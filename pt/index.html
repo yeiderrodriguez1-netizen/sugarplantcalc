@@ -5,7 +5,7 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>SugarPlantCalc | Calculadoras de processo açucareiro 100% offline (Brix, Pol, Pureza) — Ing. Yeider Rodríguez Molina</title>
-<meta content="App móvel para usinas de açúcar: calcule Brix, Pol, pureza, extração, balanço de massa, clarificação e evaporação no celular, 100% offline. Entre na lista de espera do lançamento." name="description"/>
+<meta content="App móvel para usinas de açúcar: calcule Brix, Pol, pureza, extração, balanço de massa, clarificação e evaporação no celular, 100% offline." name="description"/>
 <meta content="usina de açúcar, brix, pol, pureza, clarificação, evaporação, balanço de massa, extração, embebição, sacarose, calculadora açucareira offline, sugarplantcalc, Yeider Rodriguez Molina" name="keywords"/>
 <meta content="Ing. Yeider Rodríguez Molina" name="author"/>
 <meta content="index, follow" name="robots"/>
@@ -16,14 +16,14 @@
 <meta content="SugarPlantCalc" property="og:site_name"/>
 <meta content="https://sugarplantcalc.com/pt/" property="og:url"/>
 <meta content="SugarPlantCalc — Calculadoras de processo açucareiro, 100% offline" property="og:title"/>
-<meta content="Brix, Pol, pureza, extração, balanço de massa, clarificação e evaporação no celular, sem internet. Entre na lista de espera." property="og:description"/>
+<meta content="Brix, Pol, pureza, extração, balanço de massa, clarificação e evaporação no celular, sem internet." property="og:description"/>
 <meta content="https://sugarplantcalc.com/assets/img/og-image.jpg" property="og:image"/>
 <meta content="1024" property="og:image:width"/>
 <meta content="500" property="og:image:height"/>
 <!-- Twitter -->
 <meta content="summary_large_image" name="twitter:card"/>
 <meta content="SugarPlantCalc — Calculadoras de processo açucareiro, 100% offline" name="twitter:title"/>
-<meta content="Brix, Pol, pureza, extração, balanço de massa, clarificação e evaporação no celular, sem internet. Entre na lista de espera." name="twitter:description"/>
+<meta content="Brix, Pol, pureza, extração, balanço de massa, clarificação e evaporação no celular, sem internet." name="twitter:description"/>
 <meta content="https://sugarplantcalc.com/assets/img/og-image.jpg" name="twitter:image"/>
 <link href="../assets/img/favicon.svg" rel="icon" type="image/svg+xml"/>
 <link href="../assets/img/logo.png" rel="icon" type="image/png"/>
@@ -172,14 +172,6 @@
         .hero h1 { font-size: clamp(2.1rem, 5vw, 3.4rem); margin: 1.2rem 0; }
         .hero h1 span { color: var(--accent-gold); }
         .hero-sub { color: var(--text-muted); font-size: 1.12rem; max-width: 540px; margin-bottom: 1.8rem; }
-        .hero-form { display: flex; gap: 0.6rem; max-width: 470px; margin-bottom: 0.8rem; }
-        .hero-form input {
-            flex: 1; min-width: 0; background: var(--bg-card); border: 1px solid var(--border-color);
-            border-radius: 50px; padding: 0.85rem 1.2rem; color: var(--text-main); font-family: var(--font-main); font-size: 0.95rem;
-        }
-        .hero-form input:focus { outline: none; border-color: var(--accent-gold); }
-        .hero-ctas { display: flex; flex-wrap: wrap; gap: 0.8rem; margin-bottom: 1rem; }
-        .hero-note { color: var(--text-muted); font-size: 0.85rem; display: flex; align-items: center; gap: 0.4rem; }
         .hero-stats { display: flex; gap: 2rem; margin-top: 2rem; flex-wrap: wrap; }
         .stat h4 { font-size: 1.7rem; color: var(--accent-gold); font-family: var(--font-display); }
         .stat p { color: var(--text-muted); font-size: 0.85rem; }
@@ -312,30 +304,10 @@
         .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
         .faq-a p { color: var(--text-muted); font-size: 0.94rem; padding: 0 1.3rem 1.2rem; margin: 0; }
 
-        /* --- CTA FINAL / REGISTRO --- */
-        .register { position: relative; overflow: hidden; }
-        .register::before {
-            content: ""; position: absolute; inset: 0; z-index: 0;
-            background: radial-gradient(circle at 50% 0%, var(--accent-gold-glow) 0%, transparent 60%); opacity: 0.6;
-        }
-        .register-card {
-            position: relative; z-index: 1; max-width: 640px; margin: 0 auto; text-align: center;
-            background: var(--bg-card); border: 1px solid var(--border-gold); border-radius: var(--radius-lg);
-            padding: 3rem 2rem; box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5);
-        }
-        .register-card h2 { font-size: clamp(1.6rem, 4vw, 2.2rem); margin: 1rem 0 0.6rem; }
-        .register-card > p { color: var(--text-muted); margin-bottom: 1.8rem; }
-        .waitlist-form { display: flex; flex-direction: column; gap: 0.8rem; max-width: 440px; margin: 0 auto; }
-        .waitlist-form input {
-            background: var(--bg-main); border: 1px solid var(--border-color); border-radius: 50px;
-            padding: 0.9rem 1.3rem; color: var(--text-main); font-family: var(--font-main); font-size: 0.95rem;
-        }
-        .waitlist-form input:focus { outline: none; border-color: var(--accent-gold); }
-        .waitlist-form .btn { width: 100%; }
+        /* --- ESTADO DE FORMULARIOS --- */
         .form-status { min-height: 1.2em; font-size: 0.9rem; font-weight: 600; margin-top: 0.3rem; }
         .form-status.ok { color: var(--ok); }
         .form-status.err { color: var(--danger); }
-        .register-note { color: var(--text-muted); font-size: 0.82rem; margin-top: 1rem; }
         .hp { position: absolute; left: -9999px; opacity: 0; height: 0; width: 0; }
 
         /* --- CONTACTO --- */
@@ -372,14 +344,13 @@
         .btn:active, .lang-toggle:active, .faq-q:active, .benefit:active, .feature-card:active, .shot:active { transform: scale(0.98); }
 
         /* --- RESPONSIVE --- */
-        /* Tablet: 768px – 1024px → grids a 2 columnas fluidas */
+        /* Tablet: 768px – 1024px */
         @media (min-width: 768px) and (max-width: 1024px) {
             .container { padding: 0 2rem; }
-            .benefits-grid, .features-grid { grid-template-columns: repeat(2, 1fr); }
             .compare-grid, .contact-grid { grid-template-columns: 1fr; }
             .hero h1 { font-size: clamp(2rem, 5vw, 2.8rem); }
         }
-        /* Móvil y Tablet: <= 1024px → header hamburguesa + hero sin mockup + touch */
+        /* Móvil y Tablet: <= 1024px → header hamburguesa + hero sin mockup + tarjetas con scroll horizontal */
         @media (max-width: 1024px) {
             /* Header en reposo: solo logo (izq) + hamburguesa (der) */
             .nav-toggle { display: flex; width: 44px; height: 44px; align-items: center; justify-content: center; }
@@ -405,31 +376,37 @@
             }
             .nav-lang .lang-switch.open .lang-menu { max-height: 220px; padding: 0 0 0.4rem 1.4rem; }
             .nav-lang .lang-btn { min-height: 46px; }
-            /* Botón "Lista de espera" dentro del menú, ancho completo */
-            .nav-cta { margin-top: 0.75rem; }
-            .nav-cta .btn { width: 100%; min-height: 50px; font-size: 0.95rem; }
             /* Hero sin mockup del teléfono */
             .hero-visual { display: none; }
             .hero { padding-top: 3rem; }
             .hero-grid { grid-template-columns: 1fr; text-align: center; }
-            .hero-form, .hero-sub { margin-left: auto; margin-right: auto; }
-            .hero-ctas, .hero-stats { justify-content: center; }
+            .hero-sub { margin-left: auto; margin-right: auto; }
+            .hero-stats { justify-content: center; }
             .about-card { grid-template-columns: 1fr; text-align: center; padding: 2rem 1.5rem; }
             .about-avatar { margin: 0 auto; }
+            /* Tarjetas (beneficios y módulos) con scroll horizontal táctil */
+            .benefits-grid, .features-grid {
+                display: flex; flex-wrap: nowrap; overflow-x: auto; scroll-snap-type: x mandatory;
+                -webkit-overflow-scrolling: touch; gap: 1rem; padding-bottom: 0.6rem;
+                scrollbar-width: thin; scrollbar-color: var(--accent-gold) var(--bg-card);
+            }
+            .benefits-grid::-webkit-scrollbar, .features-grid::-webkit-scrollbar { height: 8px; }
+            .benefits-grid::-webkit-scrollbar-thumb, .features-grid::-webkit-scrollbar-thumb { background: var(--accent-gold); border-radius: 50px; }
+            .benefits-grid::-webkit-scrollbar-track, .features-grid::-webkit-scrollbar-track { background: var(--bg-card); border-radius: 50px; }
+            .benefit, .feature-card { flex: 0 0 auto; scroll-snap-align: center; }
+            .benefit { width: 78vw; min-width: 240px; max-width: 300px; }
+            .feature-card { width: 82vw; min-width: 260px; max-width: 320px; }
             /* Touch targets */
             .btn { min-height: 46px; }
             .faq-q { min-height: 52px; }
             .lightbox-close { width: 48px; height: 48px; }
             .footer-links { gap: 1.1rem 1.6rem; }
         }
-        /* Móvil: < 768px → una sola columna */
+        /* Móvil: < 768px */
         @media (max-width: 767px) {
             section { padding: 4rem 0; }
-            .benefits-grid, .features-grid, .compare-grid, .contact-grid { grid-template-columns: 1fr; }
+            .compare-grid, .contact-grid { grid-template-columns: 1fr; }
             .container { padding: 0 1.2rem; }
-            .hero-form { flex-direction: column; }
-            .hero-form .btn { width: 100%; }
-            .benefits-grid { gap: 1rem; }
         }
         /* Sin efectos :hover pegajosos en dispositivos táctiles */
         @media (hover: none) and (pointer: coarse) {
@@ -477,7 +454,6 @@
 </div>
 </div>
 </li>
-<li class="nav-cta"><a class="btn btn-primary" data-i18n="nav_cta" href="#registro">Lista de espera</a></li>
 </ul>
 </div>
 </header>
@@ -489,17 +465,6 @@
 <span class="badge" data-i18n="hero_badge">Ferramenta técnica industrial · 100% Offline</span>
 <h1 data-i18n-html="hero_title">Os cálculos da sua usina, <span>resolvidos no celular e sem internet</span></h1>
 <p class="hero-sub" data-i18n="hero_sub">O SugarPlantCalc reúne Brix, Pol, pureza, extração, balanço de massa, clarificação e evaporação em um só app. Resultados de planta em segundos, mesmo sem sinal.</p>
-<form action="https://formspree.io/f/mykrlngb" class="hero-form waitlist-form" method="POST" novalidate="">
-<input aria-hidden="true" autocomplete="off" class="hp" name="_gotcha" tabindex="-1" type="text"/>
-<input name="_subject" type="hidden" value="Lista de espera SugarPlantCalc (hero)"/>
-<input aria-label="Correo electrónico" data-i18n-ph="ph_email" name="email" placeholder="voce@email.com" required="" type="email"/>
-<button class="btn btn-primary" data-i18n="hero_cta1" type="submit">Entrar na lista</button>
-<p aria-live="polite" class="form-status" role="status"></p>
-</form>
-<p class="hero-note">
-<svg fill="none" height="15" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewbox="0 0 24 24" width="15"><path d="M20 6L9 17l-5-5"></path></svg>
-<span data-i18n="hero_note">Aviso de lançamento no Google Play. Sem spam.</span>
-</p>
 <div class="hero-stats">
 <div class="stat"><h4 data-i18n="stat1n">+10</h4><p data-i18n="stat1l">Calculadoras</p></div>
 <div class="stat"><h4 data-i18n="stat2n">100%</h4><p data-i18n="stat2l">Offline na planta</p></div>
@@ -652,7 +617,7 @@
 <p class="about-role" data-i18n="about_role">Engenheiro de Processos · Criador do SugarPlantCalc</p>
 <p data-i18n="about_p1">Engenheiro de processos especializado na otimização de usinas de açúcar. Criei o SugarPlantCalc para eliminar atrasos e erros de cálculo manual durante a operação diária.</p>
 <p data-i18n="about_p2">O objetivo: colocar nas mãos do laboratório, supervisores e engenheiros uma suíte técnica rápida, precisa e robusta que funcione sem conexão.</p>
-<a class="btn btn-secondary" data-i18n="about_cta" href="#registro">Entrar na lista de espera</a>
+<a class="btn btn-secondary" data-i18n="about_cta" href="#contacto">Escreva-me</a>
 </div>
 </div>
 </div>
@@ -672,7 +637,7 @@
 </div>
 <div class="faq-item">
 <button aria-expanded="false" class="faq-q" type="button"><span data-i18n="faq_q2">Quando estará disponível?</span><span class="faq-chevron">+</span></button>
-<div class="faq-a"><p data-i18n="faq_a2">Está em fase final de testes. Entre na lista de espera e avisaremos assim que for publicado no Google Play.</p></div>
+<div class="faq-a"><p data-i18n="faq_a2">Está em fase final de testes. Em breve estará disponível no Google Play.</p></div>
 </div>
 <div class="faq-item">
 <button aria-expanded="false" class="faq-q" type="button"><span data-i18n="faq_q3">Para quem é indicado?</span><span class="faq-chevron">+</span></button>
@@ -706,7 +671,7 @@
                         sugarfactory1995@gmail.com
                     </a>
 </div>
-<form action="https://formspree.io/f/mykrlngb" class="contact-form js-form" data-success="form_success_contact" method="POST" novalidate="">
+<form action="https://formspree.io/f/mykrlngb" class="contact-form js-form" method="POST" novalidate="">
 <input aria-hidden="true" autocomplete="off" class="hp" name="_gotcha" tabindex="-1" type="text"/>
 <input name="_subject" type="hidden" value="Consulta / sugerencia — SugarPlantCalc"/>
 <label data-i18n="form_name" for="c-name">Nome completo</label>
@@ -721,25 +686,6 @@
 </div>
 </div>
 </section>
-<!-- CTA FINAL / REGISTRO -->
-<section class="register" id="registro">
-<div class="container">
-<div class="register-card reveal">
-<span class="badge" data-i18n="reg_badge">Lista de espera</span>
-<h2 data-i18n="reg_title">Seja o primeiro a usar o SugarPlantCalc</h2>
-<p data-i18n="reg_sub">Deixe seu e-mail e avisaremos no dia do lançamento no Google Play. Sem spam, só o aviso.</p>
-<form action="https://formspree.io/f/mykrlngb" class="waitlist-form" method="POST" novalidate="">
-<input aria-hidden="true" autocomplete="off" class="hp" name="_gotcha" tabindex="-1" type="text"/>
-<input name="_subject" type="hidden" value="Lista de espera SugarPlantCalc (registro)"/>
-<input aria-label="Nombre" data-i18n-ph="ph_name" name="name" placeholder="Nome (opcional)" type="text"/>
-<input aria-label="Correo electrónico" data-i18n-ph="ph_email" name="email" placeholder="voce@email.com" required="" type="email"/>
-<button class="btn btn-primary btn-lg" data-i18n="reg_btn" type="submit">Entrar na lista de espera</button>
-<p aria-live="polite" class="form-status" role="status"></p>
-</form>
-<p class="register-note" data-i18n="reg_note">Respeitamos seu e-mail. Você pode cancelar quando quiser.</p>
-</div>
-</div>
-</section>
 <!-- FOOTER -->
 <footer class="footer">
 <div class="container">
@@ -750,7 +696,6 @@
 </div>
 <ul class="footer-links">
 <li><a data-i18n="foot_privacy" href="https://sites.google.com/view/sugarplantcalc-privacidad" rel="noopener" target="_blank">Política de privacidade</a></li>
-<li><a data-i18n="foot_waitlist" href="#registro">Lista de espera</a></li>
 <li><a href="mailto:sugarfactory1995@gmail.com">sugarfactory1995@gmail.com</a></li>
 <li><span data-i18n="gp_soon_foot">Google Play (em breve)</span></li>
 </ul>
@@ -774,11 +719,10 @@
         };
         var I18N = {
             es: {
-                nav_features: 'Funciones', nav_compare: 'Comparativa', nav_about: 'Sobre mí', nav_faq: 'FAQ', nav_cta: 'Lista de espera',
+                nav_features: 'Funciones', nav_compare: 'Comparativa', nav_about: 'Sobre mí', nav_faq: 'FAQ',
                 hero_badge: 'Herramienta técnica industrial · 100% Offline',
                 hero_title: 'Los cálculos de tu ingenio, <span>resueltos en el celular y sin internet</span>',
                 hero_sub: 'SugarPlantCalc reúne Brix, Pol, pureza, extracción, balance de masa, clarificación y evaporación en una sola app. Resultados de planta en segundos, aunque no tengas señal.',
-                hero_cta1: 'Únete a la lista', hero_note: 'Aviso de lanzamiento en Google Play. Sin spam.',
                 stat1n: '+10', stat1l: 'Calculadoras', stat2n: '100%', stat2l: 'Offline en planta', stat3n: '3', stat3l: 'Idiomas',
                 gp_soon: 'Próximamente en Google Play',
                 ben_badge: 'Ventajas', ben_title: 'Pensada para el ritmo real de la planta', ben_sub: 'Menos hojas de cálculo, menos errores, más decisiones rápidas donde ocurre el proceso.',
@@ -811,30 +755,28 @@
                 about_badge: 'El creador', about_name: 'Ing. Yeider Rodríguez Molina', about_role: 'Ingeniero de Procesos · Creador de SugarPlantCalc',
                 about_p1: 'Ingeniero de procesos especializado en optimización de ingenios azucareros. Creé SugarPlantCalc para eliminar las demoras y los errores del cálculo manual durante la operación diaria.',
                 about_p2: 'El objetivo: poner en manos de laboratorio, supervisores e ingenieros una suite técnica rápida, precisa y robusta que funcione sin conexión.',
-                about_cta: 'Unirme a la lista de espera',
+                about_cta: 'Escríbeme',
                 faq_badge: 'Preguntas frecuentes', faq_title: 'Resolvemos tus dudas', faq_sub: 'Lo que más pregunta el personal de proceso sobre SugarPlantCalc.',
                 faq_q1: '¿Necesito internet para usarla?', faq_a1: 'No. Todos los cálculos funcionan 100% offline, ideal para el trabajo en planta sin señal.',
-                faq_q2: '¿Cuándo estará disponible?', faq_a2: 'Está en fase final de pruebas. Únete a la lista de espera y te avisaremos apenas se publique en Google Play.',
+                faq_q2: '¿Cuándo estará disponible?', faq_a2: 'Está en fase final de pruebas. Muy pronto estará disponible en Google Play.',
                 faq_q3: '¿Para quién está pensada?', faq_a3: 'Para ingenieros de procesos, personal de laboratorio, supervisores y operadores de ingenios azucareros.',
                 faq_q4: '¿Qué cálculos incluye?', faq_a4: 'Brix, Pol, pureza, extracción, imbibición, balance de masa, recuperación, clarificación, evaporación y conversión de unidades.',
                 faq_q5: '¿En qué dispositivos funciona?', faq_a5: 'En teléfonos y tablets Android.',
-                faq_q6: '¿Tendrá costo?', faq_a6: 'Te informaremos las condiciones al lanzamiento. Suscríbete a la lista para enterarte primero.',
-                reg_badge: 'Lista de espera', reg_title: 'Sé el primero en usar SugarPlantCalc', reg_sub: 'Déjanos tu correo y te avisaremos el día del lanzamiento en Google Play. Sin spam, solo el aviso.',
-                ph_name: 'Nombre (opcional)', ph_email: 'tu@correo.com', reg_btn: 'Unirme a la lista de espera', reg_note: 'Respetamos tu correo. Puedes darte de baja cuando quieras.',
-                form_sending: 'Enviando…', form_success: '¡Listo! Te avisaremos en cuanto SugarPlantCalc esté disponible.', form_error: 'Hubo un problema al enviar. Revisa tu correo e inténtalo de nuevo.',
+                faq_q6: '¿Tendrá costo?', faq_a6: 'Te informaremos las condiciones al lanzamiento.',
+                ph_email: 'tu@correo.com',
+                form_sending: 'Enviando…', form_error: 'Hubo un problema al enviar. Revisa tu correo e inténtalo de nuevo.',
                 nav_contact: 'Contacto', contact_badge: 'Contacto', contact_title: '¿Dudas o sugerencias?', contact_p: '¿Quieres proponer una mejora, reportar un cálculo o consultar sobre optimización de procesos en tu ingenio? Escríbeme directamente.',
                 form_name: 'Nombre completo', form_email: 'Correo electrónico', form_message: 'Mensaje', ph_cname: 'Ing. Juan Pérez', ph_message: 'Describe tu duda o sugerencia sobre la app...', contact_btn: 'Enviar mensaje',
                 form_success_contact: '¡Gracias! Tu mensaje fue enviado. Te responderé pronto.',
                 foot_tagline: 'Calculadoras de proceso azucarero, 100% offline, por Ing. Yeider Rodríguez Molina.',
-                foot_privacy: 'Política de privacidad', foot_waitlist: 'Lista de espera', gp_soon_foot: 'Google Play (próximamente)',
+                foot_privacy: 'Política de privacidad', gp_soon_foot: 'Google Play (próximamente)',
                 foot_copy: '© 2026 SugarPlantCalc. Todos los derechos reservados. Desarrollado por Ing. Yeider Rodríguez Molina.'
             },
             en: {
-                nav_features: 'Features', nav_compare: 'Comparison', nav_about: 'About', nav_faq: 'FAQ', nav_cta: 'Waitlist',
+                nav_features: 'Features', nav_compare: 'Comparison', nav_about: 'About', nav_faq: 'FAQ',
                 hero_badge: 'Industrial technical tool · 100% Offline',
                 hero_title: 'Your sugar mill calculations, <span>solved on your phone and without internet</span>',
                 hero_sub: 'SugarPlantCalc brings Brix, Pol, purity, extraction, mass balance, clarification and evaporation into a single app. Plant results in seconds, even with no signal.',
-                hero_cta1: 'Join the waitlist', hero_note: 'Launch alert on Google Play. No spam.',
                 stat1n: '+10', stat1l: 'Calculators', stat2n: '100%', stat2l: 'Offline in plant', stat3n: '3', stat3l: 'Languages',
                 gp_soon: 'Coming soon to Google Play',
                 ben_badge: 'Benefits', ben_title: 'Built for the real pace of the plant', ben_sub: 'Fewer spreadsheets, fewer errors, faster decisions right where the process happens.',
@@ -867,30 +809,28 @@
                 about_badge: 'The creator', about_name: 'Ing. Yeider Rodríguez Molina', about_role: 'Process Engineer · Creator of SugarPlantCalc',
                 about_p1: 'Process engineer specialized in sugar mill optimization. I created SugarPlantCalc to eliminate delays and manual calculation errors during daily operation.',
                 about_p2: 'The goal: put a fast, precise and robust technical suite in the hands of lab staff, supervisors and engineers, one that works with no connection.',
-                about_cta: 'Join the waitlist',
+                about_cta: 'Contact me',
                 faq_badge: 'FAQ', faq_title: 'Answering your questions', faq_sub: 'The most common questions process staff ask about SugarPlantCalc.',
                 faq_q1: 'Do I need internet to use it?', faq_a1: 'No. All calculations work 100% offline, ideal for plant work with no signal.',
-                faq_q2: 'When will it be available?', faq_a2: 'It is in final testing. Join the waitlist and we will notify you as soon as it launches on Google Play.',
+                faq_q2: 'When will it be available?', faq_a2: 'It is in final testing. It will be available on Google Play soon.',
                 faq_q3: 'Who is it for?', faq_a3: 'For process engineers, lab staff, supervisors and operators at sugar mills.',
                 faq_q4: 'What calculations does it include?', faq_a4: 'Brix, Pol, purity, extraction, imbibition, mass balance, recovery, clarification, evaporation and unit conversion.',
                 faq_q5: 'What devices does it run on?', faq_a5: 'On Android phones and tablets.',
-                faq_q6: 'Will it have a cost?', faq_a6: 'We will share the terms at launch. Subscribe to the list to be the first to know.',
-                reg_badge: 'Waitlist', reg_title: 'Be the first to use SugarPlantCalc', reg_sub: 'Leave your email and we will notify you the day it launches on Google Play. No spam, just the alert.',
-                ph_name: 'Name (optional)', ph_email: 'you@email.com', reg_btn: 'Join the waitlist', reg_note: 'We respect your email. You can unsubscribe anytime.',
-                form_sending: 'Sending…', form_success: 'Done! We will notify you as soon as SugarPlantCalc is available.', form_error: 'There was a problem. Check your email and try again.',
+                faq_q6: 'Will it have a cost?', faq_a6: 'We will share the terms at launch.',
+                ph_email: 'you@email.com',
+                form_sending: 'Sending…', form_error: 'There was a problem. Check your email and try again.',
                 nav_contact: 'Contact', contact_badge: 'Contact', contact_title: 'Questions or suggestions?', contact_p: 'Want to propose an improvement, report a calculation or ask about process optimization at your mill? Write to me directly.',
                 form_name: 'Full name', form_email: 'Email', form_message: 'Message', ph_cname: 'Eng. John Doe', ph_message: 'Describe your question or suggestion about the app...', contact_btn: 'Send message',
                 form_success_contact: 'Thanks! Your message was sent. I will reply soon.',
                 foot_tagline: 'Sugar-process calculators, 100% offline, by Ing. Yeider Rodríguez Molina.',
-                foot_privacy: 'Privacy policy', foot_waitlist: 'Waitlist', gp_soon_foot: 'Google Play (coming soon)',
+                foot_privacy: 'Privacy policy', gp_soon_foot: 'Google Play (coming soon)',
                 foot_copy: '© 2026 SugarPlantCalc. All rights reserved. Developed by Ing. Yeider Rodríguez Molina.'
             },
             pt: {
-                nav_features: 'Funcionalidades', nav_compare: 'Comparação', nav_about: 'Sobre mim', nav_faq: 'FAQ', nav_cta: 'Lista de espera',
+                nav_features: 'Funcionalidades', nav_compare: 'Comparação', nav_about: 'Sobre mim', nav_faq: 'FAQ',
                 hero_badge: 'Ferramenta técnica industrial · 100% Offline',
                 hero_title: 'Os cálculos da sua usina, <span>resolvidos no celular e sem internet</span>',
                 hero_sub: 'O SugarPlantCalc reúne Brix, Pol, pureza, extração, balanço de massa, clarificação e evaporação em um só app. Resultados de planta em segundos, mesmo sem sinal.',
-                hero_cta1: 'Entrar na lista', hero_note: 'Aviso de lançamento no Google Play. Sem spam.',
                 stat1n: '+10', stat1l: 'Calculadoras', stat2n: '100%', stat2l: 'Offline na planta', stat3n: '3', stat3l: 'Idiomas',
                 gp_soon: 'Em breve no Google Play',
                 ben_badge: 'Vantagens', ben_title: 'Feita para o ritmo real da planta', ben_sub: 'Menos planilhas, menos erros, decisões mais rápidas onde o processo acontece.',
@@ -923,22 +863,21 @@
                 about_badge: 'O criador', about_name: 'Ing. Yeider Rodríguez Molina', about_role: 'Engenheiro de Processos · Criador do SugarPlantCalc',
                 about_p1: 'Engenheiro de processos especializado na otimização de usinas de açúcar. Criei o SugarPlantCalc para eliminar atrasos e erros de cálculo manual durante a operação diária.',
                 about_p2: 'O objetivo: colocar nas mãos do laboratório, supervisores e engenheiros uma suíte técnica rápida, precisa e robusta que funcione sem conexão.',
-                about_cta: 'Entrar na lista de espera',
+                about_cta: 'Escreva-me',
                 faq_badge: 'Perguntas frequentes', faq_title: 'Tirando suas dúvidas', faq_sub: 'As perguntas mais comuns da equipe de processo sobre o SugarPlantCalc.',
                 faq_q1: 'Preciso de internet para usar?', faq_a1: 'Não. Todos os cálculos funcionam 100% offline, ideal para o trabalho na planta sem sinal.',
-                faq_q2: 'Quando estará disponível?', faq_a2: 'Está em fase final de testes. Entre na lista de espera e avisaremos assim que for publicado no Google Play.',
+                faq_q2: 'Quando estará disponível?', faq_a2: 'Está em fase final de testes. Em breve estará disponível no Google Play.',
                 faq_q3: 'Para quem é indicado?', faq_a3: 'Para engenheiros de processos, equipe de laboratório, supervisores e operadores de usinas de açúcar.',
                 faq_q4: 'Quais cálculos inclui?', faq_a4: 'Brix, Pol, pureza, extração, embebição, balanço de massa, recuperação, clarificação, evaporação e conversão de unidades.',
                 faq_q5: 'Em quais dispositivos funciona?', faq_a5: 'Em telefones e tablets Android.',
-                faq_q6: 'Terá custo?', faq_a6: 'Informaremos as condições no lançamento. Assine a lista para saber primeiro.',
-                reg_badge: 'Lista de espera', reg_title: 'Seja o primeiro a usar o SugarPlantCalc', reg_sub: 'Deixe seu e-mail e avisaremos no dia do lançamento no Google Play. Sem spam, só o aviso.',
-                ph_name: 'Nome (opcional)', ph_email: 'voce@email.com', reg_btn: 'Entrar na lista de espera', reg_note: 'Respeitamos seu e-mail. Você pode cancelar quando quiser.',
-                form_sending: 'Enviando…', form_success: 'Pronto! Avisaremos assim que o SugarPlantCalc estiver disponível.', form_error: 'Ocorreu um problema. Verifique seu e-mail e tente novamente.',
+                faq_q6: 'Terá custo?', faq_a6: 'Informaremos as condições no lançamento.',
+                ph_email: 'voce@email.com',
+                form_sending: 'Enviando…', form_error: 'Ocorreu um problema. Verifique seu e-mail e tente novamente.',
                 nav_contact: 'Contato', contact_badge: 'Contato', contact_title: 'Dúvidas ou sugestões?', contact_p: 'Quer propor uma melhoria, relatar um cálculo ou consultar sobre otimização de processos na sua usina? Escreva-me diretamente.',
                 form_name: 'Nome completo', form_email: 'E-mail', form_message: 'Mensagem', ph_cname: 'Eng. João Silva', ph_message: 'Descreva sua dúvida ou sugestão sobre o app...', contact_btn: 'Enviar mensagem',
                 form_success_contact: 'Obrigado! Sua mensagem foi enviada. Responderei em breve.',
                 foot_tagline: 'Calculadoras de processo açucareiro, 100% offline, por Ing. Yeider Rodríguez Molina.',
-                foot_privacy: 'Política de privacidade', foot_waitlist: 'Lista de espera', gp_soon_foot: 'Google Play (em breve)',
+                foot_privacy: 'Política de privacidade', gp_soon_foot: 'Google Play (em breve)',
                 foot_copy: '© 2026 SugarPlantCalc. Todos os direitos reservados. Desenvolvido por Ing. Yeider Rodríguez Molina.'
             }
         };
@@ -1022,8 +961,8 @@
             });
         });
 
-        // Formularios enviados a Formspree (lista de espera y contacto)
-        document.querySelectorAll('.waitlist-form, .js-form').forEach(function (form) {
+        // Formulario de contacto enviado a Formspree
+        document.querySelectorAll('.js-form').forEach(function (form) {
             form.addEventListener('submit', function (e) {
                 e.preventDefault();
                 var lang = document.documentElement.lang || 'es';
@@ -1031,12 +970,11 @@
                 var status = form.querySelector('.form-status');
                 var btn = form.querySelector('button[type="submit"]');
                 var data = new FormData(form);
-                var okKey = form.getAttribute('data-success') || 'form_success';
                 if (status) { status.className = 'form-status'; status.textContent = dict.form_sending; }
                 if (btn) btn.disabled = true;
                 fetch(form.action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } })
                     .then(function (r) {
-                        if (r.ok) { if (status) { status.className = 'form-status ok'; status.textContent = dict[okKey] || dict.form_success; } form.reset(); }
+                        if (r.ok) { if (status) { status.className = 'form-status ok'; status.textContent = dict.form_success_contact; } form.reset(); }
                         else { if (status) { status.className = 'form-status err'; status.textContent = dict.form_error; } }
                     })
                     .catch(function () { if (status) { status.className = 'form-status err'; status.textContent = dict.form_error; } })
