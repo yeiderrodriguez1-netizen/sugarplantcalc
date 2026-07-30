@@ -2,14 +2,11 @@
 
 <html lang="en">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-3X0KJSK4XP"></script>
+<!-- Google tag (gtag.js) - carga diferida hasta que el usuario acepte cookies -->
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
-  gtag('config', 'G-3X0KJSK4XP');
 </script>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
@@ -437,9 +434,33 @@
             .reveal { opacity: 1; transform: none; transition: none; }
             .benefit, .feature-card, .shot, .btn { transition: none; }
         }
+        /* --- COOKIE CONSENT --- */
+        .cookie-banner { position: fixed; left: 0; right: 0; bottom: 0; z-index: 3000; background: var(--bg-card); border-top: 1px solid var(--border-gold); box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.45); padding: 1rem 1.25rem; transform: translateY(120%); transition: transform 0.35s ease; }
+        .cookie-banner.show { transform: translateY(0); }
+        .cookie-banner-inner { max-width: 1140px; margin: 0 auto; display: flex; align-items: center; gap: 1.25rem; flex-wrap: wrap; }
+        .cookie-banner-text { flex: 1 1 320px; margin: 0; color: var(--text-muted); font-size: 0.86rem; line-height: 1.55; }
+        .cookie-banner-text a { color: var(--accent-gold); text-decoration: underline; }
+        .cookie-banner-actions { display: flex; gap: 0.7rem; flex-shrink: 0; margin-left: auto; }
+        .cookie-btn { font-family: inherit; font-weight: 600; font-size: 0.86rem; padding: 0.65rem 1.3rem; border-radius: 50px; cursor: pointer; transition: 0.2s; white-space: nowrap; border: 1px solid transparent; }
+        .cookie-btn-accept { background: var(--accent-gold); color: #14110A; border-color: var(--accent-gold); }
+        .cookie-btn-accept:hover { background: var(--accent-gold-2); }
+        .cookie-btn-reject { background: transparent; color: var(--text-main); border-color: var(--border-color); }
+        .cookie-btn-reject:hover { border-color: var(--accent-gold); color: var(--accent-gold); }
+        @media (max-width: 640px) { .cookie-banner-inner { flex-direction: column; align-items: stretch; text-align: center; } .cookie-banner-actions { margin-left: 0; justify-content: center; } }
     </style>
 </head>
 <body>
+<!-- COOKIE CONSENT BANNER -->
+<div class="cookie-banner" hidden id="cookieBanner" role="dialog" aria-label="Cookie notice">
+<div class="cookie-banner-inner">
+<p class="cookie-banner-text">We use our own cookies and Google Analytics to understand how this site is used and improve it. Google Analytics only runs if you accept. <a href="https://sites.google.com/view/sugarplantcalc-privacidad" rel="noopener" target="_blank">Learn more</a>.</p>
+<div class="cookie-banner-actions">
+<button class="cookie-btn cookie-btn-reject" id="cookieReject" type="button">Reject</button>
+<button class="cookie-btn cookie-btn-accept" id="cookieAccept" type="button">Accept</button>
+</div>
+</div>
+</div>
+
 <!-- HEADER -->
 <header class="site-header" id="siteHeader">
 <div class="container nav">
@@ -708,6 +729,7 @@
 <ul class="footer-links">
 <li><a data-i18n="foot_privacy" href="https://sites.google.com/view/sugarplantcalc-privacidad" rel="noopener" target="_blank">Privacy policy</a></li>
 <li><a href="mailto:sugarfactory1995@gmail.com">sugarfactory1995@gmail.com</a></li>
+<li><a class="js-cookie-prefs" href="#">Cookie preferences</a></li>
 <li><span data-i18n="gp_soon_foot">Google Play (coming soon)</span></li>
 </ul>
 </div>
@@ -1026,5 +1048,57 @@
         setLang(savedLang);
     })();
     </script>
+<script>
+(function () {
+  var GA_ID = 'G-3X0KJSK4XP';
+  var STORAGE_KEY = 'spc_cookie_consent';
+  var banner = document.getElementById('cookieBanner');
+  var acceptBtn = document.getElementById('cookieAccept');
+  var rejectBtn = document.getElementById('cookieReject');
+  var prefLinks = document.querySelectorAll('.js-cookie-prefs');
+
+  function loadGA() {
+    if (window.__spcGaLoaded) return;
+    window.__spcGaLoaded = true;
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+    document.head.appendChild(s);
+    gtag('config', GA_ID);
+  }
+
+  function showBanner() {
+    if (!banner) return;
+    banner.hidden = false;
+    requestAnimationFrame(function () { banner.classList.add('show'); });
+  }
+  function hideBanner() {
+    if (!banner) return;
+    banner.classList.remove('show');
+    setTimeout(function () { banner.hidden = true; }, 350);
+  }
+
+  function applyConsent(value) {
+    try { localStorage.setItem(STORAGE_KEY, value); } catch (e) {}
+    if (value === 'granted') loadGA();
+  }
+
+  var stored;
+  try { stored = localStorage.getItem(STORAGE_KEY); } catch (e) { stored = null; }
+
+  if (stored === 'granted') {
+    loadGA();
+  } else if (stored !== 'denied') {
+    showBanner();
+  }
+
+  if (acceptBtn) acceptBtn.addEventListener('click', function () { applyConsent('granted'); hideBanner(); });
+  if (rejectBtn) rejectBtn.addEventListener('click', function () { applyConsent('denied'); hideBanner(); });
+
+  prefLinks.forEach(function (link) {
+    link.addEventListener('click', function (e) { e.preventDefault(); showBanner(); });
+  });
+})();
+</script>
 </body>
 </html>
