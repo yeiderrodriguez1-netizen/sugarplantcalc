@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3X0KJSK4XP"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-3X0KJSK4XP');
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#121417">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>Calculadoras online | SugarPlantCalc — Brix, Pol, Pureza, clarificação e evaporação</title>
+<meta name="description" content="14 calculadoras técnicas para usinas de açúcar direto no navegador: Brix, Pol, pureza, moagem, clarificação, dosagem de enzimas, evaporação e cristalização. Sem instalar nada.">
+<link rel="canonical" href="https://sugarplantcalc.com/pt/calculadoras/">
+<link rel="alternate" hreflang="es" href="https://sugarplantcalc.com/calculadoras/">
+<link rel="alternate" hreflang="en" href="https://sugarplantcalc.com/en/calculadoras/">
+<link rel="alternate" hreflang="pt" href="https://sugarplantcalc.com/pt/calculadoras/">
+<link rel="alternate" hreflang="x-default" href="https://sugarplantcalc.com/calculadoras/">
+<link rel="icon" href="../../assets/img/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/img/logo.png" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg-main: #121417; --bg-alt: #16191E; --bg-card: #1A1E24; --bg-card-hover: #222730;
+  --accent-gold: #F5B301; --accent-gold-2: #E5A200; --accent-gold-glow: rgba(245,179,1,.2);
+  --text-main: #F4F5F7; --text-muted: #9AA3AD;
+  --border-color: rgba(255,255,255,.08); --border-gold: rgba(245,179,1,.28);
+  --danger: #f87171; --ok: #4ade80;
+  --font-main: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-display: 'Space Grotesk', 'Inter', sans-serif;
+  --radius-md: 16px;
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;padding:0}
+body{font-family:var(--font-main);background:var(--bg-main);color:var(--text-main);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+.wrap{max-width:560px;margin:0 auto;padding:0 16px calc(32px + env(safe-area-inset-bottom))}
+.top{position:sticky;top:0;background:var(--bg-main);padding:calc(12px + env(safe-area-inset-top)) 0 10px;display:flex;align-items:center;gap:10px;z-index:5;border-bottom:1px solid transparent}
+.back{width:40px;height:40px;border:0;background:transparent;font-size:24px;color:var(--text-main);border-radius:20px;display:flex;align-items:center;justify-content:center;cursor:pointer}
+.back:active{background:var(--bg-card-hover)}
+.top h1{font-family:var(--font-display);font-size:18px;font-weight:600;margin:0}
+.hero{padding:calc(28px + env(safe-area-inset-top)) 0 4px}
+.hero .backsite{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;color:var(--text-muted);text-decoration:none;margin-bottom:14px}
+.hero .backsite:active{color:var(--accent-gold)}
+.hero h1{font-family:var(--font-display);font-size:24px;font-weight:600;margin:0}
+.hero p{font-size:14px;color:var(--text-muted);margin:6px 0 0}
+.menu{margin-top:20px}
+.grp{font-size:12px;font-weight:600;letter-spacing:.5px;text-transform:uppercase;color:var(--accent-gold);margin:24px 0 12px}
+.grp.first{margin-top:0}
+.mcard{display:flex;align-items:center;gap:14px;padding:16px;border-radius:var(--radius-md);border:1px solid var(--border-color);background:var(--bg-card);width:100%;text-align:left;cursor:pointer;font:inherit;margin-bottom:10px;transition:background .2s,border-color .2s}
+.mcard:active{background:var(--bg-card-hover);transform:scale(.99)}
+.mcard .ic{font-size:24px;line-height:1;filter:saturate(.85)}
+.mcard .tt{font-size:15.5px;font-weight:500;color:var(--text-main)}
+.mcard .ds{font-size:12px;margin-top:2px;color:var(--text-muted)}
+.mcard .ar{margin-left:auto;font-size:18px;color:var(--accent-gold);opacity:.85}
+.sec{border-radius:var(--radius-md);padding:16px;margin-bottom:12px;background:var(--bg-card);border:1px solid var(--border-color)}
+.sec h2{font-size:12.5px;font-weight:600;letter-spacing:.3px;text-transform:uppercase;margin:0 0 12px;color:var(--accent-gold)}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.grid .full{grid-column:1/-1}
+label{display:block;font-size:11.5px;margin-bottom:4px;color:var(--text-muted)}
+input,select{width:100%;height:44px;padding:0 12px;font-size:16px;font-family:inherit;border-radius:10px;border:1.5px solid var(--border-color);background:var(--bg-alt);color:var(--text-main)}
+select{padding:0 8px;font-size:14.5px}
+input:focus,select:focus{outline:none;border-color:var(--accent-gold);box-shadow:0 0 0 3px var(--accent-gold-glow)}
+.res{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px}
+.rc{border-radius:var(--radius-md);padding:14px;background:var(--bg-card-hover);border:1px solid var(--border-color)}
+.rc .lb{font-size:11.5px;color:var(--text-muted)}
+.rc .vl{font-size:24px;font-weight:600;margin:2px 0 0;font-variant-numeric:tabular-nums;color:var(--accent-gold);font-family:var(--font-display)}
+.rc .un{font-size:11px;color:var(--text-muted)}
+.rc.wide{grid-column:1/-1}
+.dose{border-radius:var(--radius-md);padding:16px;margin-bottom:12px;background:var(--bg-card);border:1px solid var(--border-color)}
+.dose h2{font-size:12.5px;font-weight:600;letter-spacing:.3px;text-transform:uppercase;margin:0 0 12px;color:var(--accent-gold)}
+.dose .g{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.dose .v{font-size:18px;font-weight:600;font-variant-numeric:tabular-nums;color:var(--text-main)}
+.dose .u{font-size:11px;margin-top:2px;color:var(--text-muted)}
+.warn{display:none;border-radius:12px;padding:11px 14px;font-size:13px;background:rgba(245,179,1,.10);border:1px solid var(--border-gold);color:var(--text-main);margin-bottom:12px;white-space:pre-wrap}
+.det{background:var(--bg-alt);border-radius:var(--radius-md);padding:6px 16px 10px;margin-bottom:12px;border:1px solid var(--border-color)}
+.det h2{font-size:12.5px;font-weight:600;margin:12px 0 8px;color:var(--text-muted);text-transform:uppercase;letter-spacing:.3px}
+.row{display:flex;justify-content:space-between;gap:12px;padding:8px 0;border-top:1px solid var(--border-color);font-size:13px}
+.row span:first-child{color:var(--text-muted)}
+.row span:last-child{font-weight:500;font-variant-numeric:tabular-nums;text-align:right;color:var(--text-main)}
+.note{font-size:12px;color:var(--text-muted);margin-top:24px}
+.btn{width:100%;height:46px;border:1.5px solid var(--border-color);background:transparent;border-radius:50px;font:inherit;font-weight:600;font-size:14px;color:var(--text-main);cursor:pointer;margin-bottom:12px;transition:.2s}
+.btn:active{border-color:var(--accent-gold);color:var(--accent-gold)}
+.jar{border-radius:14px;padding:12px;margin-bottom:8px;background:var(--bg-card);border:1.5px solid var(--border-color)}
+.jar.mejor{border-color:var(--ok);border-width:2px;background:rgba(74,222,128,.08)}
+.jar .jh{display:flex;align-items:baseline;gap:8px;margin-bottom:8px}
+.jar .jn{font-size:14px;font-weight:500;color:var(--text-main)}
+.jar .jml{font-size:11.5px;color:var(--text-muted);margin-left:auto;font-variant-numeric:tabular-nums}
+.jar .js{font-size:11.5px;font-weight:600;color:var(--ok)}
+.jar .g4{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:6px}
+.jar .g4 label{font-size:10px;margin-bottom:3px}
+.jar .g4 input{height:40px;padding:0 7px;font-size:15px;text-align:center}
+.mejorbox{border-radius:var(--radius-md);padding:16px;margin-bottom:12px;background:var(--bg-card);border:1px solid rgba(74,222,128,.35)}
+.mejorbox .lb{font-size:12px;color:var(--text-muted)}
+.mejorbox .vl{font-size:24px;font-weight:600;margin:2px 0 0;font-variant-numeric:tabular-nums;color:var(--ok);font-family:var(--font-display)}
+.mejorbox .un{font-size:11px;color:var(--text-muted)}
+.mejorbox .cm{font-size:12.5px;margin-top:10px;line-height:1.55;color:var(--text-main)}
+[hidden]{display:none!important}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<section id="inicio">
+  <div class="hero">
+    <a class="backsite" href="https://sugarplantcalc.com/pt/">‹ <span data-t="lbl_volver_sitio">SugarPlantCalc.com</span></a>
+    <h1 data-t="app_titulo">Herramientas de proceso</h1>
+    <p data-t="hero_subtitulo">Calculadoras de ingenio azucarero</p>
+  </div>
+  <div class="menu">
+    <div class="grp first" data-t="grupo_lab">Laboratorio y conversiones</div>
+    <button class="mcard" onclick="ir('conversion')">
+      <span class="ic">⇄</span><span><span class="tt" data-t="menu_conv">Conversión</span><span class="ds" data-t="menu_conv_desc">Unidades de proceso</span></span><span class="ar">›</span>
+    </button>
+    <button class="mcard" onclick="ir('pureza')">
+      <span class="ic">🧪</span><span><span class="tt" data-t="menu_pureza">Pureza</span><span class="ds" data-t="menu_pureza_desc">A partir de Brix y Pol</span></span><span class="ar">›</span>
+    </button>
+    <button class="mcard" onclick="ir('densidad')">
+      <span class="ic">⚖</span><span><span class="tt" data-t="menu_dens">Densidad</span><span class="ds" data-t="menu_dens_desc">Producto y Brix → densidad</span></span><span class="ar">›</span>
+    </button>
+    <button class="mcard" onclick="ir('rendimiento')">
+      <span class="ic">📈</span><span><span class="tt" data-t="menu_rendimiento">Rendimiento</span><span class="ds" data-t="menu_rendimiento_desc">Rendimiento fabril</span></span><span class="ar">›</span>
+    </button>
+
+    <div class="grp" data-t="grupo_molienda">Molienda y extracción</div>
+    <button class="mcard" onclick="ir('molienda')">
+      <span class="ic">⚙</span><span><span class="tt" data-t="menu_molienda">Tándem de molinos</span><span class="ds" data-t="menu_molienda_desc">Extracción, imbibición</span></span><span class="ar">›</span>
+    </button>
+
+    <div class="grp" data-t="grupo_enzimas">Tratamiento enzimático</div>
+    <button class="mcard" onclick="ir('dextranasa')">
+      <span class="ic">🧬</span><span><span class="tt" data-t="menu_dextranasa">Dextranasa</span><span class="ds" data-t="menu_dextranasa_desc">Dosificación sobre dextrano</span></span><span class="ar">›</span>
+    </button>
+    <button class="mcard" onclick="ir('amilasa')">
+      <span class="ic">🧬</span><span><span class="tt" data-t="menu_amilasa">Alfa-amilasa</span><span class="ds" data-t="menu_amilasa_desc">Dosificación sobre almidón</span></span><span class="ar">›</span>
+    </button>
+
+    <div class="grp" data-t="app_sub">Clarificación de jugo de caña</div>
+    <button class="mcard" onclick="ir('acido')">
+      <span class="ic">⚗</span><span><span class="tt" data-t="menu_acido">Ácido fosfórico</span><span class="ds" data-t="menu_acido_desc">Ajuste de P₂O₅</span></span><span class="ar">›</span>
+    </button>
+    <button class="mcard" onclick="ir('cal')">
+      <span class="ic">💧</span><span><span class="tt" data-t="menu_cal">Lechada de cal</span><span class="ds" data-t="menu_cal_desc">Encalado por grados Baumé</span></span><span class="ar">›</span>
+    </button>
+    <button class="mcard" onclick="ir('floc')">
+      <span class="ic">✽</span><span><span class="tt" data-t="menu_floc">Floculante</span><span class="ds" data-t="menu_floc_desc">Polímero al clarificador</span></span><span class="ar">›</span>
+    </button>
+    <button class="mcard" onclick="ir('jarras')">
+      <span class="ic">⚗</span><span><span class="tt" data-t="menu_jarras">Prueba de jarras</span><span class="ds" data-t="menu_jarras_desc">Dosis óptima en laboratorio</span></span><span class="ar">›</span>
+    </button>
+
+    <div class="grp" data-t="grupo_evaporacion">Evaporación</div>
+    <button class="mcard" onclick="ir('evaporacion')">
+      <span class="ic">🌡</span><span><span class="tt" data-t="menu_evaporacion">Evaporación</span><span class="ds" data-t="menu_evaporacion_desc">Economía de vapor</span></span><span class="ar">›</span>
+    </button>
+
+    <div class="grp" data-t="grupo_crist">Cristalización</div>
+    <button class="mcard" onclick="ir('solubilidad')">
+      <span class="ic">💎</span><span><span class="tt" data-t="menu_solub">Solubilidad</span><span class="ds" data-t="menu_solub_desc">Sobresaturación</span></span><span class="ar">›</span>
+    </button>
+    <button class="mcard" onclick="ir('tachos')">
+      <span class="ic">🍯</span><span><span class="tt" data-t="menu_tachos">Cristalización y tachos</span><span class="ds" data-t="menu_tachos_desc">Sobresaturación y S-J-M</span></span><span class="ar">›</span>
+    </button>
+  </div>
+  <p class="note" data-t="inicio_nota">Los valores por defecto son de referencia.</p>
+</section>
+
+<section id="conversion" hidden>
+  <div class="top"><button class="back" onclick="ir('inicio')">‹</button><h1 data-t="menu_conv">Conversión</h1></div>
+  <div class="sec"><h2 data-t="sec_conv">Categoría</h2>
+    <div class="grid">
+      <div class="full">
+        <select id="cv_cat" onchange="cambiarCategoriaConversion()">
+          <option value="temp" data-t="cat_temp">Temperatura</option>
+          <option value="pres" data-t="cat_pres">Presión</option>
+          <option value="caudal" data-t="cat_caudal">Caudal</option>
+          <option value="masa" data-t="cat_masa">Masa</option>
+          <option value="vol" data-t="cat_vol">Volumen</option>
+          <option value="conc" data-t="cat_conc">Concentración</option>
+          <option value="energia" data-t="cat_energia">Energía</option>
+          <option value="potencia" data-t="cat_potencia">Potencia</option>
+          <option value="cond" data-t="cat_cond">Conductividad</option>
+          <option value="visc" data-t="cat_visc">Viscosidad</option>
+        </select>
+      </div>
+      <div><label data-t="lbl_valor">Valor</label><input id="cv_val" value="100" inputmode="decimal"></div>
+      <div><label data-t="lbl_unidad_origen">Unidad de origen</label><select id="cv_unidad"></select></div>
+      <div class="full" id="cv_dens_wrap" hidden><label data-t="f_dens_conc">Densidad (kg/L)</label><input id="cv_dens" value="1.00" inputmode="decimal"></div>
+    </div>
+  </div>
+  <div class="det"><h2 data-t="lbl_equivalencias">Equivalencias</h2><div id="cv_det"></div></div>
+</section>
+
+<section id="pureza" hidden>
+  <div class="top"><button class="back" onclick="ir('inicio')">‹</button><h1 data-t="menu_pureza">Pureza</h1></div>
+  <div class="sec"><h2 data-t="sec_pureza">Lectura</h2>
+    <div class="grid">
+      <div><label data-t="f_brix">Brix (°Bx)</label><input id="pz_bx" value="15.0" inputmode="decimal"></div>
+      <div><label data-t="f_pol">Pol (%)</label><input id="pz_pol" value="12.5" inputmode="decimal"></div>
+    </div>
+  </div>
+  <div class="res">
+    <div class="rc wide"><div class="lb" data-t="r_pureza">Pureza</div><div class="vl" id="pz_r">—</div><div class="un" data-t="u_pureza">%</div></div>
+  </div>
+  <div class="warn" id="pz_w"></div>
+</section>
+
+<section id="densidad" hidden>
+  <div class="top"><button class="back" onclick="ir('inicio')">‹</button><h1 data-t="menu_dens">Densidad</h1></div>
+  <div class="sec"><h2 data-t="lbl_muestra">Muestra</h2>
+    <div class="grid">
+      <div class="full">
+        <select id="dn_prod">
+          <option value="jugo" data-t="prod_jugo">Jugo</option>
+          <option value="meladura" data-t="prod_meladura">Meladura</option>
+          <option value="miel" data-t="prod_miel">Miel</option>
+        </select>
+      </div>
+      <div><label data-t="f_brix">Brix (°Bx)</label><input id="dn_bx" value="15" inputmode="decimal"></div>
+      <div><label data-t="f_temp">Temperatura (°C)</label><input id="dn_t" value="30" inputmode="decimal"></div>
+    </div>
+  </div>
+  <div class="res">
+    <div class="rc"><div class="lb" data-t="r_densidad">Densidad</div><div class="vl" id="dn_kgl">—</div><div class="un" data-t="u_kgl">kg/L</div></div>
+    <div class="rc"><div class="lb" data-t="d_baume">Grados Baumé</div><div class="vl" id="dn_be">—</div><div class="un">°Bé</div></div>
+  </div>
+  <div class="warn" id="dn_w"></div>
+  <div class="det"><h2 data-t="lbl_detalle">Detalle</h2><div id="dn_det"></div></div>
+</section>
+
+<section id="rendimiento" hidden>
+  <div class="top"><button class="back" onclick="ir('inicio')">‹</button><h1 data-t="menu_rendimiento">Rendimiento</h1></div>
+  <div class="sec"><h2 data-t="sec_rendimiento">Producción del periodo</h2>
+    <div class="grid">
+      <div><label data-t="f_azucar_producida">Azúcar producida (t)</label><input id="rf_az" value="120" inputmode="decimal"></div>
+      <div><label data-t="f_cana_molida">Caña molida (t)</label><input id="rf_cana" value="1500" inputmode="decimal"></div>
+      <div class="full"><label data-t="f_pol_cana_opcional">Pol % caña (opcional)</label><input id="rf_pol" value="13.5" inputmode="decimal"></div>
+    </div>
+  </div>
+  <div class="res">
+    <div class="rc"><div class="lb" data-t="r_rendimiento_fabril">Rendimiento fabril</div><div class="vl" id="rf_rend">—</div><div class="un" data-t="u_rendimiento">%</div></div>
+    <div class="rc"><div class="lb" data-t="r_kg_azucar_ton_cana">Azúcar por caña</div><div class="vl" id="rf_kg">—</div><div class="un" data-t="u_kg_ton">kg/t</div></div>
+  </div>
+  <div class="warn" id="rf_w"></div>
+  <div class="det"><h2 data-t="lbl_detalle">Detalle</h2><div id="rf_det"></div></div>
+</section>
+
+<section id="molienda" hidden>
+  <div class="top"><button class="back" onclick="ir('inicio')">‹</button><h1 data-t="menu_molienda">Tándem de molinos</h1></div>
+  <div class="sec"><h2 data-t="sec_molienda_cana">Caña y bagazo</h2>
+    <div class="grid">
+      <div><label data-t="f_tch">Molienda (t caña/h)</label><input id="ml_tch" value="150" inputmode="decimal"></div>
+      <div><label data-t="f_pol_cana">Pol % caña</label><input id="ml_polc" value="13.5" inputmode="decimal"></div>
+      <div><label data-t="f_fibra_cana">Fibra % caña</label><input id="ml_fibc" value="12.5" inputmode="decimal"></div>
+      <div><label data-t="f_pol_bagazo">Pol % bagazo</label><input id="ml_polb" value="1.8" inputmode="decimal"></div>
+      <div class="full"><label data-t="f_fibra_bagazo">Fibra % bagazo</label><input id="ml_fibb" value="48" inputmode="decimal"></div>
+    </div>
+  </div>
+  <div class="sec"><h2 data-t="sec_molienda_jugo">Jugo e imbibición</h2>
+    <div class="grid">
+      <div><label data-t="f_brix_jugo_primario">Brix jugo primario</label><input id="ml_bxp" value="17.5" inputmode="decimal"></div>
+      <div><label data-t="f_pol_jugo_primario">Pol jugo primario</label><input id="ml_polp" value="15.2" inputmode="decimal"></div>
+      <div><label data-t="f_brix_jugo_mezclado">Brix jugo mezclado</label><input id="ml_bxm" value="13.7" inputmode="decimal"></div>
+      <div><label data-t="f_imbibicion_cana">Imbibición % caña</label><input id="ml_imb" value="28" inputmode="decimal"></div>
+    </div>
+  </div>
+  <div class="sec"><h2 data-t="sec_molienda_mazas">Mazas</h2>
+    <div class="grid">
+      <div class="full"><label data-t="f_largo_maza">Largo de maza (pies)</label><input id="ml_maza" value="6" inputmode="decimal"></div>
+    </div>
+  </div>
+  <div class="res">
+    <div class="rc"><div class="lb" data-t="r_extraccion_pol">Extracción Pol</div><div class="vl" id="ml_ext">—</div><div class="un" data-t="u_rendimiento">%</div></div>
+    <div class="rc"><div class="lb" data-t="r_extraccion_reducida">Extracción reducida</div><div class="vl" id="ml_extr">—</div><div class="un" data-t="u_rendimiento">%</div></div>
+  </div>
+  <div class="rc wide" style="margin-bottom:10px"><div class="lb" data-t="r_imbibicion_fibra">Imbibición % fibra</div><div class="vl" id="ml_imbf">—</div><div class="un" data-t="u_pct_fibra">% fibra</div></div>
+  <div class="warn" id="ml_w"></div>
+  <div class="det"><h2 data-t="lbl_detalle">Detalle</h2><div id="ml_det"></div></div>
+</section>
+
+<section id="dextranasa" hidden>
+  <div class="top"><button class="back" onclick="ir('inicio')">‹</button><h1 data-t="menu_dextranasa">Dextranasa</h1></div>
+  <div class="sec"><h2 data-t="sec_dextranasa_jugo">Jugo</h2>
+    <div class="grid">
+      <div><label data-t="f_flujo_jugo_th">Flujo de jugo (t/h)</label><input id="dx_flujo" value="450" inputmode="decimal"></div>
+      <div><label data-t="f_dextrano_ppm">Dextrano (ppm)</label><input id="dx_dext" value="150" inputmode="decimal"></div>
+      <div class="full"><label data-t="f_temp_dextranasa">Temperatura (°C)</label><input id="dx_temp" value="55" inputmode="decimal"></div>
+    </div>
+  </div>
+  <div class="sec"><h2 data-t="sec_dextranasa_enzima">Enzima</h2>
+    <div class="grid">
+      <div><label data-t="f_dosis_dextranasa_ppm">Dosis objetivo (ppm)</label><input id="dx_dosis" value="20" inputmode="decimal"></div>
+      <div><label data-t="f_densidad_dextranasa">Densidad enzima (kg/L)</label><input id="dx_dens" value="1.12" inputmode="decimal"></div>
+      <div><label data-t="f_dilucion_dextranasa">Dilución (%)</label><input id="dx_dil" value="10" inputmode="decimal"></div>
+      <div><label data-t="f_tiempo_residencia_dextranasa">Tiempo de retención (min)</label><input id="dx_tr" value="15" inputmode="decimal"></div>
+    </div>
+  </div>
+  <div class="rc wide" style="margin-bottom:10px"><div class="lb" data-t="r_caudal_bomba_dextranasa">Caudal de bomba</div><div class="vl" id="dx_bomba">—</div><div class="un" data-t="u_l_h">L/h</div></div>
+  <div class="res">
+    <div class="rc"><div class="lb" data-t="r_dextranasa_g_h">Enzima</div><div class="vl" id="dx_gh">—</div><div class="un" data-t="u_g_h">g/h</div></div>
+    <div class="rc"><div class="lb" data-t="r_dextranasa_kg_dia">Enzima</div><div class="vl" id="dx_kgd">—</div><div class="un" data-t="u_kg_dia">kg/día</div></div>
+  </div>
+  <div class="warn" id="dx_w"></div>
+  <div class="det"><h2 data-t="lbl_detalle">Detalle</h2><div id="dx_det"></div></div>
+</section>
+
+<section id="amilasa" hidden>
+  <div class="top"><button class="back" onclick="ir('inicio')">‹</button><h1 data-t="menu_amilasa">Alfa-amilasa</h1></div>
+  <div class="sec"><h2 data-t="sec_amilasa_jugo">Jugo</h2>
+    <div class="grid">
+      <div><label data-t="f_flujo_jugo_th">Flujo de jugo (t/h)</label><input id="am_flujo" value="450" inputmode="decimal"></div>
+      <div><label data-t="f_almidon_ppm">Almidón (ppm)</label><input id="am_alm" value="150" inputmode="decimal"></div>
+      <div class="full"><label data-t="f_temp_amilasa">Temperatura (°C)</label><input id="am_temp" value="88" inputmode="decimal"></div>
+    </div>
+  </div>
+  <div class="sec"><h2 data-t="sec_amilasa_enzima">Enzima</h2>
+    <div class="grid">
+      <div><label data-t="f_dosis_amilasa_ppm">Dosis objetivo (ppm)</label><input id="am_dosis" value="12" inputmode="decimal"></div>
+      <div><label data-t="f_densidad_amilasa">Densidad enzima (kg/L)</label><input id="am_dens" value="1.15" inputmode="decimal"></div>
+      <div><label data-t="f_dilucion_amilasa">Dilución (%)</label><input id="am_dil" value="8" inputmode="decimal"></div>
+      <div><label data-t="f_tiempo_residencia_amilasa">Tiempo de residencia (min)</label><input id="am_tr" value="10" inputmode="decimal"></div>
+    </div>
+  </div>
+  <div class="rc wide" style="margin-bottom:10px"><div class="lb" data-t="r_caudal_bomba_amilasa">Caudal de bomba</div><div class="vl" id="am_bomba">—</div><div class="un" data-t="u_l_h">L/h</div></div>
+  <div class="res">
+    <div class="rc"><div class="lb" data-t="r_amilasa_g_h">Enzima</div><div class="vl" id="am_gh">—</div><div class="un" data-t="u_g_h">g/h</div></div>
+    <div class="rc"><div class="lb" data-t="r_amilasa_kg_dia">Enzima</div><div class="vl" id="am_kgd">—</div><div class="un" data-t="u_kg_dia">kg/día</div></div>
+  </div>
+  <div class="warn" id="am_w"></div>
+  <div class="det"><h2 data-t="lbl_detalle">Detalle</h2><div id="am_det"></div></div>
+</section>
+
+<section id="acido" hidden>
+  <div class="top"><button class="back" onclick="ir('inicio')">‹</button><h1 data-t="menu_acido">Ácido fosfórico</h1></div>
+  <div class="sec"><h2 data-t="sec_jugo_cana">Jugo de caña</h2>
+    <div class="grid">
+      <div><label data-t="f_flujo">Flujo (m³/h)</label><input id="a_q" value="450" inputmode="decimal"></div>
+      <div><label data-t="f_brix">Brix (°Bx)</label><input id="a_bx" value="15" inputmode="decimal"></div>
+      <div><label data-t="f_temp">Temperatura (°C)</label><input id="a_t" value="35" inputmode="decimal"></div>
+      <div><label data-t="f_horas_dia">Horas de molienda / día</label><input id="a_hd" value="22" inputmode="decimal"></div>
+      <div><label data-t="f_p2o5_nat">P₂O₅ natural (ppm)</label><input id="a_pn" value="180" inputmode="decimal"></div>
+      <div><label data-t="f_p2o5_obj">P₂O₅ objetivo (ppm)</label><input id="a_po" value="300" inputmode="decimal"></div>
+      <div class="full"><label data-t="f_eficiencia">Eficiencia de dosificación (%)</label><input id="a_ef" value="100" inputmode="decimal"></div>
+    </div>
+  </div>
+  <div class="sec"><h2 data-t="sec_acido_com">Ácido comercial</h2>
+    <div class="grid">
+      <div><label data-t="f_h3po4">H₃PO₄ (% p/p)</label><input id="a_c" value="85" inputmode="decimal"></div>
+      <div><label data-t="f_densidad">Densidad (kg/L)</label><input id="a_d" value="1.685" inputmode="decimal"></div>
+    </div>
+  </div>
+  <div class="res">
+    <div class="rc"><div class="lb" data-t="r_acido_com">Ácido comercial</div><div class="vl" id="a_lh">—</div><div class="un" data-t="u_lh">L/h</div></div>
+    <div class="rc"><div class="lb" data-t="r_ajuste_bomba">Ajuste de bomba</div><div class="vl" id="a_lm">—</div><div class="un" data-t="u_lmin">L/min</div></div>
+    <div class="rc wide"><div class="lb" data-t="r_consumo_diario">Consumo diario</div><div class="vl" id="a_ld">—</div><div class="un" data-t="u_ldia">L/día</div></div>
+  </div>
+  <div class="warn" id="a_w"></div>
+  <div class="det"><h2 data-t="lbl_detalle_calculo">Detalle del cálculo</h2><div id="a_det"></div></div>
+</section>
+
+<section id="cal" hidden>
+  <div class="top"><button class="back" onclick="ir('inicio')">‹</button><h1 data-t="menu_cal">Lechada de cal</h1></div>
+  <div class="sec"><h2 data-t="sec_jugo_cana">Jugo de caña</h2>
+    <div class="grid">
+      <div><label data-t="f_flujo">Flujo (m³/h)</label><input id="c_q" value="450" inputmode="decimal"></div>
+      <div><label data-t="f_brix">Brix (°Bx)</label><input id="c_bx" value="15" inputmode="decimal"></div>
+      <div><label data-t="f_temp">Temperatura (°C)</label><input id="c_t" value="35" inputmode="decimal"></div>
+      <div><label data-t="f_horas_dia">Horas de molienda / día</label><input id="c_hd" value="22" inputmode="decimal"></div>
+      <div><label data-t="f_demanda">Demanda (kg CaO/m³)</label><input id="c_dem" value="0.80" inputmode="decimal"></div>
+      <div><label data-t="f_molienda">Molienda (t caña/h)</label><input id="c_tch" value="400" inputmode="decimal"></div>
+    </div>
+  </div>
+  <div class="sec"><h2 data-t="sec_lechada_viva">Lechada y cal viva</h2>
+    <div class="grid">
+      <div><label data-t="f_baume">Concentración (°Bé)</label><input id="c_be" value="10" inputmode="decimal"></div>
+      <div><label data-t="f_pureza_cal">Pureza cal viva (% CaO)</label><input id="c_pu" value="88" inputmode="decimal"></div>
+      <div class="full"><label data-t="f_ef_apagado">Eficiencia de apagado (%)</label><input id="c_ea" value="92" inputmode="decimal"></div>
+    </div>
+  </div>
+  <div class="res">
+    <div class="rc"><div class="lb" data-t="r_lechada_jugo">Lechada al jugo</div><div class="vl" id="c_lh">—</div><div class="un" data-t="u_lh">L/h</div></div>
+    <div class="rc"><div class="lb" data-t="r_ajuste_valvula">Ajuste de válvula</div><div class="vl" id="c_lm">—</div><div class="un" data-t="u_lmin">L/min</div></div>
+    <div class="rc wide"><div class="lb" data-t="r_cal_viva_dia">Cal viva por día</div><div class="vl" id="c_td">—</div><div class="un" data-t="u_tdia">t/día</div></div>
+  </div>
+  <div class="warn" id="c_w"></div>
+  <div class="det"><h2 data-t="lbl_detalle_calculo">Detalle del cálculo</h2><div id="c_det"></div></div>
+</section>
+
+<section id="floc" hidden>
+  <div class="top"><button class="back" onclick="ir('inicio')">‹</button><h1 data-t="menu_floc">Floculante</h1></div>
+  <div class="sec"><h2 data-t="sec_jugo_clar">Jugo al clarificador</h2>
+    <div class="grid">
+      <div><label data-t="f_flujo">Flujo (m³/h)</label><input id="f_q" value="450" inputmode="decimal"></div>
+      <div><label data-t="f_brix">Brix (°Bx)</label><input id="f_bx" value="15" inputmode="decimal"></div>
+      <div><label data-t="f_temp">Temperatura (°C)</label><input id="f_t" value="102" inputmode="decimal"></div>
+      <div><label data-t="f_horas_dia">Horas de molienda / día</label><input id="f_hd" value="22" inputmode="decimal"></div>
+      <div class="full"><label data-t="f_dosis_ppm">Dosis (ppm de polímero)</label><input id="f_ppm" value="3" inputmode="decimal"></div>
+    </div>
+  </div>
+  <div class="sec"><h2 data-t="sec_preparacion">Preparación</h2>
+    <div class="grid">
+      <div><label data-t="f_sol_madre">Solución madre (g/L)</label><input id="f_cs" value="1.0" inputmode="decimal"></div>
+      <div><label data-t="f_tanque">Tanque (m³)</label><input id="f_vt" value="5" inputmode="decimal"></div>
+      <div class="full"><label data-t="f_dilucion">Dilución en línea (agua : solución)</label><input id="f_dil" value="3" inputmode="decimal"></div>
+    </div>
+  </div>
+  <div class="res">
+    <div class="rc"><div class="lb" data-t="r_polimero">Polímero</div><div class="vl" id="f_kd">—</div><div class="un" data-t="u_kgdia">kg/día</div></div>
+    <div class="rc"><div class="lb" data-t="r_bomba_solucion">Bomba de solución</div><div class="vl" id="f_lm">—</div><div class="un" data-t="u_lmin">L/min</div></div>
+    <div class="rc wide"><div class="lb" data-t="r_duracion_batch">Duración del batch</div><div class="vl" id="f_du">—</div><div class="un" data-t="u_horas">horas</div></div>
+  </div>
+  <div class="warn" id="f_w"></div>
+  <div class="det"><h2 data-t="lbl_detalle_calculo">Detalle del cálculo</h2><div id="f_det"></div></div>
+</section>
+
+<section id="jarras" hidden>
+  <div class="top"><button class="back" onclick="ir('inicio')">‹</button><h1 data-t="menu_jarras">Prueba de jarras</h1></div>
+  <div class="sec"><h2 data-t="sec_montaje">Montaje de la prueba</h2>
+    <div class="grid">
+      <div><label data-t="f_vol_jarra">Volumen por jarra (mL)</label><input id="j_v" value="1000" inputmode="decimal"></div>
+      <div><label data-t="f_sol_prueba">Solución de prueba (g/L)</label><input id="j_cs" value="0.5" inputmode="decimal"></div>
+      <div><label data-t="f_brix_jugo">Brix del jugo (°Bx)</label><input id="j_bx" value="15" inputmode="decimal"></div>
+      <div><label data-t="f_temp">Temperatura (°C)</label><input id="j_t" value="102" inputmode="decimal"></div>
+      <div class="full"><label data-t="f_tiempo_lectura_jarra">Tiempo de lectura (min)</label><input id="j_tm" value="5" inputmode="decimal"></div>
+    </div>
+  </div>
+  <div class="dose"><h2 data-t="lbl_resultados_jarra">Resultados por jarra</h2>
+    <div id="j_tabla"></div>
+  </div>
+  <div class="mejorbox">
+    <div class="lb" data-t="r_dosis_optima">Dosis óptima</div>
+    <div class="vl" id="j_opt">—</div>
+    <div class="un" data-t="u_ppm_polimero">ppm de polímero</div>
+    <div class="cm" id="j_com" data-t="c_pocas_jarras">Registra al menos dos jarras con dosis y turbidez para obtener una recomendación.</div>
+  </div>
+  <button class="btn" onclick="llevarAFloculante()" data-t="j_llevar_floc">Llevar esta dosis a la calculadora de floculante</button>
+  <div class="warn" id="j_w"></div>
+  <div class="det"><h2 data-t="lbl_como_correr">Cómo correr la prueba</h2><div id="j_guia"></div></div>
+</section>
+
+<section id="evaporacion" hidden>
+  <div class="top"><button class="back" onclick="ir('inicio')">‹</button><h1 data-t="menu_evaporacion">Evaporación</h1></div>
+  <div class="sec"><h2 data-t="sec_evaporacion_jugo">Jugo clarificado y meladura</h2>
+    <div class="grid">
+      <div><label data-t="f_flujo_jugo_clarificado_th">Flujo jugo clarificado (t/h)</label><input id="ev_flujo" value="400" inputmode="decimal"></div>
+      <div><label data-t="f_brix_jugo_clarificado">Brix jugo clarificado</label><input id="ev_bxc" value="15" inputmode="decimal"></div>
+      <div><label data-t="f_brix_meladura_target">Brix meladura objetivo</label><input id="ev_bxt" value="65" inputmode="decimal"></div>
+      <div><label data-t="f_brix_meladura_real">Brix meladura real</label><input id="ev_bxr" value="65" inputmode="decimal"></div>
+    </div>
+  </div>
+  <div class="sec"><h2 data-t="sec_evaporacion_vapor">Vapor y equipo</h2>
+    <div class="grid">
+      <div><label data-t="f_vapor_alimentado_th">Vapor alimentado (t/h)</label><input id="ev_vap" value="100" inputmode="decimal"></div>
+      <div><label data-t="f_area_calandrias">Área calandrias (m²)</label><input id="ev_area" value="3500" inputmode="decimal"></div>
+      <div><label data-t="f_vacio_ultimo_efecto">Vacío último efecto (inHg)</label><input id="ev_vac" value="26" inputmode="decimal"></div>
+      <div><label data-t="f_num_efectos">Número de efectos</label>
+        <select id="ev_efectos">
+          <option value="3">3</option>
+          <option value="4" selected>4</option>
+          <option value="5">5</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <div class="res">
+    <div class="rc"><div class="lb" data-t="r_agua_evaporada_total_h">Agua evaporada</div><div class="vl" id="ev_agua">—</div><div class="un" data-t="u_ton_h">t/h</div></div>
+    <div class="rc"><div class="lb" data-t="r_economia_vapor">Economía de vapor</div><div class="vl" id="ev_econ">—</div><div class="un" data-t="u_kg_kg">kg/kg</div></div>
+  </div>
+  <div class="warn" id="ev_w"></div>
+  <div class="det"><h2 data-t="lbl_detalle">Detalle</h2><div id="ev_det"></div></div>
+</section>
+
+<section id="solubilidad" hidden>
+  <div class="top"><button class="back" onclick="ir('inicio')">‹</button><h1 data-t="menu_solub">Solubilidad</h1></div>
+  <div class="sec"><h2 data-t="sec_solub">Masa o jarabe</h2>
+    <div class="grid">
+      <div><label data-t="f_brix">Brix (°Bx)</label><input id="sb_bx" value="92" inputmode="decimal"></div>
+      <div><label data-t="f_pureza">Pureza (%)</label><input id="sb_pu" value="80" inputmode="decimal"></div>
+      <div><label data-t="f_temp">Temperatura (°C)</label><input id="sb_t" value="65" inputmode="decimal"></div>
+      <div><label data-t="f_coef_sol">Coef. de solubilidad</label><input id="sb_coef" value="1.0" inputmode="decimal"></div>
+    </div>
+  </div>
+  <div class="res">
+    <div class="rc wide"><div class="lb" data-t="r_sobresat">Sobresaturación</div><div class="vl" id="sb_y">—</div><div class="un" data-t="u_adim">adimensional</div></div>
+  </div>
+  <div class="warn" id="sb_w"></div>
+  <div class="det"><h2 data-t="lbl_detalle">Detalle</h2><div id="sb_det"></div></div>
+</section>
+
+<section id="tachos" hidden>
+  <div class="top"><button class="back" onclick="ir('inicio')">‹</button><h1 data-t="menu_tachos">Cristalización en tachos</h1></div>
+  <div class="sec"><h2 data-t="sec_tacho_licor">Licor de alimentación</h2>
+    <div class="grid">
+      <div><label data-t="f_brix_licor">Brix licor (°Bx)</label><input id="tc_bxl" value="65" inputmode="decimal"></div>
+      <div><label data-t="f_pureza_licor">Pureza licor (%)</label><input id="tc_pul" value="85" inputmode="decimal"></div>
+    </div>
+  </div>
+  <div class="sec"><h2 data-t="sec_tacho_masa">Masa cocida</h2>
+    <div class="grid">
+      <div><label data-t="f_brix_masa_cocida">Brix masa cocida (°Bx)</label><input id="tc_bxm" value="92" inputmode="decimal"></div>
+      <div><label data-t="f_pureza_masa_cocida">Pureza masa cocida (%)</label><input id="tc_pum" value="80" inputmode="decimal"></div>
+      <div><label data-t="f_pureza_miel">Pureza miel madre (%)</label><input id="tc_pumm" value="60" inputmode="decimal"></div>
+      <div><label data-t="f_pureza_cristal">Pureza cristal (%)</label><input id="tc_puc" value="99.5" inputmode="decimal"></div>
+      <div class="full"><label data-t="f_coef_sol">Coef. de solubilidad</label><input id="tc_coef" value="1.0" inputmode="decimal"></div>
+    </div>
+  </div>
+  <div class="sec"><h2 data-t="sec_tacho_equipo">Equipo</h2>
+    <div class="grid">
+      <div><label data-t="f_temp">Temperatura (°C)</label><input id="tc_temp" value="65" inputmode="decimal"></div>
+      <div><label data-t="f_vacio_tacho">Vacío (inHg)</label><input id="tc_vac" value="26" inputmode="decimal"></div>
+      <div><label data-t="f_volumen_tacho">Volumen tacho (m³)</label><input id="tc_vol" value="30" inputmode="decimal"></div>
+      <div><label data-t="f_densidad_masa_cocida">Densidad masa cocida (t/m³)</label><input id="tc_dens" value="1.48" inputmode="decimal"></div>
+    </div>
+  </div>
+  <div class="res">
+    <div class="rc"><div class="lb" data-t="r_sobresat">Sobresaturación</div><div class="vl" id="tc_y">—</div><div class="un" data-t="u_adim">adim.</div></div>
+    <div class="rc"><div class="lb" data-t="r_porcentaje_cristal">% Cristal</div><div class="vl" id="tc_pc">—</div><div class="un" data-t="u_pct">%</div></div>
+  </div>
+  <div class="rc wide" style="margin-bottom:10px"><div class="lb" data-t="r_rendimiento_sjm">Rendimiento S-J-M</div><div class="vl" id="tc_sjm">—</div><div class="un" data-t="u_pct">%</div></div>
+  <div class="warn" id="tc_w"></div>
+  <div class="det"><h2 data-t="lbl_detalle">Detalle</h2><div id="tc_det"></div></div>
+</section>
+
+</div>
+<script>
+var I18N = {"app_titulo": {"es": "Herramientas de proceso", "en": "Process tools", "pt": "Ferramentas de processo"}, "inicio_nota": {"es": "Los valores por defecto son de referencia. Ajusta cada campo a las condiciones reales de tu turno antes de llevar la cifra al equipo. Los datos quedan guardados en el celular.", "en": "Defaults are reference values only. Adjust each field to your shift's real conditions before taking the figure to the equipment. Values are saved on the phone.", "pt": "Os valores padrão são apenas de referência. Ajuste cada campo às condições reais do seu turno antes de levar o número ao equipamento. Os dados ficam salvos no celular."}, "app_sub": {"es": "Clarificación de jugo de caña", "en": "Cane juice clarification", "pt": "Clarificação do caldo de cana"}, "grupo_lab": {"es": "Laboratorio y conversiones", "en": "Lab and conversions", "pt": "Laboratório e conversões"}, "grupo_molienda": {"es": "Molienda y extracción", "en": "Milling and extraction", "pt": "Moagem e extração"}, "grupo_enzimas": {"es": "Tratamiento enzimático", "en": "Enzymatic treatment", "pt": "Tratamento enzimático"}, "grupo_evaporacion": {"es": "Evaporación", "en": "Evaporation", "pt": "Evaporação"}, "grupo_crist": {"es": "Cristalización", "en": "Crystallization", "pt": "Cristalização"}, "menu_conv": {"es": "Conversión", "en": "Conversion", "pt": "Conversão"}, "menu_conv_desc": {"es": "Unidades de proceso, se actualiza sola", "en": "Process units, updates itself", "pt": "Unidades de processo, atualiza sozinha"}, "menu_pureza": {"es": "Pureza", "en": "Purity", "pt": "Pureza"}, "menu_pureza_desc": {"es": "A partir de Brix y Pol", "en": "From Brix and Pol", "pt": "A partir de Brix e Pol"}, "menu_dens": {"es": "Densidad", "en": "Density", "pt": "Densidade"}, "menu_dens_desc": {"es": "Producto y Brix → densidad", "en": "Product and Brix → density", "pt": "Produto e Brix → densidade"}, "menu_rendimiento": {"es": "Rendimiento", "en": "Yield", "pt": "Rendimento"}, "menu_rendimiento_desc": {"es": "Rendimiento fabril a partir de la producción del turno", "en": "Factory yield from shift production data", "pt": "Rendimento fabril a partir da produção do turno"}, "menu_molienda": {"es": "Tándem de molinos", "en": "Mill tandem", "pt": "Tandem de moendas"}, "menu_molienda_desc": {"es": "Extracción, imbibición y balance de fibra", "en": "Extraction, imbibition and fibre balance", "pt": "Extração, embebição e balanço de fibra"}, "menu_dextranasa": {"es": "Dextranasa", "en": "Dextranase", "pt": "Dextranase"}, "menu_dextranasa_desc": {"es": "Dosificación de enzima contra el dextrano", "en": "Enzyme dosing against dextran", "pt": "Dosagem de enzima contra o dextrano"}, "menu_amilasa": {"es": "Alfa-amilasa", "en": "Alpha-amylase", "pt": "Alfa-amilase"}, "menu_amilasa_desc": {"es": "Dosificación de enzima contra el almidón", "en": "Enzyme dosing against starch", "pt": "Dosagem de enzima contra o amido"}, "menu_acido": {"es": "Ácido fosfórico", "en": "Phosphoric acid", "pt": "Ácido fosfórico"}, "menu_acido_desc": {"es": "Ajuste de P₂O₅ en el jugo alcalizado", "en": "P₂O₅ adjustment in limed juice", "pt": "Ajuste de P₂O₅ no caldo caleado"}, "menu_cal": {"es": "Lechada de cal", "en": "Milk of lime", "pt": "Leite de cal"}, "menu_cal_desc": {"es": "Encalado a partir de grados Baumé", "en": "Liming from degrees Baumé", "pt": "Caleagem a partir de graus Baumé"}, "menu_floc": {"es": "Floculante", "en": "Flocculant", "pt": "Floculante"}, "menu_floc_desc": {"es": "Polímero al clarificador y preparación", "en": "Polymer to the clarifier and make-up", "pt": "Polímero ao clarificador e preparo"}, "menu_jarras": {"es": "Prueba de jarras", "en": "Jar test", "pt": "Teste de jarros"}, "menu_jarras_desc": {"es": "Dosis óptima de floculante en laboratorio", "en": "Optimum flocculant dose in the lab", "pt": "Dose ótima de floculante no laboratório"}, "menu_evaporacion": {"es": "Evaporación y economía térmica", "en": "Evaporation and thermal economy", "pt": "Evaporação e economia térmica"}, "menu_evaporacion_desc": {"es": "Múltiple efecto: economía de vapor y meladura", "en": "Multiple effect: steam economy and syrup", "pt": "Múltiplo efeito: economia de vapor e xarope"}, "menu_solub": {"es": "Solubilidad de sacarosa", "en": "Sucrose solubility", "pt": "Solubilidade da sacarose"}, "menu_solub_desc": {"es": "Solubilidad y sobresaturación para cocimiento", "en": "Solubility and supersaturation for boiling", "pt": "Solubilidade e supersaturação para cozimento"}, "menu_tachos": {"es": "Cristalización y tachos", "en": "Crystallization and pans", "pt": "Cristalização e tachas"}, "menu_tachos_desc": {"es": "Sobresaturación, rendimiento S-J-M y templada", "en": "Supersaturation, S-J-M yield and strike", "pt": "Supersaturação, rendimento S-J-M e batelada"}, "sec_conv": {"es": "Categoría", "en": "Category", "pt": "Categoria"}, "cat_temp": {"es": "Temperatura", "en": "Temperature", "pt": "Temperatura"}, "cat_pres": {"es": "Presión", "en": "Pressure", "pt": "Pressão"}, "cat_caudal": {"es": "Caudal", "en": "Flow", "pt": "Vazão"}, "cat_masa": {"es": "Masa", "en": "Mass", "pt": "Massa"}, "cat_vol": {"es": "Volumen", "en": "Volume", "pt": "Volume"}, "cat_conc": {"es": "Concentración", "en": "Concentration", "pt": "Concentração"}, "cat_energia": {"es": "Energía", "en": "Energy", "pt": "Energia"}, "cat_potencia": {"es": "Potencia", "en": "Power", "pt": "Potência"}, "cat_cond": {"es": "Conductividad", "en": "Conductivity", "pt": "Condutividade"}, "cat_visc": {"es": "Viscosidad", "en": "Viscosity", "pt": "Viscosidade"}, "u_c": {"es": "°C", "en": "°C", "pt": "°C"}, "u_f": {"es": "°F", "en": "°F", "pt": "°F"}, "u_kpa": {"es": "kPa", "en": "kPa", "pt": "kPa"}, "u_bar": {"es": "bar", "en": "bar", "pt": "bar"}, "u_psi": {"es": "psi", "en": "psi", "pt": "psi"}, "u_kgcm2": {"es": "kg/cm²", "en": "kg/cm²", "pt": "kg/cm²"}, "u_mmhg": {"es": "mmHg", "en": "mmHg", "pt": "mmHg"}, "u_ls": {"es": "L/s", "en": "L/s", "pt": "L/s"}, "u_m3h": {"es": "m³/h", "en": "m³/h", "pt": "m³/h"}, "u_gpm": {"es": "gpm", "en": "gpm", "pt": "gpm"}, "u_kg": {"es": "kg", "en": "kg", "pt": "kg"}, "u_t": {"es": "t", "en": "t", "pt": "t"}, "u_lb": {"es": "lb", "en": "lb", "pt": "lb"}, "u_l": {"es": "L", "en": "L", "pt": "L"}, "u_m3": {"es": "m³", "en": "m³", "pt": "m³"}, "u_gal": {"es": "gal (US)", "en": "gal (US)", "pt": "gal (US)"}, "u_pct": {"es": "%", "en": "%", "pt": "%"}, "u_ppm": {"es": "ppm", "en": "ppm", "pt": "ppm"}, "u_mgl": {"es": "mg/L", "en": "mg/L", "pt": "mg/L"}, "u_kj": {"es": "kJ", "en": "kJ", "pt": "kJ"}, "u_kcal": {"es": "kcal", "en": "kcal", "pt": "kcal"}, "u_btu": {"es": "BTU", "en": "BTU", "pt": "BTU"}, "u_kw": {"es": "kW", "en": "kW", "pt": "kW"}, "u_hp": {"es": "HP", "en": "HP", "pt": "HP"}, "u_uscm": {"es": "µS/cm", "en": "µS/cm", "pt": "µS/cm"}, "u_mscm": {"es": "mS/cm", "en": "mS/cm", "pt": "mS/cm"}, "u_cp": {"es": "cP", "en": "cP", "pt": "cP"}, "u_pas": {"es": "Pa·s", "en": "Pa·s", "pt": "Pa·s"}, "f_dens_conc": {"es": "Densidad de la solución (kg/L)", "en": "Solution density (kg/L)", "pt": "Densidade da solução (kg/L)"}, "nota_conc": {"es": "% es peso/peso y ppm es base másica. La densidad convierte a mg/L: en agua deja 1.0; en jugo o meladura pon la real.", "en": "% is weight/weight and ppm is mass basis. Density converts to mg/L: leave 1.0 for water; use the real one for juice or syrup.", "pt": "% é peso/peso e ppm é base mássica. A densidade converte para mg/L: deixe 1,0 para água; use a real para caldo ou xarope."}, "nota_pres": {"es": "Conversión directa entre unidades, con la misma referencia (manométrica o absoluta). No mezcla manométrica con absoluta.", "en": "Direct conversion between units, same reference (gauge or absolute). It does not mix gauge with absolute.", "pt": "Conversão direta entre unidades, mesma referência (manométrica ou absoluta). Não mistura manométrica com absoluta."}, "sec_pureza": {"es": "Lecturas de laboratorio", "en": "Lab readings", "pt": "Leituras de laboratório"}, "f_brix": {"es": "Brix (°Bx)", "en": "Brix (°Bx)", "pt": "Brix (°Bx)"}, "f_pol": {"es": "Pol (°Z)", "en": "Pol (°Z)", "pt": "Pol (°Z)"}, "r_pureza": {"es": "Pureza", "en": "Purity", "pt": "Pureza"}, "u_pureza": {"es": "% de pureza aparente", "en": "% apparent purity", "pt": "% de pureza aparente"}, "nota_pureza_rango": {"es": "Rango típico: jugo mezclado 78–88 %, jugo claro similar, meladura y mieles más altas.", "en": "Typical range: mixed juice 78–88 %, clarified juice similar, syrup and molasses higher.", "pt": "Faixa típica: caldo misto 78–88 %, caldo clarificado similar, xarope e méis mais altos."}, "av_pureza_imposible": {"es": "Pol mayor que Brix: la pureza pasaría de 100 %, lo cual es imposible. Revisa las lecturas: la sacarosa no puede superar los sólidos totales.", "en": "Pol greater than Brix: purity would exceed 100 %, which is impossible. Check the readings: sucrose cannot exceed total solids.", "pt": "Pol maior que Brix: a pureza passaria de 100 %, o que é impossível. Verifique as leituras: a sacarose não pode superar os sólidos totais."}, "av_pureza_baja": {"es": "Pureza de {0} %: es baja. Típico: jugo mezclado 78–88 %, jugo claro similar, meladura más alta. Verifica si el valor tiene sentido para tu corriente.", "en": "Purity of {0} %: it is low. Typical: mixed juice 78–88 %, clarified juice similar, syrup higher. Check whether the value makes sense for your stream.", "pt": "Pureza de {0} %: é baixa. Típico: caldo misto 78–88 %, caldo clarificado similar, xarope mais alta. Verifique se o valor faz sentido para a sua corrente."}, "sec_dens": {"es": "Corriente", "en": "Stream", "pt": "Corrente"}, "f_producto": {"es": "Producto", "en": "Product", "pt": "Produto"}, "prod_jugo": {"es": "Jugo", "en": "Juice", "pt": "Caldo"}, "prod_meladura": {"es": "Meladura", "en": "Syrup", "pt": "Xarope"}, "prod_miel": {"es": "Miel", "en": "Molasses", "pt": "Mel"}, "f_temp": {"es": "Temperatura (°C)", "en": "Temperature (°C)", "pt": "Temperatura (°C)"}, "r_densidad": {"es": "Densidad", "en": "Density", "pt": "Densidade"}, "u_kgl": {"es": "kg/L", "en": "kg/L", "pt": "kg/L"}, "d_baume": {"es": "Grados Baumé", "en": "Degrees Baumé", "pt": "Graus Baumé"}, "d_sg": {"es": "Gravedad específica", "en": "Specific gravity", "pt": "Gravidade específica"}, "nota_dens": {"es": "La densidad depende del Brix y la temperatura; el producto acota el rango. La miel se corrige por baja pureza. Tablas a 20 °C.", "en": "Density depends on Brix and temperature; the product sets the range. Molasses is corrected for low purity. Tables at 20 °C.", "pt": "A densidade depende do Brix e da temperatura; o produto define a faixa. O mel é corrigido por baixa pureza. Tabelas a 20 °C."}, "av_dens_bajo": {"es": "El Brix está por debajo del rango típico de este producto ({0}–{1} °Bx). Revisa si elegiste el producto correcto.", "en": "Brix is below this product's typical range ({0}–{1} °Bx). Check whether you picked the right product.", "pt": "O Brix está abaixo da faixa típica deste produto ({0}–{1} °Bx). Verifique se escolheu o produto certo."}, "av_dens_alto": {"es": "El Brix está por encima del rango típico de este producto ({0}–{1} °Bx). Revisa si elegiste el producto correcto.", "en": "Brix is above this product's typical range ({0}–{1} °Bx). Check whether you picked the right product.", "pt": "O Brix está acima da faixa típica deste produto ({0}–{1} °Bx). Verifique se escolheu o produto certo."}, "sec_rendimiento": {"es": "Producción del periodo", "en": "Period production", "pt": "Produção do período"}, "f_azucar_producida": {"es": "Azúcar producida (t)", "en": "Sugar produced (t)", "pt": "Açúcar produzido (t)"}, "f_cana_molida": {"es": "Caña molida (t)", "en": "Cane milled (t)", "pt": "Cana moída (t)"}, "f_pol_cana_opcional": {"es": "Pol en caña (%) — opcional", "en": "Pol in cane (%) — optional", "pt": "Pol na cana (%) — opcional"}, "r_rendimiento_fabril": {"es": "Rendimiento fabril", "en": "Factory yield", "pt": "Rendimento fabril"}, "u_rendimiento": {"es": "%", "en": "%", "pt": "%"}, "r_kg_azucar_ton_cana": {"es": "Azúcar por tonelada de caña", "en": "Sugar per tonne of cane", "pt": "Açúcar por tonelada de cana"}, "u_kg_ton": {"es": "kg/t", "en": "kg/t", "pt": "kg/t"}, "r_recobrado_global": {"es": "Recobrado global", "en": "Overall recovery", "pt": "Recobrimento global"}, "av_rendimiento_imposible": {"es": "El rendimiento fabril supera el Pol de la caña: es físicamente imposible recuperar más azúcar del que traía la caña. Revisa las unidades de azúcar producida y caña molida.", "en": "Factory yield exceeds the cane's Pol: it is physically impossible to recover more sugar than the cane carried. Check the units of sugar produced and cane milled.", "pt": "O rendimento fabril supera o Pol da cana: é fisicamente impossível recuperar mais açúcar do que a cana trazia. Revise as unidades de açúcar produzido e cana moída."}, "sec_molienda_cana": {"es": "Caña y bagazo", "en": "Cane and bagasse", "pt": "Cana e bagaço"}, "sec_molienda_jugo": {"es": "Jugo e imbibición", "en": "Juice and imbibition", "pt": "Caldo e embebição"}, "sec_molienda_mazas": {"es": "Mazas", "en": "Mill rolls", "pt": "Rolos da moenda"}, "f_tch": {"es": "Caña (t/h)", "en": "Cane (t/h)", "pt": "Cana (t/h)"}, "f_pol_cana": {"es": "Pol en caña (%)", "en": "Pol in cane (%)", "pt": "Pol na cana (%)"}, "f_fibra_cana": {"es": "Fibra en caña (%)", "en": "Fibre in cane (%)", "pt": "Fibra na cana (%)"}, "f_pol_bagazo": {"es": "Pol en bagazo (%)", "en": "Pol in bagasse (%)", "pt": "Pol no bagaço (%)"}, "f_fibra_bagazo": {"es": "Fibra en bagazo (%)", "en": "Fibre in bagasse (%)", "pt": "Fibra no bagaço (%)"}, "f_brix_jugo_primario": {"es": "Brix jugo primario (°Bx)", "en": "Primary juice Brix (°Bx)", "pt": "Brix do caldo primário (°Bx)"}, "f_pol_jugo_primario": {"es": "Pol jugo primario (%)", "en": "Primary juice Pol (%)", "pt": "Pol do caldo primário (%)"}, "f_brix_jugo_mezclado": {"es": "Brix jugo mezclado (°Bx)", "en": "Mixed juice Brix (°Bx)", "pt": "Brix do caldo misto (°Bx)"}, "f_imbibicion_cana": {"es": "Imbibición % caña", "en": "Imbibition % cane", "pt": "Embebição % cana"}, "f_largo_maza": {"es": "Largo de mazas (pies)", "en": "Roll length (feet)", "pt": "Comprimento dos rolos (pés)"}, "r_extraccion_pol": {"es": "Extracción de Pol", "en": "Pol extraction", "pt": "Extração de Pol"}, "r_extraccion_reducida": {"es": "Extracción reducida (12.5 %)", "en": "Reduced extraction (12.5 %)", "pt": "Extração reduzida (12,5 %)"}, "r_imbibicion_fibra": {"es": "Imbibición % fibra", "en": "Imbibition % fibre", "pt": "Embebição % fibra"}, "u_pct_fibra": {"es": "% fibra", "en": "% fibre", "pt": "% fibra"}, "r_fibra_ton_h": {"es": "Fibra", "en": "Fibre", "pt": "Fibra"}, "r_flujo_agua_h": {"es": "Agua de imbibición", "en": "Imbibition water", "pt": "Água de embebição"}, "r_bagazo_cana": {"es": "Bagazo % caña", "en": "Bagasse % cane", "pt": "Bagaço % cana"}, "r_jugo_perdido_fibra": {"es": "Jugo perdido % fibra", "en": "Juice lost % fibre", "pt": "Caldo perdido % fibra"}, "r_brix_mezclado_esperado": {"es": "Brix mezclado esperado", "en": "Expected mixed juice Brix", "pt": "Brix misto esperado"}, "r_tch_por_pie": {"es": "Carga por pie de maza", "en": "Load per foot of roll", "pt": "Carga por pé de rolo"}, "u_tch_pie": {"es": "t/h·pie", "en": "t/h·ft", "pt": "t/h·pé"}, "av_molinos_imbibicion_baja": {"es": "Imbibición baja ({0} % fibra, < 200 %): riesgo de pérdida de extracción.", "en": "Low imbibition ({0} % fibre, < 200 %): risk of extraction loss.", "pt": "Embebição baixa ({0} % fibra, < 200 %): risco de perda de extração."}, "av_molinos_imbibicion_alta": {"es": "Imbibición alta ({0} % fibra, > 250 %): riesgo de sobrecarga térmica en evaporadores.", "en": "High imbibition ({0} % fibre, > 250 %): risk of thermal overload in the evaporators.", "pt": "Embebição alta ({0} % fibra, > 250 %): risco de sobrecarga térmica nos evaporadores."}, "av_molinos_brix_desviado": {"es": "Brix mezclado ({0}) se desvía del esperado ({1}) por más de 0.8: revisa el flujómetro de agua o fugas en tanques.", "en": "Mixed juice Brix ({0}) deviates from the expected value ({1}) by more than 0.8: check the water flow meter or tank leaks.", "pt": "Brix misto ({0}) se desvia do esperado ({1}) em mais de 0,8: revise o fluxômetro de água ou vazamentos nos tanques."}, "av_molinos_jugo_perdido_alto": {"es": "Jugo perdido % fibra elevado ({0}, > 40): revisa el trabajo mecánico o la preparación de caña.", "en": "High juice lost % fibre ({0}, > 40): check mechanical work or cane preparation.", "pt": "Caldo perdido % fibra elevado ({0}, > 40): revise o trabalho mecânico ou o preparo da cana."}, "sec_dextranasa_jugo": {"es": "Jugo y dextrano", "en": "Juice and dextran", "pt": "Caldo e dextrano"}, "sec_dextranasa_enzima": {"es": "Enzima dextranasa", "en": "Dextranase enzyme", "pt": "Enzima dextranase"}, "f_flujo_jugo_th": {"es": "Caudal de jugo (t/h)", "en": "Juice flow (t/h)", "pt": "Vazão de caldo (t/h)"}, "f_dextrano_ppm": {"es": "Dextrano en jugo (ppm)", "en": "Dextran in juice (ppm)", "pt": "Dextrano no caldo (ppm)"}, "f_temp_dextranasa": {"es": "Temperatura del jugo (°C)", "en": "Juice temperature (°C)", "pt": "Temperatura do caldo (°C)"}, "f_dosis_dextranasa_ppm": {"es": "Dosis objetivo (ppm)", "en": "Target dose (ppm)", "pt": "Dose alvo (ppm)"}, "f_densidad_dextranasa": {"es": "Densidad enzima (kg/L)", "en": "Enzyme density (kg/L)", "pt": "Densidade da enzima (kg/L)"}, "f_dilucion_dextranasa": {"es": "Dilución en tanque (% V/V)", "en": "Tank dilution (% V/V)", "pt": "Diluição no tanque (% V/V)"}, "f_tiempo_residencia_dextranasa": {"es": "Tiempo de residencia (min)", "en": "Residence time (min)", "pt": "Tempo de residência (min)"}, "r_caudal_bomba_dextranasa": {"es": "Caudal de bomba dosificadora", "en": "Dosing pump flow", "pt": "Vazão da bomba dosadora"}, "u_l_h": {"es": "L/h", "en": "L/h", "pt": "L/h"}, "r_dextranasa_g_h": {"es": "Consumo de dextranasa", "en": "Dextranase consumption", "pt": "Consumo de dextranase"}, "u_g_h": {"es": "g/h", "en": "g/h", "pt": "g/h"}, "r_dextranasa_kg_dia": {"es": "Consumo diario", "en": "Daily consumption", "pt": "Consumo diário"}, "u_kg_dia": {"es": "kg/día", "en": "kg/day", "pt": "kg/dia"}, "r_dextrano_kg_h": {"es": "Dextrano entrante", "en": "Incoming dextran", "pt": "Dextrano entrando"}, "u_ml_min": {"es": "mL/min", "en": "mL/min", "pt": "mL/min"}, "av_dextranasa_dextrano_severo": {"es": "Dextrano severo ({0} ppm, > 500): riesgo de alta viscosidad, elongación de cristales y falsos granos.", "en": "Severe dextran ({0} ppm, > 500): risk of high viscosity, crystal elongation and false grain.", "pt": "Dextrano severo ({0} ppm, > 500): risco de alta viscosidade, elongação de cristais e grãos falsos."}, "av_dextranasa_temp_alta": {"es": "Temperatura alta ({0} °C, > 65): riesgo de inactivación de la enzima.", "en": "High temperature ({0} °C, > 65): risk of enzyme inactivation.", "pt": "Temperatura alta ({0} °C, > 65): risco de inativação da enzima."}, "av_dextranasa_temp_baja": {"es": "Temperatura baja ({0} °C, < 45): cinética enzimática lenta.", "en": "Low temperature ({0} °C, < 45): slow enzyme kinetics.", "pt": "Temperatura baixa ({0} °C, < 45): cinética enzimática lenta."}, "av_dextranasa_residencia_baja": {"es": "Tiempo de retención bajo ({0} min, < 10).", "en": "Low retention time ({0} min, < 10).", "pt": "Tempo de retenção baixo ({0} min, < 10)."}, "av_dextranasa_doble_falla": {"es": "Temperatura ({0} °C) fuera del óptimo Y tiempo de retención bajo ({1} min) a la vez: la enzima probablemente no está trabajando. Revisa ambas condiciones.", "en": "Temperature ({0} °C) out of range AND low retention time ({1} min) at the same time: the enzyme is likely not working. Check both conditions.", "pt": "Temperatura ({0} °C) fora do ótimo E tempo de retenção baixo ({1} min) ao mesmo tempo: a enzima provavelmente não está funcionando. Revise ambas as condições."}, "sec_amilasa_jugo": {"es": "Jugo y almidón", "en": "Juice and starch", "pt": "Caldo e amido"}, "sec_amilasa_enzima": {"es": "Enzima alfa-amilasa", "en": "Alpha-amylase enzyme", "pt": "Enzima alfa-amilase"}, "f_almidon_ppm": {"es": "Almidón en jugo (ppm)", "en": "Starch in juice (ppm)", "pt": "Amido no caldo (ppm)"}, "f_temp_amilasa": {"es": "Temperatura del jugo (°C)", "en": "Juice temperature (°C)", "pt": "Temperatura do caldo (°C)"}, "f_dosis_amilasa_ppm": {"es": "Dosis objetivo (ppm)", "en": "Target dose (ppm)", "pt": "Dose alvo (ppm)"}, "f_densidad_amilasa": {"es": "Densidad enzima (kg/L)", "en": "Enzyme density (kg/L)", "pt": "Densidade da enzima (kg/L)"}, "f_dilucion_amilasa": {"es": "Dilución en tanque (% V/V)", "en": "Tank dilution (% V/V)", "pt": "Diluição no tanque (% V/V)"}, "f_tiempo_residencia_amilasa": {"es": "Tiempo de residencia (min)", "en": "Residence time (min)", "pt": "Tempo de residência (min)"}, "r_caudal_bomba_amilasa": {"es": "Caudal de bomba dosificadora", "en": "Dosing pump flow", "pt": "Vazão da bomba dosadora"}, "r_amilasa_g_h": {"es": "Consumo de amilasa", "en": "Amylase consumption", "pt": "Consumo de amilase"}, "r_amilasa_kg_dia": {"es": "Consumo diario", "en": "Daily consumption", "pt": "Consumo diário"}, "r_almidon_kg_h": {"es": "Almidón entrante", "en": "Incoming starch", "pt": "Amido entrando"}, "av_amilasa_almidon_alto": {"es": "Almidón elevado ({0} ppm, > 500): riesgo de alta viscosidad y rechazo de calidad en el azúcar comercial.", "en": "High starch ({0} ppm, > 500): risk of high viscosity and commercial sugar quality rejection.", "pt": "Amido elevado ({0} ppm, > 500): risco de alta viscosidade e rejeição de qualidade no açúcar comercial."}, "av_amilasa_temp_alta": {"es": "Temperatura alta ({0} °C, > 98): riesgo de inactivación térmica.", "en": "High temperature ({0} °C, > 98): risk of thermal inactivation.", "pt": "Temperatura alta ({0} °C, > 98): risco de inativação térmica."}, "av_amilasa_temp_baja": {"es": "Temperatura baja ({0} °C, < 75): el almidón no gelifica del todo.", "en": "Low temperature ({0} °C, < 75): starch does not fully gelatinise.", "pt": "Temperatura baixa ({0} °C, < 75): o amido não gelifica totalmente."}, "av_amilasa_residencia_baja": {"es": "Tiempo de residencia muy bajo ({0} min, < 5).", "en": "Very low residence time ({0} min, < 5).", "pt": "Tempo de residência muito baixo ({0} min, < 5)."}, "av_amilasa_doble_falla": {"es": "Temperatura ({0} °C) fuera del óptimo Y tiempo de residencia bajo ({1} min) a la vez: la enzima probablemente no está trabajando. Revisa ambas condiciones.", "en": "Temperature ({0} °C) out of range AND low residence time ({1} min) at the same time: the enzyme is likely not working. Check both conditions.", "pt": "Temperatura ({0} °C) fora do ótimo E tempo de residência baixo ({1} min) ao mesmo tempo: a enzima provavelmente não está funcionando. Revise ambas as condições."}, "sec_evaporacion_jugo": {"es": "Jugo clarificado y meladura", "en": "Clarified juice and syrup", "pt": "Caldo clarificado e xarope"}, "sec_evaporacion_vapor": {"es": "Vapor y equipo", "en": "Steam and equipment", "pt": "Vapor e equipamento"}, "f_flujo_jugo_clarificado_th": {"es": "Jugo clarificado (t/h)", "en": "Clarified juice (t/h)", "pt": "Caldo clarificado (t/h)"}, "f_brix_jugo_clarificado": {"es": "Brix jugo clarificado (°Bx)", "en": "Clarified juice Brix (°Bx)", "pt": "Brix do caldo clarificado (°Bx)"}, "f_brix_meladura_target": {"es": "Brix meladura objetivo (°Bx)", "en": "Target syrup Brix (°Bx)", "pt": "Brix alvo do xarope (°Bx)"}, "f_brix_meladura_real": {"es": "Brix meladura real (°Bx)", "en": "Actual syrup Brix (°Bx)", "pt": "Brix real do xarope (°Bx)"}, "f_vapor_alimentado_th": {"es": "Vapor alimentado al 1er vaso (t/h)", "en": "Steam fed to 1st vessel (t/h)", "pt": "Vapor alimentado ao 1º vaso (t/h)"}, "f_num_efectos": {"es": "Número de efectos", "en": "Number of effects", "pt": "Número de efeitos"}, "f_area_calandrias": {"es": "Área de calandrias (m²)", "en": "Calandria area (m²)", "pt": "Área das calandras (m²)"}, "f_vacio_ultimo_efecto": {"es": "Vacío último efecto (inHg)", "en": "Last effect vacuum (inHg)", "pt": "Vácuo do último efeito (inHg)"}, "r_agua_evaporada_total_h": {"es": "Agua evaporada total", "en": "Total water evaporated", "pt": "Água evaporada total"}, "u_ton_h": {"es": "t/h", "en": "t/h", "pt": "t/h"}, "r_economia_vapor": {"es": "Economía de vapor", "en": "Steam economy", "pt": "Economia de vapor"}, "u_kg_kg": {"es": "kg/kg", "en": "kg/kg", "pt": "kg/kg"}, "r_porcentaje_evaporacion": {"es": "% de evaporación", "en": "% evaporation", "pt": "% de evaporação"}, "r_flujo_meladura_h": {"es": "Meladura producida", "en": "Syrup produced", "pt": "Xarope produzido"}, "r_tasa_evaporacion_especifica": {"es": "Tasa de evaporación específica", "en": "Specific evaporation rate", "pt": "Taxa de evaporação específica"}, "u_kg_m2h": {"es": "kg/m²·h", "en": "kg/m²·h", "pt": "kg/m²·h"}, "r_brix_meladura_teorico": {"es": "Brix meladura teórico (por vapor)", "en": "Theoretical syrup Brix (from steam)", "pt": "Brix teórico do xarope (pelo vapor)"}, "av_evap_meladura_liviana": {"es": "Meladura liviana ({0} °Bx, < 60): aumenta el tiempo de cocción en tachos y el consumo de vapor.", "en": "Light syrup ({0} °Bx, < 60): increases pan boiling time and steam consumption.", "pt": "Xarope leve ({0} °Bx, < 60): aumenta o tempo de cozimento nas tachas e o consumo de vapor."}, "av_evap_meladura_concentrada": {"es": "Meladura muy concentrada ({0} °Bx, > 70): riesgo de cristalización no controlada y taponamiento.", "en": "Very concentrated syrup ({0} °Bx, > 70): risk of uncontrolled crystallisation and plugging.", "pt": "Xarope muito concentrado ({0} °Bx, > 70): risco de cristalização não controlada e entupimento."}, "av_evap_economia_baja_4": {"es": "Economía de vapor baja ({0} kg/kg, < 3.2 en cuádruple): posible incrustación o purga deficiente.", "en": "Low steam economy ({0} kg/kg, < 3.2 in quadruple effect): possible scaling or poor bleeding.", "pt": "Economia de vapor baixa ({0} kg/kg, < 3,2 em quádruplo efeito): possível incrustação ou sangria deficiente."}, "av_evap_economia_baja_5": {"es": "Economía de vapor baja ({0} kg/kg, < 4.0 en quíntuple): revisa incrustaciones o sangrados.", "en": "Low steam economy ({0} kg/kg, < 4.0 in quintuple effect): check scaling or bleeds.", "pt": "Economia de vapor baixa ({0} kg/kg, < 4,0 em quíntuplo efeito): revise incrustações ou sangrias."}, "av_evap_vacio_bajo": {"es": "Vacío bajo en el condensador ({0} inHg, < 24): pérdida de capacidad de evaporación.", "en": "Low condenser vacuum ({0} inHg, < 24): loss of evaporation capacity.", "pt": "Vácuo baixo no condensador ({0} inHg, < 24): perda de capacidade de evaporação."}, "av_evap_brix_desviado": {"es": "Brix de meladura real ({0}) se desvía del teórico por vapor ({1}) por más de 2 puntos: revisa el refractómetro o el flujo de vapor medido.", "en": "Actual syrup Brix ({0}) deviates from the steam-based theoretical value ({1}) by more than 2 points: check the refractometer or the measured steam flow.", "pt": "Brix real do xarope ({0}) se desvia do teórico pelo vapor ({1}) em mais de 2 pontos: revise o refratômetro ou o fluxo de vapor medido."}, "sec_solub": {"es": "Datos de la masa", "en": "Massecuite data", "pt": "Dados da massa"}, "f_pureza": {"es": "Pureza (%)", "en": "Purity (%)", "pt": "Pureza (%)"}, "sec_impurezas": {"es": "Ajuste por impurezas", "en": "Impurity adjustment", "pt": "Ajuste por impurezas"}, "f_coef_sol": {"es": "Coef. de solubilidad", "en": "Solubility coefficient", "pt": "Coef. de solubilidade"}, "nota_coef_sol": {"es": "Relación entre la solubilidad en la solución impura y en agua pura a la misma temperatura. Déjalo en 1.0 (sacarosa pura) salvo que tengas el dato de tu fábrica; por debajo de 1 las impurezas bajan la solubilidad.", "en": "Ratio between solubility in the impure solution and in pure water at the same temperature. Leave it at 1.0 (pure sucrose) unless you have your factory's own value; below 1 the impurities lower the solubility.", "pt": "Relação entre a solubilidade na solução impura e em água pura à mesma temperatura. Deixe em 1.0 (sacarose pura) salvo se tiver o dado da sua fábrica; abaixo de 1 as impurezas reduzem a solubilidade."}, "r_sobresat": {"es": "Coeficiente de sobresaturación", "en": "Supersaturation coefficient", "pt": "Coeficiente de supersaturação"}, "u_adim": {"es": "adimensional (y)", "en": "dimensionless (y)", "pt": "adimensional (y)"}, "d_sol_pura": {"es": "Solubilidad sacarosa pura", "en": "Pure sucrose solubility", "pt": "Solubilidade sacarose pura"}, "d_sol_gagua": {"es": "Solubilidad (g/100 g agua)", "en": "Solubility (g/100 g water)", "pt": "Solubilidade (g/100 g água)"}, "d_sol_impura": {"es": "Saturación con impurezas", "en": "Saturation with impurities", "pt": "Saturação com impurezas"}, "d_rel_sacagua": {"es": "Relación sacarosa/agua real", "en": "Actual sucrose/water ratio", "pt": "Relação sacarose/água real"}, "d_rel_sat": {"es": "Relación en saturación", "en": "Ratio at saturation", "pt": "Relação na saturação"}, "nota_solub": {"es": "y<1 insaturada: el cristal se disuelve. 1.0–1.2 metaestable: el cristal crece sin nuclear (zona de trabajo). 1.2–1.3 intermedia. y>1.3 lábil: nucleación espontánea (grano falso). La corrección por impurezas es una estimación ajustable, no un valor universal.", "en": "y<1 undersaturated: the crystal dissolves. 1.0–1.2 metastable: the crystal grows without nucleating (working zone). 1.2–1.3 intermediate. y>1.3 labile: spontaneous nucleation (false grain). The impurity correction is an adjustable estimate, not a universal value.", "pt": "y<1 insaturada: o cristal se dissolve. 1.0–1.2 metaestável: o cristal cresce sem nuclear (zona de trabalho). 1.2–1.3 intermediária. y>1.3 lábil: nucleação espontânea (grão falso). A correção por impurezas é uma estimativa ajustável, não um valor universal."}, "av_sol_temp": {"es": "La correlación es fiable solo entre 0 y 100 °C.", "en": "The correlation is reliable only between 0 and 100 °C.", "pt": "A correlação é confiável apenas entre 0 e 100 °C."}, "av_sol_insaturada": {"es": "Insaturada (y = {0}): la solución no está saturada, un cristal se disolvería.", "en": "Undersaturated (y = {0}): the solution is not saturated, a crystal would dissolve.", "pt": "Insaturada (y = {0}): a solução não está saturada, um cristal se dissolveria."}, "av_sol_metaestable": {"es": "Zona metaestable (y = {0}): el cristal crece sin formar núcleos nuevos. Es la zona de trabajo.", "en": "Metastable zone (y = {0}): crystals grow without forming new nuclei. This is the working zone.", "pt": "Zona metaestável (y = {0}): os cristais crescem sem formar novos núcleos. É a zona de trabalho."}, "av_sol_intermedia": {"es": "Zona intermedia (y = {0}): pueden aparecer núcleos sobre los cristales existentes.", "en": "Intermediate zone (y = {0}): nuclei may appear on existing crystals.", "pt": "Zona intermediária (y = {0}): podem surgir núcleos sobre os cristais existentes."}, "av_sol_labil": {"es": "Zona lábil (y = {0}): nucleación espontánea, riesgo de grano falso.", "en": "Labile zone (y = {0}): spontaneous nucleation, risk of false grain.", "pt": "Zona lábil (y = {0}): nucleação espontânea, risco de grão falso."}, "sec_tacho_licor": {"es": "Licor de alimentación", "en": "Feed liquor", "pt": "Licor de alimentação"}, "sec_tacho_masa": {"es": "Masa cocida y miel", "en": "Massecuite and molasses", "pt": "Massa cozida e mel"}, "sec_tacho_equipo": {"es": "Equipo", "en": "Equipment", "pt": "Equipamento"}, "f_brix_licor": {"es": "Brix del licor (°Bx)", "en": "Liquor Brix (°Bx)", "pt": "Brix do licor (°Bx)"}, "f_pureza_licor": {"es": "Pureza del licor J (%)", "en": "Liquor purity J (%)", "pt": "Pureza do licor J (%)"}, "f_brix_masa_cocida": {"es": "Brix masa cocida (°Bx)", "en": "Massecuite Brix (°Bx)", "pt": "Brix da massa cozida (°Bx)"}, "f_pureza_masa_cocida": {"es": "Pureza masa cocida (%)", "en": "Massecuite purity (%)", "pt": "Pureza da massa cozida (%)"}, "f_pureza_miel": {"es": "Pureza miel madre M (%)", "en": "Mother liquor purity M (%)", "pt": "Pureza do mel-mãe M (%)"}, "f_pureza_cristal": {"es": "Pureza del cristal S (%)", "en": "Crystal purity S (%)", "pt": "Pureza do cristal S (%)"}, "f_vacio_tacho": {"es": "Vacío del tacho (inHg)", "en": "Pan vacuum (inHg)", "pt": "Vácuo da tacha (inHg)"}, "f_volumen_tacho": {"es": "Volumen del tacho (m³)", "en": "Pan volume (m³)", "pt": "Volume da tacha (m³)"}, "f_densidad_masa_cocida": {"es": "Densidad masa cocida (t/m³)", "en": "Massecuite density (t/m³)", "pt": "Densidade da massa cozida (t/m³)"}, "r_porcentaje_cristal": {"es": "% de cristal en la masa", "en": "% crystal in massecuite", "pt": "% de cristal na massa"}, "r_rendimiento_sjm": {"es": "Rendimiento teórico S-J-M", "en": "Theoretical S-J-M yield", "pt": "Rendimento teórico S-J-M"}, "r_ton_masa_cocida": {"es": "Masa cocida por templada", "en": "Massecuite per strike", "pt": "Massa cozida por batelada"}, "r_ton_licor_requerido": {"es": "Licor requerido", "en": "Liquor required", "pt": "Licor necessário"}, "r_agua_evaporada_tacho": {"es": "Agua a evaporar en el tacho", "en": "Water to evaporate in the pan", "pt": "Água a evaporar na tacha"}, "av_tacho_bajo_cristal": {"es": "Bajo porcentaje de cristales ({0} %, < 30): ajusta la densidad de siembra o el tiempo de cocción.", "en": "Low crystal content ({0} %, < 30): adjust seeding density or boiling time.", "pt": "Baixo percentual de cristais ({0} %, < 30): ajuste a densidade de semeadura ou o tempo de cozimento."}, "av_tacho_vacio_bajo": {"es": "Vacío bajo en el tacho ({0} inHg, < 25): sube la temperatura de ebullición y puede caramelizar la sacarosa.", "en": "Low pan vacuum ({0} inHg, < 25): raises boiling temperature and may caramelise the sucrose.", "pt": "Vácuo baixo na tacha ({0} inHg, < 25): eleva a temperatura de ebulição e pode caramelizar a sacarose."}, "av_tacho_pureza_inconsistente": {"es": "La pureza de la masa cocida ({0} %) debería quedar entre la de la miel M ({1} %) y la del licor J ({2} %). Revisa las lecturas de laboratorio.", "en": "Massecuite purity ({0} %) should fall between the mother liquor M ({1} %) and the feed liquor J ({2} %). Check the lab readings.", "pt": "A pureza da massa cozida ({0} %) deveria ficar entre a do mel-mãe M ({1} %) e a do licor J ({2} %). Revise as leituras de laboratório."}, "av_tacho_datos_invalidos": {"es": "El rendimiento S-J-M o el % de cristal salió fuera de 0-100 %: son datos de laboratorio inconsistentes, no un resultado real.", "en": "The S-J-M yield or the crystal % came out outside 0-100 %: these are inconsistent lab readings, not a real result.", "pt": "O rendimento S-J-M ou o % de cristal saiu fora de 0-100 %: são leituras de laboratório inconsistentes, não um resultado real."}, "sec_jugo_cana": {"es": "Jugo de caña", "en": "Cane juice", "pt": "Caldo de cana"}, "f_flujo": {"es": "Flujo (m³/h)", "en": "Flow (m³/h)", "pt": "Vazão (m³/h)"}, "f_horas_dia": {"es": "Horas de molienda / día", "en": "Crushing hours / day", "pt": "Horas de moagem / dia"}, "f_p2o5_nat": {"es": "P₂O₅ natural (ppm)", "en": "Natural P₂O₅ (ppm)", "pt": "P₂O₅ natural (ppm)"}, "f_p2o5_obj": {"es": "P₂O₅ objetivo (ppm)", "en": "Target P₂O₅ (ppm)", "pt": "P₂O₅ alvo (ppm)"}, "f_eficiencia": {"es": "Eficiencia de dosificación (%)", "en": "Dosing efficiency (%)", "pt": "Eficiência de dosagem (%)"}, "sec_acido_com": {"es": "Ácido comercial", "en": "Commercial acid", "pt": "Ácido comercial"}, "f_h3po4": {"es": "H₃PO₄ (% p/p)", "en": "H₃PO₄ (% w/w)", "pt": "H₃PO₄ (% p/p)"}, "f_pureza_acido": {"es": "Pureza (%)", "en": "Purity (%)", "pt": "Pureza (%)"}, "f_densidad": {"es": "Densidad (kg/L)", "en": "Density (kg/L)", "pt": "Densidade (kg/L)"}, "nota_pureza": {"es": "Deja la pureza en 100 % salvo que la ficha técnica del proveedor reporte concentración y pureza como dos cifras distintas. Si el porcentaje rotulado ya es el ensayo de H₃PO₄, bajarla aquí sobredosifica.", "en": "Leave purity at 100 % unless the supplier's data sheet reports concentration and purity as two separate figures. If the labelled percentage is already the H₃PO₄ assay, lowering it here overdoses.", "pt": "Deixe a pureza em 100 % salvo se a ficha técnica do fornecedor informar concentração e pureza como dois números distintos. Se o percentual rotulado já for o ensaio de H₃PO₄, baixá-la aqui sobredosa."}, "u_lh": {"es": "L/h", "en": "L/h", "pt": "L/h"}, "u_lmin": {"es": "L/min", "en": "L/min", "pt": "L/min"}, "u_ldia": {"es": "L/día", "en": "L/day", "pt": "L/dia"}, "u_mlmin": {"es": "mL/min", "en": "mL/min", "pt": "mL/min"}, "u_l_m3": {"es": "L / m³ jugo", "en": "L / m³ juice", "pt": "L / m³ caldo"}, "u_ml_m3": {"es": "mL / m³ jugo", "en": "mL / m³ juice", "pt": "mL / m³ caldo"}, "d_densidad_jugo": {"es": "Densidad del jugo", "en": "Juice density", "pt": "Densidade do caldo"}, "d_flujo_masico": {"es": "Flujo másico de jugo", "en": "Juice mass flow", "pt": "Vazão mássica de caldo"}, "d_deficit": {"es": "Déficit de P₂O₅", "en": "P₂O₅ deficit", "pt": "Déficit de P₂O₅"}, "d_p2o5_adic": {"es": "P₂O₅ a adicionar", "en": "P₂O₅ to add", "pt": "P₂O₅ a adicionar"}, "d_h3po4_puro": {"es": "H₃PO₄ puro equivalente", "en": "Pure H₃PO₄ equivalent", "pt": "H₃PO₄ puro equivalente"}, "d_ing_activo": {"es": "Ingrediente activo real", "en": "Actual active ingredient", "pt": "Ingrediente ativo real"}, "d_ing_activo_val": {"es": "{0} % (concentración × pureza)", "en": "{0} % (concentration × purity)", "pt": "{0} % (concentração × pureza)"}, "d_acido_masa": {"es": "Ácido comercial (masa)", "en": "Commercial acid (mass)", "pt": "Ácido comercial (massa)"}, "r_acido_com": {"es": "Ácido comercial", "en": "Commercial acid", "pt": "Ácido comercial"}, "r_ajuste_bomba": {"es": "Ajuste de bomba", "en": "Pump setting", "pt": "Ajuste da bomba"}, "r_consumo_diario": {"es": "Consumo diario", "en": "Daily consumption", "pt": "Consumo diário"}, "av_acido_cubierto": {"es": "El jugo ya alcanza el objetivo de P₂O₅. No se requiere dosificación.", "en": "The juice already meets the P₂O₅ target. No dosing required.", "pt": "O caldo já atinge o alvo de P₂O₅. Não é necessário dosar."}, "av_acido_bajo": {"es": "Objetivo por debajo de 250 ppm: la clarificación suele perder eficacia. El rango usual es 250–350 ppm.", "en": "Target below 250 ppm: clarification usually loses effectiveness. The usual range is 250–350 ppm.", "pt": "Alvo abaixo de 250 ppm: a clarificação costuma perder eficácia. A faixa usual é 250–350 ppm."}, "av_acido_alto": {"es": "Objetivo por encima de 400 ppm: el exceso de fosfato eleva el consumo de cal y el volumen de cachaza.", "en": "Target above 400 ppm: excess phosphate raises lime consumption and filter mud volume.", "pt": "Alvo acima de 400 ppm: o excesso de fosfato eleva o consumo de cal e o volume de torta."}, "f_demanda": {"es": "Demanda (kg CaO/m³)", "en": "Demand (kg CaO/m³)", "pt": "Demanda (kg CaO/m³)"}, "f_molienda": {"es": "Molienda (t caña/h)", "en": "Crushing (t cane/h)", "pt": "Moagem (t cana/h)"}, "sec_lechada_viva": {"es": "Lechada y cal viva", "en": "Milk of lime and quicklime", "pt": "Leite de cal e cal virgem"}, "f_baume": {"es": "Concentración (°Bé)", "en": "Concentration (°Bé)", "pt": "Concentração (°Bé)"}, "f_pureza_cal": {"es": "Pureza cal viva (% CaO)", "en": "Quicklime purity (% CaO)", "pt": "Pureza da cal virgem (% CaO)"}, "f_ef_apagado": {"es": "Eficiencia de apagado (%)", "en": "Slaking efficiency (%)", "pt": "Eficiência de extinção (%)"}, "r_lechada_jugo": {"es": "Lechada al jugo", "en": "Milk of lime to juice", "pt": "Leite de cal ao caldo"}, "r_ajuste_valvula": {"es": "Ajuste de válvula", "en": "Valve setting", "pt": "Ajuste da válvula"}, "u_tdia": {"es": "t/día", "en": "t/day", "pt": "t/dia"}, "r_cal_viva_dia": {"es": "Cal viva por día", "en": "Quicklime per day", "pt": "Cal virgem por dia"}, "u_lmin_lechada": {"es": "L/min lechada", "en": "L/min milk of lime", "pt": "L/min leite de cal"}, "u_kgcao_tcana": {"es": "kg CaO / t caña", "en": "kg CaO / t cane", "pt": "kg CaO / t cana"}, "u_gcao_l": {"es": "g CaO / L lechada", "en": "g CaO / L milk of lime", "pt": "g CaO / L leite de cal"}, "d_densidad_lechada": {"es": "Densidad de la lechada", "en": "Milk of lime density", "pt": "Densidade do leite de cal"}, "d_solidos": {"es": "Sólidos en la lechada", "en": "Solids in milk of lime", "pt": "Sólidos no leite de cal"}, "d_cao_req": {"es": "CaO requerido", "en": "CaO required", "pt": "CaO requerido"}, "d_caoh2_eq": {"es": "Ca(OH)₂ equivalente", "en": "Ca(OH)₂ equivalent", "pt": "Ca(OH)₂ equivalente"}, "d_cal_viva_com": {"es": "Cal viva comercial", "en": "Commercial quicklime", "pt": "Cal virgem comercial"}, "d_agua_apagado": {"es": "Agua de apagado (aprox.)", "en": "Slaking water (approx.)", "pt": "Água de extinção (aprox.)"}, "av_cal_baja": {"es": "Lechada por debajo de 5 °Bé: caudales muy altos y dilución del jugo. El rango operativo usual es 6–12 °Bé.", "en": "Milk of lime below 5 °Bé: very high flow rates and juice dilution. The usual operating range is 6–12 °Bé.", "pt": "Leite de cal abaixo de 5 °Bé: vazões muito altas e diluição do caldo. A faixa operacional usual é 6–12 °Bé."}, "av_cal_alta": {"es": "Lechada por encima de 15 °Bé: riesgo de sedimentación y taponamiento en líneas y válvulas.", "en": "Milk of lime above 15 °Bé: risk of settling and plugging in lines and valves.", "pt": "Leite de cal acima de 15 °Bé: risco de sedimentação e entupimento em linhas e válvulas."}, "av_cal_poco": {"es": "Menos de 0.5 kg CaO por tonelada de caña: revisa la demanda, el jugo podría quedar sin neutralizar.", "en": "Less than 0.5 kg CaO per tonne of cane: check the demand, the juice could end up unneutralised.", "pt": "Menos de 0,5 kg CaO por tonelada de cana: verifique a demanda, o caldo pode ficar sem neutralizar."}, "av_cal_mucho": {"es": "Más de 1.5 kg CaO por tonelada de caña: consumo alto, sube el volumen de cachaza y la formación de color.", "en": "More than 1.5 kg CaO per tonne of cane: high consumption, it raises filter mud volume and colour formation.", "pt": "Mais de 1,5 kg CaO por tonelada de cana: consumo alto, aumenta o volume de torta e a formação de cor."}, "sec_jugo_clar": {"es": "Jugo al clarificador", "en": "Juice to the clarifier", "pt": "Caldo ao clarificador"}, "f_dosis_ppm": {"es": "Dosis (ppm de polímero)", "en": "Dose (ppm of polymer)", "pt": "Dose (ppm de polímero)"}, "sec_preparacion": {"es": "Preparación", "en": "Make-up", "pt": "Preparo"}, "f_sol_madre": {"es": "Solución madre (g/L)", "en": "Stock solution (g/L)", "pt": "Solução mãe (g/L)"}, "f_tanque": {"es": "Tanque (m³)", "en": "Tank (m³)", "pt": "Tanque (m³)"}, "f_dilucion": {"es": "Dilución en línea (agua : solución)", "en": "In-line dilution (water : solution)", "pt": "Diluição em linha (água : solução)"}, "r_polimero": {"es": "Polímero", "en": "Polymer", "pt": "Polímero"}, "u_kgdia": {"es": "kg/día", "en": "kg/day", "pt": "kg/dia"}, "r_bomba_solucion": {"es": "Bomba de solución", "en": "Solution pump", "pt": "Bomba de solução"}, "r_duracion_batch": {"es": "Duración del batch", "en": "Batch duration", "pt": "Duração do batch"}, "u_horas": {"es": "horas", "en": "hours", "pt": "horas"}, "u_lmin_madre": {"es": "L/min madre", "en": "L/min stock", "pt": "L/min mãe"}, "u_lmin_aplicado": {"es": "L/min aplicado", "en": "L/min applied", "pt": "L/min aplicado"}, "u_gpolvo_m3": {"es": "g polvo / m³ jugo", "en": "g powder / m³ juice", "pt": "g pó / m³ caldo"}, "d_polimero_req": {"es": "Polímero requerido", "en": "Polymer required", "pt": "Polímero requerido"}, "d_agua_dilucion": {"es": "Agua de dilución en línea", "en": "In-line dilution water", "pt": "Água de diluição em linha"}, "d_conc_aplicada": {"es": "Concentración aplicada", "en": "Applied concentration", "pt": "Concentração aplicada"}, "d_polvo_batch": {"es": "Polvo por batch", "en": "Powder per batch", "pt": "Pó por batch"}, "d_batches_dia": {"es": "Batches por día", "en": "Batches per day", "pt": "Batches por dia"}, "av_floc_sol_alta": {"es": "Solución madre por encima de 2 g/L: la viscosidad dispara y el polímero no se disuelve bien. El rango práctico es 0.5–1.5 g/L.", "en": "Stock solution above 2 g/L: viscosity shoots up and the polymer does not dissolve well. The practical range is 0.5–1.5 g/L.", "pt": "Solução mãe acima de 2 g/L: a viscosidade dispara e o polímero não se dissolve bem. A faixa prática é 0,5–1,5 g/L."}, "av_floc_sol_baja": {"es": "Solución madre por debajo de 0.3 g/L: obliga a tanques enormes y el polímero se degrada antes de usarse.", "en": "Stock solution below 0.3 g/L: it forces huge tanks and the polymer degrades before it is used.", "pt": "Solução mãe abaixo de 0,3 g/L: exige tanques enormes e o polímero se degrada antes de ser usado."}, "av_floc_dosis_baja": {"es": "Menos de 1 ppm: rara vez se forma flóculo estable. Verifica con prueba de jarras.", "en": "Less than 1 ppm: a stable floc rarely forms. Check with a jar test.", "pt": "Menos de 1 ppm: raramente se forma flóculo estável. Verifique com teste de jarros."}, "av_floc_dosis_alta": {"es": "Más de 6 ppm: sobredosis típica. Refloculación del lodo y mayor turbiedad del jugo claro.", "en": "More than 6 ppm: typical overdose. Mud reflocculation and higher clarified juice turbidity.", "pt": "Mais de 6 ppm: sobredosagem típica. Refloculação do lodo e maior turbidez do caldo clarificado."}, "av_floc_batch": {"es": "El batch dura menos de 1.5 h: no alcanza el tiempo de maduración del polímero (30–60 min). Considera un tanque mayor o dos tanques alternos.", "en": "The batch lasts less than 1.5 h: it does not allow the polymer ageing time (30–60 min). Consider a larger tank or two alternating tanks.", "pt": "O batch dura menos de 1,5 h: não alcança o tempo de maturação do polímero (30–60 min). Considere um tanque maior ou dois tanques alternados."}, "j_jarra": {"es": "Jarra {0}", "en": "Jar {0}", "pt": "Jarro {0}"}, "f_interfaz": {"es": "Interfaz cm", "en": "Interface cm", "pt": "Interface cm"}, "f_lodo": {"es": "Lodo %", "en": "Mud %", "pt": "Lodo %"}, "f_turbidez": {"es": "Turbidez", "en": "Turbidity", "pt": "Turbidez"}, "u_ppm_polimero": {"es": "ppm de polímero", "en": "ppm of polymer", "pt": "ppm de polímero"}, "u_ppm_ref": {"es": "ppm de referencia, sin aprobar", "en": "reference ppm, not approved", "pt": "ppm de referência, não aprovada"}, "j_llevar_floc": {"es": "Llevar esta dosis a la calculadora de floculante", "en": "Send this dose to the flocculant calculator", "pt": "Levar esta dose à calculadora de floculante"}, "r_dosis_optima": {"es": "Dosis óptima", "en": "Optimum dose", "pt": "Dose ótima"}, "r_sin_dosis": {"es": "Sin dosis recomendada", "en": "No dose recommended", "pt": "Sem dose recomendada"}, "r_sin_dosis_cerca": {"es": "Sin dosis · jarra más cercana", "en": "No dose · closest jar", "pt": "Sem dose · jarro mais próximo"}, "c_pocas_jarras": {"es": "Registra al menos dos jarras con dosis y turbidez para obtener una recomendación.", "en": "Record at least two jars with dose and turbidity to get a recommendation.", "pt": "Registre pelo menos dois jarros com dose e turbidez para obter uma recomendação."}, "f_vol_jarra": {"es": "Volumen por jarra (mL)", "en": "Volume per jar (mL)", "pt": "Volume por jarro (mL)"}, "f_sol_prueba": {"es": "Solución de prueba (g/L)", "en": "Test solution (g/L)", "pt": "Solução de teste (g/L)"}, "f_brix_jugo": {"es": "Brix del jugo (°Bx)", "en": "Juice Brix (°Bx)", "pt": "Brix do caldo (°Bx)"}, "f_vel_min": {"es": "Velocidad mínima (cm/min)", "en": "Minimum settling rate (cm/min)", "pt": "Velocidade mínima (cm/min)"}, "f_turb_max": {"es": "Turbidez máxima", "en": "Maximum turbidity", "pt": "Turbidez máxima"}, "sec_montaje": {"es": "Montaje de la prueba", "en": "Test set-up", "pt": "Montagem do teste"}, "sec_criterios": {"es": "Criterios de aceptación", "en": "Acceptance criteria", "pt": "Critérios de aceitação"}, "nota_dos_pruebas": {"es": "Determina la dosis óptima con solución de prueba de laboratorio. Para evaluar el proceso, la corrida horaria se hace con el floculante industrial que está corriendo.", "en": "This finds the optimum dose using a lab test solution. To evaluate the process, the hourly run is done with the industrial flocculant actually in use.", "pt": "Determina a dose ótima com solução de teste de laboratório. Para avaliar o processo, a corrida horária é feita com o floculante industrial em uso."}, "nota_criterios": {"es": "Una jarra sirve solo si cumple las dos condiciones. La velocidad avisa antes (depende de Brix, temperatura y pH); la turbidez evalúa el resultado final, cuando ya no hay corrección posible.", "en": "A jar only counts if it meets both conditions. Settling rate warns early (it depends on Brix, temperature and pH); turbidity evaluates the final result, when no correction is possible any more.", "pt": "Um jarro só serve se atender às duas condições. A velocidade avisa antes (depende de Brix, temperatura e pH); a turbidez avalia o resultado final, quando já não há correção possível."}, "d_densidad_usada": {"es": "Densidad usada", "en": "Density used", "pt": "Densidade usada"}, "d_densidad_usada_v": {"es": "{0} kg/m³ · masa por jarra {1} g", "en": "{0} kg/m³ · mass per jar {1} g", "pt": "{0} kg/m³ · massa por jarro {1} g"}, "d_ejemplo_3ppm": {"es": "Ejemplo a 3 ppm", "en": "Example at 3 ppm", "pt": "Exemplo a 3 ppm"}, "d_ejemplo_3ppm_v": {"es": "{0} mL de solución de prueba por jarra", "en": "{0} mL of test solution per jar", "pt": "{0} mL de solução de teste por jarro"}, "g_1": {"es": "1. Solución", "en": "1. Solution", "pt": "1. Solução"}, "g_1v": {"es": "Prepara la solución de floculante y déjala madurar de 30 a 60 minutos antes de usarla; sin ese reposo el polímero no flocula bien.", "en": "Prepare the flocculant solution and let it mature for 30 to 60 minutes before using it; without that resting time the polymer does not flocculate well.", "pt": "Prepare a solução de floculante e deixe-a amadurecer de 30 a 60 minutos antes de usá-la; sem esse descanso o polímero não flocula bem."}, "g_2": {"es": "2. Jugo", "en": "2. Juice", "pt": "2. Caldo"}, "g_2v": {"es": "Toma la muestra de jugo alcalizado en la entrada del clarificador, antes de dosificar el floculante y a temperatura de proceso (100–105 °C). Asegúrate de que el flujo sea representativo, evitando zonas de baja circulación o sedimentación, y mantén la muestra caliente durante toda la prueba: si se enfría, la velocidad de sedimentación cambia.", "en": "Take the limed juice sample at the clarifier inlet, before dosing the flocculant and at process temperature (100–105 °C). Make sure the flow is representative, avoiding areas of low circulation or settling, and keep the sample hot throughout the test: if it cools, the settling rate changes.", "pt": "Colete a amostra de caldo caleado na entrada do clarificador, antes de dosar o floculante e à temperatura de processo (100–105 °C). Garanta que a vazão seja representativa, evitando zonas de baixa circulação ou sedimentação, e mantenha a amostra quente durante todo o teste: se esfriar, a velocidade de sedimentação muda."}, "g_3": {"es": "3. Dosificar", "en": "3. Dose", "pt": "3. Dosar"}, "g_3v": {"es": "Agrega el volumen indicado en cada jarra con un dosificador, con agitación rápida (100 rpm) durante 10 s.", "en": "Add the indicated volume to each jar with a dispenser, under rapid stirring (100 rpm) for 10 s.", "pt": "Adicione o volume indicado em cada jarro com um dosador, sob agitação rápida (100 rpm) durante 10 s."}, "g_4": {"es": "4. Floculación", "en": "4. Flocculation", "pt": "4. Floculação"}, "g_4v": {"es": "Baja a 20–30 rpm por 1 min y detén la agitación.", "en": "Reduce to 20–30 rpm for 1 min and stop stirring.", "pt": "Reduza a 20–30 rpm por 1 min e pare a agitação."}, "g_5": {"es": "5. Velocidad", "en": "5. Settling rate", "pt": "5. Velocidade"}, "g_5v": {"es": "Mide el descenso de la interfaz al minuto 1.", "en": "Measure the interface drop at minute 1.", "pt": "Meça a descida da interface no minuto 1."}, "g_6": {"es": "6. Lodos", "en": "6. Mud", "pt": "6. Lodo"}, "g_6v": {"es": "Lee el volumen de lodo a los 30 minutos, ya con la sedimentación terminada. Es un dato de referencia, no un criterio de aceptación: no descarta ni aprueba una jarra. Otras referencias leen a 1, 3 y 5 min, pero eso mide compactación, no volumen final.", "en": "Read the mud volume at 30 minutes, once settling has finished. It is a reference figure, not an acceptance criterion: it neither rejects nor approves a jar. Other references read at 1, 3 and 5 min, but that measures compaction, not final volume.", "pt": "Leia o volume de lodo aos 30 minutos, já com a sedimentação concluída. É um dado de referência, não um critério de aceitação: não reprova nem aprova um jarro. Outras referências leem a 1, 3 e 5 min, mas isso mede compactação, não volume final."}, "g_7": {"es": "7. Turbidez", "en": "7. Turbidity", "pt": "7. Turbidez"}, "g_7v": {"es": "Mide la turbidez del sobrenadante en unidades ICUMSA (IU). El objetivo de 20 IU es criterio de planta, no una norma publicada: ajústalo a tu ingenio.", "en": "Measure the turbidity of the supernatant in ICUMSA units (IU). The 20 IU target is a plant criterion, not a published standard: adjust it to your mill.", "pt": "Meça a turbidez do sobrenadante em unidades ICUMSA (IU). O alvo de 20 IU é critério de planta, não uma norma publicada: ajuste-o à sua usina."}, "hero_subtitulo": {"es": "Calculadoras de ingenio azucarero", "en": "Sugar mill calculators", "pt": "Calculadoras de usina de açúcar"}, "lbl_detalle": {"es": "Detalle", "en": "Detail", "pt": "Detalhe"}, "lbl_detalle_calculo": {"es": "Detalle del cálculo", "en": "Calculation detail", "pt": "Detalhe do cálculo"}, "lbl_equivalencias": {"es": "Equivalencias", "en": "Equivalents", "pt": "Equivalências"}, "lbl_muestra": {"es": "Muestra", "en": "Sample", "pt": "Amostra"}, "lbl_valor": {"es": "Valor", "en": "Value", "pt": "Valor"}, "lbl_unidad_origen": {"es": "Unidad de origen", "en": "Source unit", "pt": "Unidade de origem"}, "f_tiempo_lectura_jarra": {"es": "Tiempo de lectura (min)", "en": "Reading time (min)", "pt": "Tempo de leitura (min)"}, "lbl_resultados_jarra": {"es": "Resultados por jarra", "en": "Results per jar", "pt": "Resultados por jarro"}, "lbl_como_correr": {"es": "Cómo correr la prueba", "en": "How to run the test", "pt": "Como executar o teste"}, "cta_calculadora": {"es": "Abrir las calculadoras", "en": "Open the calculators", "pt": "Abrir as calculadoras"}, "lbl_volver_sitio": {"es": "SugarPlantCalc.com", "en": "SugarPlantCalc.com", "pt": "SugarPlantCalc.com"}, "lbl_prueba_jarras_titulo": {"es": "Prueba de jarras", "en": "Jar test", "pt": "Teste de jarros"}, "lbl_ppm": {"es": "ppm", "en": "ppm", "pt": "ppm"}, "a_borde_superior": {"es": "La jarra elegida es la de mayor dosis: el óptimo puede estar por encima del rango probado. Repite la serie subiendo las dosis.", "en": "The chosen jar is the highest dose: the optimum may lie above the tested range. Repeat the series with higher doses.", "pt": "O jarro escolhido é o de maior dose: o ótimo pode estar acima da faixa testada. Repita a série com doses maiores."}, "a_borde_inferior": {"es": "La jarra elegida es la de menor dosis: el óptimo puede estar por debajo. Repite la serie bajando las dosis.", "en": "The chosen jar is the lowest dose: the optimum may lie below. Repeat the series with lower doses.", "pt": "O jarro escolhido é o de menor dose: o ótimo pode estar abaixo. Repita a série com doses menores."}};
+var LANG = "pt";
+function t(k){ var e=I18N[k]; if(!e) return k; return e[LANG]||e.es||k; }
+function tf(k){ var s=t(k); for(var i=1;i<arguments.length;i++){ s=s.split("{"+(i-1)+"}").join(arguments[i]); } return s; }
+
+var F_P=0.7243,F_CAO=0.7569,D_CAOH2=2.24;
+function g(id){return document.getElementById(id)}
+function n(id){var e=g(id);if(!e)return 0;var x=parseFloat((e.value||"").replace(",","."));return isFinite(x)?x:0}
+function f(x,d){return (!isFinite(x))?"—":x.toFixed(d)}
+function set(id,v){var e=g(id);if(e)e.textContent=v}
+function rhoJugo(bx,t){
+  var rho20=998.70+3.91679*bx+0.0135108*bx*bx+2.95998e-5*bx*bx*bx;
+  var dt=t-20;
+  return rho20-(0.24707*dt+0.003169*dt*dt);
+}
+function sgBaume(b){return b<145?145/(145-b):1}
+function tabla(id,filas){g(id).innerHTML=filas.map(function(r){
+  return '<div class="row"><span>'+r[0]+'</span><span>'+r[1]+'</span></div>'}).join("")}
+function aviso(id,msg){var e=g(id);if(msg){e.textContent=msg;e.style.display="block"}else{e.style.display="none"}}
+
+var SECCIONES=["inicio","conversion","pureza","densidad","rendimiento","molienda","dextranasa","amilasa",
+  "acido","cal","floc","jarras","evaporacion","solubilidad","tachos"];
+
+function ir(id){
+  SECCIONES.forEach(function(s){g(s).hidden=(s!==id)});
+  window.scrollTo(0,0);
+  if(location.hash!=="#"+id)history.pushState({v:id},"","#"+id);
+}
+window.addEventListener("popstate",function(e){
+  var v=(e.state&&e.state.v)||(location.hash||"#inicio").slice(1);
+  SECCIONES.forEach(function(s){g(s).hidden=(s!==v)});
+});
+
+function calcAcido(){
+  var q=n('a_q'),bx=n('a_bx'),tC=n('a_t'),pn=n('a_pn'),po=n('a_po'),ef=n('a_ef'),c=n('a_c'),d=n('a_d'),hd=n('a_hd');
+  var rho=rhoJugo(bx,tC),m=q*rho,def=Math.max(po-pn,0),e=ef>0?ef/100:1;
+  var p=m*def/1e6/e,h=p/F_P,com=c>0?h/(c/100):0,lh=d>0?com/d:0,lm=lh/60;
+  set('a_lh',f(lh,1));set('a_lm',f(lm,3));set('a_ld',f(lh*hd,0));
+  tabla('a_det',[[t('d_densidad_jugo'),f(rho,1)+" kg/m³"],[t('d_flujo_masico'),f(m/1000,1)+" t/h"],
+    [t('d_deficit'),f(def,0)+" ppm"],[t('d_p2o5_adic'),f(p,2)+" kg/h"],
+    [t('d_h3po4_puro'),f(h,2)+" kg/h"],[t('d_acido_masa'),f(com,2)+" kg/h"]]);
+  aviso('a_w', po-pn<=0?t('av_acido_cubierto') : po<250?t('av_acido_bajo') : po>400?t('av_acido_alto') : null);
+}
+function calcCal(){
+  var q=n('c_q'),bx=n('c_bx'),tC=n('c_t'),dem=n('c_dem'),tch=n('c_tch'),hd=n('c_hd'),be=n('c_be'),pu=n('c_pu'),ea=n('c_ea');
+  var rho=rhoJugo(bx,tC),sg=sgBaume(be);
+  var frac=Math.max((1-1/sg)/(1-1/D_CAOH2),0);
+  var gCoh=frac*sg*1000,gCao=gCoh*F_CAO;
+  var cao=q*dem,coh=cao/F_CAO,lh=gCao>0?cao*1000/gCao:0,lm=lh/60;
+  var rend=(pu>0?pu/100:1)*(ea>0?ea/100:1),cv=rend>0?cao/rend:0;
+  var agua=Math.max(lh*sg-cv,0),caotc=tch>0?cao/tch:0;
+  set('c_lh',f(lh,0));set('c_lm',f(lm,1));set('c_td',f(cv*hd/1000,2));
+  tabla('c_det',[[t('d_densidad_jugo'),f(rho,1)+" kg/m³"],[t('d_densidad_lechada'),f(sg,4)+" kg/L"],
+    [t('d_solidos'),f(frac*100,1)+" % Ca(OH)₂ p/p"],[t('d_cao_req'),f(cao,1)+" kg/h"],
+    [t('d_caoh2_eq'),f(coh,1)+" kg/h"],[t('d_cal_viva_com'),f(cv,1)+" kg/h"],
+    [t('d_agua_apagado'),f(agua/1000,2)+" m³/h"]]);
+  aviso('c_w', be<5?t('av_cal_baja') : be>15?t('av_cal_alta') : (caotc>0&&caotc<0.5)?t('av_cal_poco') : caotc>1.5?t('av_cal_mucho') : null);
+}
+function calcFloc(){
+  var q=n('f_q'),bx=n('f_bx'),tC=n('f_t'),ppm=n('f_ppm'),hd=n('f_hd'),cs=n('f_cs'),dil=n('f_dil'),vt=n('f_vt');
+  var rho=rhoJugo(bx,tC),m=q*rho,pol=m*ppm/1e6;
+  var lh=cs>0?pol*1000/cs:0,lm=lh/60,ap=lh*(1+dil),apm=ap/60;
+  var agua=lh*dil,capl=ap>0?pol*1000/ap:0,dur=lh>0?vt*1000/lh:0;
+  set('f_kd',f(pol*hd,1));set('f_lm',f(lm,1));set('f_du',f(dur,1));
+  tabla('f_det',[[t('d_densidad_jugo'),f(rho,1)+" kg/m³"],[t('d_flujo_masico'),f(m/1000,1)+" t/h"],
+    [t('d_polimero_req'),f(pol,3)+" kg/h"],[t('d_agua_dilucion'),f(agua/1000,2)+" m³/h"],
+    [t('d_conc_aplicada'),f(capl,3)+" g/L"],[t('d_polvo_batch'),f(vt*cs,1)+" kg"],
+    [t('d_batches_dia'),dur>0?f(hd/dur,1):"—"]]);
+  aviso('f_w', cs>2?t('av_floc_sol_alta') : cs<0.3?t('av_floc_sol_baja') : ppm<1?t('av_floc_dosis_baja')
+    : ppm>6?t('av_floc_dosis_alta') : (dur>0&&dur<1.5)?t('av_floc_batch') : null);
+}
+
+var NJ=6;
+function construirJarras(){
+  var h="";
+  for(var i=1;i<=NJ;i++){
+    h+='<div class="jar" id="j_row'+i+'">'
+      +'<div class="jh"><span class="jn">'+tf('j_jarra',i)+'</span><span class="js" id="j_sc'+i+'"></span>'
+      +'<span class="jml" id="j_ml'+i+'">—</span></div>'
+      +'<div class="g4">'
+      +'<div><label>'+t('lbl_ppm')+'</label><input id="j_p'+i+'" value="'+i+'" inputmode="decimal"></div>'
+      +'<div><label>'+t('f_interfaz')+'</label><input id="j_h'+i+'" value="" inputmode="decimal"></div>'
+      +'<div><label>'+t('f_lodo')+'</label><input id="j_l'+i+'" value="" inputmode="decimal"></div>'
+      +'<div><label>'+t('f_turbidez')+' NTU</label><input id="j_n'+i+'" value="" inputmode="decimal"></div>'
+      +'</div></div>';
+  }
+  g('j_tabla').innerHTML=h;
+}
+
+function calcJarras(){
+  var V=n('j_v'),cs=n('j_cs'),bx=n('j_bx'),tC=n('j_t'),tm=n('j_tm');
+  var rho=rhoJugo(bx,tC);
+  var masaG=V*rho/1000;
+  var datos=[];
+  for(var i=1;i<=NJ;i++){
+    var ppm=n('j_p'+i),alt=n('j_h'+i),lodo=n('j_l'+i),ntu=n('j_n'+i);
+    var mg=masaG*ppm/1000;
+    var ml=cs>0?mg/cs:0;
+    set('j_ml'+i, ppm>0? f(ml,2)+" mL":"—");
+    var vel=tm>0?alt/tm:0;
+    datos.push({i:i,ppm:ppm,vel:vel,lodo:lodo,ntu:ntu,valida:(ntu>0&&ppm>0)});
+  }
+  var validas=datos.filter(function(d){return d.valida});
+  for(var k=1;k<=NJ;k++){set('j_sc'+k,"");g('j_row'+k).classList.remove("mejor")}
+
+  if(validas.length<2){
+    set('j_opt',"—");
+    g('j_com').textContent=t('c_pocas_jarras');
+    aviso('j_w',null);
+    guia(masaG,cs,rho);
+    return;
+  }
+
+  var maxVel=Math.max.apply(null,validas.map(function(d){return d.vel}));
+  var lodos=validas.filter(function(d){return d.lodo>0}).map(function(d){return d.lodo});
+  var minLodo=lodos.length?Math.min.apply(null,lodos):0;
+  var minNtu=Math.min.apply(null,validas.map(function(d){return d.ntu}));
+
+  validas.forEach(function(d){
+    var nTurb=minNtu/d.ntu;
+    var nVel=maxVel>0?d.vel/maxVel:0;
+    var nLodo=(minLodo>0&&d.lodo>0)?minLodo/d.lodo:0;
+    var peso=0.45+0.35+(nLodo>0?0.20:0);
+    d.score=100*(0.45*nTurb+0.35*nVel+(nLodo>0?0.20*nLodo:0))/peso;
+  });
+
+  var mejor=validas.slice().sort(function(a,b){return b.score-a.score})[0];
+  validas.forEach(function(d){set('j_sc'+d.i,f(d.score,0))});
+  g('j_row'+mejor.i).classList.add("mejor");
+
+  set('j_opt',f(mejor.ppm,1));
+  var partes=[tf('j_jarra',mejor.i)+": "+f(mejor.ntu,0)+" NTU"];
+  if(mejor.vel>0)partes.push(f(mejor.vel,1)+" cm/min");
+  if(mejor.lodo>0)partes.push(f(mejor.lodo,0)+" %");
+  g('j_com').textContent=partes.join(" · ")+".";
+
+  var ordenadas=validas.slice().sort(function(a,b){return a.ppm-b.ppm});
+  var msg=null;
+  if(mejor.ppm===ordenadas[ordenadas.length-1].ppm) msg=t('a_borde_superior');
+  else if(mejor.ppm===ordenadas[0].ppm) msg=t('a_borde_inferior');
+  aviso('j_w',msg);
+  guia(masaG,cs,rho);
+}
+
+function guia(masaG,cs,rho){
+  var ej=cs>0?(masaG*3/1000)/cs:0;
+  g('j_guia').innerHTML=[
+    [t('g_1'),t('g_1v')], [t('g_2'),t('g_2v')], [t('g_3'),t('g_3v')],
+    [t('g_4'),t('g_4v')], [t('g_5'),t('g_5v')], [t('g_6'),t('g_6v')], [t('g_7'),t('g_7v')],
+    [t('d_densidad_usada'), tf('d_densidad_usada_v', f(rho,1), f(masaG,0))],
+    [t('d_ejemplo_3ppm'), tf('d_ejemplo_3ppm_v', f(ej,2))]
+  ].map(function(r){return '<div class="row"><span>'+r[0]+'</span><span style="font-weight:400;text-align:right;max-width:62%">'+r[1]+'</span></div>'}).join("");
+}
+
+function llevarAFloculante(){
+  var v=g('j_opt').textContent;
+  if(v&&v!=="—"){g('f_ppm').value=v;calcular();ir('floc')}
+}
+
+/* ---------------------------------------------------------- Conversión de unidades */
+var CATEGORIAS_CONV={
+  temp:{esp:"temp",unidades:[{c:"°C"},{c:"°F"}]},
+  pres:{unidades:[{k:"u_kpa",fa:1},{k:"u_bar",fa:100},{k:"u_psi",fa:6.894757},{k:"u_kgcm2",fa:98.0665},{k:"u_mmhg",fa:0.1333224}]},
+  caudal:{unidades:[{k:"u_ls",fa:1},{k:"u_m3h",fa:1/3.6},{k:"u_gpm",fa:0.0630902}]},
+  masa:{unidades:[{k:"u_kg",fa:1},{k:"u_t",fa:1000},{k:"u_lb",fa:0.4535924}]},
+  vol:{unidades:[{k:"u_l",fa:1},{k:"u_m3",fa:1000},{k:"u_gal",fa:3.785412}]},
+  conc:{esp:"conc",unidades:[{k:"u_pct"},{k:"u_ppm"},{k:"u_mgl"}]},
+  energia:{unidades:[{k:"u_kj",fa:1},{k:"u_kcal",fa:4.184},{k:"u_btu",fa:1.055056}]},
+  potencia:{unidades:[{k:"u_kw",fa:1},{k:"u_hp",fa:0.7456999}]},
+  cond:{unidades:[{k:"u_uscm",fa:1},{k:"u_mscm",fa:1000}]},
+  visc:{unidades:[{k:"u_cp",fa:1},{k:"u_pas",fa:1000}]}
+};
+function cambiarCategoriaConversion(){
+  var cat=CATEGORIAS_CONV[g('cv_cat').value];
+  var sel=g('cv_unidad');
+  sel.innerHTML=cat.unidades.map(function(u,i){
+    var etiqueta = u.c ? u.c : t(u.k);
+    return '<option value="'+i+'">'+etiqueta+'</option>';
+  }).join("");
+  g('cv_dens_wrap').hidden=(cat.esp!=='conc');
+  calcular();
+}
+function calcConversion(){
+  var cat=CATEGORIAS_CONV[g('cv_cat').value];
+  var idx=parseInt(g('cv_unidad').value||"0",10),val=n('cv_val'),dens=n('cv_dens');
+  var filas;
+  if(cat.esp==='temp'){
+    var c=cat.unidades[idx].c==='°F'?(val-32)*5/9:val;
+    filas=cat.unidades.map(function(u){var v=u.c==='°F'?c*9/5+32:c;return[u.c,f(v,2)]});
+  } else if(cat.esp==='conc'){
+    var d=dens>0?dens:1;
+    var ppm;
+    if(cat.unidades[idx].k==='u_pct')ppm=val*10000;
+    else if(cat.unidades[idx].k==='u_mgl')ppm=val/d;
+    else ppm=val;
+    filas=cat.unidades.map(function(u){
+      var v=u.k==='u_pct'?ppm/10000:(u.k==='u_mgl'?ppm*d:ppm);
+      return[t(u.k),f(v,2)];
+    });
+  } else {
+    var base=val*cat.unidades[idx].fa;
+    filas=cat.unidades.map(function(u){return[t(u.k),f(base/u.fa,4)]});
+  }
+  tabla('cv_det',filas);
+}
+
+/* ---------------------------------------------------------- Pureza (Brix/Pol) */
+function calcPureza(){
+  var bx=n('pz_bx'),pol=n('pz_pol');
+  if(bx<=0||pol<=0){set('pz_r','—');aviso('pz_w',null);return}
+  var p=pol/bx*100;
+  set('pz_r',f(p,1));
+  aviso('pz_w', pol>bx?t('av_pureza_imposible') : p<70?tf('av_pureza_baja',f(p,1)) : null);
+}
+
+/* ---------------------------------------------------------- Densidad por producto */
+var PRODUCTOS_DENS={jugo:{min:10,max:20,factor:1.0},meladura:{min:55,max:70,factor:1.0},miel:{min:80,max:95,factor:1.010}};
+function calcDensidad(){
+  var prod=PRODUCTOS_DENS[g('dn_prod').value],bx=n('dn_bx'),tC=n('dn_t');
+  if(bx<=0){set('dn_kgl','—');set('dn_be','—');tabla('dn_det',[]);aviso('dn_w',null);return}
+  var rho=rhoJugo(bx,tC)*prod.factor;
+  var kgl=rho/1000,sg=kgl/0.998203,be=sg>0?145-145/sg:0;
+  set('dn_kgl',f(kgl,4));set('dn_be',f(be,1));
+  tabla('dn_det',[[t('d_sg')+" (20 °C)",f(sg,4)]]);
+  aviso('dn_w', bx<prod.min?tf('av_dens_bajo',prod.min,prod.max) : bx>prod.max?tf('av_dens_alto',prod.min,prod.max) : null);
+}
+
+/* ---------------------------------------------------------- Rendimiento fabril */
+function calcRendimiento(){
+  var az=n('rf_az'),cana=n('rf_cana'),pol=n('rf_pol');
+  if(az<0||cana<=0){set('rf_rend','—');set('rf_kg','—');tabla('rf_det',[]);aviso('rf_w',null);return}
+  var rend=az/cana*100,kg=az*1000/cana,hayPol=pol>0,recobrado=hayPol?rend/pol*100:0;
+  set('rf_rend',f(rend,2));set('rf_kg',f(kg,1));
+  tabla('rf_det', hayPol?[[t('r_recobrado_global'),f(recobrado,1)+" %"]]:[]);
+  aviso('rf_w', (hayPol&&rend>pol)?t('av_rendimiento_imposible'):null);
+}
+
+/* ---------------------------------------------------------- Solubilidad (reusada por Tachos) */
+function solPuraPct(t){return 64.397+0.07251*t+0.0020569*t*t-9.035e-6*t*t*t}
+function calcSolub(brix,pureza,temp,coef){
+  if(brix<=0||brix>=100||pureza<=0)return{valida:false};
+  var c=coef>0?coef:1,satPura=solPuraPct(temp);
+  var gAgua=satPura<100?100*satPura/(100-satPura):0;
+  var qSatPura=satPura<100?satPura/(100-satPura):0;
+  var qSat=qSatPura*c;
+  var sacarosa=brix*pureza/100,agua=100-brix;
+  var q=agua>0?sacarosa/agua:0,y=qSat>0?q/qSat:0;
+  return{valida:true,satPura:satPura,gAgua:gAgua,q:q,qSat:qSat,y:y,tempOk:(temp>=0&&temp<=100)};
+}
+function avisoSolub(r){
+  if(!r.valida)return null;
+  if(!r.tempOk)return t('av_sol_temp');
+  if(r.y>1.3)return tf('av_sol_labil',f(r.y,2));
+  if(r.y>1.2)return tf('av_sol_intermedia',f(r.y,2));
+  if(r.y>=1.0)return tf('av_sol_metaestable',f(r.y,2));
+  if(r.y>0)return tf('av_sol_insaturada',f(r.y,2));
+  return null;
+}
+function calcSolubilidad(){
+  var r=calcSolub(n('sb_bx'),n('sb_pu'),n('sb_t'),n('sb_coef'));
+  set('sb_y', r.valida?f(r.y,3):"—");
+  tabla('sb_det', r.valida?[
+    [t('d_sol_pura'),f(r.satPura,2)+" %"],
+    [t('d_sol_gagua'),f(r.gAgua,1)],
+    [t('d_rel_sacagua'),f(r.q,3)],
+    [t('d_rel_sat'),f(r.qSat,3)]
+  ]:[]);
+  aviso('sb_w', avisoSolub(r));
+}
+
+/* ---------------------------------------------------------- Cristalización en tachos */
+function calcTachos(){
+  var bxl=n('tc_bxl'),pul=n('tc_pul'),bxm=n('tc_bxm'),pum=n('tc_pum'),pumm=n('tc_pumm'),puc=n('tc_puc'),
+      temp=n('tc_temp'),vac=n('tc_vac'),vol=n('tc_vol'),dens=n('tc_dens'),coef=n('tc_coef');
+  var invalido=bxl<=0||pul<=0||bxm<=0||pum<=0||pumm<=0||pumm>=100||puc<=pumm||vol<=0||dens<=0;
+  if(invalido){set('tc_y','—');set('tc_pc','—');set('tc_sjm','—');tabla('tc_det',[]);aviso('tc_w',null);return}
+  var sol=calcSolub(bxm,pum,temp,coef);
+  var sjm=(puc*(pul-pumm))/(pul*(puc-pumm))*100;
+  var pctCristal=(bxm*(pum-pumm))/(100-pumm);
+  var tonMasa=vol*dens;
+  var tonLicor=tonMasa*(bxm/bxl);
+  var aguaEvap=tonLicor-tonMasa;
+  set('tc_y', sol.valida?f(sol.y,3):"—");
+  set('tc_pc',f(pctCristal,1));
+  set('tc_sjm',f(sjm,1));
+  tabla('tc_det',[
+    [t('r_ton_masa_cocida'),f(tonMasa,2)+" t"],
+    [t('r_ton_licor_requerido'),f(tonLicor,2)+" t"],
+    [t('r_agua_evaporada_tacho'),f(aguaEvap,2)+" t"]
+  ]);
+  var avisos=[];
+  var av0=avisoSolub(sol);if(av0)avisos.push(av0);
+  if(pctCristal<30)avisos.push(tf('av_tacho_bajo_cristal',f(pctCristal,1)));
+  if(vac>0&&vac<25)avisos.push(tf('av_tacho_vacio_bajo',f(vac,1)));
+  if(pum<pumm||pum>pul)avisos.push(tf('av_tacho_pureza_inconsistente',f(pum,1),f(pumm,1),f(pul,1)));
+  if(sjm<0||sjm>100||pctCristal<0||pctCristal>100)avisos.push(t('av_tacho_datos_invalidos'));
+  aviso('tc_w', avisos.length?avisos.join("\n\n"):null);
+}
+
+/* ---------------------------------------------------------- Tándem de molinos */
+function calcMolienda(){
+  var tch=n('ml_tch'),polc=n('ml_polc'),fibc=n('ml_fibc'),polb=n('ml_polb'),fibb=n('ml_fibb'),
+      bxp=n('ml_bxp'),polp=n('ml_polp'),bxm=n('ml_bxm'),imb=n('ml_imb'),maza=n('ml_maza');
+  var invalido=tch<=0||fibc<=0||fibc>=100||fibb<=0||polc<=0||maza<=0;
+  if(invalido){["ml_ext","ml_extr","ml_imbf"].forEach(function(id){set(id,'—')});tabla('ml_det',[]);aviso('ml_w',null);return}
+  var fibraTh=tch*(fibc/100);
+  var imbFibra=(imb/fibc)*100;
+  var aguaH=tch*(imb/100);
+  var bagCana=(fibc/fibb)*100;
+  var extPol=100-((polb*fibc)/(fibb*polc))*100;
+  var extRed=100-((100-extPol)*(fibc/12.5)*(87.5/(100-fibc)));
+  var hayPolP=polp>0;
+  var jugoPerdido=hayPolP?(polb*100*100)/(polp*fibb):0;
+  var bxmEsperado=bxp*(1-(imb/(100+imb)));
+  var tchPie=tch/maza;
+  set('ml_ext',f(extPol,2));set('ml_extr',f(extRed,2));set('ml_imbf',f(imbFibra,1));
+  tabla('ml_det',[
+    [t('r_fibra_ton_h'),f(fibraTh,2)+" t/h"],
+    [t('r_flujo_agua_h'),f(aguaH,2)+" t/h"],
+    [t('r_bagazo_cana'),f(bagCana,2)+" %"],
+    [t('r_jugo_perdido_fibra'), hayPolP?(f(jugoPerdido,2)+" %"):"—"],
+    [t('r_brix_mezclado_esperado'),f(bxmEsperado,2)+" °Bx"],
+    [t('r_tch_por_pie'),f(tchPie,2)+" "+t('u_tch_pie')]
+  ]);
+  var avisos=[];
+  if(imbFibra<200)avisos.push(tf('av_molinos_imbibicion_baja',f(imbFibra,1)));
+  if(imbFibra>250)avisos.push(tf('av_molinos_imbibicion_alta',f(imbFibra,1)));
+  if(bxm>0&&Math.abs(bxm-bxmEsperado)>0.8)avisos.push(tf('av_molinos_brix_desviado',f(bxm,1),f(bxmEsperado,1)));
+  if(hayPolP&&jugoPerdido>40)avisos.push(tf('av_molinos_jugo_perdido_alto',f(jugoPerdido,1)));
+  aviso('ml_w', avisos.length?avisos.join("\n\n"):null);
+}
+
+/* ---------------------------------------------------------- Dosificación de enzimas */
+function calcEnzima(flujoTh,sustratoPpm,dosisPpm,densEnz,dilucionPct){
+  if(flujoTh<=0||densEnz<=0||dilucionPct<=0)return{valida:false};
+  var sustratoKgH=(flujoTh*sustratoPpm)/1000;
+  var enzGH=flujoTh*dosisPpm;
+  var enzKgDia=(enzGH*24)/1000;
+  var enzMlMin=(enzGH/densEnz)/60;
+  var enzLH=(enzGH/densEnz)/1000;
+  var caudalBombaLH=enzLH/(dilucionPct/100);
+  return{valida:true,sustratoKgH:sustratoKgH,enzGH:enzGH,enzKgDia:enzKgDia,enzMlMin:enzMlMin,caudalBombaLH:caudalBombaLH};
+}
+function avisosDextranasa(dextrano,temp,tr){
+  var avisos=[];
+  if(dextrano>500)avisos.push(tf('av_dextranasa_dextrano_severo',f(dextrano,0)));
+  var tempAlta=temp>65,tempBaja=(temp>0.001&&temp<44.999),tiempoBajo=tr<10;
+  if((tempAlta&&tiempoBajo)||(tempBaja&&tiempoBajo)){
+    avisos.push(tf('av_dextranasa_doble_falla',f(temp,1),f(tr,1)));
+  } else {
+    if(tempAlta)avisos.push(tf('av_dextranasa_temp_alta',f(temp,1)));
+    if(tempBaja)avisos.push(tf('av_dextranasa_temp_baja',f(temp,1)));
+    if(tiempoBajo)avisos.push(tf('av_dextranasa_residencia_baja',f(tr,1)));
+  }
+  return avisos;
+}
+function calcDextranasa(){
+  var flujo=n('dx_flujo'),dext=n('dx_dext'),dosis=n('dx_dosis'),dens=n('dx_dens'),dil=n('dx_dil'),temp=n('dx_temp'),tr=n('dx_tr');
+  var r=calcEnzima(flujo,dext,dosis,dens,dil);
+  set('dx_bomba', r.valida?f(r.caudalBombaLH,3):"—");
+  set('dx_gh', r.valida?f(r.enzGH,1):"—");
+  set('dx_kgd', r.valida?f(r.enzKgDia,2):"—");
+  tabla('dx_det', r.valida?[[t('f_dextrano_ppm'),f(r.sustratoKgH,2)+" kg/h"],[t('u_ml_min'),f(r.enzMlMin,2)]]:[]);
+  var avisos=avisosDextranasa(dext,temp,tr);
+  aviso('dx_w', avisos.length?avisos.join("\n\n"):null);
+}
+function avisosAmilasa(almidon,temp,tr){
+  var avisos=[];
+  if(almidon>500)avisos.push(tf('av_amilasa_almidon_alto',f(almidon,0)));
+  var tempAlta=temp>98,tempBaja=(temp>0.001&&temp<74.999),tiempoBajo=tr<5;
+  if((tempAlta&&tiempoBajo)||(tempBaja&&tiempoBajo)){
+    avisos.push(tf('av_amilasa_doble_falla',f(temp,1),f(tr,1)));
+  } else {
+    if(tempAlta)avisos.push(tf('av_amilasa_temp_alta',f(temp,1)));
+    if(tempBaja)avisos.push(tf('av_amilasa_temp_baja',f(temp,1)));
+    if(tiempoBajo)avisos.push(tf('av_amilasa_residencia_baja',f(tr,1)));
+  }
+  return avisos;
+}
+function calcAmilasa(){
+  var flujo=n('am_flujo'),alm=n('am_alm'),dosis=n('am_dosis'),dens=n('am_dens'),dil=n('am_dil'),temp=n('am_temp'),tr=n('am_tr');
+  var r=calcEnzima(flujo,alm,dosis,dens,dil);
+  set('am_bomba', r.valida?f(r.caudalBombaLH,3):"—");
+  set('am_gh', r.valida?f(r.enzGH,1):"—");
+  set('am_kgd', r.valida?f(r.enzKgDia,2):"—");
+  tabla('am_det', r.valida?[[t('f_almidon_ppm'),f(r.sustratoKgH,2)+" kg/h"],[t('u_ml_min'),f(r.enzMlMin,2)]]:[]);
+  var avisos=avisosAmilasa(alm,temp,tr);
+  aviso('am_w', avisos.length?avisos.join("\n\n"):null);
+}
+
+/* ---------------------------------------------------------- Evaporación */
+function economiaTipica(ne){return ne===3?2.6:ne===4?3.2:ne===5?4.0:3.2}
+function calcEvaporacion(){
+  var flujo=n('ev_flujo'),bxc=n('ev_bxc'),bxt=n('ev_bxt'),bxr=n('ev_bxr'),vap=n('ev_vap'),
+      numEf=parseInt(g('ev_efectos').value||"4",10),area=n('ev_area'),vac=n('ev_vac');
+  var invalido=flujo<=0||bxt<=0||vap<=0||area<=0;
+  if(invalido){["ev_agua","ev_econ"].forEach(function(id){set(id,'—')});tabla('ev_det',[]);aviso('ev_w',null);return}
+  var pctEvap=(1-(bxc/bxt))*100;
+  var aguaH=flujo*(pctEvap/100);
+  var meladuraH=flujo-aguaH;
+  var econ=aguaH/vap;
+  var tasa=(aguaH*1000)/area;
+  var aguaEsperadaVapor=vap*economiaTipica(numEf);
+  var meladuraEsperada=flujo-aguaEsperadaVapor;
+  var bxTeorico=meladuraEsperada>0?bxc*flujo/meladuraEsperada:0;
+  set('ev_agua',f(aguaH,2));set('ev_econ',f(econ,2));
+  tabla('ev_det',[
+    [t('r_porcentaje_evaporacion'),f(pctEvap,2)+" %"],
+    [t('r_flujo_meladura_h'),f(meladuraH,2)+" t/h"],
+    [t('r_tasa_evaporacion_especifica'),f(tasa,1)+" "+t('u_kg_m2h')],
+    [t('r_brix_meladura_teorico'), bxr>0?(f(bxTeorico,1)+" °Bx"):"—"]
+  ]);
+  var avisos=[];
+  if(bxr>0&&bxr<60)avisos.push(tf('av_evap_meladura_liviana',f(bxr,1)));
+  if(bxr>70)avisos.push(tf('av_evap_meladura_concentrada',f(bxr,1)));
+  if(numEf===4&&econ<3.2)avisos.push(tf('av_evap_economia_baja_4',f(econ,2)));
+  if(numEf===5&&econ<4.0)avisos.push(tf('av_evap_economia_baja_5',f(econ,2)));
+  if(vac>0&&vac<24)avisos.push(tf('av_evap_vacio_bajo',f(vac,1)));
+  if(bxr>0&&meladuraEsperada>0&&Math.abs(bxr-bxTeorico)>2)avisos.push(tf('av_evap_brix_desviado',f(bxr,1),f(bxTeorico,1)));
+  aviso('ev_w', avisos.length?avisos.join("\n\n"):null);
+}
+
+function calcular(){
+  calcAcido();calcCal();calcFloc();calcJarras();
+  calcConversion();calcPureza();calcDensidad();calcRendimiento();
+  calcMolienda();calcDextranasa();calcAmilasa();calcEvaporacion();
+  calcSolubilidad();calcTachos();
+  guardar();
+}
+
+function aplicarTextosEstaticos(){
+  document.querySelectorAll('[data-t]').forEach(function(e){
+    e.textContent = t(e.getAttribute('data-t'));
+  });
+}
+
+construirJarras();
+aplicarTextosEstaticos();
+var CAMPOS=[];
+document.querySelectorAll("input,select").forEach(function(e){
+  CAMPOS.push(e.id);
+  e.addEventListener("input",calcular);
+  e.addEventListener("change",calcular);
+});
+function guardar(){try{var o={};CAMPOS.forEach(function(k){o[k]=g(k).value});
+  localStorage.setItem("ingeniocalc_"+LANG,JSON.stringify(o))}catch(_){}}
+function restaurar(){try{var o=JSON.parse(localStorage.getItem("ingeniocalc_"+LANG)||"{}");
+  CAMPOS.forEach(function(k){if(o[k]!=null)g(k).value=o[k]})}catch(_){}}
+
+restaurar();
+cambiarCategoriaConversion();
+var inicial=(location.hash||"#inicio").slice(1);
+if(SECCIONES.indexOf(inicial)<0)inicial="inicio";
+SECCIONES.forEach(function(s){g(s).hidden=(s!==inicial)});
+history.replaceState({v:inicial},"","#"+inicial);
+calcular();
+</script>
+</body>
+</html>
