@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#121417">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>Calculadora Fórmula S-J-M: Eficiencia de Cristalización</title>
+<meta name="description" content="Calcula el rendimiento S-J-M y el % de cristal en masa cocida a partir de purezas de licor, masa y miel madre. Incluye alertas de sobresaturación.">
+<link rel="canonical" href="https://sugarplantcalc.com/calculadoras/formula-sjm-cristalizacion-tachos/">
+<link rel="alternate" hreflang="es" href="https://sugarplantcalc.com/calculadoras/formula-sjm-cristalizacion-tachos/">
+<link rel="alternate" hreflang="en" href="https://sugarplantcalc.com/en/calculadoras/sjm-formula-massecuite-crystallization/">
+<link rel="alternate" hreflang="pt" href="https://sugarplantcalc.com/pt/calculadoras/formula-sjm-cristalizacao-cozimento/">
+<link rel="alternate" hreflang="x-default" href="https://sugarplantcalc.com/calculadoras/formula-sjm-cristalizacion-tachos/">
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/img/logo.png" type="image/png">
+<link rel="apple-touch-icon" href="/assets/img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/calc-theme.css">
+<link rel="stylesheet" href="/assets/css/calc-page.css">
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://sugarplantcalc.com/calculadoras/formula-sjm-cristalizacion-tachos/#app",
+      "name": "Calculadora de Cristalización: Fórmula S-J-M y % de Cristal en Masa Cocida",
+      "url": "https://sugarplantcalc.com/calculadoras/formula-sjm-cristalizacion-tachos/",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web",
+      "description": "Calcula el rendimiento S-J-M y el % de cristal en masa cocida a partir de purezas de licor, masa y miel madre. Incluye alertas de sobresaturación.",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "author": { "@type": "Person", "name": "Ing. Yeider Rodríguez Molina" },
+      "inLanguage": "es"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://sugarplantcalc.com/calculadoras/formula-sjm-cristalizacion-tachos/#faq",
+      "mainEntity": [
+        { "@type": "Question", "name": "¿Qué significa S-J-M en cristalización de azúcar?", "acceptedAnswer": { "@type": "Answer", "text": "Identifica las tres purezas del balance: Sacarosa (cristal), Jugo (licor madre) y Miel (miel madre). También se conoce como fórmula de purity drop o caída de pureza." } },
+        { "@type": "Question", "name": "¿Cuál es el % de cristal ideal en una masa cocida A?", "acceptedAnswer": { "@type": "Answer", "text": "Típicamente entre 40% y 55%. Por debajo de 30% se considera bajo contenido de cristal." } },
+        { "@type": "Question", "name": "¿Cómo se relaciona la pureza de la miel madre con el agotamiento?", "acceptedAnswer": { "@type": "Answer", "text": "La miel madre debe tener pureza menor que la masa cocida y que el licor de alimentación. Si esa relación no se cumple, los datos son inconsistentes." } },
+        { "@type": "Question", "name": "¿Qué es el coeficiente de sobresaturación y cómo se usa aquí?", "acceptedAnswer": { "@type": "Answer", "text": "Es un factor derivado de la solubilidad de la sacarosa a la temperatura de trabajo, calculado en detalle en la calculadora de Solubilidad y usado aquí como insumo del balance." } }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://sugarplantcalc.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Calculadoras", "item": "https://sugarplantcalc.com/calculadoras/" },
+        { "@type": "ListItem", "position": 3, "name": "Calculadora de Cristalización: Fórmula S-J-M y % de Cristal en Masa Cocida", "item": "https://sugarplantcalc.com/calculadoras/formula-sjm-cristalizacion-tachos/" }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="cookie-banner" hidden id="cookieBanner" role="dialog" aria-label="Cookie notice">
+<div class="cookie-banner-inner">
+<p class="cookie-banner-text">Usamos cookies propias y de Google Analytics para entender cómo se usa este sitio y mejorarlo. Google Analytics solo se activa si aceptas. <a href="https://sites.google.com/view/sugarplantcalc-privacidad" rel="noopener" target="_blank">Más información</a>.</p>
+<div class="cookie-banner-actions">
+<button class="cookie-btn cookie-btn-reject" id="cookieReject" type="button">Rechazar</button>
+<button class="cookie-btn cookie-btn-accept" id="cookieAccept" type="button">Aceptar</button>
+</div>
+</div>
+</div>
+
+<div class="wrap calc-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+<a href="https://sugarplantcalc.com/">Inicio</a> &rsaquo; <a href="https://sugarplantcalc.com/calculadoras/">Calculadoras</a> &rsaquo; <span>Calculadora de Cristalización: Fórmula S-J-M y % de Cristal en Masa Cocida</span>
+</nav>
+
+<article>
+<h1>Calculadora de Cristalización: Fórmula S-J-M y % de Cristal en Masa Cocida</h1>
+
+<div class="intro"><p>La <strong>fórmula S-J-M</strong> mide qué tan eficiente es un tacho de cristalización relacionando las purezas del cristal (S), el licor de alimentación (J) y la miel madre (M). Esta calculadora obtiene el rendimiento teórico S-J-M, el % de cristal en la masa cocida y el balance de masa del tacho a partir de tus lecturas de laboratorio.</p></div>
+
+<h2>Calculadora: rendimiento S-J-M, % cristal y balance de masa</h2>
+<div class="sec"><h3>Licor de alimentación</h3>
+    <div class="grid">
+      <div><label for="tc_bxl">Brix del licor (°Bx)</label><input id="tc_bxl" value="65" inputmode="decimal"></div>
+      <div><label for="tc_pul">Pureza del licor J (%)</label><input id="tc_pul" value="85" inputmode="decimal"></div>
+    </div>
+  </div>
+  <div class="sec"><h3>Masa cocida y miel</h3>
+    <div class="grid">
+      <div><label for="tc_bxm">Brix masa cocida (°Bx)</label><input id="tc_bxm" value="92" inputmode="decimal"></div>
+      <div><label for="tc_pum">Pureza masa cocida (%)</label><input id="tc_pum" value="80" inputmode="decimal"></div>
+      <div><label for="tc_pumm">Pureza miel madre M (%)</label><input id="tc_pumm" value="60" inputmode="decimal"></div>
+      <div><label for="tc_puc">Pureza del cristal S (%)</label><input id="tc_puc" value="99.5" inputmode="decimal"></div>
+      <div class="full"><label for="tc_coef">Coef. de solubilidad</label><input id="tc_coef" value="1.0" inputmode="decimal"></div>
+    </div>
+  </div>
+  <div class="sec"><h3>Equipo</h3>
+    <div class="grid">
+      <div><label for="tc_temp">Temperatura (°C)</label><input id="tc_temp" value="65" inputmode="decimal"></div>
+      <div><label for="tc_vac">Vacío del tacho (inHg)</label><input id="tc_vac" value="26" inputmode="decimal"></div>
+      <div><label for="tc_vol">Volumen del tacho (m³)</label><input id="tc_vol" value="30" inputmode="decimal"></div>
+      <div><label for="tc_dens">Densidad masa cocida (t/m³)</label><input id="tc_dens" value="1.48" inputmode="decimal"></div>
+    </div>
+  </div>
+  <div class="res">
+    <div class="rc"><div class="lb">Sobresaturación</div><div class="vl" id="tc_y">—</div><div class="un">adim.</div></div>
+    <div class="rc"><div class="lb">% Cristal</div><div class="vl" id="tc_pc">—</div><div class="un">%</div></div>
+  </div>
+  <div class="rc wide" style="margin-bottom:10px"><div class="lb">Rendimiento teórico S-J-M</div><div class="vl" id="tc_sjm">—</div><div class="un">%</div></div>
+  <div class="warn" id="tc_w"></div>
+  <div class="det"><h4>Detalle</h4><div id="tc_det"></div></div>
+
+
+<h2>Fundamento teórico y fórmulas</h2>
+<h3>Rendimiento S-J-M</h3>
+<div class="formula-block">\[SJM(\%) = \frac{Pu_{cristal}\,(Pu_{licor}-Pu_{mielmadre})}{Pu_{licor}\,(Pu_{cristal}-Pu_{mielmadre})}\times100\]</div>
+<h3>% de cristal en masa cocida</h3>
+<div class="formula-block">\[\%Cristal = \frac{Bx_{masa}\,(Pu_{masa}-Pu_{mielmadre})}{100-Pu_{mielmadre}}\]</div>
+<h3>Balance de masa del tacho</h3>
+<div class="formula-block">\[m_{masa} = V \times \rho \qquad m_{licor} = m_{masa}\times\frac{Bx_{masa}}{Bx_{licor}} \qquad m_{agua\,evap} = m_{licor}-m_{masa}\]</div>
+<p class="lit-ref"><strong>Literatura de referencia:</strong> Peter Rein, <em>Cane Sugar Engineering</em> (cristalización y balance de masa en tachos); E. Hugot, <em>Handbook of Cane Sugar Engineering</em>; Meade–Chen, <em>Cane Sugar Handbook</em> (métodos de purity drop).</p>
+
+<h2>Rangos operacionales típicos (KPIs)</h2>
+<table class="kpi-table">
+<thead><tr><th>KPI</th><th>Rango típico</th><th>Alerta</th></tr></thead>
+<tbody>
+<tr><td>Rendimiento S-J-M</td><td>55% – 70%</td><td>Fuera de 0–100% "datos inválidos"</td></tr>
+<tr><td>% Cristal en masa cocida</td><td>40% – 55%</td><td>&lt;30% "bajo contenido de cristal"</td></tr>
+<tr><td>Relación de purezas (miel &lt; masa &lt; licor)</td><td>Debe cumplirse siempre</td><td>Si no se cumple → "pureza inconsistente"</td></tr>
+<tr><td>Vacío del tacho</td><td>≥ 25 inHg</td><td>&lt;25 inHg "vacío bajo"</td></tr>
+</tbody>
+</table>
+
+<h2>Preguntas frecuentes</h2>
+<div class="faq-list">
+<div class="faq-item"><h3>¿Qué significa S-J-M en cristalización de azúcar?</h3><p>Identifica las tres purezas del balance: Sacarosa (cristal), Jugo (licor madre) y Miel (miel madre). También se conoce como fórmula de purity drop o caída de pureza.</p></div>
+<div class="faq-item"><h3>¿Cuál es el % de cristal ideal en una masa cocida A?</h3><p>Típicamente entre 40% y 55%. Por debajo de 30% se considera bajo contenido de cristal.</p></div>
+<div class="faq-item"><h3>¿Cómo se relaciona la pureza de la miel madre con el agotamiento?</h3><p>La miel madre debe tener pureza menor que la masa cocida y que el licor de alimentación. Si esa relación no se cumple, los datos son inconsistentes.</p></div>
+<div class="faq-item"><h3>¿Qué es el coeficiente de sobresaturación y cómo se usa aquí?</h3><p>Es un factor derivado de la solubilidad de la sacarosa a la temperatura de trabajo, calculado en detalle en la calculadora de Solubilidad y usado aquí como insumo del balance.</p></div>
+</div>
+
+<p class="back-link"><a href="https://sugarplantcalc.com/calculadoras/">&lsaquo; Volver a todas las calculadoras</a></p>
+</article>
+</div>
+
+<script>
+var LBL = {"tonMasa": "Masa cocida por templada", "tonLicor": "Licor requerido", "aguaEvap": "Agua a evaporar en el tacho", "avTemp": "La temperatura está fuera del rango 0-100°C: revisa la lectura del sensor.", "avLabil": "Zona lábil (Y={0}, > 1.3): alto riesgo de nucleación espontánea (grano falso).", "avInterm": "Zona intermedia (Y={0}, 1.2–1.3): controla de cerca para evitar nucleación.", "avBajoCristal": "Bajo porcentaje de cristales ({0} %, < 30): ajusta la densidad de siembra o el tiempo de cocción.", "avVacioBajo": "Vacío bajo en el tacho ({0} inHg, < 25): sube la temperatura de ebullición y puede caramelizar la sacarosa.", "avPurezaInc": "La pureza de la masa cocida ({0} %) debería quedar entre la de la miel M ({1} %) y la del licor J ({2} %). Revisa las lecturas de laboratorio.", "avInvalido": "El rendimiento S-J-M o el % de cristal salió fuera de 0-100 %: son datos de laboratorio inconsistentes, no un resultado real."};
+
+function g(id){return document.getElementById(id)}
+function n(id){var e=g(id);if(!e)return 0;var x=parseFloat((e.value||"").replace(",","."));return isFinite(x)?x:0}
+function f(x,d){return (!isFinite(x))?"—":x.toFixed(d)}
+function set(id,v){var e=g(id);if(e)e.textContent=v}
+function tabla(id,filas){var e=g(id);if(!e)return;e.innerHTML=filas.map(function(r){return '<div class="row"><span>'+r[0]+'</span><span style="font-weight:400;text-align:right;max-width:62%">'+r[1]+'</span></div>'}).join("")}
+function aviso(id,msg){var e=g(id);if(!e)return;if(!msg){e.style.display='none';e.textContent='';return}e.style.display='block';e.textContent=msg}
+
+function solPuraPct(t){return 64.397+0.07251*t+0.0020569*t*t-9.035e-6*t*t*t}
+function calcSolub(brix,pureza,temp,coef){
+  if(brix<=0||brix>=100||pureza<=0)return{valida:false};
+  var c=coef>0?coef:1,satPura=solPuraPct(temp);
+  var qSatPura=satPura<100?satPura/(100-satPura):0;
+  var qSat=qSatPura*c;
+  var sacarosa=brix*pureza/100,agua=100-brix;
+  var q=agua>0?sacarosa/agua:0,y=qSat>0?q/qSat:0;
+  return{valida:true,satPura:satPura,q:q,qSat:qSat,y:y,tempOk:(temp>=0&&temp<=100)};
+}
+
+function calcTachos(){
+  var bxl=n('tc_bxl'),pul=n('tc_pul'),bxm=n('tc_bxm'),pum=n('tc_pum'),pumm=n('tc_pumm'),puc=n('tc_puc'),
+      temp=n('tc_temp'),vac=n('tc_vac'),vol=n('tc_vol'),dens=n('tc_dens'),coef=n('tc_coef');
+  var invalido=bxl<=0||pul<=0||bxm<=0||pum<=0||pumm<=0||pumm>=100||puc<=pumm||vol<=0||dens<=0;
+  if(invalido){set('tc_y','—');set('tc_pc','—');set('tc_sjm','—');tabla('tc_det',[]);aviso('tc_w',null);return}
+  var sol=calcSolub(bxm,pum,temp,coef);
+  var sjm=(puc*(pul-pumm))/(pul*(puc-pumm))*100;
+  var pctCristal=(bxm*(pum-pumm))/(100-pumm);
+  var tonMasa=vol*dens;
+  var tonLicor=tonMasa*(bxm/bxl);
+  var aguaEvap=tonLicor-tonMasa;
+  set('tc_y', sol.valida?f(sol.y,3):"—");
+  set('tc_pc',f(pctCristal,1));
+  set('tc_sjm',f(sjm,1));
+  tabla('tc_det',[
+    [LBL.tonMasa,f(tonMasa,2)+" t"],
+    [LBL.tonLicor,f(tonLicor,2)+" t"],
+    [LBL.aguaEvap,f(aguaEvap,2)+" t"]
+  ]);
+  var avisos=[];
+  if(sol.valida && sol.tempOk===false) avisos.push(LBL.avTemp);
+  else if(sol.valida){
+    if(sol.y>1.3)avisos.push(LBL.avLabil.replace('{0}',f(sol.y,2)));
+    else if(sol.y>1.2)avisos.push(LBL.avInterm.replace('{0}',f(sol.y,2)));
+  }
+  if(pctCristal<30)avisos.push(LBL.avBajoCristal.replace('{0}',f(pctCristal,1)));
+  if(vac>0&&vac<25)avisos.push(LBL.avVacioBajo.replace('{0}',f(vac,1)));
+  if(pum<pumm||pum>pul)avisos.push(LBL.avPurezaInc.replace('{0}',f(pum,1)).replace('{1}',f(pumm,1)).replace('{2}',f(pul,1)));
+  if(sjm<0||sjm>100||pctCristal<0||pctCristal>100)avisos.push(LBL.avInvalido);
+  aviso('tc_w', avisos.length?avisos.join("\n\n"):null);
+}
+
+var CAMPOS=[];
+document.querySelectorAll("#tc_bxl,#tc_pul,#tc_bxm,#tc_pum,#tc_pumm,#tc_puc,#tc_coef,#tc_temp,#tc_vac,#tc_vol,#tc_dens").forEach(function(e){
+  CAMPOS.push(e.id);
+  e.addEventListener("input",calcTachos);
+  e.addEventListener("change",calcTachos);
+});
+try{
+  var saved=JSON.parse(localStorage.getItem("spc_calc_tachos")||"{}");
+  CAMPOS.forEach(function(k){if(saved[k]!=null)g(k).value=saved[k]});
+}catch(_){}
+calcTachos();
+window.addEventListener('beforeunload',function(){try{var o={};CAMPOS.forEach(function(k){o[k]=g(k).value});localStorage.setItem("spc_calc_tachos",JSON.stringify(o))}catch(_){}});
+
+</script>
+<script src="/assets/js/cookie-consent.js"></script>
+</body>
+</html>
