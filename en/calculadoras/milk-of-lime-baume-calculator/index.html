@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#121417">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>Milk of Lime Calculator in Baumé Degrees</title>
+<meta name="description" content="Calculate milk of lime flow (L/h), required quicklime (t/day) and slaking water from the concentration in °Bé.">
+<link rel="canonical" href="https://sugarplantcalc.com/en/calculadoras/milk-of-lime-baume-calculator/">
+<link rel="alternate" hreflang="es" href="https://sugarplantcalc.com/calculadoras/lechada-de-cal-grados-baume/">
+<link rel="alternate" hreflang="en" href="https://sugarplantcalc.com/en/calculadoras/milk-of-lime-baume-calculator/">
+<link rel="alternate" hreflang="pt" href="https://sugarplantcalc.com/pt/calculadoras/calculadora-leite-de-cal-graus-baume/">
+<link rel="alternate" hreflang="x-default" href="https://sugarplantcalc.com/calculadoras/lechada-de-cal-grados-baume/">
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/img/logo.png" type="image/png">
+<link rel="apple-touch-icon" href="/assets/img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/calc-theme.css">
+<link rel="stylesheet" href="/assets/css/calc-page.css">
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://sugarplantcalc.com/en/calculadoras/milk-of-lime-baume-calculator/#app",
+      "name": "Milk of Lime and Baumé Degrees Calculator",
+      "url": "https://sugarplantcalc.com/en/calculadoras/milk-of-lime-baume-calculator/",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web",
+      "description": "Calculate milk of lime flow (L/h), required quicklime (t/day) and slaking water from the concentration in °Bé.",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "author": { "@type": "Person", "name": "Ing. Yeider Rodríguez Molina" },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://sugarplantcalc.com/en/calculadoras/milk-of-lime-baume-calculator/#faq",
+      "mainEntity": [
+        { "@type": "Question", "name": "Why is milk of lime handled in Baumé degrees instead of Brix?", "acceptedAnswer": { "@type": "Answer", "text": "Baumé degrees can be read directly with a hydrometer without calculating composition, and the scale is calibrated for denser suspensions like milk of lime, unlike Brix which is specific to sugar solutions." } },
+        { "@type": "Question", "name": "What happens if the milk of lime is above 15 °Bé?", "acceptedAnswer": { "@type": "Answer", "text": "A milk of lime that is too concentrated settles easily and clogs lines, valves and dosing nozzles; the recommended operating range is 6–12 °Bé to maintain good flowability." } },
+        { "@type": "Question", "name": "How does CaO demand relate to cane quality?", "acceptedAnswer": { "@type": "Answer", "text": "More deteriorated cane or juice with higher natural acidity requires more lime to reach the neutralisation pH; demands below 0.5 kg CaO/t cane usually leave the juice insufficiently neutralised." } },
+        { "@type": "Question", "name": "Why is the factor 0.7569 used in the quicklime calculation?", "acceptedAnswer": { "@type": "Answer", "text": "It is the molar mass ratio between CaO (56.08 g/mol) and Ca(OH)₂ (74.09 g/mol); it converts the equivalent Ca(OH)₂ present in the milk of lime into the amount of CaO (quicklime) needed to produce it." } }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sugarplantcalc.com/en/" },
+        { "@type": "ListItem", "position": 2, "name": "Calculators", "item": "https://sugarplantcalc.com/en/calculadoras/" },
+        { "@type": "ListItem", "position": 3, "name": "Milk of Lime and Baumé Degrees Calculator", "item": "https://sugarplantcalc.com/en/calculadoras/milk-of-lime-baume-calculator/" }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="cookie-banner" hidden id="cookieBanner" role="dialog" aria-label="Cookie notice">
+<div class="cookie-banner-inner">
+<p class="cookie-banner-text">We use our own cookies and Google Analytics cookies to understand how this site is used and improve it. Google Analytics only activates if you accept. <a href="https://sites.google.com/view/sugarplantcalc-privacidad" rel="noopener" target="_blank">More information</a>.</p>
+<div class="cookie-banner-actions">
+<button class="cookie-btn cookie-btn-reject" id="cookieReject" type="button">Reject</button>
+<button class="cookie-btn cookie-btn-accept" id="cookieAccept" type="button">Accept</button>
+</div>
+</div>
+</div>
+
+<div class="wrap calc-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+<a href="https://sugarplantcalc.com/en/">Home</a> &rsaquo; <a href="https://sugarplantcalc.com/en/calculadoras/">Calculators</a> &rsaquo; <span>Milk of Lime and Baumé Degrees Calculator</span>
+</nav>
+
+<article>
+<h1>Milk of Lime and Baumé Degrees Calculator</h1>
+
+<div class="intro"><p><strong>Milk of lime</strong> is prepared by slaking quicklime (CaO) in water to a concentration expressed in Baumé degrees, and is dosed into the juice to neutralise acidity in the liming stage. This calculator computes the milk of lime flow to the juice, the valve setting, the commercial quicklime required per day, and the approximate slaking water, from the CaO demand and milk of lime concentration.</p></div>
+
+<h2>Calculator: milk of lime flow, required quicklime and slaking water</h2>
+<div class="sec"><h3>Cane juice</h3>
+    <div class="grid">
+      <div><label for="c_q">Flow (m³/h)</label><input id="c_q" value="450" inputmode="decimal"></div>
+      <div><label for="c_bx">Brix (°Bx)</label><input id="c_bx" value="15" inputmode="decimal"></div>
+      <div><label for="c_t">Temperature (°C)</label><input id="c_t" value="35" inputmode="decimal"></div>
+      <div><label for="c_hd">Crushing hours / day</label><input id="c_hd" value="22" inputmode="decimal"></div>
+      <div><label for="c_dem">Demand (kg CaO/m³)</label><input id="c_dem" value="0.80" inputmode="decimal"></div>
+      <div><label for="c_tch">Crushing (t cane/h)</label><input id="c_tch" value="400" inputmode="decimal"></div>
+    </div>
+  </div>
+  <div class="sec"><h3>Milk of lime and quicklime</h3>
+    <div class="grid">
+      <div><label for="c_be">Concentration (°Bé)</label><input id="c_be" value="10" inputmode="decimal"></div>
+      <div><label for="c_pu">Quicklime purity (% CaO)</label><input id="c_pu" value="88" inputmode="decimal"></div>
+      <div class="full"><label for="c_ea">Slaking efficiency (%)</label><input id="c_ea" value="92" inputmode="decimal"></div>
+    </div>
+  </div>
+  <div class="res">
+    <div class="rc"><div class="lb">Milk of lime to juice</div><div class="vl" id="c_lh">—</div><div class="un">L/h</div></div>
+    <div class="rc"><div class="lb">Valve setting</div><div class="vl" id="c_lm">—</div><div class="un">L/min</div></div>
+    <div class="rc wide"><div class="lb">Quicklime per day</div><div class="vl" id="c_td">—</div><div class="un">t/day</div></div>
+  </div>
+  <div class="warn" id="c_w"></div>
+  <div class="det"><h4>Calculation detail</h4><div id="c_det"></div></div>
+
+
+<h2>Theoretical background and formulas</h2>
+<h3>Milk of lime density from Baumé degrees</h3>
+<div class="formula-block">\[SG_{milk} = \frac{145}{145-°Bé}\]</div>
+<h3>Required CaO and milk of lime flow</h3>
+<div class="formula-block">\[CaO_{kg/h} = Q_{juice}\,(m^3/h) \times Demand\,(kg\,CaO/m^3)\]</div>
+<div class="formula-block">\[Q_{milk}\,(L/h) = \frac{CaO_{kg/h} \times 1000}{g_{CaO}\,(g/L\,milk)}\]</div>
+<h3>Commercial quicklime</h3>
+<div class="formula-block">\[Quicklime_{commercial} = \frac{CaO_{kg/h}}{(\%Purity/100)\times(\%Slaking_{efficiency}/100)}\]</div>
+<p>The 0.7569 factor converts Ca(OH)₂ to equivalent CaO (molar mass ratio 56.08/74.09), and 2.24 kg/L is the reference density of pure Ca(OH)₂ used to estimate dissolved solids in the milk of lime from its specific gravity (Hugot).</p>
+<p class="lit-ref"><strong>Reference literature:</strong> E. Hugot, <em>Handbook of Cane Sugar Engineering</em> (liming and milk of lime preparation); Peter Rein, <em>Cane Sugar Engineering</em>; Meade–Chen, <em>Cane Sugar Handbook</em>.</p>
+
+<h2>Typical operational ranges (KPIs)</h2>
+<table class="kpi-table">
+<thead><tr><th>KPI</th><th>Typical range</th><th>Alert</th></tr></thead>
+<tbody>
+<tr><td>Milk of lime concentration</td><td>6 – 12 °Bé</td><td>&lt;5 °Bé "low milk of lime" · &gt;15 °Bé "high milk of lime"</td></tr>
+<tr><td>CaO demand per cane</td><td>0.5 – 1.5 kg CaO/t cane</td><td>&lt;0.5 "insufficient lime" · &gt;1.5 "high consumption"</td></tr>
+<tr><td>Commercial quicklime purity</td><td>85% – 92% CaO</td><td>Informative (depends on supplier)</td></tr>
+<tr><td>Slaking efficiency</td><td>88% – 95%</td><td>Informative (depends on slaker and water quality)</td></tr>
+</tbody>
+</table>
+
+<h2>Frequently asked questions</h2>
+<div class="faq-list">
+<div class="faq-item"><h3>Why is milk of lime handled in Baumé degrees instead of Brix?</h3><p>Baumé degrees can be read directly with a hydrometer without calculating composition, and the scale is calibrated for denser suspensions like milk of lime, unlike Brix which is specific to sugar solutions.</p></div>
+<div class="faq-item"><h3>What happens if the milk of lime is above 15 °Bé?</h3><p>A milk of lime that is too concentrated settles easily and clogs lines, valves and dosing nozzles; the recommended operating range is 6–12 °Bé to maintain good flowability.</p></div>
+<div class="faq-item"><h3>How does CaO demand relate to cane quality?</h3><p>More deteriorated cane or juice with higher natural acidity requires more lime to reach the neutralisation pH; demands below 0.5 kg CaO/t cane usually leave the juice insufficiently neutralised.</p></div>
+<div class="faq-item"><h3>Why is the factor 0.7569 used in the quicklime calculation?</h3><p>It is the molar mass ratio between CaO (56.08 g/mol) and Ca(OH)₂ (74.09 g/mol); it converts the equivalent Ca(OH)₂ present in the milk of lime into the amount of CaO (quicklime) needed to produce it.</p></div>
+</div>
+
+<p class="back-link"><a href="https://sugarplantcalc.com/en/calculadoras/">&lsaquo; Back to all calculators</a></p>
+</article>
+</div>
+
+<script>
+var LBL = {"densidadJugo": "Juice density", "densidadLechada": "Milk of lime density", "solidos": "Solids in milk of lime", "caoReq": "CaO required", "caoh2Eq": "Ca(OH)₂ equivalent", "calVivaCom": "Commercial quicklime", "aguaApagado": "Slaking water (approx.)", "avBaja": "Milk of lime below 5 °Bé: very high flow rates and juice dilution. The usual operating range is 6–12 °Bé.", "avAlta": "Milk of lime above 15 °Bé: risk of settling and plugging in lines and valves.", "avPoco": "Less than 0.5 kg CaO per tonne of cane: check the demand, the juice could end up unneutralised.", "avMucho": "More than 1.5 kg CaO per tonne of cane: high consumption, it raises filter mud volume and colour formation."};
+
+function g(id){return document.getElementById(id)}
+function n(id){var e=g(id);if(!e)return 0;var x=parseFloat((e.value||"").replace(",","."));return isFinite(x)?x:0}
+function f(x,d){return (!isFinite(x))?"—":x.toFixed(d)}
+function set(id,v){var e=g(id);if(e)e.textContent=v}
+function tabla(id,filas){var e=g(id);if(!e)return;e.innerHTML=filas.map(function(r){return '<div class="row"><span>'+r[0]+'</span><span style="font-weight:400;text-align:right;max-width:62%">'+r[1]+'</span></div>'}).join("")}
+function aviso(id,msg){var e=g(id);if(!e)return;if(!msg){e.style.display='none';e.textContent='';return}e.style.display='block';e.textContent=msg}
+
+function rhoJugo(bx,tC){
+  var rho20=998.70+3.91679*bx+0.0135108*bx*bx+2.95998e-5*bx*bx*bx;
+  var dt=tC-20;
+  return rho20-(0.24707*dt+0.003169*dt*dt);
+}
+function sgBaume(b){return b<145?145/(145-b):1}
+var F_CAO=0.7569,D_CAOH2=2.24;
+
+function calcCal(){
+  var q=n('c_q'),bx=n('c_bx'),tC=n('c_t'),dem=n('c_dem'),tch=n('c_tch'),hd=n('c_hd'),be=n('c_be'),pu=n('c_pu'),ea=n('c_ea');
+  var rho=rhoJugo(bx,tC),sg=sgBaume(be);
+  var frac=Math.max((1-1/sg)/(1-1/D_CAOH2),0);
+  var gCoh=frac*sg*1000,gCao=gCoh*F_CAO;
+  var cao=q*dem,coh=cao/F_CAO,lh=gCao>0?cao*1000/gCao:0,lm=lh/60;
+  var rend=(pu>0?pu/100:1)*(ea>0?ea/100:1),cv=rend>0?cao/rend:0;
+  var agua=Math.max(lh*sg-cv,0),caotc=tch>0?cao/tch:0;
+  set('c_lh',f(lh,0));set('c_lm',f(lm,1));set('c_td',f(cv*hd/1000,2));
+  tabla('c_det',[[LBL.densidadJugo,f(rho,1)+" kg/m³"],[LBL.densidadLechada,f(sg,4)+" kg/L"],
+    [LBL.solidos,f(frac*100,1)+" % Ca(OH)₂ p/p"],[LBL.caoReq,f(cao,1)+" kg/h"],
+    [LBL.caoh2Eq,f(coh,1)+" kg/h"],[LBL.calVivaCom,f(cv,1)+" kg/h"],
+    [LBL.aguaApagado,f(agua/1000,2)+" m³/h"]]);
+  aviso('c_w', be<5?LBL.avBaja : (be>15?LBL.avAlta : ((caotc>0&&caotc<0.5)?LBL.avPoco : (caotc>1.5?LBL.avMucho : null))));
+}
+
+var CAMPOS=[];
+document.querySelectorAll("#c_q,#c_bx,#c_t,#c_hd,#c_dem,#c_tch,#c_be,#c_pu,#c_ea").forEach(function(e){
+  CAMPOS.push(e.id);
+  e.addEventListener("input",calcCal);
+  e.addEventListener("change",calcCal);
+});
+try{
+  var saved=JSON.parse(localStorage.getItem("spc_calc_cal")||"{}");
+  CAMPOS.forEach(function(k){if(saved[k]!=null)g(k).value=saved[k]});
+}catch(_){}
+calcCal();
+window.addEventListener('beforeunload',function(){try{var o={};CAMPOS.forEach(function(k){o[k]=g(k).value});localStorage.setItem("spc_calc_cal",JSON.stringify(o))}catch(_){}});
+
+</script>
+<script src="/assets/js/cookie-consent.js"></script>
+</body>
+</html>
