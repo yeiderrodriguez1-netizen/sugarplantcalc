@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#121417">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>Calculadora de Densidade: Caldo, Xarope e Mel por Brix</title>
+<meta name="description" content="Calcule a densidade (kg/L) e os graus Baumé de caldo, xarope ou mel a partir do Brix e da temperatura. Avisa se o Brix não é típico do produto.">
+<link rel="canonical" href="https://sugarplantcalc.com/pt/calculadoras/calculadora-densidade-caldo-xarope-mel/">
+<link rel="alternate" hreflang="es" href="https://sugarplantcalc.com/calculadoras/densidad-brix-jugo-meladura-miel/">
+<link rel="alternate" hreflang="en" href="https://sugarplantcalc.com/en/calculadoras/juice-syrup-molasses-density-calculator/">
+<link rel="alternate" hreflang="pt" href="https://sugarplantcalc.com/pt/calculadoras/calculadora-densidade-caldo-xarope-mel/">
+<link rel="alternate" hreflang="x-default" href="https://sugarplantcalc.com/calculadoras/densidad-brix-jugo-meladura-miel/">
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/img/logo.png" type="image/png">
+<link rel="apple-touch-icon" href="/assets/img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/calc-theme.css">
+<link rel="stylesheet" href="/assets/css/calc-page.css">
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://sugarplantcalc.com/pt/calculadoras/calculadora-densidade-caldo-xarope-mel/#app",
+      "name": "Calculadora de Densidade de Caldo, Xarope e Mel",
+      "url": "https://sugarplantcalc.com/pt/calculadoras/calculadora-densidade-caldo-xarope-mel/",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web",
+      "description": "Calcule a densidade (kg/L) e os graus Baumé de caldo, xarope ou mel a partir do Brix e da temperatura. Avisa se o Brix não é típico do produto.",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "author": { "@type": "Person", "name": "Ing. Yeider Rodríguez Molina" },
+      "inLanguage": "pt"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://sugarplantcalc.com/pt/calculadoras/calculadora-densidade-caldo-xarope-mel/#faq",
+      "mainEntity": [
+        { "@type": "Question", "name": "Por que a densidade do mel usa um fator diferente do caldo?", "acceptedAnswer": { "@type": "Answer", "text": "O mel tem maior concentração de não-açúcares (cinzas, gomas) que aumentam sua densidade além do previsto pela correlação pura sacarose-água do caldo; por isso se aplica um fator de correção de 1,010." } },
+        { "@type": "Question", "name": "O que são os graus Baumé e para que servem na fábrica?", "acceptedAnswer": { "@type": "Answer", "text": "É uma escala de gravidade específica muito usada em campo porque pode ser lida diretamente com um densímetro, sem calcular o Brix; útil para o controle rápido do leite de cal e dos xaropes." } },
+        { "@type": "Question", "name": "Por que a calculadora avisa que o Brix está fora da faixa típica?", "acceptedAnswer": { "@type": "Answer", "text": "Cada produto (caldo, xarope, mel) tem uma janela de concentração normal no processo; um valor fora dessa faixa costuma indicar que o produto errado foi selecionado ou que há um problema real de processo." } },
+        { "@type": "Question", "name": "Como a temperatura afeta a densidade medida?", "acceptedAnswer": { "@type": "Answer", "text": "Quanto maior a temperatura, menor a densidade de uma solução açucarada devido à expansão térmica; por isso todo densímetro e refratômetro de campo deve ser corrigido ou lido na temperatura de referência (geralmente 20 °C)." } }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Início", "item": "https://sugarplantcalc.com/pt/" },
+        { "@type": "ListItem", "position": 2, "name": "Calculadoras", "item": "https://sugarplantcalc.com/pt/calculadoras/" },
+        { "@type": "ListItem", "position": 3, "name": "Calculadora de Densidade de Caldo, Xarope e Mel", "item": "https://sugarplantcalc.com/pt/calculadoras/calculadora-densidade-caldo-xarope-mel/" }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="cookie-banner" hidden id="cookieBanner" role="dialog" aria-label="Cookie notice">
+<div class="cookie-banner-inner">
+<p class="cookie-banner-text">Usamos cookies próprios e do Google Analytics para entender como este site é usado e melhorá-lo. O Google Analytics só é ativado se você aceitar. <a href="https://sites.google.com/view/sugarplantcalc-privacidad" rel="noopener" target="_blank">Mais informações</a>.</p>
+<div class="cookie-banner-actions">
+<button class="cookie-btn cookie-btn-reject" id="cookieReject" type="button">Rejeitar</button>
+<button class="cookie-btn cookie-btn-accept" id="cookieAccept" type="button">Aceitar</button>
+</div>
+</div>
+</div>
+
+<div class="wrap calc-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+<a href="https://sugarplantcalc.com/pt/">Início</a> &rsaquo; <a href="https://sugarplantcalc.com/pt/calculadoras/">Calculadoras</a> &rsaquo; <span>Calculadora de Densidade de Caldo, Xarope e Mel</span>
+</nav>
+
+<article>
+<h1>Calculadora de Densidade de Caldo, Xarope e Mel</h1>
+
+<div class="intro"><p>A <strong>densidade</strong> das correntes açucareiras é calculada a partir do Brix e da temperatura usando correlações empíricas padrão da indústria. Esta calculadora obtém a densidade em kg/L, a gravidade específica e os graus Baumé de caldo, xarope ou mel, e avisa se o Brix informado não corresponde à faixa típica do produto selecionado.</p></div>
+
+<h2>Calculadora: densidade e graus Baumé por Brix e temperatura</h2>
+<div class="sec"><h3>Amostra</h3>
+    <div class="grid">
+      <div class="full">
+        <label for="dn_prod">Produto</label>
+        <select id="dn_prod">
+          <option value="jugo">Caldo</option>
+          <option value="meladura">Xarope</option>
+          <option value="miel">Mel</option>
+        </select>
+      </div>
+      <div><label for="dn_bx">Brix (°Bx)</label><input id="dn_bx" value="15" inputmode="decimal"></div>
+      <div><label for="dn_t">Temperatura (°C)</label><input id="dn_t" value="30" inputmode="decimal"></div>
+    </div>
+  </div>
+  <div class="res">
+    <div class="rc"><div class="lb">Densidade</div><div class="vl" id="dn_kgl">—</div><div class="un">kg/L</div></div>
+    <div class="rc"><div class="lb">Graus Baumé</div><div class="vl" id="dn_be">—</div><div class="un">°Bé</div></div>
+  </div>
+  <div class="warn" id="dn_w"></div>
+  <div class="det"><h4>Detalhe</h4><div id="dn_det"></div></div>
+
+
+<h2>Fundamento teórico e fórmulas</h2>
+<h3>Densidade do caldo a 20 °C (correlação polinomial)</h3>
+<div class="formula-block">\[\rho_{20} = 998.70 + 3.91679\,Bx + 0.0135108\,Bx^2 + 2.95998\times10^{-5}\,Bx^3\]</div>
+<h3>Correção por temperatura</h3>
+<div class="formula-block">\[\rho(t) = \rho_{20} - \left(0.24707\,\Delta t + 0.003169\,\Delta t^2\right), \quad \Delta t = t - 20\]</div>
+<h3>Graus Baumé</h3>
+<div class="formula-block">\[°B\acute{e} = 145 - \frac{145}{SG}\]</div>
+<p>Para xarope e mel aplica-se o mesmo modelo de densidade do caldo com um fator de correção próprio de cada produto, já que seus não-açúcares e viscosidade diferem do caldo diluído (Hugot).</p>
+<p class="lit-ref"><strong>Literatura de referência:</strong> E. Hugot, <em>Handbook of Cane Sugar Engineering</em> (correlações de densidade de soluções açucaradas); Peter Rein, <em>Cane Sugar Engineering</em>; Meade–Chen, <em>Cane Sugar Handbook</em> (escala Baumé).</p>
+
+<h2>Faixas operacionais típicas (KPIs)</h2>
+<table class="kpi-table">
+<thead><tr><th>KPI</th><th>Faixa típica</th><th>Alerta</th></tr></thead>
+<tbody>
+<tr><td>Brix típico do caldo</td><td>10 – 20 °Bx</td><td>&lt;10 ou &gt;20 °Bx "fora da faixa típica"</td></tr>
+<tr><td>Brix típico do xarope</td><td>55 – 70 °Bx</td><td>&lt;55 ou &gt;70 °Bx "fora da faixa típica"</td></tr>
+<tr><td>Brix típico do mel</td><td>80 – 95 °Bx</td><td>&lt;80 ou &gt;95 °Bx "fora da faixa típica"</td></tr>
+</tbody>
+</table>
+
+<h2>Perguntas frequentes</h2>
+<div class="faq-list">
+<div class="faq-item"><h3>Por que a densidade do mel usa um fator diferente do caldo?</h3><p>O mel tem maior concentração de não-açúcares (cinzas, gomas) que aumentam sua densidade além do previsto pela correlação pura sacarose-água do caldo; por isso se aplica um fator de correção de 1,010.</p></div>
+<div class="faq-item"><h3>O que são os graus Baumé e para que servem na fábrica?</h3><p>É uma escala de gravidade específica muito usada em campo porque pode ser lida diretamente com um densímetro, sem calcular o Brix; útil para o controle rápido do leite de cal e dos xaropes.</p></div>
+<div class="faq-item"><h3>Por que a calculadora avisa que o Brix está fora da faixa típica?</h3><p>Cada produto (caldo, xarope, mel) tem uma janela de concentração normal no processo; um valor fora dessa faixa costuma indicar que o produto errado foi selecionado ou que há um problema real de processo.</p></div>
+<div class="faq-item"><h3>Como a temperatura afeta a densidade medida?</h3><p>Quanto maior a temperatura, menor a densidade de uma solução açucarada devido à expansão térmica; por isso todo densímetro e refratômetro de campo deve ser corrigido ou lido na temperatura de referência (geralmente 20 °C).</p></div>
+</div>
+
+<p class="back-link"><a href="https://sugarplantcalc.com/pt/calculadoras/">&lsaquo; Voltar a todas as calculadoras</a></p>
+</article>
+</div>
+
+<script>
+var LBL = {"sg": "Gravidade específica (20 °C)", "avBajo": "O Brix está abaixo da faixa típica deste produto ({0}–{1} °Bx). Verifique se escolheu o produto certo.", "avAlto": "O Brix está acima da faixa típica deste produto ({0}–{1} °Bx). Verifique se escolheu o produto certo."};
+
+function g(id){return document.getElementById(id)}
+function n(id){var e=g(id);if(!e)return 0;var x=parseFloat((e.value||"").replace(",","."));return isFinite(x)?x:0}
+function f(x,d){return (!isFinite(x))?"—":x.toFixed(d)}
+function set(id,v){var e=g(id);if(e)e.textContent=v}
+function tabla(id,filas){var e=g(id);if(!e)return;e.innerHTML=filas.map(function(r){return '<div class="row"><span>'+r[0]+'</span><span style="font-weight:400;text-align:right;max-width:62%">'+r[1]+'</span></div>'}).join("")}
+function aviso(id,msg){var e=g(id);if(!e)return;if(!msg){e.style.display='none';e.textContent='';return}e.style.display='block';e.textContent=msg}
+
+function rhoJugo(bx,tC){
+  var rho20=998.70+3.91679*bx+0.0135108*bx*bx+2.95998e-5*bx*bx*bx;
+  var dt=tC-20;
+  return rho20-(0.24707*dt+0.003169*dt*dt);
+}
+
+var PRODUCTOS_DENS={jugo:{min:10,max:20,factor:1.0},meladura:{min:55,max:70,factor:1.0},miel:{min:80,max:95,factor:1.010}};
+function calcDensidad(){
+  var prod=PRODUCTOS_DENS[g('dn_prod').value],bx=n('dn_bx'),tC=n('dn_t');
+  if(bx<=0){set('dn_kgl','—');set('dn_be','—');tabla('dn_det',[]);aviso('dn_w',null);return}
+  var rho=rhoJugo(bx,tC)*prod.factor;
+  var kgl=rho/1000,sg=kgl/0.998203,be=sg>0?145-145/sg:0;
+  set('dn_kgl',f(kgl,4));set('dn_be',f(be,1));
+  tabla('dn_det',[[LBL.sg,f(sg,4)]]);
+  aviso('dn_w', bx<prod.min?LBL.avBajo.replace('{0}',prod.min).replace('{1}',prod.max) : (bx>prod.max?LBL.avAlto.replace('{0}',prod.min).replace('{1}',prod.max):null));
+}
+
+var CAMPOS=[];
+document.querySelectorAll("#dn_prod,#dn_bx,#dn_t").forEach(function(e){
+  CAMPOS.push(e.id);
+  e.addEventListener("input",calcDensidad);
+  e.addEventListener("change",calcDensidad);
+});
+try{
+  var saved=JSON.parse(localStorage.getItem("spc_calc_densidad")||"{}");
+  CAMPOS.forEach(function(k){if(saved[k]!=null)g(k).value=saved[k]});
+}catch(_){}
+calcDensidad();
+window.addEventListener('beforeunload',function(){try{var o={};CAMPOS.forEach(function(k){o[k]=g(k).value});localStorage.setItem("spc_calc_densidad",JSON.stringify(o))}catch(_){}});
+
+</script>
+<script src="/assets/js/cookie-consent.js"></script>
+</body>
+</html>
