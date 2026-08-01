@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#121417">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>Mill Tandem Pol Extraction Calculator</title>
+<meta name="description" content="Calculate Pol extraction, reduced extraction and imbibition % fibre for your mill tandem. Instantly detect brix deviations and juice losses.">
+<link rel="canonical" href="https://sugarplantcalc.com/en/calculadoras/mill-tandem-pol-extraction-calculator/">
+<link rel="alternate" hreflang="es" href="https://sugarplantcalc.com/calculadoras/tandem-molinos-extraccion-pol/">
+<link rel="alternate" hreflang="en" href="https://sugarplantcalc.com/en/calculadoras/mill-tandem-pol-extraction-calculator/">
+<link rel="alternate" hreflang="pt" href="https://sugarplantcalc.com/pt/calculadoras/tandem-moendas-calculadora-extracao-pol/">
+<link rel="alternate" hreflang="x-default" href="https://sugarplantcalc.com/calculadoras/tandem-molinos-extraccion-pol/">
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/img/logo.png" type="image/png">
+<link rel="apple-touch-icon" href="/assets/img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/calc-theme.css">
+<link rel="stylesheet" href="/assets/css/calc-page.css">
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://sugarplantcalc.com/en/calculadoras/mill-tandem-pol-extraction-calculator/#app",
+      "name": "Mill Tandem Pol Extraction Calculator",
+      "url": "https://sugarplantcalc.com/en/calculadoras/mill-tandem-pol-extraction-calculator/",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web",
+      "description": "Calculate Pol extraction, reduced extraction and imbibition % fibre for your mill tandem. Instantly detect brix deviations and juice losses.",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "author": { "@type": "Person", "name": "Ing. Yeider Rodríguez Molina" },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://sugarplantcalc.com/en/calculadoras/mill-tandem-pol-extraction-calculator/#faq",
+      "mainEntity": [
+        { "@type": "Question", "name": "What is a normal Pol extraction in a sugar mill?", "acceptedAnswer": { "@type": "Answer", "text": "Well-maintained tandems operate between 94% and 97%; below 94% usually indicates roll wear, insufficient imbibition or poor cane preparation." } },
+        { "@type": "Question", "name": "What is the difference between Pol extraction and reduced extraction?", "acceptedAnswer": { "@type": "Answer", "text": "Reduced extraction normalises the result to 12.5% fibre in cane, allowing tandems of different varieties/seasons to be compared on equal terms (Hugot's method)." } },
+        { "@type": "Question", "name": "How does imbibition % fibre affect extraction?", "acceptedAnswer": { "@type": "Answer", "text": "The typical efficient range is 200–250% fibre; below it dilutes the residual juice in bagasse poorly, above it overloads evaporation without proportional extraction gain." } },
+        { "@type": "Question", "name": "Why does my actual mixed juice Brix differ from the expected value?", "acceptedAnswer": { "@type": "Answer", "text": "A deviation greater than 0.8 °Bx from the value calculated by dilution usually signals leaks, poor imbibition water distribution or a sampling error." } }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sugarplantcalc.com/en/" },
+        { "@type": "ListItem", "position": 2, "name": "Calculators", "item": "https://sugarplantcalc.com/en/calculadoras/" },
+        { "@type": "ListItem", "position": 3, "name": "Mill Tandem Pol Extraction Calculator", "item": "https://sugarplantcalc.com/en/calculadoras/mill-tandem-pol-extraction-calculator/" }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="cookie-banner" hidden id="cookieBanner" role="dialog" aria-label="Cookie notice">
+<div class="cookie-banner-inner">
+<p class="cookie-banner-text">We use our own cookies and Google Analytics cookies to understand how this site is used and improve it. Google Analytics only activates if you accept. <a href="https://sites.google.com/view/sugarplantcalc-privacidad" rel="noopener" target="_blank">More information</a>.</p>
+<div class="cookie-banner-actions">
+<button class="cookie-btn cookie-btn-reject" id="cookieReject" type="button">Reject</button>
+<button class="cookie-btn cookie-btn-accept" id="cookieAccept" type="button">Accept</button>
+</div>
+</div>
+</div>
+
+<div class="wrap calc-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+<a href="https://sugarplantcalc.com/en/">Home</a> &rsaquo; <a href="https://sugarplantcalc.com/en/calculadoras/">Calculators</a> &rsaquo; <span>Mill Tandem Pol Extraction Calculator</span>
+</nav>
+
+<article>
+<h1>Mill Tandem Pol Extraction Calculator</h1>
+
+<div class="intro"><p><strong>Pol extraction</strong> is the most widely used indicator to measure how well a mill tandem separates sucrose from cane fibre. This calculator computes Pol extraction, extraction reduced to 12.5% fibre, and imbibition % fibre from your shift's cane, bagasse, juice and imbibition data.</p></div>
+
+<h2>Calculator: Pol extraction, reduced extraction and imbibition</h2>
+<div class="sec"><h3>Cane and bagasse</h3>
+    <div class="grid">
+      <div><label for="ml_tch">Cane (t/h)</label><input id="ml_tch" value="150" inputmode="decimal"></div>
+      <div><label for="ml_polc">Pol in cane (%)</label><input id="ml_polc" value="13.5" inputmode="decimal"></div>
+      <div><label for="ml_fibc">Fibre in cane (%)</label><input id="ml_fibc" value="12.5" inputmode="decimal"></div>
+      <div><label for="ml_polb">Pol in bagasse (%)</label><input id="ml_polb" value="1.8" inputmode="decimal"></div>
+      <div class="full"><label for="ml_fibb">Fibre in bagasse (%)</label><input id="ml_fibb" value="48" inputmode="decimal"></div>
+    </div>
+  </div>
+  <div class="sec"><h3>Juice and imbibition</h3>
+    <div class="grid">
+      <div><label for="ml_bxp">Primary juice Brix (°Bx)</label><input id="ml_bxp" value="17.5" inputmode="decimal"></div>
+      <div><label for="ml_polp">Primary juice Pol (%)</label><input id="ml_polp" value="15.2" inputmode="decimal"></div>
+      <div><label for="ml_bxm">Mixed juice Brix (°Bx)</label><input id="ml_bxm" value="13.7" inputmode="decimal"></div>
+      <div><label for="ml_imb">Imbibition % cane</label><input id="ml_imb" value="28" inputmode="decimal"></div>
+    </div>
+  </div>
+  <div class="sec"><h3>Mill rolls</h3>
+    <div class="grid">
+      <div class="full"><label for="ml_maza">Roll length (feet)</label><input id="ml_maza" value="6" inputmode="decimal"></div>
+    </div>
+  </div>
+  <div class="res">
+    <div class="rc"><div class="lb">Pol extraction</div><div class="vl" id="ml_ext">—</div><div class="un">%</div></div>
+    <div class="rc"><div class="lb">Reduced extraction</div><div class="vl" id="ml_extr">—</div><div class="un">%</div></div>
+  </div>
+  <div class="rc wide" style="margin-bottom:10px"><div class="lb">Imbibition % fibre</div><div class="vl" id="ml_imbf">—</div><div class="un">% fibre</div></div>
+  <div class="warn" id="ml_w"></div>
+  <div class="det"><h4>Detail</h4><div id="ml_det"></div></div>
+
+
+<h2>Theoretical background and formulas</h2>
+<h3>Pol extraction</h3>
+<div class="formula-block">\[EP(\%) = 100 - \frac{Pol_{bagasse} \times Fibre_{cane}}{Fibre_{bagasse} \times Pol_{cane}} \times 100\]</div>
+<h3>Reduced extraction (normalised to 12.5% fibre — E. Hugot)</h3>
+<div class="formula-block">\[ER(\%) = 100 - (100-EP)\left(\frac{Fibre_{cane}}{12.5}\right)\left(\frac{87.5}{100-Fibre_{cane}}\right)\]</div>
+<h3>Imbibition % fibre</h3>
+<div class="formula-block">\[IF(\%) = \frac{Imbibition_{\%cane}}{Fibre_{\%cane}} \times 100\]</div>
+<h3>Expected mixed juice Brix</h3>
+<div class="formula-block">\[Bx_{mixed}^{expected} = Bx_{primary}\left(1-\frac{Imb}{100+Imb}\right)\]</div>
+<p class="lit-ref"><strong>Reference literature:</strong> E. Hugot, <em>Handbook of Cane Sugar Engineering</em> (reduced extraction at 12.5% fibre); Peter Rein, <em>Cane Sugar Engineering</em> (extraction and imbibition); Meade–Chen, <em>Cane Sugar Handbook</em>.</p>
+
+<h2>Typical operational ranges (KPIs)</h2>
+<table class="kpi-table">
+<thead><tr><th>KPI</th><th>Typical range</th><th>Alert</th></tr></thead>
+<tbody>
+<tr><td>Pol extraction</td><td>94% – 97%</td><td>Informative (varies by variety/shredder)</td></tr>
+<tr><td>Reduced extraction (12.5% fibre)</td><td>≥ 96%</td><td>Informative</td></tr>
+<tr><td>Imbibition % fibre</td><td>200% – 250%</td><td>&lt;200% "low" · &gt;250% "high"</td></tr>
+<tr><td>Mixed juice Brix deviation vs. expected</td><td>≤ 0.8 °Bx</td><td>&gt;0.8 °Bx "deviated"</td></tr>
+<tr><td>Juice lost in bagasse fibre</td><td>&lt; 35–40%</td><td>&gt;40% "high juice loss"</td></tr>
+</tbody>
+</table>
+
+<h2>Frequently asked questions</h2>
+<div class="faq-list">
+<div class="faq-item"><h3>What is a normal Pol extraction in a sugar mill?</h3><p>Well-maintained tandems operate between 94% and 97%; below 94% usually indicates roll wear, insufficient imbibition or poor cane preparation.</p></div>
+<div class="faq-item"><h3>What is the difference between Pol extraction and reduced extraction?</h3><p>Reduced extraction normalises the result to 12.5% fibre in cane, allowing tandems of different varieties/seasons to be compared on equal terms (Hugot's method).</p></div>
+<div class="faq-item"><h3>How does imbibition % fibre affect extraction?</h3><p>The typical efficient range is 200–250% fibre; below it dilutes the residual juice in bagasse poorly, above it overloads evaporation without proportional extraction gain.</p></div>
+<div class="faq-item"><h3>Why does my actual mixed juice Brix differ from the expected value?</h3><p>A deviation greater than 0.8 °Bx from the value calculated by dilution usually signals leaks, poor imbibition water distribution or a sampling error.</p></div>
+</div>
+
+<p class="back-link"><a href="https://sugarplantcalc.com/en/calculadoras/">&lsaquo; Back to all calculators</a></p>
+</article>
+</div>
+
+<script>
+var LBL = {"fibra": "Fibre", "agua": "Imbibition water", "bagazo": "Bagasse % cane", "jugoPerdido": "Juice lost % fibre", "brixEsperado": "Expected mixed juice Brix", "tchPie": "Load per foot of roll", "uTchPie": "t/h·ft", "avImbBaja": "Low imbibition ({0} % fibre, < 200 %): risk of extraction loss.", "avImbAlta": "High imbibition ({0} % fibre, > 250 %): risk of thermal overload in the evaporators.", "avBrixDesv": "Mixed juice Brix ({0}) deviates from the expected value ({1}) by more than 0.8: check the water flow meter or tank leaks.", "avJugoAlto": "High juice lost % fibre ({0}, > 40): check mechanical work or cane preparation."};
+
+function g(id){return document.getElementById(id)}
+function n(id){var e=g(id);if(!e)return 0;var x=parseFloat((e.value||"").replace(",","."));return isFinite(x)?x:0}
+function f(x,d){return (!isFinite(x))?"—":x.toFixed(d)}
+function set(id,v){var e=g(id);if(e)e.textContent=v}
+function tabla(id,filas){var e=g(id);if(!e)return;e.innerHTML=filas.map(function(r){return '<div class="row"><span>'+r[0]+'</span><span style="font-weight:400;text-align:right;max-width:62%">'+r[1]+'</span></div>'}).join("")}
+function aviso(id,msg){var e=g(id);if(!e)return;if(!msg){e.style.display='none';e.textContent='';return}e.style.display='block';e.textContent=msg}
+
+function calcMolienda(){
+  var tch=n('ml_tch'),polc=n('ml_polc'),fibc=n('ml_fibc'),polb=n('ml_polb'),fibb=n('ml_fibb'),
+      bxp=n('ml_bxp'),polp=n('ml_polp'),bxm=n('ml_bxm'),imb=n('ml_imb'),maza=n('ml_maza');
+  var invalido=tch<=0||fibc<=0||fibc>=100||fibb<=0||polc<=0||maza<=0;
+  if(invalido){["ml_ext","ml_extr","ml_imbf"].forEach(function(id){set(id,'—')});tabla('ml_det',[]);aviso('ml_w',null);return}
+  var fibraTh=tch*(fibc/100);
+  var imbFibra=(imb/fibc)*100;
+  var aguaH=tch*(imb/100);
+  var bagCana=(fibc/fibb)*100;
+  var extPol=100-((polb*fibc)/(fibb*polc))*100;
+  var extRed=100-((100-extPol)*(fibc/12.5)*(87.5/(100-fibc)));
+  var hayPolP=polp>0;
+  var jugoPerdido=hayPolP?(polb*100*100)/(polp*fibb):0;
+  var bxmEsperado=bxp*(1-(imb/(100+imb)));
+  var tchPie=tch/maza;
+  set('ml_ext',f(extPol,2));set('ml_extr',f(extRed,2));set('ml_imbf',f(imbFibra,1));
+  tabla('ml_det',[
+    [LBL.fibra,f(fibraTh,2)+" t/h"],
+    [LBL.agua,f(aguaH,2)+" t/h"],
+    [LBL.bagazo,f(bagCana,2)+" %"],
+    [LBL.jugoPerdido, hayPolP?(f(jugoPerdido,2)+" %"):"—"],
+    [LBL.brixEsperado,f(bxmEsperado,2)+" °Bx"],
+    [LBL.tchPie,f(tchPie,2)+" "+LBL.uTchPie]
+  ]);
+  var avisos=[];
+  if(imbFibra<200)avisos.push(LBL.avImbBaja.replace('{0}',f(imbFibra,1)));
+  if(imbFibra>250)avisos.push(LBL.avImbAlta.replace('{0}',f(imbFibra,1)));
+  if(bxm>0&&Math.abs(bxm-bxmEsperado)>0.8)avisos.push(LBL.avBrixDesv.replace('{0}',f(bxm,1)).replace('{1}',f(bxmEsperado,1)));
+  if(hayPolP&&jugoPerdido>40)avisos.push(LBL.avJugoAlto.replace('{0}',f(jugoPerdido,1)));
+  aviso('ml_w', avisos.length?avisos.join("\n\n"):null);
+}
+
+var CAMPOS=[];
+document.querySelectorAll("#ml_tch,#ml_polc,#ml_fibc,#ml_polb,#ml_fibb,#ml_bxp,#ml_polp,#ml_bxm,#ml_imb,#ml_maza").forEach(function(e){
+  CAMPOS.push(e.id);
+  e.addEventListener("input",calcMolienda);
+  e.addEventListener("change",calcMolienda);
+});
+try{
+  var saved=JSON.parse(localStorage.getItem("spc_calc_molienda")||"{}");
+  CAMPOS.forEach(function(k){if(saved[k]!=null)g(k).value=saved[k]});
+}catch(_){}
+calcMolienda();
+window.addEventListener('beforeunload',function(){try{var o={};CAMPOS.forEach(function(k){o[k]=g(k).value});localStorage.setItem("spc_calc_molienda",JSON.stringify(o))}catch(_){}});
+
+</script>
+<script src="/assets/js/cookie-consent.js"></script>
+</body>
+</html>
