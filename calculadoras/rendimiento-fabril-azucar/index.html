@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#121417">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>Calculadora de Rendimiento Fabril de Azúcar</title>
+<meta name="description" content="Calcula el rendimiento fabril (%), el azúcar por tonelada de caña y el recobrado global a partir de la producción de tu turno o zafra.">
+<link rel="canonical" href="https://sugarplantcalc.com/calculadoras/rendimiento-fabril-azucar/">
+<link rel="alternate" hreflang="es" href="https://sugarplantcalc.com/calculadoras/rendimiento-fabril-azucar/">
+<link rel="alternate" hreflang="en" href="https://sugarplantcalc.com/en/calculadoras/sugar-factory-yield-calculator/">
+<link rel="alternate" hreflang="pt" href="https://sugarplantcalc.com/pt/calculadoras/calculadora-rendimento-fabril-acucar/">
+<link rel="alternate" hreflang="x-default" href="https://sugarplantcalc.com/calculadoras/rendimiento-fabril-azucar/">
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/img/logo.png" type="image/png">
+<link rel="apple-touch-icon" href="/assets/img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/calc-theme.css">
+<link rel="stylesheet" href="/assets/css/calc-page.css">
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://sugarplantcalc.com/calculadoras/rendimiento-fabril-azucar/#app",
+      "name": "Calculadora de Rendimiento Fabril de Azúcar",
+      "url": "https://sugarplantcalc.com/calculadoras/rendimiento-fabril-azucar/",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web",
+      "description": "Calcula el rendimiento fabril (%), el azúcar por tonelada de caña y el recobrado global a partir de la producción de tu turno o zafra.",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "author": { "@type": "Person", "name": "Ing. Yeider Rodríguez Molina" },
+      "inLanguage": "es"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://sugarplantcalc.com/calculadoras/rendimiento-fabril-azucar/#faq",
+      "mainEntity": [
+        { "@type": "Question", "name": "¿Cuál es un buen rendimiento fabril en un ingenio azucarero?", "acceptedAnswer": { "@type": "Answer", "text": "Depende de la variedad y la región, pero valores entre 10% y 13% son típicos; por debajo de 10% suele señalar caña de baja pol o pérdidas elevadas en el proceso." } },
+        { "@type": "Question", "name": "¿Por qué la calculadora dice que el resultado es imposible?", "acceptedAnswer": { "@type": "Answer", "text": "Si el rendimiento fabril calculado supera el Pol % de la caña, significa que se estaría recuperando más azúcar de la sacarosa que realmente traía la caña, lo cual no puede ocurrir: revisa las unidades de azúcar producida y caña molida." } },
+        { "@type": "Question", "name": "¿Qué diferencia hay entre rendimiento fabril y recobrado global?", "acceptedAnswer": { "@type": "Answer", "text": "El rendimiento fabril es azúcar producida sobre caña molida; el recobrado global lo normaliza dividiendo por el Pol % de la caña, permitiendo comparar zafras o ingenios con caña de distinta calidad." } },
+        { "@type": "Question", "name": "¿Qué factores bajan más el rendimiento fabril?", "acceptedAnswer": { "@type": "Answer", "text": "Los principales son baja extracción en molienda, pérdidas de sacarosa en cachaza y meladura, e inversión de sacarosa por tiempos de proceso prolongados o pH inadecuado." } }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://sugarplantcalc.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Calculadoras", "item": "https://sugarplantcalc.com/calculadoras/" },
+        { "@type": "ListItem", "position": 3, "name": "Calculadora de Rendimiento Fabril de Azúcar", "item": "https://sugarplantcalc.com/calculadoras/rendimiento-fabril-azucar/" }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="cookie-banner" hidden id="cookieBanner" role="dialog" aria-label="Cookie notice">
+<div class="cookie-banner-inner">
+<p class="cookie-banner-text">Usamos cookies propias y de Google Analytics para entender cómo se usa este sitio y mejorarlo. Google Analytics solo se activa si aceptas. <a href="https://sites.google.com/view/sugarplantcalc-privacidad" rel="noopener" target="_blank">Más información</a>.</p>
+<div class="cookie-banner-actions">
+<button class="cookie-btn cookie-btn-reject" id="cookieReject" type="button">Rechazar</button>
+<button class="cookie-btn cookie-btn-accept" id="cookieAccept" type="button">Aceptar</button>
+</div>
+</div>
+</div>
+
+<div class="wrap calc-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+<a href="https://sugarplantcalc.com/">Inicio</a> &rsaquo; <a href="https://sugarplantcalc.com/calculadoras/">Calculadoras</a> &rsaquo; <span>Calculadora de Rendimiento Fabril de Azúcar</span>
+</nav>
+
+<article>
+<h1>Calculadora de Rendimiento Fabril de Azúcar</h1>
+
+<div class="intro"><p>El <strong>rendimiento fabril</strong> es el KPI financiero central de un ingenio: cuánta azúcar comercial se obtiene por cada tonelada de caña molida. Esta calculadora obtiene el rendimiento fabril, el azúcar por tonelada de caña (kg/t) y, si se conoce el Pol % caña, el recobrado global de la fábrica.</p></div>
+
+<h2>Calculadora: rendimiento fabril, azúcar por caña y recobrado</h2>
+<div class="sec"><h3>Producción del periodo</h3>
+    <div class="grid">
+      <div><label for="rf_az">Azúcar producida (t)</label><input id="rf_az" value="120" inputmode="decimal"></div>
+      <div><label for="rf_cana">Caña molida (t)</label><input id="rf_cana" value="1500" inputmode="decimal"></div>
+      <div class="full"><label for="rf_pol">Pol % caña (opcional)</label><input id="rf_pol" value="13.5" inputmode="decimal"></div>
+    </div>
+  </div>
+  <div class="res">
+    <div class="rc"><div class="lb">Rendimiento fabril</div><div class="vl" id="rf_rend">—</div><div class="un">%</div></div>
+    <div class="rc"><div class="lb">Azúcar por caña</div><div class="vl" id="rf_kg">—</div><div class="un">kg/t</div></div>
+  </div>
+  <div class="warn" id="rf_w"></div>
+  <div class="det"><h4>Detalle</h4><div id="rf_det"></div></div>
+
+
+<h2>Fundamento teórico y fórmulas</h2>
+<h3>Rendimiento fabril</h3>
+<div class="formula-block">\[Rendimiento(\%) = \frac{Azúcar_{producida}}{Caña_{molida}} \times 100\]</div>
+<h3>Azúcar por caña</h3>
+<div class="formula-block">\[kg_{azúcar}/t_{caña} = \frac{Azúcar_{producida}\,(t) \times 1000}{Caña_{molida}\,(t)}\]</div>
+<h3>Recobrado global</h3>
+<div class="formula-block">\[Recobrado(\%) = \frac{Rendimiento_{fabril}}{Pol_{\%caña}} \times 100\]</div>
+<p>El recobrado global expresa qué fracción de la sacarosa que entró con la caña efectivamente se convirtió en azúcar comercial, combinando en un solo número las pérdidas de molienda, clarificación, evaporación y cristalización (Meade–Chen).</p>
+<p class="lit-ref"><strong>Literatura de referencia:</strong> Meade–Chen, <em>Cane Sugar Handbook</em> (rendimiento fabril y recobrado global); Peter Rein, <em>Cane Sugar Engineering</em>; E. Hugot, <em>Handbook of Cane Sugar Engineering</em>.</p>
+
+<h2>Rangos operacionales típicos (KPIs)</h2>
+<table class="kpi-table">
+<thead><tr><th>KPI</th><th>Rango típico</th><th>Alerta</th></tr></thead>
+<tbody>
+<tr><td>Rendimiento fabril</td><td>10% – 13%</td><td>Informativo (varía por variedad, madurez y eficiencia de fábrica)</td></tr>
+<tr><td>Azúcar por caña</td><td>100 – 130 kg/t</td><td>Informativo</td></tr>
+<tr><td>Recobrado global</td><td>85% – 92%</td><td>Informativo (fábricas eficientes)</td></tr>
+<tr><td>Relación rendimiento vs. Pol caña</td><td>Rendimiento ≤ Pol % caña</td><td>Rendimiento &gt; Pol % caña → "resultado imposible"</td></tr>
+</tbody>
+</table>
+
+<h2>Preguntas frecuentes</h2>
+<div class="faq-list">
+<div class="faq-item"><h3>¿Cuál es un buen rendimiento fabril en un ingenio azucarero?</h3><p>Depende de la variedad y la región, pero valores entre 10% y 13% son típicos; por debajo de 10% suele señalar caña de baja pol o pérdidas elevadas en el proceso.</p></div>
+<div class="faq-item"><h3>¿Por qué la calculadora dice que el resultado es imposible?</h3><p>Si el rendimiento fabril calculado supera el Pol % de la caña, significa que se estaría recuperando más azúcar de la sacarosa que realmente traía la caña, lo cual no puede ocurrir: revisa las unidades de azúcar producida y caña molida.</p></div>
+<div class="faq-item"><h3>¿Qué diferencia hay entre rendimiento fabril y recobrado global?</h3><p>El rendimiento fabril es azúcar producida sobre caña molida; el recobrado global lo normaliza dividiendo por el Pol % de la caña, permitiendo comparar zafras o ingenios con caña de distinta calidad.</p></div>
+<div class="faq-item"><h3>¿Qué factores bajan más el rendimiento fabril?</h3><p>Los principales son baja extracción en molienda, pérdidas de sacarosa en cachaza y meladura, e inversión de sacarosa por tiempos de proceso prolongados o pH inadecuado.</p></div>
+</div>
+
+<p class="back-link"><a href="https://sugarplantcalc.com/calculadoras/">&lsaquo; Volver a todas las calculadoras</a></p>
+</article>
+</div>
+
+<script>
+var LBL = {"recobrado": "Recobrado global (rendimiento / Pol caña)", "avImposible": "El rendimiento fabril supera el Pol de la caña: es físicamente imposible recuperar más azúcar del que traía la caña. Revisa las unidades de azúcar producida y caña molida."};
+
+function g(id){return document.getElementById(id)}
+function n(id){var e=g(id);if(!e)return 0;var x=parseFloat((e.value||"").replace(",","."));return isFinite(x)?x:0}
+function f(x,d){return (!isFinite(x))?"—":x.toFixed(d)}
+function set(id,v){var e=g(id);if(e)e.textContent=v}
+function tabla(id,filas){var e=g(id);if(!e)return;e.innerHTML=filas.map(function(r){return '<div class="row"><span>'+r[0]+'</span><span style="font-weight:400;text-align:right;max-width:62%">'+r[1]+'</span></div>'}).join("")}
+function aviso(id,msg){var e=g(id);if(!e)return;if(!msg){e.style.display='none';e.textContent='';return}e.style.display='block';e.textContent=msg}
+
+function calcRendimiento(){
+  var az=n('rf_az'),cana=n('rf_cana'),pol=n('rf_pol');
+  if(az<0||cana<=0){set('rf_rend','—');set('rf_kg','—');tabla('rf_det',[]);aviso('rf_w',null);return}
+  var rend=az/cana*100,kg=az*1000/cana,hayPol=pol>0,recobrado=hayPol?rend/pol*100:0;
+  set('rf_rend',f(rend,2));set('rf_kg',f(kg,1));
+  tabla('rf_det', hayPol?[[LBL.recobrado,f(recobrado,1)+" %"]]:[]);
+  aviso('rf_w', (hayPol&&rend>pol)?LBL.avImposible:null);
+}
+
+var CAMPOS=[];
+document.querySelectorAll("#rf_az,#rf_cana,#rf_pol").forEach(function(e){
+  CAMPOS.push(e.id);
+  e.addEventListener("input",calcRendimiento);
+  e.addEventListener("change",calcRendimiento);
+});
+try{
+  var saved=JSON.parse(localStorage.getItem("spc_calc_rendimiento")||"{}");
+  CAMPOS.forEach(function(k){if(saved[k]!=null)g(k).value=saved[k]});
+}catch(_){}
+calcRendimiento();
+window.addEventListener('beforeunload',function(){try{var o={};CAMPOS.forEach(function(k){o[k]=g(k).value});localStorage.setItem("spc_calc_rendimiento",JSON.stringify(o))}catch(_){}});
+
+</script>
+<script src="/assets/js/cookie-consent.js"></script>
+</body>
+</html>
