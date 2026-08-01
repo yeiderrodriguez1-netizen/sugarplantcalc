@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#121417">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>Calculadora de Ácido Fosfórico para Clarificação</title>
+<meta name="description" content="Calcule a dose de ácido fosfórico comercial (L/h, L/dia) para atingir o P₂O₅ alvo na clarificação do caldo de cana.">
+<link rel="canonical" href="https://sugarplantcalc.com/pt/calculadoras/calculadora-acido-fosforico-clarificacao/">
+<link rel="alternate" hreflang="es" href="https://sugarplantcalc.com/calculadoras/acido-fosforico-clarificacion/">
+<link rel="alternate" hreflang="en" href="https://sugarplantcalc.com/en/calculadoras/phosphoric-acid-clarification-calculator/">
+<link rel="alternate" hreflang="pt" href="https://sugarplantcalc.com/pt/calculadoras/calculadora-acido-fosforico-clarificacao/">
+<link rel="alternate" hreflang="x-default" href="https://sugarplantcalc.com/calculadoras/acido-fosforico-clarificacion/">
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/img/logo.png" type="image/png">
+<link rel="apple-touch-icon" href="/assets/img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/calc-theme.css">
+<link rel="stylesheet" href="/assets/css/calc-page.css">
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://sugarplantcalc.com/pt/calculadoras/calculadora-acido-fosforico-clarificacao/#app",
+      "name": "Calculadora de Dosagem de Ácido Fosfórico para Clarificação",
+      "url": "https://sugarplantcalc.com/pt/calculadoras/calculadora-acido-fosforico-clarificacao/",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web",
+      "description": "Calcule a dose de ácido fosfórico comercial (L/h, L/dia) para atingir o P₂O₅ alvo na clarificação do caldo de cana.",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "author": { "@type": "Person", "name": "Ing. Yeider Rodríguez Molina" },
+      "inLanguage": "pt"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://sugarplantcalc.com/pt/calculadoras/calculadora-acido-fosforico-clarificacao/#faq",
+      "mainEntity": [
+        { "@type": "Question", "name": "Qual é a faixa típica de P₂O₅ alvo para clarificar bem o caldo?", "acceptedAnswer": { "@type": "Answer", "text": "A faixa usual é 250–350 ppm de P₂O₅ no caldo; abaixo de 250 ppm a clarificação por defecação fosfatada costuma perder eficácia na formação do floco de fosfato de cálcio." } },
+        { "@type": "Question", "name": "Por que dosar mais de 400 ppm de P₂O₅ não é recomendado?", "acceptedAnswer": { "@type": "Answer", "text": "Um excesso de fosfato acima de 400 ppm eleva desnecessariamente o consumo de cal para neutralizar o ácido e aumenta o volume de torta gerado no filtro, sem ganho proporcional de clarificação." } },
+        { "@type": "Question", "name": "O que significa o caldo \"já cobrir o alvo\"?", "acceptedAnswer": { "@type": "Answer", "text": "Algumas canas têm naturalmente P₂O₅ alto; se o P₂O₅ natural medido já iguala ou supera o alvo de processo, não é necessário dosar ácido fosfórico adicional." } },
+        { "@type": "Question", "name": "Por que se usa o fator 0,7243 no cálculo?", "acceptedAnswer": { "@type": "Answer", "text": "É a relação de massas molares entre P₂O₅ (141,94 g/mol) e H₃PO₄ (2 × 97,99 g/mol); converte a massa de P₂O₅ elementar necessária na massa equivalente de ácido fosfórico puro." } }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Início", "item": "https://sugarplantcalc.com/pt/" },
+        { "@type": "ListItem", "position": 2, "name": "Calculadoras", "item": "https://sugarplantcalc.com/pt/calculadoras/" },
+        { "@type": "ListItem", "position": 3, "name": "Calculadora de Dosagem de Ácido Fosfórico para Clarificação", "item": "https://sugarplantcalc.com/pt/calculadoras/calculadora-acido-fosforico-clarificacao/" }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="cookie-banner" hidden id="cookieBanner" role="dialog" aria-label="Cookie notice">
+<div class="cookie-banner-inner">
+<p class="cookie-banner-text">Usamos cookies próprios e do Google Analytics para entender como este site é usado e melhorá-lo. O Google Analytics só é ativado se você aceitar. <a href="https://sites.google.com/view/sugarplantcalc-privacidad" rel="noopener" target="_blank">Mais informações</a>.</p>
+<div class="cookie-banner-actions">
+<button class="cookie-btn cookie-btn-reject" id="cookieReject" type="button">Rejeitar</button>
+<button class="cookie-btn cookie-btn-accept" id="cookieAccept" type="button">Aceitar</button>
+</div>
+</div>
+</div>
+
+<div class="wrap calc-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+<a href="https://sugarplantcalc.com/pt/">Início</a> &rsaquo; <a href="https://sugarplantcalc.com/pt/calculadoras/">Calculadoras</a> &rsaquo; <span>Calculadora de Dosagem de Ácido Fosfórico para Clarificação</span>
+</nav>
+
+<article>
+<h1>Calculadora de Dosagem de Ácido Fosfórico para Clarificação</h1>
+
+<div class="intro"><p>O <strong>ácido fosfórico</strong> é dosado no caldo de cana quando o teor natural de P₂O₅ é insuficiente para uma boa clarificação por defecação sulfitada ou fosfatação. Esta calculadora obtém a vazão de ácido comercial em L/h, o ajuste da bomba em L/min e o consumo diário, a partir do déficit de P₂O₅ entre o caldo natural e o alvo de processo.</p></div>
+
+<h2>Calculadora: dose de ácido fosfórico comercial e ajuste da bomba</h2>
+<div class="sec"><h3>Caldo de cana</h3>
+    <div class="grid">
+      <div><label for="a_q">Vazão (m³/h)</label><input id="a_q" value="450" inputmode="decimal"></div>
+      <div><label for="a_bx">Brix (°Bx)</label><input id="a_bx" value="15" inputmode="decimal"></div>
+      <div><label for="a_t">Temperatura (°C)</label><input id="a_t" value="35" inputmode="decimal"></div>
+      <div><label for="a_hd">Horas de moagem / dia</label><input id="a_hd" value="22" inputmode="decimal"></div>
+      <div><label for="a_pn">P₂O₅ natural (ppm)</label><input id="a_pn" value="180" inputmode="decimal"></div>
+      <div><label for="a_po">P₂O₅ alvo (ppm)</label><input id="a_po" value="300" inputmode="decimal"></div>
+      <div class="full"><label for="a_ef">Eficiência de dosagem (%)</label><input id="a_ef" value="100" inputmode="decimal"></div>
+    </div>
+  </div>
+  <div class="sec"><h3>Ácido comercial</h3>
+    <div class="grid">
+      <div><label for="a_c">H₃PO₄ (% p/p)</label><input id="a_c" value="85" inputmode="decimal"></div>
+      <div><label for="a_d">Densidade (kg/L)</label><input id="a_d" value="1.685" inputmode="decimal"></div>
+    </div>
+  </div>
+  <div class="res">
+    <div class="rc"><div class="lb">Ácido comercial</div><div class="vl" id="a_lh">—</div><div class="un">L/h</div></div>
+    <div class="rc"><div class="lb">Ajuste da bomba</div><div class="vl" id="a_lm">—</div><div class="un">L/min</div></div>
+    <div class="rc wide"><div class="lb">Consumo diário</div><div class="vl" id="a_ld">—</div><div class="un">L/dia</div></div>
+  </div>
+  <div class="warn" id="a_w"></div>
+  <div class="det"><h4>Detalhe do cálculo</h4><div id="a_det"></div></div>
+
+
+<h2>Fundamento teórico e fórmulas</h2>
+<h3>Déficit de P₂O₅ e adição necessária</h3>
+<div class="formula-block">\[P_2O_{5\,adicionar}\,(kg/h) = \frac{\dot{m}_{caldo}\,(kg/h) \times (P_2O_{5\,alvo} - P_2O_{5\,natural})\,(ppm)}{10^6 \times \eta_{dosagem}}\]</div>
+<h3>Equivalência a H₃PO₄ puro</h3>
+<div class="formula-block">\[H_3PO_{4\,puro} = \frac{P_2O_{5\,adicionar}}{0.7243}\]</div>
+<h3>Ácido comercial e vazão da bomba</h3>
+<div class="formula-block">\[\dot{m}_{ácido\,comercial} = \frac{H_3PO_{4\,puro}}{\%H_3PO_4/100} \qquad Q_{L/h} = \frac{\dot{m}_{ácido\,comercial}}{\rho_{ácido}}\]</div>
+<p>O fator 0,7243 é a relação estequiométrica de massa molar entre P₂O₅ (141,94 g/mol) e H₃PO₄ (2 × 98 g/mol), usada para converter o P₂O₅ elementar no ácido puro equivalente (Hugot).</p>
+<p class="lit-ref"><strong>Literatura de referência:</strong> E. Hugot, <em>Handbook of Cane Sugar Engineering</em> (fosfatação e clarificação); Peter Rein, <em>Cane Sugar Engineering</em>; Meade–Chen, <em>Cane Sugar Handbook</em>.</p>
+
+<h2>Faixas operacionais típicas (KPIs)</h2>
+<table class="kpi-table">
+<thead><tr><th>KPI</th><th>Faixa típica</th><th>Alerta</th></tr></thead>
+<tbody>
+<tr><td>P₂O₅ alvo no caldo</td><td>250 – 350 ppm</td><td>&lt;250 ppm "alvo baixo" · &gt;400 ppm "alvo alto"</td></tr>
+<tr><td>Alvo já atingido</td><td>alvo ≤ P₂O₅ natural</td><td>"caldo já cobre o alvo, não requer dosagem"</td></tr>
+<tr><td>H₃PO₄ comercial típico</td><td>75% – 85% p/p</td><td>Informativo (concentração comercial padrão)</td></tr>
+</tbody>
+</table>
+
+<h2>Perguntas frequentes</h2>
+<div class="faq-list">
+<div class="faq-item"><h3>Qual é a faixa típica de P₂O₅ alvo para clarificar bem o caldo?</h3><p>A faixa usual é 250–350 ppm de P₂O₅ no caldo; abaixo de 250 ppm a clarificação por defecação fosfatada costuma perder eficácia na formação do floco de fosfato de cálcio.</p></div>
+<div class="faq-item"><h3>Por que dosar mais de 400 ppm de P₂O₅ não é recomendado?</h3><p>Um excesso de fosfato acima de 400 ppm eleva desnecessariamente o consumo de cal para neutralizar o ácido e aumenta o volume de torta gerado no filtro, sem ganho proporcional de clarificação.</p></div>
+<div class="faq-item"><h3>O que significa o caldo "já cobrir o alvo"?</h3><p>Algumas canas têm naturalmente P₂O₅ alto; se o P₂O₅ natural medido já iguala ou supera o alvo de processo, não é necessário dosar ácido fosfórico adicional.</p></div>
+<div class="faq-item"><h3>Por que se usa o fator 0,7243 no cálculo?</h3><p>É a relação de massas molares entre P₂O₅ (141,94 g/mol) e H₃PO₄ (2 × 97,99 g/mol); converte a massa de P₂O₅ elementar necessária na massa equivalente de ácido fosfórico puro.</p></div>
+</div>
+
+<p class="back-link"><a href="https://sugarplantcalc.com/pt/calculadoras/">&lsaquo; Voltar a todas as calculadoras</a></p>
+</article>
+</div>
+
+<script>
+var LBL = {"densidadJugo": "Densidade do caldo", "flujoMasico": "Vazão mássica de caldo", "deficit": "Déficit de P₂O₅", "p2o5Adic": "P₂O₅ a adicionar", "h3po4Puro": "H₃PO₄ puro equivalente", "acidoMasa": "Ácido comercial (massa)", "avCubierto": "O caldo já atinge o alvo de P₂O₅. Não é necessário dosar.", "avBajo": "Alvo abaixo de 250 ppm: a clarificação costuma perder eficácia. A faixa usual é 250–350 ppm.", "avAlto": "Alvo acima de 400 ppm: o excesso de fosfato eleva o consumo de cal e o volume de torta."};
+
+function g(id){return document.getElementById(id)}
+function n(id){var e=g(id);if(!e)return 0;var x=parseFloat((e.value||"").replace(",","."));return isFinite(x)?x:0}
+function f(x,d){return (!isFinite(x))?"—":x.toFixed(d)}
+function set(id,v){var e=g(id);if(e)e.textContent=v}
+function tabla(id,filas){var e=g(id);if(!e)return;e.innerHTML=filas.map(function(r){return '<div class="row"><span>'+r[0]+'</span><span style="font-weight:400;text-align:right;max-width:62%">'+r[1]+'</span></div>'}).join("")}
+function aviso(id,msg){var e=g(id);if(!e)return;if(!msg){e.style.display='none';e.textContent='';return}e.style.display='block';e.textContent=msg}
+
+function rhoJugo(bx,tC){
+  var rho20=998.70+3.91679*bx+0.0135108*bx*bx+2.95998e-5*bx*bx*bx;
+  var dt=tC-20;
+  return rho20-(0.24707*dt+0.003169*dt*dt);
+}
+var F_P=0.7243;
+
+function calcAcido(){
+  var q=n('a_q'),bx=n('a_bx'),tC=n('a_t'),pn=n('a_pn'),po=n('a_po'),ef=n('a_ef'),c=n('a_c'),d=n('a_d'),hd=n('a_hd');
+  var rho=rhoJugo(bx,tC),m=q*rho,def=Math.max(po-pn,0),e=ef>0?ef/100:1;
+  var p=m*def/1e6/e,h=p/F_P,com=c>0?h/(c/100):0,lh=d>0?com/d:0,lm=lh/60;
+  set('a_lh',f(lh,1));set('a_lm',f(lm,3));set('a_ld',f(lh*hd,0));
+  tabla('a_det',[[LBL.densidadJugo,f(rho,1)+" kg/m³"],[LBL.flujoMasico,f(m/1000,1)+" t/h"],
+    [LBL.deficit,f(def,0)+" ppm"],[LBL.p2o5Adic,f(p,2)+" kg/h"],
+    [LBL.h3po4Puro,f(h,2)+" kg/h"],[LBL.acidoMasa,f(com,2)+" kg/h"]]);
+  aviso('a_w', po-pn<=0?LBL.avCubierto : (po<250?LBL.avBajo : (po>400?LBL.avAlto : null)));
+}
+
+var CAMPOS=[];
+document.querySelectorAll("#a_q,#a_bx,#a_t,#a_hd,#a_pn,#a_po,#a_ef,#a_c,#a_d").forEach(function(e){
+  CAMPOS.push(e.id);
+  e.addEventListener("input",calcAcido);
+  e.addEventListener("change",calcAcido);
+});
+try{
+  var saved=JSON.parse(localStorage.getItem("spc_calc_acido")||"{}");
+  CAMPOS.forEach(function(k){if(saved[k]!=null)g(k).value=saved[k]});
+}catch(_){}
+calcAcido();
+window.addEventListener('beforeunload',function(){try{var o={};CAMPOS.forEach(function(k){o[k]=g(k).value});localStorage.setItem("spc_calc_acido",JSON.stringify(o))}catch(_){}});
+
+</script>
+<script src="/assets/js/cookie-consent.js"></script>
+</body>
+</html>
