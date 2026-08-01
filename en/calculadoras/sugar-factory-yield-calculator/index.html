@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#121417">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>Sugar Factory Yield Calculator</title>
+<meta name="description" content="Calculate factory yield (%), sugar per tonne of cane and overall recovery from your shift or season production data.">
+<link rel="canonical" href="https://sugarplantcalc.com/en/calculadoras/sugar-factory-yield-calculator/">
+<link rel="alternate" hreflang="es" href="https://sugarplantcalc.com/calculadoras/rendimiento-fabril-azucar/">
+<link rel="alternate" hreflang="en" href="https://sugarplantcalc.com/en/calculadoras/sugar-factory-yield-calculator/">
+<link rel="alternate" hreflang="pt" href="https://sugarplantcalc.com/pt/calculadoras/calculadora-rendimento-fabril-acucar/">
+<link rel="alternate" hreflang="x-default" href="https://sugarplantcalc.com/calculadoras/rendimiento-fabril-azucar/">
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/img/logo.png" type="image/png">
+<link rel="apple-touch-icon" href="/assets/img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/calc-theme.css">
+<link rel="stylesheet" href="/assets/css/calc-page.css">
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://sugarplantcalc.com/en/calculadoras/sugar-factory-yield-calculator/#app",
+      "name": "Sugar Factory Yield Calculator",
+      "url": "https://sugarplantcalc.com/en/calculadoras/sugar-factory-yield-calculator/",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web",
+      "description": "Calculate factory yield (%), sugar per tonne of cane and overall recovery from your shift or season production data.",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "author": { "@type": "Person", "name": "Ing. Yeider Rodríguez Molina" },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://sugarplantcalc.com/en/calculadoras/sugar-factory-yield-calculator/#faq",
+      "mainEntity": [
+        { "@type": "Question", "name": "What is a good factory yield in a sugar mill?", "acceptedAnswer": { "@type": "Answer", "text": "It depends on variety and region, but values between 10% and 13% are typical; below 10% usually points to low-pol cane or high process losses." } },
+        { "@type": "Question", "name": "Why does the calculator say the result is impossible?", "acceptedAnswer": { "@type": "Answer", "text": "If the calculated factory yield exceeds the cane's Pol %, it would mean recovering more sugar than the sucrose the cane actually carried, which cannot happen: check the units of sugar produced and cane milled." } },
+        { "@type": "Question", "name": "What is the difference between factory yield and overall recovery?", "acceptedAnswer": { "@type": "Answer", "text": "Factory yield is sugar produced over cane milled; overall recovery normalises it by dividing by the cane's Pol %, allowing comparison of seasons or mills with cane of different quality." } },
+        { "@type": "Question", "name": "What factors lower factory yield the most?", "acceptedAnswer": { "@type": "Answer", "text": "The main ones are low milling extraction, sucrose losses in filter mud and molasses, and sucrose inversion from prolonged process times or inadequate pH." } }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sugarplantcalc.com/en/" },
+        { "@type": "ListItem", "position": 2, "name": "Calculators", "item": "https://sugarplantcalc.com/en/calculadoras/" },
+        { "@type": "ListItem", "position": 3, "name": "Sugar Factory Yield Calculator", "item": "https://sugarplantcalc.com/en/calculadoras/sugar-factory-yield-calculator/" }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="cookie-banner" hidden id="cookieBanner" role="dialog" aria-label="Cookie notice">
+<div class="cookie-banner-inner">
+<p class="cookie-banner-text">We use our own cookies and Google Analytics cookies to understand how this site is used and improve it. Google Analytics only activates if you accept. <a href="https://sites.google.com/view/sugarplantcalc-privacidad" rel="noopener" target="_blank">More information</a>.</p>
+<div class="cookie-banner-actions">
+<button class="cookie-btn cookie-btn-reject" id="cookieReject" type="button">Reject</button>
+<button class="cookie-btn cookie-btn-accept" id="cookieAccept" type="button">Accept</button>
+</div>
+</div>
+</div>
+
+<div class="wrap calc-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+<a href="https://sugarplantcalc.com/en/">Home</a> &rsaquo; <a href="https://sugarplantcalc.com/en/calculadoras/">Calculators</a> &rsaquo; <span>Sugar Factory Yield Calculator</span>
+</nav>
+
+<article>
+<h1>Sugar Factory Yield Calculator</h1>
+
+<div class="intro"><p><strong>Factory yield</strong> is a sugar mill's central financial KPI: how much commercial sugar is obtained per tonne of cane milled. This calculator computes factory yield, sugar per tonne of cane (kg/t) and, if cane Pol % is known, the mill's overall recovery.</p></div>
+
+<h2>Calculator: factory yield, sugar per cane and overall recovery</h2>
+<div class="sec"><h3>Period production</h3>
+    <div class="grid">
+      <div><label for="rf_az">Sugar produced (t)</label><input id="rf_az" value="120" inputmode="decimal"></div>
+      <div><label for="rf_cana">Cane milled (t)</label><input id="rf_cana" value="1500" inputmode="decimal"></div>
+      <div class="full"><label for="rf_pol">Pol % cane (optional)</label><input id="rf_pol" value="13.5" inputmode="decimal"></div>
+    </div>
+  </div>
+  <div class="res">
+    <div class="rc"><div class="lb">Factory yield</div><div class="vl" id="rf_rend">—</div><div class="un">%</div></div>
+    <div class="rc"><div class="lb">Sugar per cane</div><div class="vl" id="rf_kg">—</div><div class="un">kg/t</div></div>
+  </div>
+  <div class="warn" id="rf_w"></div>
+  <div class="det"><h4>Detail</h4><div id="rf_det"></div></div>
+
+
+<h2>Theoretical background and formulas</h2>
+<h3>Factory yield</h3>
+<div class="formula-block">\[Yield(\%) = \frac{Sugar_{produced}}{Cane_{milled}} \times 100\]</div>
+<h3>Sugar per cane</h3>
+<div class="formula-block">\[kg_{sugar}/t_{cane} = \frac{Sugar_{produced}\,(t) \times 1000}{Cane_{milled}\,(t)}\]</div>
+<h3>Overall recovery</h3>
+<div class="formula-block">\[Recovery(\%) = \frac{Factory_{yield}}{Pol_{\%cane}} \times 100\]</div>
+<p>Overall recovery expresses what fraction of the sucrose that entered with the cane was actually converted into commercial sugar, combining milling, clarification, evaporation and crystallization losses into a single number (Meade–Chen).</p>
+<p class="lit-ref"><strong>Reference literature:</strong> Meade–Chen, <em>Cane Sugar Handbook</em> (factory yield and overall recovery); Peter Rein, <em>Cane Sugar Engineering</em>; E. Hugot, <em>Handbook of Cane Sugar Engineering</em>.</p>
+
+<h2>Typical operational ranges (KPIs)</h2>
+<table class="kpi-table">
+<thead><tr><th>KPI</th><th>Typical range</th><th>Alert</th></tr></thead>
+<tbody>
+<tr><td>Factory yield</td><td>10% – 13%</td><td>Informative (varies by variety, maturity and factory efficiency)</td></tr>
+<tr><td>Sugar per cane</td><td>100 – 130 kg/t</td><td>Informative</td></tr>
+<tr><td>Overall recovery</td><td>85% – 92%</td><td>Informative (efficient factories)</td></tr>
+<tr><td>Yield vs. cane Pol relationship</td><td>Yield ≤ cane Pol %</td><td>Yield &gt; cane Pol % → "impossible result"</td></tr>
+</tbody>
+</table>
+
+<h2>Frequently asked questions</h2>
+<div class="faq-list">
+<div class="faq-item"><h3>What is a good factory yield in a sugar mill?</h3><p>It depends on variety and region, but values between 10% and 13% are typical; below 10% usually points to low-pol cane or high process losses.</p></div>
+<div class="faq-item"><h3>Why does the calculator say the result is impossible?</h3><p>If the calculated factory yield exceeds the cane's Pol %, it would mean recovering more sugar than the sucrose the cane actually carried, which cannot happen: check the units of sugar produced and cane milled.</p></div>
+<div class="faq-item"><h3>What is the difference between factory yield and overall recovery?</h3><p>Factory yield is sugar produced over cane milled; overall recovery normalises it by dividing by the cane's Pol %, allowing comparison of seasons or mills with cane of different quality.</p></div>
+<div class="faq-item"><h3>What factors lower factory yield the most?</h3><p>The main ones are low milling extraction, sucrose losses in filter mud and molasses, and sucrose inversion from prolonged process times or inadequate pH.</p></div>
+</div>
+
+<p class="back-link"><a href="https://sugarplantcalc.com/en/calculadoras/">&lsaquo; Back to all calculators</a></p>
+</article>
+</div>
+
+<script>
+var LBL = {"recobrado": "Overall recovery (yield / cane Pol)", "avImposible": "Factory yield exceeds the cane's Pol: it is physically impossible to recover more sugar than the cane carried. Check the units of sugar produced and cane milled."};
+
+function g(id){return document.getElementById(id)}
+function n(id){var e=g(id);if(!e)return 0;var x=parseFloat((e.value||"").replace(",","."));return isFinite(x)?x:0}
+function f(x,d){return (!isFinite(x))?"—":x.toFixed(d)}
+function set(id,v){var e=g(id);if(e)e.textContent=v}
+function tabla(id,filas){var e=g(id);if(!e)return;e.innerHTML=filas.map(function(r){return '<div class="row"><span>'+r[0]+'</span><span style="font-weight:400;text-align:right;max-width:62%">'+r[1]+'</span></div>'}).join("")}
+function aviso(id,msg){var e=g(id);if(!e)return;if(!msg){e.style.display='none';e.textContent='';return}e.style.display='block';e.textContent=msg}
+
+function calcRendimiento(){
+  var az=n('rf_az'),cana=n('rf_cana'),pol=n('rf_pol');
+  if(az<0||cana<=0){set('rf_rend','—');set('rf_kg','—');tabla('rf_det',[]);aviso('rf_w',null);return}
+  var rend=az/cana*100,kg=az*1000/cana,hayPol=pol>0,recobrado=hayPol?rend/pol*100:0;
+  set('rf_rend',f(rend,2));set('rf_kg',f(kg,1));
+  tabla('rf_det', hayPol?[[LBL.recobrado,f(recobrado,1)+" %"]]:[]);
+  aviso('rf_w', (hayPol&&rend>pol)?LBL.avImposible:null);
+}
+
+var CAMPOS=[];
+document.querySelectorAll("#rf_az,#rf_cana,#rf_pol").forEach(function(e){
+  CAMPOS.push(e.id);
+  e.addEventListener("input",calcRendimiento);
+  e.addEventListener("change",calcRendimiento);
+});
+try{
+  var saved=JSON.parse(localStorage.getItem("spc_calc_rendimiento")||"{}");
+  CAMPOS.forEach(function(k){if(saved[k]!=null)g(k).value=saved[k]});
+}catch(_){}
+calcRendimiento();
+window.addEventListener('beforeunload',function(){try{var o={};CAMPOS.forEach(function(k){o[k]=g(k).value});localStorage.setItem("spc_calc_rendimiento",JSON.stringify(o))}catch(_){}});
+
+</script>
+<script src="/assets/js/cookie-consent.js"></script>
+</body>
+</html>
