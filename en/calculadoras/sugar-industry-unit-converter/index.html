@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#121417">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>Sugar Industry Unit Converter</title>
+<meta name="description" content="Convert temperature, pressure, flow, mass, volume, concentration, energy, power, conductivity and viscosity using the factors used in sugar mills.">
+<link rel="canonical" href="https://sugarplantcalc.com/en/calculadoras/sugar-industry-unit-converter/">
+<link rel="alternate" hreflang="es" href="https://sugarplantcalc.com/calculadoras/conversor-unidades-azucar/">
+<link rel="alternate" hreflang="en" href="https://sugarplantcalc.com/en/calculadoras/sugar-industry-unit-converter/">
+<link rel="alternate" hreflang="pt" href="https://sugarplantcalc.com/pt/calculadoras/conversor-de-unidades-industria-acucareira/">
+<link rel="alternate" hreflang="x-default" href="https://sugarplantcalc.com/calculadoras/conversor-unidades-azucar/">
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/img/logo.png" type="image/png">
+<link rel="apple-touch-icon" href="/assets/img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/calc-theme.css">
+<link rel="stylesheet" href="/assets/css/calc-page.css">
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://sugarplantcalc.com/en/calculadoras/sugar-industry-unit-converter/#app",
+      "name": "Sugar Industry Unit Converter",
+      "url": "https://sugarplantcalc.com/en/calculadoras/sugar-industry-unit-converter/",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web",
+      "description": "Convert temperature, pressure, flow, mass, volume, concentration, energy, power, conductivity and viscosity using the factors used in sugar mills.",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "author": { "@type": "Person", "name": "Ing. Yeider Rodríguez Molina" },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://sugarplantcalc.com/en/calculadoras/sugar-industry-unit-converter/#faq",
+      "mainEntity": [
+        { "@type": "Question", "name": "Why does converting mg/L to ppm require the solution density?", "acceptedAnswer": { "@type": "Answer", "text": "Because ppm is a mass fraction (mg of solute per kg of solution) while mg/L is mass per volume; they are only numerically equal when the solution density is 1.00 kg/L, as in dilute water." } },
+        { "@type": "Question", "name": "Which pressure units are most used in a sugar mill?", "acceptedAnswer": { "@type": "Answer", "text": "kPa and bar for modern instrumentation, psi on US-origin equipment, kg/cm² on older gauges, and mmHg or inHg specifically for vacuum readings in evaporators and pans." } },
+        { "@type": "Question", "name": "How do you convert HP to kW for mill drives and turbines?", "acceptedAnswer": { "@type": "Answer", "text": "Multiply the power in HP by the factor 0.7456999 to get kilowatts; it is the standard conversion used when comparing mill drives, turbogenerators and pumps." } },
+        { "@type": "Question", "name": "What is the difference between viscosity in cP and Pa·s?", "acceptedAnswer": { "@type": "Answer", "text": "1 Pa·s equals 1000 cP; centipoise (cP) is the practical reference unit for molasses and massecuites because water at 20 °C has approximately 1 cP." } }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sugarplantcalc.com/en/" },
+        { "@type": "ListItem", "position": 2, "name": "Calculators", "item": "https://sugarplantcalc.com/en/calculadoras/" },
+        { "@type": "ListItem", "position": 3, "name": "Sugar Industry Unit Converter", "item": "https://sugarplantcalc.com/en/calculadoras/sugar-industry-unit-converter/" }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="cookie-banner" hidden id="cookieBanner" role="dialog" aria-label="Cookie notice">
+<div class="cookie-banner-inner">
+<p class="cookie-banner-text">We use our own cookies and Google Analytics cookies to understand how this site is used and improve it. Google Analytics only activates if you accept. <a href="https://sites.google.com/view/sugarplantcalc-privacidad" rel="noopener" target="_blank">More information</a>.</p>
+<div class="cookie-banner-actions">
+<button class="cookie-btn cookie-btn-reject" id="cookieReject" type="button">Reject</button>
+<button class="cookie-btn cookie-btn-accept" id="cookieAccept" type="button">Accept</button>
+</div>
+</div>
+</div>
+
+<div class="wrap calc-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+<a href="https://sugarplantcalc.com/en/">Home</a> &rsaquo; <a href="https://sugarplantcalc.com/en/calculadoras/">Calculators</a> &rsaquo; <span>Sugar Industry Unit Converter</span>
+</nav>
+
+<article>
+<h1>Sugar Industry Unit Converter</h1>
+
+<div class="intro"><p>This <strong>unit converter</strong> groups the 10 unit categories most used daily in a sugar mill: temperature, pressure, flow, mass, volume, concentration, energy, power, conductivity and viscosity. Select the category, enter the value, and instantly get the equivalents in every unit of the group.</p></div>
+
+<h2>Calculator: conversion between mill technical units</h2>
+<div class="sec"><h3>Category</h3>
+    <div class="grid">
+      <div class="full">
+        <label for="cv_cat">Category</label>
+        <select id="cv_cat" onchange="cambiarCategoriaConversion()">
+          <option value="temp">Temperature</option>
+          <option value="pres">Pressure</option>
+          <option value="caudal">Flow</option>
+          <option value="masa">Mass</option>
+          <option value="vol">Volume</option>
+          <option value="conc">Concentration</option>
+          <option value="energia">Energy</option>
+          <option value="potencia">Power</option>
+          <option value="cond">Conductivity</option>
+          <option value="visc">Viscosity</option>
+        </select>
+      </div>
+      <div><label for="cv_val">Value</label><input id="cv_val" value="100" inputmode="decimal"></div>
+      <div><label for="cv_unidad">Source unit</label><select id="cv_unidad"></select></div>
+      <div class="full" id="cv_dens_wrap" hidden><label for="cv_dens">Solution density (kg/L)</label><input id="cv_dens" value="1.00" inputmode="decimal"></div>
+    </div>
+  </div>
+  <div class="det"><h4>Equivalents</h4><div id="cv_det"></div></div>
+
+
+<h2>Theoretical background and formulas</h2>
+<h3>Linear factor conversion</h3>
+<div class="formula-block">\[V_{target} = V_{source} \times \frac{f_{source}}{f_{target}}\]</div>
+<p>Each unit within a category (e.g. kPa, bar, psi, kg/cm² and mmHg for pressure) has a conversion factor relative to a base unit. The input value is first brought to the base unit and then distributed to every other unit in the group.</p>
+<h3>Temperature conversion</h3>
+<div class="formula-block">\[°C = (°F - 32) \times \frac{5}{9} \qquad °F = °C \times \frac{9}{5} + 32\]</div>
+<h3>Concentration conversion (with density)</h3>
+<div class="formula-block">\[ppm = \%w/w \times 10000 \qquad ppm = \frac{mg/L}{\rho_{solution}}\]</div>
+<p>Converting between mg/L and ppm requires the solution density because ppm is a mass ratio (mg of solute per kg of solution) while mg/L is mass per volume.</p>
+<p class="lit-ref"><strong>Reference literature:</strong> E. Hugot, <em>Handbook of Cane Sugar Engineering</em> (units and conversion factors for industrial use); Peter Rein, <em>Cane Sugar Engineering</em>; Meade–Chen, <em>Cane Sugar Handbook</em>.</p>
+
+<h2>Typical operational ranges (KPIs)</h2>
+<table class="kpi-table">
+<thead><tr><th>KPI</th><th>Typical range</th><th>Alert</th></tr></thead>
+<tbody>
+<tr><td>Pressure</td><td>kPa · bar · psi · kg/cm² · mmHg</td><td>Reference (no alerts, direct conversion)</td></tr>
+<tr><td>Flow</td><td>L/s · m³/h · gpm</td><td>Reference</td></tr>
+<tr><td>Concentration</td><td>% · ppm · mg/L (requires density)</td><td>Reference</td></tr>
+<tr><td>Temperature</td><td>°C ↔ °F</td><td>Reference</td></tr>
+</tbody>
+</table>
+
+<h2>Frequently asked questions</h2>
+<div class="faq-list">
+<div class="faq-item"><h3>Why does converting mg/L to ppm require the solution density?</h3><p>Because ppm is a mass fraction (mg of solute per kg of solution) while mg/L is mass per volume; they are only numerically equal when the solution density is 1.00 kg/L, as in dilute water.</p></div>
+<div class="faq-item"><h3>Which pressure units are most used in a sugar mill?</h3><p>kPa and bar for modern instrumentation, psi on US-origin equipment, kg/cm² on older gauges, and mmHg or inHg specifically for vacuum readings in evaporators and pans.</p></div>
+<div class="faq-item"><h3>How do you convert HP to kW for mill drives and turbines?</h3><p>Multiply the power in HP by the factor 0.7456999 to get kilowatts; it is the standard conversion used when comparing mill drives, turbogenerators and pumps.</p></div>
+<div class="faq-item"><h3>What is the difference between viscosity in cP and Pa·s?</h3><p>1 Pa·s equals 1000 cP; centipoise (cP) is the practical reference unit for molasses and massecuites because water at 20 °C has approximately 1 cP.</p></div>
+</div>
+
+<p class="back-link"><a href="https://sugarplantcalc.com/en/calculadoras/">&lsaquo; Back to all calculators</a></p>
+</article>
+</div>
+
+<script>
+var LBL = {"u_kpa": "kPa", "u_bar": "bar", "u_psi": "psi", "u_kgcm2": "kg/cm²", "u_mmhg": "mmHg", "u_ls": "L/s", "u_m3h": "m³/h", "u_gpm": "gpm", "u_kg": "kg", "u_t": "t", "u_lb": "lb", "u_l": "L", "u_m3": "m³", "u_gal": "gal (US)", "u_pct": "%", "u_ppm": "ppm", "u_mgl": "mg/L", "u_kj": "kJ", "u_kcal": "kcal", "u_btu": "BTU", "u_kw": "kW", "u_hp": "HP", "u_uscm": "µS/cm", "u_mscm": "mS/cm", "u_cp": "cP", "u_pas": "Pa·s"};
+
+function g(id){return document.getElementById(id)}
+function n(id){var e=g(id);if(!e)return 0;var x=parseFloat((e.value||"").replace(",","."));return isFinite(x)?x:0}
+function f(x,d){return (!isFinite(x))?"—":x.toFixed(d)}
+function tabla(id,filas){var e=g(id);if(!e)return;e.innerHTML=filas.map(function(r){return '<div class="row"><span>'+r[0]+'</span><span style="font-weight:400;text-align:right;max-width:62%">'+r[1]+'</span></div>'}).join("")}
+
+var CATEGORIAS_CONV={
+  temp:{esp:"temp",unidades:[{c:"°C"},{c:"°F"}]},
+  pres:{unidades:[{k:LBL.u_kpa,fa:1},{k:LBL.u_bar,fa:100},{k:LBL.u_psi,fa:6.894757},{k:LBL.u_kgcm2,fa:98.0665},{k:LBL.u_mmhg,fa:0.1333224}]},
+  caudal:{unidades:[{k:LBL.u_ls,fa:1},{k:LBL.u_m3h,fa:1/3.6},{k:LBL.u_gpm,fa:0.0630902}]},
+  masa:{unidades:[{k:LBL.u_kg,fa:1},{k:LBL.u_t,fa:1000},{k:LBL.u_lb,fa:0.4535924}]},
+  vol:{unidades:[{k:LBL.u_l,fa:1},{k:LBL.u_m3,fa:1000},{k:LBL.u_gal,fa:3.785412}]},
+  conc:{esp:"conc",unidades:[{k:LBL.u_pct},{k:LBL.u_ppm},{k:LBL.u_mgl}]},
+  energia:{unidades:[{k:LBL.u_kj,fa:1},{k:LBL.u_kcal,fa:4.184},{k:LBL.u_btu,fa:1.055056}]},
+  potencia:{unidades:[{k:LBL.u_kw,fa:1},{k:LBL.u_hp,fa:0.7456999}]},
+  cond:{unidades:[{k:LBL.u_uscm,fa:1},{k:LBL.u_mscm,fa:1000}]},
+  visc:{unidades:[{k:LBL.u_cp,fa:1},{k:LBL.u_pas,fa:1000}]}
+};
+function cambiarCategoriaConversion(){
+  var cat=CATEGORIAS_CONV[g('cv_cat').value];
+  var sel=g('cv_unidad');
+  sel.innerHTML=cat.unidades.map(function(u,i){
+    var etiqueta = u.c ? u.c : u.k;
+    return '<option value="'+i+'">'+etiqueta+'</option>';
+  }).join("");
+  g('cv_dens_wrap').hidden=(cat.esp!=='conc');
+  calcConversion();
+}
+function calcConversion(){
+  var cat=CATEGORIAS_CONV[g('cv_cat').value];
+  var idx=parseInt(g('cv_unidad').value||"0",10),val=n('cv_val'),dens=n('cv_dens');
+  var filas;
+  if(cat.esp==='temp'){
+    var c=cat.unidades[idx].c==='°F'?(val-32)*5/9:val;
+    filas=cat.unidades.map(function(u){var v=u.c==='°F'?c*9/5+32:c;return[u.c,f(v,2)]});
+  } else if(cat.esp==='conc'){
+    var d=dens>0?dens:1;
+    var ppm;
+    if(cat.unidades[idx].k===LBL.u_pct)ppm=val*10000;
+    else if(cat.unidades[idx].k===LBL.u_mgl)ppm=val/d;
+    else ppm=val;
+    filas=cat.unidades.map(function(u){
+      var v=u.k===LBL.u_pct?ppm/10000:(u.k===LBL.u_mgl?ppm*d:ppm);
+      return[u.k,f(v,2)];
+    });
+  } else {
+    var base=val*cat.unidades[idx].fa;
+    filas=cat.unidades.map(function(u){return[u.k,f(base/u.fa,4)]});
+  }
+  tabla('cv_det',filas);
+}
+
+var CAMPOS=["cv_cat","cv_val","cv_unidad","cv_dens"];
+document.querySelectorAll("#cv_val,#cv_unidad,#cv_dens").forEach(function(e){
+  e.addEventListener("input",calcConversion);
+  e.addEventListener("change",calcConversion);
+});
+cambiarCategoriaConversion();
+
+</script>
+<script src="/assets/js/cookie-consent.js"></script>
+</body>
+</html>
