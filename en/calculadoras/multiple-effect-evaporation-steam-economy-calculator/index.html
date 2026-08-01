@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#121417">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>Multiple Effect Evaporation and Steam Economy Calculator</title>
+<meta name="description" content="Calculate water evaporated (t/h), steam economy (kg/kg) and specific evaporation rate for your evaporator train.">
+<link rel="canonical" href="https://sugarplantcalc.com/en/calculadoras/multiple-effect-evaporation-steam-economy-calculator/">
+<link rel="alternate" hreflang="es" href="https://sugarplantcalc.com/calculadoras/evaporacion-multiple-efecto-economia-vapor/">
+<link rel="alternate" hreflang="en" href="https://sugarplantcalc.com/en/calculadoras/multiple-effect-evaporation-steam-economy-calculator/">
+<link rel="alternate" hreflang="pt" href="https://sugarplantcalc.com/pt/calculadoras/calculadora-evaporacao-multiplo-efeito-economia-vapor/">
+<link rel="alternate" hreflang="x-default" href="https://sugarplantcalc.com/calculadoras/evaporacion-multiple-efecto-economia-vapor/">
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/img/logo.png" type="image/png">
+<link rel="apple-touch-icon" href="/assets/img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/calc-theme.css">
+<link rel="stylesheet" href="/assets/css/calc-page.css">
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://sugarplantcalc.com/en/calculadoras/multiple-effect-evaporation-steam-economy-calculator/#app",
+      "name": "Multiple Effect Evaporation and Steam Economy Calculator",
+      "url": "https://sugarplantcalc.com/en/calculadoras/multiple-effect-evaporation-steam-economy-calculator/",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web",
+      "description": "Calculate water evaporated (t/h), steam economy (kg/kg) and specific evaporation rate for your evaporator train.",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "author": { "@type": "Person", "name": "Ing. Yeider Rodríguez Molina" },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://sugarplantcalc.com/en/calculadoras/multiple-effect-evaporation-steam-economy-calculator/#faq",
+      "mainEntity": [
+        { "@type": "Question", "name": "What steam economy should I expect in a quadruple effect evaporator?", "acceptedAnswer": { "@type": "Answer", "text": "A typical reference value is 3.2 kg of water evaporated per kg of steam fed to the first effect; below that, check for calandria scaling or insufficient vapour bleeding." } },
+        { "@type": "Question", "name": "Why is very concentrated syrup (>70 °Bx) a risk?", "acceptedAnswer": { "@type": "Answer", "text": "At very high concentrations, syrup can start crystallising spontaneously inside the evaporator itself or in outlet piping, causing plugging and loss of control over downstream crystallization." } },
+        { "@type": "Question", "name": "How is theoretical syrup Brix calculated and what is it used for?", "acceptedAnswer": { "@type": "Answer", "text": "It is estimated from the steam fed and the typical steam economy for the number of effects; compared with the measured actual Brix, a deviation greater than 2 points usually indicates an instrumentation error (refractometer) or steam flow measurement error." } },
+        { "@type": "Question", "name": "What effect does low condenser vacuum have on evaporation?", "acceptedAnswer": { "@type": "Answer", "text": "A vacuum below 24 inHg in the last effect reduces the available temperature differential for heat transfer, decreasing the evaporation capacity of the entire train, even if inlet steam is sufficient." } }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sugarplantcalc.com/en/" },
+        { "@type": "ListItem", "position": 2, "name": "Calculators", "item": "https://sugarplantcalc.com/en/calculadoras/" },
+        { "@type": "ListItem", "position": 3, "name": "Multiple Effect Evaporation and Steam Economy Calculator", "item": "https://sugarplantcalc.com/en/calculadoras/multiple-effect-evaporation-steam-economy-calculator/" }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="cookie-banner" hidden id="cookieBanner" role="dialog" aria-label="Cookie notice">
+<div class="cookie-banner-inner">
+<p class="cookie-banner-text">We use our own cookies and Google Analytics cookies to understand how this site is used and improve it. Google Analytics only activates if you accept. <a href="https://sites.google.com/view/sugarplantcalc-privacidad" rel="noopener" target="_blank">More information</a>.</p>
+<div class="cookie-banner-actions">
+<button class="cookie-btn cookie-btn-reject" id="cookieReject" type="button">Reject</button>
+<button class="cookie-btn cookie-btn-accept" id="cookieAccept" type="button">Accept</button>
+</div>
+</div>
+</div>
+
+<div class="wrap calc-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+<a href="https://sugarplantcalc.com/en/">Home</a> &rsaquo; <a href="https://sugarplantcalc.com/en/calculadoras/">Calculators</a> &rsaquo; <span>Multiple Effect Evaporation and Steam Economy Calculator</span>
+</nav>
+
+<article>
+<h1>Multiple Effect Evaporation and Steam Economy Calculator</h1>
+
+<div class="intro"><p>A <strong>multiple effect evaporation</strong> train concentrates clarified juice into syrup consuming the minimum possible steam by reusing vapour between effects. This calculator computes total water evaporated, steam economy, the specific evaporation rate per calandria area, and the theoretical expected syrup Brix based on the steam fed, comparing it against the measured actual Brix.</p></div>
+
+<h2>Calculator: water evaporated, steam economy and theoretical brix</h2>
+<div class="sec"><h3>Clarified juice and syrup</h3>
+    <div class="grid">
+      <div><label for="ev_flujo">Clarified juice (t/h)</label><input id="ev_flujo" value="400" inputmode="decimal"></div>
+      <div><label for="ev_bxc">Clarified juice Brix (°Bx)</label><input id="ev_bxc" value="15" inputmode="decimal"></div>
+      <div><label for="ev_bxt">Target syrup Brix (°Bx)</label><input id="ev_bxt" value="65" inputmode="decimal"></div>
+      <div><label for="ev_bxr">Actual syrup Brix (°Bx)</label><input id="ev_bxr" value="65" inputmode="decimal"></div>
+    </div>
+  </div>
+  <div class="sec"><h3>Steam and equipment</h3>
+    <div class="grid">
+      <div><label for="ev_vap">Steam fed to 1st vessel (t/h)</label><input id="ev_vap" value="100" inputmode="decimal"></div>
+      <div><label for="ev_area">Calandria area (m²)</label><input id="ev_area" value="3500" inputmode="decimal"></div>
+      <div><label for="ev_vac">Last effect vacuum (inHg)</label><input id="ev_vac" value="26" inputmode="decimal"></div>
+      <div><label for="ev_efectos">Number of effects</label>
+        <select id="ev_efectos">
+          <option value="3">3</option>
+          <option value="4" selected>4</option>
+          <option value="5">5</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <div class="res">
+    <div class="rc"><div class="lb">Total water evaporated</div><div class="vl" id="ev_agua">—</div><div class="un">t/h</div></div>
+    <div class="rc"><div class="lb">Steam economy</div><div class="vl" id="ev_econ">—</div><div class="un">kg/kg</div></div>
+  </div>
+  <div class="warn" id="ev_w"></div>
+  <div class="det"><h4>Detail</h4><div id="ev_det"></div></div>
+
+
+<h2>Theoretical background and formulas</h2>
+<h3>Water evaporated and syrup produced</h3>
+<div class="formula-block">\[\%Evaporation = \left(1-\frac{Bx_{clarified}}{Bx_{syrup,target}}\right)\times100\]</div>
+<div class="formula-block">\[Water_{evaporated}\,(t/h) = Clarified_{juice}\,(t/h) \times \frac{\%Evaporation}{100}\]</div>
+<h3>Steam economy</h3>
+<div class="formula-block">\[Economy\,(kg/kg) = \frac{Water_{evaporated}}{Steam_{fed\,1st\,effect}}\]</div>
+<h3>Specific evaporation rate</h3>
+<div class="formula-block">\[Rate\,(kg/m^2\cdot h) = \frac{Water_{evaporated}\times1000}{Calandria_{area}}\]</div>
+<p>Typical steam economy scales roughly with the number of effects (Hugot): 2.6 kg/kg in triple effect, 3.2 kg/kg in quadruple, and 4.0 kg/kg in quintuple effect; these values are used as a reference to estimate theoretical syrup Brix and detect deviations against actual Brix.</p>
+<p class="lit-ref"><strong>Reference literature:</strong> E. Hugot, <em>Handbook of Cane Sugar Engineering</em> (multiple effect evaporation and steam economy); Peter Rein, <em>Cane Sugar Engineering</em>; Meade–Chen, <em>Cane Sugar Handbook</em>.</p>
+
+<h2>Typical operational ranges (KPIs)</h2>
+<table class="kpi-table">
+<thead><tr><th>KPI</th><th>Typical range</th><th>Alert</th></tr></thead>
+<tbody>
+<tr><td>Actual syrup Brix</td><td>60 – 70 °Bx</td><td>&lt;60 °Bx "light syrup" · &gt;70 °Bx "very concentrated syrup"</td></tr>
+<tr><td>Steam economy (quadruple effect)</td><td>≥ 3.2 kg/kg</td><td>&lt;3.2 kg/kg "low economy" (possible scaling)</td></tr>
+<tr><td>Steam economy (quintuple effect)</td><td>≥ 4.0 kg/kg</td><td>&lt;4.0 kg/kg "low economy"</td></tr>
+<tr><td>Condenser vacuum</td><td>≥ 24 inHg</td><td>&lt;24 inHg "low vacuum, loss of capacity"</td></tr>
+<tr><td>Actual vs. steam-theoretical Brix deviation</td><td>≤ 2 °Bx</td><td>&gt;2 °Bx "brix deviated, check instruments"</td></tr>
+</tbody>
+</table>
+
+<h2>Frequently asked questions</h2>
+<div class="faq-list">
+<div class="faq-item"><h3>What steam economy should I expect in a quadruple effect evaporator?</h3><p>A typical reference value is 3.2 kg of water evaporated per kg of steam fed to the first effect; below that, check for calandria scaling or insufficient vapour bleeding.</p></div>
+<div class="faq-item"><h3>Why is very concentrated syrup (>70 °Bx) a risk?</h3><p>At very high concentrations, syrup can start crystallising spontaneously inside the evaporator itself or in outlet piping, causing plugging and loss of control over downstream crystallization.</p></div>
+<div class="faq-item"><h3>How is theoretical syrup Brix calculated and what is it used for?</h3><p>It is estimated from the steam fed and the typical steam economy for the number of effects; compared with the measured actual Brix, a deviation greater than 2 points usually indicates an instrumentation error (refractometer) or steam flow measurement error.</p></div>
+<div class="faq-item"><h3>What effect does low condenser vacuum have on evaporation?</h3><p>A vacuum below 24 inHg in the last effect reduces the available temperature differential for heat transfer, decreasing the evaporation capacity of the entire train, even if inlet steam is sufficient.</p></div>
+</div>
+
+<p class="back-link"><a href="https://sugarplantcalc.com/en/calculadoras/">&lsaquo; Back to all calculators</a></p>
+</article>
+</div>
+
+<script>
+var LBL = {"pctEvap": "% evaporation", "meladuraH": "Syrup produced", "tasa": "Specific evaporation rate", "bxTeorico": "Theoretical syrup Brix (from steam)", "avMeladuraLiviana": "Light syrup ({0} °Bx, < 60): increases pan boiling time and steam consumption.", "avMeladuraConc": "Very concentrated syrup ({0} °Bx, > 70): risk of uncontrolled crystallisation and plugging.", "avEconBaja4": "Low steam economy ({0} kg/kg, < 3.2 in quadruple effect): possible scaling or poor bleeding.", "avEconBaja5": "Low steam economy ({0} kg/kg, < 4.0 in quintuple effect): check scaling or bleeds.", "avVacioBajo": "Low condenser vacuum ({0} inHg, < 24): loss of evaporation capacity.", "avBrixDesv": "Actual syrup Brix ({0}) deviates from the steam-based theoretical value ({1}) by more than 2 points: check the refractometer or the measured steam flow."};
+
+function g(id){return document.getElementById(id)}
+function n(id){var e=g(id);if(!e)return 0;var x=parseFloat((e.value||"").replace(",","."));return isFinite(x)?x:0}
+function f(x,d){return (!isFinite(x))?"—":x.toFixed(d)}
+function set(id,v){var e=g(id);if(e)e.textContent=v}
+function tabla(id,filas){var e=g(id);if(!e)return;e.innerHTML=filas.map(function(r){return '<div class="row"><span>'+r[0]+'</span><span style="font-weight:400;text-align:right;max-width:62%">'+r[1]+'</span></div>'}).join("")}
+function aviso(id,msg){var e=g(id);if(!e)return;if(!msg){e.style.display='none';e.textContent='';return}e.style.display='block';e.textContent=msg}
+
+function economiaTipica(ne){return ne===3?2.6:ne===4?3.2:ne===5?4.0:3.2}
+function calcEvaporacion(){
+  var flujo=n('ev_flujo'),bxc=n('ev_bxc'),bxt=n('ev_bxt'),bxr=n('ev_bxr'),vap=n('ev_vap'),
+      numEf=parseInt(g('ev_efectos').value||"4",10),area=n('ev_area'),vac=n('ev_vac');
+  var invalido=flujo<=0||bxt<=0||vap<=0||area<=0;
+  if(invalido){["ev_agua","ev_econ"].forEach(function(id){set(id,'—')});tabla('ev_det',[]);aviso('ev_w',null);return}
+  var pctEvap=(1-(bxc/bxt))*100;
+  var aguaH=flujo*(pctEvap/100);
+  var meladuraH=flujo-aguaH;
+  var econ=aguaH/vap;
+  var tasa=(aguaH*1000)/area;
+  var aguaEsperadaVapor=vap*economiaTipica(numEf);
+  var meladuraEsperada=flujo-aguaEsperadaVapor;
+  var bxTeorico=meladuraEsperada>0?bxc*flujo/meladuraEsperada:0;
+  set('ev_agua',f(aguaH,2));set('ev_econ',f(econ,2));
+  tabla('ev_det',[
+    [LBL.pctEvap,f(pctEvap,2)+" %"],
+    [LBL.meladuraH,f(meladuraH,2)+" t/h"],
+    [LBL.tasa,f(tasa,1)+" kg/m²·h"],
+    [LBL.bxTeorico, bxr>0?(f(bxTeorico,1)+" °Bx"):"—"]
+  ]);
+  var avisos=[];
+  if(bxr>0&&bxr<60)avisos.push(LBL.avMeladuraLiviana.replace('{0}',f(bxr,1)));
+  if(bxr>70)avisos.push(LBL.avMeladuraConc.replace('{0}',f(bxr,1)));
+  if(numEf===4&&econ<3.2)avisos.push(LBL.avEconBaja4.replace('{0}',f(econ,2)));
+  if(numEf===5&&econ<4.0)avisos.push(LBL.avEconBaja5.replace('{0}',f(econ,2)));
+  if(vac>0&&vac<24)avisos.push(LBL.avVacioBajo.replace('{0}',f(vac,1)));
+  if(bxr>0&&meladuraEsperada>0&&Math.abs(bxr-bxTeorico)>2)avisos.push(LBL.avBrixDesv.replace('{0}',f(bxr,1)).replace('{1}',f(bxTeorico,1)));
+  aviso('ev_w', avisos.length?avisos.join("\n\n"):null);
+}
+
+var CAMPOS=[];
+document.querySelectorAll("#ev_flujo,#ev_bxc,#ev_bxt,#ev_bxr,#ev_vap,#ev_area,#ev_vac,#ev_efectos").forEach(function(e){
+  CAMPOS.push(e.id);
+  e.addEventListener("input",calcEvaporacion);
+  e.addEventListener("change",calcEvaporacion);
+});
+try{
+  var saved=JSON.parse(localStorage.getItem("spc_calc_evaporacion")||"{}");
+  CAMPOS.forEach(function(k){if(saved[k]!=null)g(k).value=saved[k]});
+}catch(_){}
+calcEvaporacion();
+window.addEventListener('beforeunload',function(){try{var o={};CAMPOS.forEach(function(k){o[k]=g(k).value});localStorage.setItem("spc_calc_evaporacion",JSON.stringify(o))}catch(_){}});
+
+</script>
+<script src="/assets/js/cookie-consent.js"></script>
+</body>
+</html>
