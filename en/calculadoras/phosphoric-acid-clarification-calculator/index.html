@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#121417">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>Phosphoric Acid Calculator for Clarification</title>
+<meta name="description" content="Calculate the commercial phosphoric acid dose (L/h, L/day) needed to reach the target P₂O₅ in sugarcane juice clarification.">
+<link rel="canonical" href="https://sugarplantcalc.com/en/calculadoras/phosphoric-acid-clarification-calculator/">
+<link rel="alternate" hreflang="es" href="https://sugarplantcalc.com/calculadoras/acido-fosforico-clarificacion/">
+<link rel="alternate" hreflang="en" href="https://sugarplantcalc.com/en/calculadoras/phosphoric-acid-clarification-calculator/">
+<link rel="alternate" hreflang="pt" href="https://sugarplantcalc.com/pt/calculadoras/calculadora-acido-fosforico-clarificacao/">
+<link rel="alternate" hreflang="x-default" href="https://sugarplantcalc.com/calculadoras/acido-fosforico-clarificacion/">
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/img/logo.png" type="image/png">
+<link rel="apple-touch-icon" href="/assets/img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/calc-theme.css">
+<link rel="stylesheet" href="/assets/css/calc-page.css">
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://sugarplantcalc.com/en/calculadoras/phosphoric-acid-clarification-calculator/#app",
+      "name": "Phosphoric Acid Dosing Calculator for Clarification",
+      "url": "https://sugarplantcalc.com/en/calculadoras/phosphoric-acid-clarification-calculator/",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web",
+      "description": "Calculate the commercial phosphoric acid dose (L/h, L/day) needed to reach the target P₂O₅ in sugarcane juice clarification.",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "author": { "@type": "Person", "name": "Ing. Yeider Rodríguez Molina" },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://sugarplantcalc.com/en/calculadoras/phosphoric-acid-clarification-calculator/#faq",
+      "mainEntity": [
+        { "@type": "Question", "name": "What is the typical target P₂O₅ range for good juice clarification?", "acceptedAnswer": { "@type": "Answer", "text": "The usual range is 250–350 ppm P₂O₅ in juice; below 250 ppm phosphatation defecation usually loses effectiveness in forming calcium phosphate floc." } },
+        { "@type": "Question", "name": "Why is dosing above 400 ppm P₂O₅ not recommended?", "acceptedAnswer": { "@type": "Answer", "text": "Excess phosphate above 400 ppm unnecessarily raises lime consumption to neutralise the acid and increases the volume of filter mud generated, without a proportional clarification gain." } },
+        { "@type": "Question", "name": "What does it mean that the juice \"already covers the target\"?", "acceptedAnswer": { "@type": "Answer", "text": "Some canes naturally have high P₂O₅; if the measured natural P₂O₅ already equals or exceeds the process target, no additional phosphoric acid dosing is needed." } },
+        { "@type": "Question", "name": "Why is the factor 0.7243 used in the calculation?", "acceptedAnswer": { "@type": "Answer", "text": "It is the molar mass ratio between P₂O₅ (141.94 g/mol) and H₃PO₄ (2 × 97.99 g/mol); it converts the required elemental P₂O₅ mass into the equivalent mass of pure phosphoric acid." } }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sugarplantcalc.com/en/" },
+        { "@type": "ListItem", "position": 2, "name": "Calculators", "item": "https://sugarplantcalc.com/en/calculadoras/" },
+        { "@type": "ListItem", "position": 3, "name": "Phosphoric Acid Dosing Calculator for Clarification", "item": "https://sugarplantcalc.com/en/calculadoras/phosphoric-acid-clarification-calculator/" }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="cookie-banner" hidden id="cookieBanner" role="dialog" aria-label="Cookie notice">
+<div class="cookie-banner-inner">
+<p class="cookie-banner-text">We use our own cookies and Google Analytics cookies to understand how this site is used and improve it. Google Analytics only activates if you accept. <a href="https://sites.google.com/view/sugarplantcalc-privacidad" rel="noopener" target="_blank">More information</a>.</p>
+<div class="cookie-banner-actions">
+<button class="cookie-btn cookie-btn-reject" id="cookieReject" type="button">Reject</button>
+<button class="cookie-btn cookie-btn-accept" id="cookieAccept" type="button">Accept</button>
+</div>
+</div>
+</div>
+
+<div class="wrap calc-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+<a href="https://sugarplantcalc.com/en/">Home</a> &rsaquo; <a href="https://sugarplantcalc.com/en/calculadoras/">Calculators</a> &rsaquo; <span>Phosphoric Acid Dosing Calculator for Clarification</span>
+</nav>
+
+<article>
+<h1>Phosphoric Acid Dosing Calculator for Clarification</h1>
+
+<div class="intro"><p><strong>Phosphoric acid</strong> is dosed into cane juice when the natural P₂O₅ content is insufficient for good clarification by sulphitation or phosphatation defecation. This calculator computes the commercial acid flow in L/h, the pump setting in L/min and daily consumption, from the P₂O₅ deficit between the natural juice and the process target.</p></div>
+
+<h2>Calculator: commercial phosphoric acid dose and pump setting</h2>
+<div class="sec"><h3>Cane juice</h3>
+    <div class="grid">
+      <div><label for="a_q">Flow (m³/h)</label><input id="a_q" value="450" inputmode="decimal"></div>
+      <div><label for="a_bx">Brix (°Bx)</label><input id="a_bx" value="15" inputmode="decimal"></div>
+      <div><label for="a_t">Temperature (°C)</label><input id="a_t" value="35" inputmode="decimal"></div>
+      <div><label for="a_hd">Crushing hours / day</label><input id="a_hd" value="22" inputmode="decimal"></div>
+      <div><label for="a_pn">Natural P₂O₅ (ppm)</label><input id="a_pn" value="180" inputmode="decimal"></div>
+      <div><label for="a_po">Target P₂O₅ (ppm)</label><input id="a_po" value="300" inputmode="decimal"></div>
+      <div class="full"><label for="a_ef">Dosing efficiency (%)</label><input id="a_ef" value="100" inputmode="decimal"></div>
+    </div>
+  </div>
+  <div class="sec"><h3>Commercial acid</h3>
+    <div class="grid">
+      <div><label for="a_c">H₃PO₄ (% w/w)</label><input id="a_c" value="85" inputmode="decimal"></div>
+      <div><label for="a_d">Density (kg/L)</label><input id="a_d" value="1.685" inputmode="decimal"></div>
+    </div>
+  </div>
+  <div class="res">
+    <div class="rc"><div class="lb">Commercial acid</div><div class="vl" id="a_lh">—</div><div class="un">L/h</div></div>
+    <div class="rc"><div class="lb">Pump setting</div><div class="vl" id="a_lm">—</div><div class="un">L/min</div></div>
+    <div class="rc wide"><div class="lb">Daily consumption</div><div class="vl" id="a_ld">—</div><div class="un">L/day</div></div>
+  </div>
+  <div class="warn" id="a_w"></div>
+  <div class="det"><h4>Calculation detail</h4><div id="a_det"></div></div>
+
+
+<h2>Theoretical background and formulas</h2>
+<h3>P₂O₅ deficit and required addition</h3>
+<div class="formula-block">\[P_2O_{5\,to\,add}\,(kg/h) = \frac{\dot{m}_{juice}\,(kg/h) \times (P_2O_{5\,target} - P_2O_{5\,natural})\,(ppm)}{10^6 \times \eta_{dosing}}\]</div>
+<h3>Equivalent pure H₃PO₄</h3>
+<div class="formula-block">\[H_3PO_{4\,pure} = \frac{P_2O_{5\,to\,add}}{0.7243}\]</div>
+<h3>Commercial acid and pump flow</h3>
+<div class="formula-block">\[\dot{m}_{commercial\,acid} = \frac{H_3PO_{4\,pure}}{\%H_3PO_4/100} \qquad Q_{L/h} = \frac{\dot{m}_{commercial\,acid}}{\rho_{acid}}\]</div>
+<p>The 0.7243 factor is the stoichiometric molar mass ratio between P₂O₅ (141.94 g/mol) and H₃PO₄ (2 × 98 g/mol), used to convert elemental P₂O₅ into equivalent pure acid (Hugot).</p>
+<p class="lit-ref"><strong>Reference literature:</strong> E. Hugot, <em>Handbook of Cane Sugar Engineering</em> (phosphatation and clarification); Peter Rein, <em>Cane Sugar Engineering</em>; Meade–Chen, <em>Cane Sugar Handbook</em>.</p>
+
+<h2>Typical operational ranges (KPIs)</h2>
+<table class="kpi-table">
+<thead><tr><th>KPI</th><th>Typical range</th><th>Alert</th></tr></thead>
+<tbody>
+<tr><td>Target P₂O₅ in juice</td><td>250 – 350 ppm</td><td>&lt;250 ppm "low target" · &gt;400 ppm "high target"</td></tr>
+<tr><td>Target already met</td><td>target ≤ natural P₂O₅</td><td>"juice already covers target, no dosing required"</td></tr>
+<tr><td>Typical commercial H₃PO₄</td><td>75% – 85% w/w</td><td>Informative (standard commercial concentration)</td></tr>
+</tbody>
+</table>
+
+<h2>Frequently asked questions</h2>
+<div class="faq-list">
+<div class="faq-item"><h3>What is the typical target P₂O₅ range for good juice clarification?</h3><p>The usual range is 250–350 ppm P₂O₅ in juice; below 250 ppm phosphatation defecation usually loses effectiveness in forming calcium phosphate floc.</p></div>
+<div class="faq-item"><h3>Why is dosing above 400 ppm P₂O₅ not recommended?</h3><p>Excess phosphate above 400 ppm unnecessarily raises lime consumption to neutralise the acid and increases the volume of filter mud generated, without a proportional clarification gain.</p></div>
+<div class="faq-item"><h3>What does it mean that the juice "already covers the target"?</h3><p>Some canes naturally have high P₂O₅; if the measured natural P₂O₅ already equals or exceeds the process target, no additional phosphoric acid dosing is needed.</p></div>
+<div class="faq-item"><h3>Why is the factor 0.7243 used in the calculation?</h3><p>It is the molar mass ratio between P₂O₅ (141.94 g/mol) and H₃PO₄ (2 × 97.99 g/mol); it converts the required elemental P₂O₅ mass into the equivalent mass of pure phosphoric acid.</p></div>
+</div>
+
+<p class="back-link"><a href="https://sugarplantcalc.com/en/calculadoras/">&lsaquo; Back to all calculators</a></p>
+</article>
+</div>
+
+<script>
+var LBL = {"densidadJugo": "Juice density", "flujoMasico": "Juice mass flow", "deficit": "P₂O₅ deficit", "p2o5Adic": "P₂O₅ to add", "h3po4Puro": "Pure H₃PO₄ equivalent", "acidoMasa": "Commercial acid (mass)", "avCubierto": "The juice already meets the P₂O₅ target. No dosing required.", "avBajo": "Target below 250 ppm: clarification usually loses effectiveness. The usual range is 250–350 ppm.", "avAlto": "Target above 400 ppm: excess phosphate raises lime consumption and filter mud volume."};
+
+function g(id){return document.getElementById(id)}
+function n(id){var e=g(id);if(!e)return 0;var x=parseFloat((e.value||"").replace(",","."));return isFinite(x)?x:0}
+function f(x,d){return (!isFinite(x))?"—":x.toFixed(d)}
+function set(id,v){var e=g(id);if(e)e.textContent=v}
+function tabla(id,filas){var e=g(id);if(!e)return;e.innerHTML=filas.map(function(r){return '<div class="row"><span>'+r[0]+'</span><span style="font-weight:400;text-align:right;max-width:62%">'+r[1]+'</span></div>'}).join("")}
+function aviso(id,msg){var e=g(id);if(!e)return;if(!msg){e.style.display='none';e.textContent='';return}e.style.display='block';e.textContent=msg}
+
+function rhoJugo(bx,tC){
+  var rho20=998.70+3.91679*bx+0.0135108*bx*bx+2.95998e-5*bx*bx*bx;
+  var dt=tC-20;
+  return rho20-(0.24707*dt+0.003169*dt*dt);
+}
+var F_P=0.7243;
+
+function calcAcido(){
+  var q=n('a_q'),bx=n('a_bx'),tC=n('a_t'),pn=n('a_pn'),po=n('a_po'),ef=n('a_ef'),c=n('a_c'),d=n('a_d'),hd=n('a_hd');
+  var rho=rhoJugo(bx,tC),m=q*rho,def=Math.max(po-pn,0),e=ef>0?ef/100:1;
+  var p=m*def/1e6/e,h=p/F_P,com=c>0?h/(c/100):0,lh=d>0?com/d:0,lm=lh/60;
+  set('a_lh',f(lh,1));set('a_lm',f(lm,3));set('a_ld',f(lh*hd,0));
+  tabla('a_det',[[LBL.densidadJugo,f(rho,1)+" kg/m³"],[LBL.flujoMasico,f(m/1000,1)+" t/h"],
+    [LBL.deficit,f(def,0)+" ppm"],[LBL.p2o5Adic,f(p,2)+" kg/h"],
+    [LBL.h3po4Puro,f(h,2)+" kg/h"],[LBL.acidoMasa,f(com,2)+" kg/h"]]);
+  aviso('a_w', po-pn<=0?LBL.avCubierto : (po<250?LBL.avBajo : (po>400?LBL.avAlto : null)));
+}
+
+var CAMPOS=[];
+document.querySelectorAll("#a_q,#a_bx,#a_t,#a_hd,#a_pn,#a_po,#a_ef,#a_c,#a_d").forEach(function(e){
+  CAMPOS.push(e.id);
+  e.addEventListener("input",calcAcido);
+  e.addEventListener("change",calcAcido);
+});
+try{
+  var saved=JSON.parse(localStorage.getItem("spc_calc_acido")||"{}");
+  CAMPOS.forEach(function(k){if(saved[k]!=null)g(k).value=saved[k]});
+}catch(_){}
+calcAcido();
+window.addEventListener('beforeunload',function(){try{var o={};CAMPOS.forEach(function(k){o[k]=g(k).value});localStorage.setItem("spc_calc_acido",JSON.stringify(o))}catch(_){}});
+
+</script>
+<script src="/assets/js/cookie-consent.js"></script>
+</body>
+</html>
