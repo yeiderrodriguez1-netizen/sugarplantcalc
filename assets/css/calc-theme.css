@@ -1,4 +1,3 @@
-<style>
 :root {
   --bg-main: #121417; --bg-alt: #16191E; --bg-card: #1A1E24; --bg-card-hover: #222730;
   --accent-gold: #F5B301; --accent-gold-2: #E5A200; --accent-gold-glow: rgba(245,179,1,.2);
@@ -94,4 +93,3 @@ input:focus,select:focus{outline:none;border-color:var(--accent-gold);box-shadow
 .cookie-btn-reject{background:transparent;color:var(--text-main);border-color:var(--border-color)}
 .cookie-btn-reject:hover{border-color:var(--accent-gold);color:var(--accent-gold)}
 @media(max-width:640px){.cookie-banner-inner{flex-direction:column;align-items:stretch;text-align:center}.cookie-banner-actions{margin-left:0;justify-content:center}}
-</style>
