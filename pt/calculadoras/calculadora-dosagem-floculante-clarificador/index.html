@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#121417">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>Calculadora de Dosagem de Floculante para o Clarificador</title>
+<meta name="description" content="Calcule o consumo de polímero (kg/dia), a vazão da bomba de solução (L/min) e a duração do batch de floculante do seu clarificador.">
+<link rel="canonical" href="https://sugarplantcalc.com/pt/calculadoras/calculadora-dosagem-floculante-clarificador/">
+<link rel="alternate" hreflang="es" href="https://sugarplantcalc.com/calculadoras/dosis-floculante-clarificador/">
+<link rel="alternate" hreflang="en" href="https://sugarplantcalc.com/en/calculadoras/flocculant-dosing-calculator-clarifier/">
+<link rel="alternate" hreflang="pt" href="https://sugarplantcalc.com/pt/calculadoras/calculadora-dosagem-floculante-clarificador/">
+<link rel="alternate" hreflang="x-default" href="https://sugarplantcalc.com/calculadoras/dosis-floculante-clarificador/">
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/img/logo.png" type="image/png">
+<link rel="apple-touch-icon" href="/assets/img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/calc-theme.css">
+<link rel="stylesheet" href="/assets/css/calc-page.css">
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://sugarplantcalc.com/pt/calculadoras/calculadora-dosagem-floculante-clarificador/#app",
+      "name": "Calculadora de Dosagem de Floculante para o Clarificador",
+      "url": "https://sugarplantcalc.com/pt/calculadoras/calculadora-dosagem-floculante-clarificador/",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web",
+      "description": "Calcule o consumo de polímero (kg/dia), a vazão da bomba de solução (L/min) e a duração do batch de floculante do seu clarificador.",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "author": { "@type": "Person", "name": "Ing. Yeider Rodríguez Molina" },
+      "inLanguage": "pt"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://sugarplantcalc.com/pt/calculadoras/calculadora-dosagem-floculante-clarificador/#faq",
+      "mainEntity": [
+        { "@type": "Question", "name": "Qual é a dose típica de floculante na clarificação do caldo de cana?", "acceptedAnswer": { "@type": "Answer", "text": "A faixa usual é 1–6 ppm de polímero sobre o caldo; abaixo de 1 ppm raramente se forma um floco estável, e acima de 6 ppm é uma sobredosagem típica que pode refloculação o lodo e aumentar a turbidez." } },
+        { "@type": "Question", "name": "Por que a solução mãe não deve ser preparada muito concentrada?", "acceptedAnswer": { "@type": "Answer", "text": "Acima de 2 g/L a viscosidade da solução de poliacrilamida aumenta drasticamente, dificultando sua dissolução completa e a dosagem uniforme; a faixa prática recomendada é 0,5–1,5 g/L." } },
+        { "@type": "Question", "name": "O que acontece se o batch durar menos de 1,5 hora?", "acceptedAnswer": { "@type": "Answer", "text": "O polímero precisa de um tempo de maturação de 30–60 minutos após se dissolver para desenvolver toda sua cadeia e efetividade; um batch consumido em menos de 1,5 hora não dá tempo suficiente, sendo melhor usar um tanque maior ou alternar dois tanques." } },
+        { "@type": "Question", "name": "Como a dose de floculante se relaciona com o teste de jarros?", "acceptedAnswer": { "@type": "Answer", "text": "A dose ótima em ppm obtida em um teste de jarros de laboratório é o ponto de partida ideal para esta calculadora, pois valida em campo a faixa de trabalho antes de ajustar a bomba dosadora na planta." } }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Início", "item": "https://sugarplantcalc.com/pt/" },
+        { "@type": "ListItem", "position": 2, "name": "Calculadoras", "item": "https://sugarplantcalc.com/pt/calculadoras/" },
+        { "@type": "ListItem", "position": 3, "name": "Calculadora de Dosagem de Floculante para o Clarificador", "item": "https://sugarplantcalc.com/pt/calculadoras/calculadora-dosagem-floculante-clarificador/" }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="cookie-banner" hidden id="cookieBanner" role="dialog" aria-label="Cookie notice">
+<div class="cookie-banner-inner">
+<p class="cookie-banner-text">Usamos cookies próprios e do Google Analytics para entender como este site é usado e melhorá-lo. O Google Analytics só é ativado se você aceitar. <a href="https://sites.google.com/view/sugarplantcalc-privacidad" rel="noopener" target="_blank">Mais informações</a>.</p>
+<div class="cookie-banner-actions">
+<button class="cookie-btn cookie-btn-reject" id="cookieReject" type="button">Rejeitar</button>
+<button class="cookie-btn cookie-btn-accept" id="cookieAccept" type="button">Aceitar</button>
+</div>
+</div>
+</div>
+
+<div class="wrap calc-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+<a href="https://sugarplantcalc.com/pt/">Início</a> &rsaquo; <a href="https://sugarplantcalc.com/pt/calculadoras/">Calculadoras</a> &rsaquo; <span>Calculadora de Dosagem de Floculante para o Clarificador</span>
+</nav>
+
+<article>
+<h1>Calculadora de Dosagem de Floculante para o Clarificador</h1>
+
+<div class="intro"><p>O <strong>floculante</strong> (poliacrilamida aniônica) é dosado no caldo caleado e aquecido antes do clarificador para acelerar a sedimentação do lodo. Esta calculadora obtém o consumo diário de polímero, a vazão da bomba de solução diluída e a duração do batch de preparo a partir da vazão de caldo, da dose em ppm e da concentração da solução mãe.</p></div>
+
+<h2>Calculadora: polímero necessário, bomba de solução e batch</h2>
+<div class="sec"><h3>Caldo ao clarificador</h3>
+    <div class="grid">
+      <div><label for="f_q">Vazão (m³/h)</label><input id="f_q" value="450" inputmode="decimal"></div>
+      <div><label for="f_bx">Brix (°Bx)</label><input id="f_bx" value="15" inputmode="decimal"></div>
+      <div><label for="f_t">Temperatura (°C)</label><input id="f_t" value="102" inputmode="decimal"></div>
+      <div><label for="f_hd">Horas de moagem / dia</label><input id="f_hd" value="22" inputmode="decimal"></div>
+      <div class="full"><label for="f_ppm">Dose (ppm de polímero)</label><input id="f_ppm" value="3" inputmode="decimal"></div>
+    </div>
+  </div>
+  <div class="sec"><h3>Preparo</h3>
+    <div class="grid">
+      <div><label for="f_cs">Solução mãe (g/L)</label><input id="f_cs" value="1.0" inputmode="decimal"></div>
+      <div><label for="f_vt">Tanque (m³)</label><input id="f_vt" value="5" inputmode="decimal"></div>
+      <div class="full"><label for="f_dil">Diluição em linha (água : solução)</label><input id="f_dil" value="3" inputmode="decimal"></div>
+    </div>
+  </div>
+  <div class="res">
+    <div class="rc"><div class="lb">Polímero</div><div class="vl" id="f_kd">—</div><div class="un">kg/dia</div></div>
+    <div class="rc"><div class="lb">Bomba de solução</div><div class="vl" id="f_lm">—</div><div class="un">L/min</div></div>
+    <div class="rc wide"><div class="lb">Duração do batch</div><div class="vl" id="f_du">—</div><div class="un">horas</div></div>
+  </div>
+  <div class="warn" id="f_w"></div>
+  <div class="det"><h4>Detalhe do cálculo</h4><div id="f_det"></div></div>
+
+
+<h2>Fundamento teórico e fórmulas</h2>
+<h3>Polímero puro necessário</h3>
+<div class="formula-block">\[Polímero_{kg/h} = \dot{m}_{caldo}\,(kg/h) \times \frac{Dose_{ppm}}{10^6}\]</div>
+<h3>Vazão da bomba de solução</h3>
+<div class="formula-block">\[Q_{bomba}\,(L/h) = \frac{Polímero_{kg/h} \times 1000}{C_{solução\,mãe}\,(g/L)}\]</div>
+<h3>Duração do batch</h3>
+<div class="formula-block">\[t_{batch}\,(h) = \frac{V_{tanque}\,(m^3) \times 1000}{Q_{bomba}\,(L/h)}\]</div>
+<p>A solução mãe de polímero é preparada diluída (tipicamente 0,5–1,5 g/L) porque em concentração maior sua viscosidade sobe exponencialmente, dificultando tanto a dissolução completa quanto a dosagem uniforme (Rein).</p>
+<p class="lit-ref"><strong>Literatura de referência:</strong> Peter Rein, <em>Cane Sugar Engineering</em> (floculantes e clarificação); E. Hugot, <em>Handbook of Cane Sugar Engineering</em>; Meade–Chen, <em>Cane Sugar Handbook</em>.</p>
+
+<h2>Faixas operacionais típicas (KPIs)</h2>
+<table class="kpi-table">
+<thead><tr><th>KPI</th><th>Faixa típica</th><th>Alerta</th></tr></thead>
+<tbody>
+<tr><td>Concentração da solução mãe</td><td>0,5 – 1,5 g/L</td><td>&lt;0,3 g/L "solução muito diluída" · &gt;2 g/L "solução muito concentrada"</td></tr>
+<tr><td>Dose de polímero</td><td>1 – 6 ppm</td><td>&lt;1 ppm "dose baixa" · &gt;6 ppm "sobredosagem típica"</td></tr>
+<tr><td>Duração do batch</td><td>≥ 1,5 h</td><td>&lt;1,5 h "batch curto, não dá tempo de o polímero maturar"</td></tr>
+</tbody>
+</table>
+
+<h2>Perguntas frequentes</h2>
+<div class="faq-list">
+<div class="faq-item"><h3>Qual é a dose típica de floculante na clarificação do caldo de cana?</h3><p>A faixa usual é 1–6 ppm de polímero sobre o caldo; abaixo de 1 ppm raramente se forma um floco estável, e acima de 6 ppm é uma sobredosagem típica que pode refloculação o lodo e aumentar a turbidez.</p></div>
+<div class="faq-item"><h3>Por que a solução mãe não deve ser preparada muito concentrada?</h3><p>Acima de 2 g/L a viscosidade da solução de poliacrilamida aumenta drasticamente, dificultando sua dissolução completa e a dosagem uniforme; a faixa prática recomendada é 0,5–1,5 g/L.</p></div>
+<div class="faq-item"><h3>O que acontece se o batch durar menos de 1,5 hora?</h3><p>O polímero precisa de um tempo de maturação de 30–60 minutos após se dissolver para desenvolver toda sua cadeia e efetividade; um batch consumido em menos de 1,5 hora não dá tempo suficiente, sendo melhor usar um tanque maior ou alternar dois tanques.</p></div>
+<div class="faq-item"><h3>Como a dose de floculante se relaciona com o teste de jarros?</h3><p>A dose ótima em ppm obtida em um teste de jarros de laboratório é o ponto de partida ideal para esta calculadora, pois valida em campo a faixa de trabalho antes de ajustar a bomba dosadora na planta.</p></div>
+</div>
+
+<p class="back-link"><a href="https://sugarplantcalc.com/pt/calculadoras/">&lsaquo; Voltar a todas as calculadoras</a></p>
+</article>
+</div>
+
+<script>
+var LBL = {"densidadJugo": "Densidade do caldo", "flujoMasico": "Vazão mássica de caldo", "polimeroReq": "Polímero requerido", "aguaDilucion": "Água de diluição em linha", "concAplicada": "Concentração aplicada", "polvoBatch": "Pó por batch", "batchesDia": "Batches por dia", "avSolAlta": "Solução mãe acima de 2 g/L: a viscosidade dispara e o polímero não se dissolve bem. A faixa prática é 0,5–1,5 g/L.", "avSolBaja": "Solução mãe abaixo de 0,3 g/L: exige tanques enormes e o polímero se degrada antes de ser usado.", "avDosisBaja": "Menos de 1 ppm: raramente se forma flóculo estável. Verifique com teste de jarros.", "avDosisAlta": "Mais de 6 ppm: sobredosagem típica. Refloculação do lodo e maior turbidez do caldo clarificado.", "avBatch": "O batch dura menos de 1,5 h: não alcança o tempo de maturação do polímero (30–60 min). Considere um tanque maior ou dois tanques alternados."};
+
+function g(id){return document.getElementById(id)}
+function n(id){var e=g(id);if(!e)return 0;var x=parseFloat((e.value||"").replace(",","."));return isFinite(x)?x:0}
+function f(x,d){return (!isFinite(x))?"—":x.toFixed(d)}
+function set(id,v){var e=g(id);if(e)e.textContent=v}
+function tabla(id,filas){var e=g(id);if(!e)return;e.innerHTML=filas.map(function(r){return '<div class="row"><span>'+r[0]+'</span><span style="font-weight:400;text-align:right;max-width:62%">'+r[1]+'</span></div>'}).join("")}
+function aviso(id,msg){var e=g(id);if(!e)return;if(!msg){e.style.display='none';e.textContent='';return}e.style.display='block';e.textContent=msg}
+
+function rhoJugo(bx,tC){
+  var rho20=998.70+3.91679*bx+0.0135108*bx*bx+2.95998e-5*bx*bx*bx;
+  var dt=tC-20;
+  return rho20-(0.24707*dt+0.003169*dt*dt);
+}
+
+function calcFloc(){
+  var q=n('f_q'),bx=n('f_bx'),tC=n('f_t'),ppm=n('f_ppm'),hd=n('f_hd'),cs=n('f_cs'),dil=n('f_dil'),vt=n('f_vt');
+  var rho=rhoJugo(bx,tC),m=q*rho,pol=m*ppm/1e6;
+  var lh=cs>0?pol*1000/cs:0,lm=lh/60,ap=lh*(1+dil),apm=ap/60;
+  var agua=lh*dil,capl=ap>0?pol*1000/ap:0,dur=lh>0?vt*1000/lh:0;
+  set('f_kd',f(pol*hd,1));set('f_lm',f(lm,1));set('f_du',f(dur,1));
+  tabla('f_det',[[LBL.densidadJugo,f(rho,1)+" kg/m³"],[LBL.flujoMasico,f(m/1000,1)+" t/h"],
+    [LBL.polimeroReq,f(pol,3)+" kg/h"],[LBL.aguaDilucion,f(agua/1000,2)+" m³/h"],
+    [LBL.concAplicada,f(capl,3)+" g/L"],[LBL.polvoBatch,f(vt*cs,1)+" kg"],
+    [LBL.batchesDia,dur>0?f(hd/dur,1):"—"]]);
+  aviso('f_w', cs>2?LBL.avSolAlta : (cs<0.3?LBL.avSolBaja : (ppm<1?LBL.avDosisBaja
+    : (ppm>6?LBL.avDosisAlta : ((dur>0&&dur<1.5)?LBL.avBatch : null)))));
+}
+
+var CAMPOS=[];
+document.querySelectorAll("#f_q,#f_bx,#f_t,#f_hd,#f_ppm,#f_cs,#f_vt,#f_dil").forEach(function(e){
+  CAMPOS.push(e.id);
+  e.addEventListener("input",calcFloc);
+  e.addEventListener("change",calcFloc);
+});
+try{
+  var saved=JSON.parse(localStorage.getItem("spc_calc_floc")||"{}");
+  CAMPOS.forEach(function(k){if(saved[k]!=null)g(k).value=saved[k]});
+}catch(_){}
+calcFloc();
+window.addEventListener('beforeunload',function(){try{var o={};CAMPOS.forEach(function(k){o[k]=g(k).value});localStorage.setItem("spc_calc_floc",JSON.stringify(o))}catch(_){}});
+
+</script>
+<script src="/assets/js/cookie-consent.js"></script>
+</body>
+</html>
