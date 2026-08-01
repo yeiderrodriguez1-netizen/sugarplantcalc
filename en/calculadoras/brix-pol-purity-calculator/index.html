@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#121417">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>Sugar Purity Calculator: Brix and Pol</title>
+<meta name="description" content="Calculate juice, syrup or molasses purity from Brix and Pol readings. Instantly flag impossible readings or low purity.">
+<link rel="canonical" href="https://sugarplantcalc.com/en/calculadoras/brix-pol-purity-calculator/">
+<link rel="alternate" hreflang="es" href="https://sugarplantcalc.com/calculadoras/calculadora-pureza-brix-pol/">
+<link rel="alternate" hreflang="en" href="https://sugarplantcalc.com/en/calculadoras/brix-pol-purity-calculator/">
+<link rel="alternate" hreflang="pt" href="https://sugarplantcalc.com/pt/calculadoras/calculadora-pureza-brix-pol/">
+<link rel="alternate" hreflang="x-default" href="https://sugarplantcalc.com/calculadoras/calculadora-pureza-brix-pol/">
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/img/logo.png" type="image/png">
+<link rel="apple-touch-icon" href="/assets/img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/calc-theme.css">
+<link rel="stylesheet" href="/assets/css/calc-page.css">
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://sugarplantcalc.com/en/calculadoras/brix-pol-purity-calculator/#app",
+      "name": "Purity Calculator from Brix and Pol",
+      "url": "https://sugarplantcalc.com/en/calculadoras/brix-pol-purity-calculator/",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web",
+      "description": "Calculate juice, syrup or molasses purity from Brix and Pol readings. Instantly flag impossible readings or low purity.",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "author": { "@type": "Person", "name": "Ing. Yeider Rodríguez Molina" },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://sugarplantcalc.com/en/calculadoras/brix-pol-purity-calculator/#faq",
+      "mainEntity": [
+        { "@type": "Question", "name": "What does it mean if juice purity is low?", "acceptedAnswer": { "@type": "Answer", "text": "Purity below 70% usually indicates deteriorated cane, contamination with non-sugars, or a sampling error; the normal range for mixed juice is 78–88%." } },
+        { "@type": "Question", "name": "Why does the calculator flag \"impossible purity\" in some cases?", "acceptedAnswer": { "@type": "Answer", "text": "If the Pol reading is greater than Brix, the formula gives over 100%, which is not physically possible because sucrose cannot exceed total dissolved solids: check the refractometer and polarimeter." } },
+        { "@type": "Question", "name": "What is the difference between apparent purity and true purity?", "acceptedAnswer": { "@type": "Answer", "text": "Apparent purity uses refractometric Brix and polarized Pol, which include other dissolved solids; true purity requires actual sucrose analysis (HPLC) and is usually slightly different." } },
+        { "@type": "Question", "name": "How does purity change along the factory process?", "acceptedAnswer": { "@type": "Answer", "text": "It generally rises slightly from mixed juice to syrup due to clarification (removal of non-sugars), then falls in the molasses as crystallizable sucrose is exhausted." } }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sugarplantcalc.com/en/" },
+        { "@type": "ListItem", "position": 2, "name": "Calculators", "item": "https://sugarplantcalc.com/en/calculadoras/" },
+        { "@type": "ListItem", "position": 3, "name": "Purity Calculator from Brix and Pol", "item": "https://sugarplantcalc.com/en/calculadoras/brix-pol-purity-calculator/" }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="cookie-banner" hidden id="cookieBanner" role="dialog" aria-label="Cookie notice">
+<div class="cookie-banner-inner">
+<p class="cookie-banner-text">We use our own cookies and Google Analytics cookies to understand how this site is used and improve it. Google Analytics only activates if you accept. <a href="https://sites.google.com/view/sugarplantcalc-privacidad" rel="noopener" target="_blank">More information</a>.</p>
+<div class="cookie-banner-actions">
+<button class="cookie-btn cookie-btn-reject" id="cookieReject" type="button">Reject</button>
+<button class="cookie-btn cookie-btn-accept" id="cookieAccept" type="button">Accept</button>
+</div>
+</div>
+</div>
+
+<div class="wrap calc-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+<a href="https://sugarplantcalc.com/en/">Home</a> &rsaquo; <a href="https://sugarplantcalc.com/en/calculadoras/">Calculators</a> &rsaquo; <span>Purity Calculator from Brix and Pol</span>
+</nav>
+
+<article>
+<h1>Purity Calculator from Brix and Pol</h1>
+
+<div class="intro"><p><strong>Purity</strong> is the ratio between sucrose (Pol) and total soluble solids (Brix) in a juice, syrup or molasses. It is the most widely used lab indicator for tracking extraction, clarification and evaporation quality in a sugar mill. This calculator computes apparent purity and flags readings that are low or physically impossible.</p></div>
+
+<h2>Calculator: apparent purity (Pol/Brix)</h2>
+<div class="sec"><h3>Laboratory reading</h3>
+    <div class="grid">
+      <div><label for="pz_bx">Brix (°Bx)</label><input id="pz_bx" value="15.0" inputmode="decimal"></div>
+      <div><label for="pz_pol">Pol (%)</label><input id="pz_pol" value="12.5" inputmode="decimal"></div>
+    </div>
+  </div>
+  <div class="res">
+    <div class="rc wide"><div class="lb">Purity</div><div class="vl" id="pz_r">—</div><div class="un">%</div></div>
+  </div>
+  <div class="warn" id="pz_w"></div>
+
+
+<h2>Theoretical background and formulas</h2>
+<h3>Apparent purity</h3>
+<div class="formula-block">\[Purity(\%) = \frac{Pol}{Brix} \times 100\]</div>
+<p>Apparent purity assumes refractometric Brix represents total soluble solids and Pol represents apparent sucrose measured by polarimetry. It is a working approximation (not true purity from HPLC), but it is the daily factory-control standard (Meade–Chen).</p>
+<p class="lit-ref"><strong>Reference literature:</strong> Meade–Chen, <em>Cane Sugar Handbook</em> (apparent purity definition and typical purities by stream); Peter Rein, <em>Cane Sugar Engineering</em>; E. Hugot, <em>Handbook of Cane Sugar Engineering</em>.</p>
+
+<h2>Typical operational ranges (KPIs)</h2>
+<table class="kpi-table">
+<thead><tr><th>KPI</th><th>Typical range</th><th>Alert</th></tr></thead>
+<tbody>
+<tr><td>Mixed juice purity</td><td>78% – 88%</td><td>Informative (typical mixed juice)</td></tr>
+<tr><td>Clarified juice purity</td><td>78% – 88%</td><td>Informative (similar to mixed juice)</td></tr>
+<tr><td>Syrup purity</td><td>80% – 88%</td><td>Informative (slightly higher due to concentration)</td></tr>
+<tr><td>Calculated purity</td><td>≥ 70%</td><td>&lt;70% "low purity"</td></tr>
+<tr><td>Pol vs. Brix relationship</td><td>Pol ≤ Brix always</td><td>Pol &gt; Brix → "impossible purity" (&gt;100%)</td></tr>
+</tbody>
+</table>
+
+<h2>Frequently asked questions</h2>
+<div class="faq-list">
+<div class="faq-item"><h3>What does it mean if juice purity is low?</h3><p>Purity below 70% usually indicates deteriorated cane, contamination with non-sugars, or a sampling error; the normal range for mixed juice is 78–88%.</p></div>
+<div class="faq-item"><h3>Why does the calculator flag "impossible purity" in some cases?</h3><p>If the Pol reading is greater than Brix, the formula gives over 100%, which is not physically possible because sucrose cannot exceed total dissolved solids: check the refractometer and polarimeter.</p></div>
+<div class="faq-item"><h3>What is the difference between apparent purity and true purity?</h3><p>Apparent purity uses refractometric Brix and polarized Pol, which include other dissolved solids; true purity requires actual sucrose analysis (HPLC) and is usually slightly different.</p></div>
+<div class="faq-item"><h3>How does purity change along the factory process?</h3><p>It generally rises slightly from mixed juice to syrup due to clarification (removal of non-sugars), then falls in the molasses as crystallizable sucrose is exhausted.</p></div>
+</div>
+
+<p class="back-link"><a href="https://sugarplantcalc.com/en/calculadoras/">&lsaquo; Back to all calculators</a></p>
+</article>
+</div>
+
+<script>
+var LBL = {"avImposible": "Pol greater than Brix: purity would exceed 100 %, which is impossible. Check the readings: sucrose cannot exceed total solids.", "avBaja": "Purity of {0} %: it is low. Typical: mixed juice 78–88 %, clarified juice similar, syrup higher. Check whether the value makes sense for your stream."};
+
+function g(id){return document.getElementById(id)}
+function n(id){var e=g(id);if(!e)return 0;var x=parseFloat((e.value||"").replace(",","."));return isFinite(x)?x:0}
+function f(x,d){return (!isFinite(x))?"—":x.toFixed(d)}
+function set(id,v){var e=g(id);if(e)e.textContent=v}
+function aviso(id,msg){var e=g(id);if(!e)return;if(!msg){e.style.display='none';e.textContent='';return}e.style.display='block';e.textContent=msg}
+
+function calcPureza(){
+  var bx=n('pz_bx'),pol=n('pz_pol');
+  if(bx<=0||pol<=0){set('pz_r','—');aviso('pz_w',null);return}
+  var p=pol/bx*100;
+  set('pz_r',f(p,1));
+  aviso('pz_w', pol>bx?LBL.avImposible : (p<70?LBL.avBaja.replace('{0}',f(p,1)):null));
+}
+
+var CAMPOS=[];
+document.querySelectorAll("#pz_bx,#pz_pol").forEach(function(e){
+  CAMPOS.push(e.id);
+  e.addEventListener("input",calcPureza);
+  e.addEventListener("change",calcPureza);
+});
+try{
+  var saved=JSON.parse(localStorage.getItem("spc_calc_pureza")||"{}");
+  CAMPOS.forEach(function(k){if(saved[k]!=null)g(k).value=saved[k]});
+}catch(_){}
+calcPureza();
+window.addEventListener('beforeunload',function(){try{var o={};CAMPOS.forEach(function(k){o[k]=g(k).value});localStorage.setItem("spc_calc_pureza",JSON.stringify(o))}catch(_){}});
+
+</script>
+<script src="/assets/js/cookie-consent.js"></script>
+</body>
+</html>
