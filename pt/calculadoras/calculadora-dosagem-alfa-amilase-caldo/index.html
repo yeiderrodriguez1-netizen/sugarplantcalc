@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#121417">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>Calculadora de Dosagem de Alfa-amilase no Caldo</title>
+<meta name="description" content="Calcule o consumo de alfa-amilase (g/h, kg/dia) e a vazão da bomba dosadora com base no amido do caldo, temperatura e tempo de residência.">
+<link rel="canonical" href="https://sugarplantcalc.com/pt/calculadoras/calculadora-dosagem-alfa-amilase-caldo/">
+<link rel="alternate" hreflang="es" href="https://sugarplantcalc.com/calculadoras/dosificacion-alfa-amilasa-jugo/">
+<link rel="alternate" hreflang="en" href="https://sugarplantcalc.com/en/calculadoras/alpha-amylase-dosing-calculator-juice/">
+<link rel="alternate" hreflang="pt" href="https://sugarplantcalc.com/pt/calculadoras/calculadora-dosagem-alfa-amilase-caldo/">
+<link rel="alternate" hreflang="x-default" href="https://sugarplantcalc.com/calculadoras/dosificacion-alfa-amilasa-jugo/">
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/img/logo.png" type="image/png">
+<link rel="apple-touch-icon" href="/assets/img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/calc-theme.css">
+<link rel="stylesheet" href="/assets/css/calc-page.css">
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://sugarplantcalc.com/pt/calculadoras/calculadora-dosagem-alfa-amilase-caldo/#app",
+      "name": "Calculadora de Dosagem de Alfa-amilase para Caldo de Cana",
+      "url": "https://sugarplantcalc.com/pt/calculadoras/calculadora-dosagem-alfa-amilase-caldo/",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web",
+      "description": "Calcule o consumo de alfa-amilase (g/h, kg/dia) e a vazão da bomba dosadora com base no amido do caldo, temperatura e tempo de residência.",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "author": { "@type": "Person", "name": "Ing. Yeider Rodríguez Molina" },
+      "inLanguage": "pt"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://sugarplantcalc.com/pt/calculadoras/calculadora-dosagem-alfa-amilase-caldo/#faq",
+      "mainEntity": [
+        { "@type": "Question", "name": "Que nível de amido no caldo é considerado elevado?", "acceptedAnswer": { "@type": "Answer", "text": "Acima de 500 ppm é considerado amido elevado, com risco de alta viscosidade em xarope e massas cozidas, e possível rejeição de qualidade no açúcar comercial por turbidez." } },
+        { "@type": "Question", "name": "Qual é a temperatura ideal para dosar alfa-amilase?", "acceptedAnswer": { "@type": "Answer", "text": "A faixa de trabalho típica é 75–98 °C; abaixo de 75 °C o amido não gelatiniza totalmente e a enzima não consegue acessá-lo, e acima de 98 °C há risco de inativação térmica." } },
+        { "@type": "Question", "name": "Onde a alfa-amilase é normalmente dosada no processo?", "acceptedAnswer": { "@type": "Answer", "text": "Costuma ser dosada no caldo caleado quente ou na entrada da clarificação, onde a temperatura já está na faixa ótima da enzima e há tempo de residência suficiente antes da evaporação." } },
+        { "@type": "Question", "name": "O que acontece se o tempo de residência for muito baixo mesmo com a temperatura correta?", "acceptedAnswer": { "@type": "Answer", "text": "Com menos de 5 minutos de contato a hidrólise do amido é incompleta mesmo na temperatura ótima; a calculadora marca \"tempo de residência muito baixo\" nesse caso." } }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Início", "item": "https://sugarplantcalc.com/pt/" },
+        { "@type": "ListItem", "position": 2, "name": "Calculadoras", "item": "https://sugarplantcalc.com/pt/calculadoras/" },
+        { "@type": "ListItem", "position": 3, "name": "Calculadora de Dosagem de Alfa-amilase para Caldo de Cana", "item": "https://sugarplantcalc.com/pt/calculadoras/calculadora-dosagem-alfa-amilase-caldo/" }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="cookie-banner" hidden id="cookieBanner" role="dialog" aria-label="Cookie notice">
+<div class="cookie-banner-inner">
+<p class="cookie-banner-text">Usamos cookies próprios e do Google Analytics para entender como este site é usado e melhorá-lo. O Google Analytics só é ativado se você aceitar. <a href="https://sites.google.com/view/sugarplantcalc-privacidad" rel="noopener" target="_blank">Mais informações</a>.</p>
+<div class="cookie-banner-actions">
+<button class="cookie-btn cookie-btn-reject" id="cookieReject" type="button">Rejeitar</button>
+<button class="cookie-btn cookie-btn-accept" id="cookieAccept" type="button">Aceitar</button>
+</div>
+</div>
+</div>
+
+<div class="wrap calc-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+<a href="https://sugarplantcalc.com/pt/">Início</a> &rsaquo; <a href="https://sugarplantcalc.com/pt/calculadoras/">Calculadoras</a> &rsaquo; <span>Calculadora de Dosagem de Alfa-amilase para Caldo de Cana</span>
+</nav>
+
+<article>
+<h1>Calculadora de Dosagem de Alfa-amilase para Caldo de Cana</h1>
+
+<div class="intro"><p>A <strong>alfa-amilase</strong> hidrolisa o amido natural da cana para evitar problemas de filtrabilidade, turbidez e viscosidade no caldo clarificado, xarope e massas cozidas. Esta calculadora obtém o consumo de enzima em g/h e kg/dia, e a vazão da bomba dosadora diluída, a partir da vazão de caldo, do amido medido, da dose alvo e das condições de temperatura e tempo de residência.</p></div>
+
+<h2>Calculadora: consumo de enzima e vazão da bomba dosadora</h2>
+<div class="sec"><h3>Caldo e amido</h3>
+    <div class="grid">
+      <div><label for="am_flujo">Vazão de caldo (t/h)</label><input id="am_flujo" value="450" inputmode="decimal"></div>
+      <div><label for="am_alm">Amido no caldo (ppm)</label><input id="am_alm" value="150" inputmode="decimal"></div>
+      <div class="full"><label for="am_temp">Temperatura do caldo (°C)</label><input id="am_temp" value="88" inputmode="decimal"></div>
+    </div>
+  </div>
+  <div class="sec"><h3>Enzima alfa-amilase</h3>
+    <div class="grid">
+      <div><label for="am_dosis">Dose alvo (ppm)</label><input id="am_dosis" value="12" inputmode="decimal"></div>
+      <div><label for="am_dens">Densidade da enzima (kg/L)</label><input id="am_dens" value="1.15" inputmode="decimal"></div>
+      <div><label for="am_dil">Diluição no tanque (% V/V)</label><input id="am_dil" value="8" inputmode="decimal"></div>
+      <div><label for="am_tr">Tempo de residência (min)</label><input id="am_tr" value="10" inputmode="decimal"></div>
+    </div>
+  </div>
+  <div class="rc wide" style="margin-bottom:10px"><div class="lb">Vazão da bomba dosadora</div><div class="vl" id="am_bomba">—</div><div class="un">L/h</div></div>
+  <div class="res">
+    <div class="rc"><div class="lb">Consumo de amilase</div><div class="vl" id="am_gh">—</div><div class="un">g/h</div></div>
+    <div class="rc"><div class="lb">Consumo diário</div><div class="vl" id="am_kgd">—</div><div class="un">kg/dia</div></div>
+  </div>
+  <div class="warn" id="am_w"></div>
+  <div class="det"><h4>Detalhe</h4><div id="am_det"></div></div>
+
+
+<h2>Fundamento teórico e fórmulas</h2>
+<h3>Consumo de enzima</h3>
+<div class="formula-block">\[Enzima_{g/h} = Vazão_{caldo}\,(t/h) \times Dose_{alvo}\,(ppm)\]</div>
+<h3>Vazão da bomba dosadora (enzima diluída)</h3>
+<div class="formula-block">\[Q_{bomba}\,(L/h) = \frac{Enzima_{g/h}/\rho_{enzima}}{1000 \times (Diluição_{\%}/100)}\]</div>
+<p>Uma alfa-amilase termoestável típica funciona melhor entre 75 °C e 98 °C, coincidindo com a temperatura do caldo caleado ou clarificado; fora dessa faixa a gelatinização do amido é incompleta ou a enzima se desnatura (Eggleston, ISSCT).</p>
+<p class="lit-ref"><strong>Literatura de referência:</strong> Peter Rein, <em>Cane Sugar Engineering</em> (amido e seu controle enzimático); E. Hugot, <em>Handbook of Cane Sugar Engineering</em>; Meade–Chen, <em>Cane Sugar Handbook</em> (amido e filtrabilidade).</p>
+
+<h2>Faixas operacionais típicas (KPIs)</h2>
+<table class="kpi-table">
+<thead><tr><th>KPI</th><th>Faixa típica</th><th>Alerta</th></tr></thead>
+<tbody>
+<tr><td>Amido no caldo</td><td>&lt; 500 ppm</td><td>&gt;500 ppm "amido elevado"</td></tr>
+<tr><td>Temperatura de reação</td><td>75 °C – 98 °C</td><td>&gt;98 °C "temperatura alta" · &lt;75 °C "temperatura baixa"</td></tr>
+<tr><td>Tempo de residência</td><td>≥ 5 min</td><td>&lt;5 min "tempo de residência muito baixo"</td></tr>
+<tr><td>Temperatura fora da faixa + tempo baixo</td><td>Ambas as condições ao mesmo tempo</td><td>"dupla falha": a enzima provavelmente não funciona</td></tr>
+</tbody>
+</table>
+
+<h2>Perguntas frequentes</h2>
+<div class="faq-list">
+<div class="faq-item"><h3>Que nível de amido no caldo é considerado elevado?</h3><p>Acima de 500 ppm é considerado amido elevado, com risco de alta viscosidade em xarope e massas cozidas, e possível rejeição de qualidade no açúcar comercial por turbidez.</p></div>
+<div class="faq-item"><h3>Qual é a temperatura ideal para dosar alfa-amilase?</h3><p>A faixa de trabalho típica é 75–98 °C; abaixo de 75 °C o amido não gelatiniza totalmente e a enzima não consegue acessá-lo, e acima de 98 °C há risco de inativação térmica.</p></div>
+<div class="faq-item"><h3>Onde a alfa-amilase é normalmente dosada no processo?</h3><p>Costuma ser dosada no caldo caleado quente ou na entrada da clarificação, onde a temperatura já está na faixa ótima da enzima e há tempo de residência suficiente antes da evaporação.</p></div>
+<div class="faq-item"><h3>O que acontece se o tempo de residência for muito baixo mesmo com a temperatura correta?</h3><p>Com menos de 5 minutos de contato a hidrólise do amido é incompleta mesmo na temperatura ótima; a calculadora marca "tempo de residência muito baixo" nesse caso.</p></div>
+</div>
+
+<p class="back-link"><a href="https://sugarplantcalc.com/pt/calculadoras/">&lsaquo; Voltar a todas as calculadoras</a></p>
+</article>
+</div>
+
+<script>
+var LBL = {"almidonJugo": "Amido no caldo", "mlMin": "mL/min", "avAlmidonAlto": "Amido elevado ({0} ppm, > 500): risco de alta viscosidade e rejeição de qualidade no açúcar comercial.", "avDobleFalla": "Temperatura ({0} °C) fora do ótimo E tempo de residência baixo ({1} min) ao mesmo tempo: a enzima provavelmente não está funcionando. Revise ambas as condições.", "avTempAlta": "Temperatura alta ({0} °C, > 98): risco de inativação térmica.", "avTempBaja": "Temperatura baixa ({0} °C, < 75): o amido não gelifica totalmente.", "avResidenciaBaja": "Tempo de residência muito baixo ({0} min, < 5)."};
+
+function g(id){return document.getElementById(id)}
+function n(id){var e=g(id);if(!e)return 0;var x=parseFloat((e.value||"").replace(",","."));return isFinite(x)?x:0}
+function f(x,d){return (!isFinite(x))?"—":x.toFixed(d)}
+function set(id,v){var e=g(id);if(e)e.textContent=v}
+function tabla(id,filas){var e=g(id);if(!e)return;e.innerHTML=filas.map(function(r){return '<div class="row"><span>'+r[0]+'</span><span style="font-weight:400;text-align:right;max-width:62%">'+r[1]+'</span></div>'}).join("")}
+function aviso(id,msg){var e=g(id);if(!e)return;if(!msg){e.style.display='none';e.textContent='';return}e.style.display='block';e.textContent=msg}
+
+function calcEnzima(flujoTh,sustratoPpm,dosisPpm,densEnz,dilucionPct){
+  if(flujoTh<=0||densEnz<=0||dilucionPct<=0)return{valida:false};
+  var sustratoKgH=(flujoTh*sustratoPpm)/1000;
+  var enzGH=flujoTh*dosisPpm;
+  var enzKgDia=(enzGH*24)/1000;
+  var enzMlMin=(enzGH/densEnz)/60;
+  var enzLH=(enzGH/densEnz)/1000;
+  var caudalBombaLH=enzLH/(dilucionPct/100);
+  return{valida:true,sustratoKgH:sustratoKgH,enzGH:enzGH,enzKgDia:enzKgDia,enzMlMin:enzMlMin,caudalBombaLH:caudalBombaLH};
+}
+function avisosAmilasa(almidon,temp,tr){
+  var avisos=[];
+  if(almidon>500)avisos.push(LBL.avAlmidonAlto.replace('{0}',f(almidon,0)));
+  var tempAlta=temp>98,tempBaja=(temp>0.001&&temp<74.999),tiempoBajo=tr<5;
+  if((tempAlta&&tiempoBajo)||(tempBaja&&tiempoBajo)){
+    avisos.push(LBL.avDobleFalla.replace('{0}',f(temp,1)).replace('{1}',f(tr,1)));
+  } else {
+    if(tempAlta)avisos.push(LBL.avTempAlta.replace('{0}',f(temp,1)));
+    if(tempBaja)avisos.push(LBL.avTempBaja.replace('{0}',f(temp,1)));
+    if(tiempoBajo)avisos.push(LBL.avResidenciaBaja.replace('{0}',f(tr,1)));
+  }
+  return avisos;
+}
+function calcAmilasa(){
+  var flujo=n('am_flujo'),alm=n('am_alm'),dosis=n('am_dosis'),dens=n('am_dens'),dil=n('am_dil'),temp=n('am_temp'),tr=n('am_tr');
+  var r=calcEnzima(flujo,alm,dosis,dens,dil);
+  set('am_bomba', r.valida?f(r.caudalBombaLH,3):"—");
+  set('am_gh', r.valida?f(r.enzGH,1):"—");
+  set('am_kgd', r.valida?f(r.enzKgDia,2):"—");
+  tabla('am_det', r.valida?[[LBL.almidonJugo,f(r.sustratoKgH,2)+" kg/h"],[LBL.mlMin,f(r.enzMlMin,2)]]:[]);
+  var avisos=avisosAmilasa(alm,temp,tr);
+  aviso('am_w', avisos.length?avisos.join("\n\n"):null);
+}
+
+var CAMPOS=[];
+document.querySelectorAll("#am_flujo,#am_alm,#am_temp,#am_dosis,#am_dens,#am_dil,#am_tr").forEach(function(e){
+  CAMPOS.push(e.id);
+  e.addEventListener("input",calcAmilasa);
+  e.addEventListener("change",calcAmilasa);
+});
+try{
+  var saved=JSON.parse(localStorage.getItem("spc_calc_amilasa")||"{}");
+  CAMPOS.forEach(function(k){if(saved[k]!=null)g(k).value=saved[k]});
+}catch(_){}
+calcAmilasa();
+window.addEventListener('beforeunload',function(){try{var o={};CAMPOS.forEach(function(k){o[k]=g(k).value});localStorage.setItem("spc_calc_amilasa",JSON.stringify(o))}catch(_){}});
+
+</script>
+<script src="/assets/js/cookie-consent.js"></script>
+</body>
+</html>
