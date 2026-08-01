@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#121417">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>Calculadora de Evaporación y Economía de Vapor</title>
+<meta name="description" content="Calcula el agua evaporada (t/h), la economía de vapor (kg/kg) y la tasa de evaporación específica de tu tren de evaporadores.">
+<link rel="canonical" href="https://sugarplantcalc.com/calculadoras/evaporacion-multiple-efecto-economia-vapor/">
+<link rel="alternate" hreflang="es" href="https://sugarplantcalc.com/calculadoras/evaporacion-multiple-efecto-economia-vapor/">
+<link rel="alternate" hreflang="en" href="https://sugarplantcalc.com/en/calculadoras/multiple-effect-evaporation-steam-economy-calculator/">
+<link rel="alternate" hreflang="pt" href="https://sugarplantcalc.com/pt/calculadoras/calculadora-evaporacao-multiplo-efeito-economia-vapor/">
+<link rel="alternate" hreflang="x-default" href="https://sugarplantcalc.com/calculadoras/evaporacion-multiple-efecto-economia-vapor/">
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/img/logo.png" type="image/png">
+<link rel="apple-touch-icon" href="/assets/img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/calc-theme.css">
+<link rel="stylesheet" href="/assets/css/calc-page.css">
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://sugarplantcalc.com/calculadoras/evaporacion-multiple-efecto-economia-vapor/#app",
+      "name": "Calculadora de Evaporación de Múltiple Efecto y Economía de Vapor",
+      "url": "https://sugarplantcalc.com/calculadoras/evaporacion-multiple-efecto-economia-vapor/",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web",
+      "description": "Calcula el agua evaporada (t/h), la economía de vapor (kg/kg) y la tasa de evaporación específica de tu tren de evaporadores.",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "author": { "@type": "Person", "name": "Ing. Yeider Rodríguez Molina" },
+      "inLanguage": "es"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://sugarplantcalc.com/calculadoras/evaporacion-multiple-efecto-economia-vapor/#faq",
+      "mainEntity": [
+        { "@type": "Question", "name": "¿Qué economía de vapor debo esperar en un evaporador de cuádruple efecto?", "acceptedAnswer": { "@type": "Answer", "text": "Un valor de referencia típico es 3.2 kg de agua evaporada por kg de vapor alimentado al primer efecto; por debajo de eso conviene revisar incrustación en calandrias o purgas insuficientes de vapor vegetal." } },
+        { "@type": "Question", "name": "¿Por qué la meladura muy concentrada (>70 °Bx) es un riesgo?", "acceptedAnswer": { "@type": "Answer", "text": "A concentraciones muy altas la meladura puede empezar a cristalizar espontáneamente dentro del propio evaporador o en las tuberías de salida, generando taponamientos y pérdida de control del proceso de cristalización aguas abajo." } },
+        { "@type": "Question", "name": "¿Cómo se calcula el Brix teórico de meladura y para qué sirve?", "acceptedAnswer": { "@type": "Answer", "text": "Se estima a partir del vapor alimentado y la economía de vapor típica según el número de efectos; comparado con el Brix real medido, una desviación mayor a 2 puntos suele indicar error de instrumentación (refractómetro) o de medición del flujo de vapor." } },
+        { "@type": "Question", "name": "¿Qué efecto tiene un vacío bajo en el condensador sobre la evaporación?", "acceptedAnswer": { "@type": "Answer", "text": "Un vacío por debajo de 24 inHg en el último efecto reduce el diferencial de temperatura disponible para la transferencia de calor, disminuyendo la capacidad de evaporación de todo el tren, incluso si el vapor de entrada es suficiente." } }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://sugarplantcalc.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Calculadoras", "item": "https://sugarplantcalc.com/calculadoras/" },
+        { "@type": "ListItem", "position": 3, "name": "Calculadora de Evaporación de Múltiple Efecto y Economía de Vapor", "item": "https://sugarplantcalc.com/calculadoras/evaporacion-multiple-efecto-economia-vapor/" }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="cookie-banner" hidden id="cookieBanner" role="dialog" aria-label="Cookie notice">
+<div class="cookie-banner-inner">
+<p class="cookie-banner-text">Usamos cookies propias y de Google Analytics para entender cómo se usa este sitio y mejorarlo. Google Analytics solo se activa si aceptas. <a href="https://sites.google.com/view/sugarplantcalc-privacidad" rel="noopener" target="_blank">Más información</a>.</p>
+<div class="cookie-banner-actions">
+<button class="cookie-btn cookie-btn-reject" id="cookieReject" type="button">Rechazar</button>
+<button class="cookie-btn cookie-btn-accept" id="cookieAccept" type="button">Aceptar</button>
+</div>
+</div>
+</div>
+
+<div class="wrap calc-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+<a href="https://sugarplantcalc.com/">Inicio</a> &rsaquo; <a href="https://sugarplantcalc.com/calculadoras/">Calculadoras</a> &rsaquo; <span>Calculadora de Evaporación de Múltiple Efecto y Economía de Vapor</span>
+</nav>
+
+<article>
+<h1>Calculadora de Evaporación de Múltiple Efecto y Economía de Vapor</h1>
+
+<div class="intro"><p>El tren de <strong>evaporación de múltiple efecto</strong> concentra el jugo clarificado hasta meladura consumiendo el mínimo vapor posible mediante el reuso del vapor vegetal entre efectos. Esta calculadora obtiene el agua evaporada total, la economía de vapor, la tasa de evaporación específica por área de calandria y el Brix teórico de meladura esperado según el vapor alimentado, comparándolo con el Brix real medido.</p></div>
+
+<h2>Calculadora: agua evaporada, economía de vapor y brix teórico</h2>
+<div class="sec"><h3>Jugo clarificado y meladura</h3>
+    <div class="grid">
+      <div><label for="ev_flujo">Jugo clarificado (t/h)</label><input id="ev_flujo" value="400" inputmode="decimal"></div>
+      <div><label for="ev_bxc">Brix jugo clarificado (°Bx)</label><input id="ev_bxc" value="15" inputmode="decimal"></div>
+      <div><label for="ev_bxt">Brix meladura objetivo (°Bx)</label><input id="ev_bxt" value="65" inputmode="decimal"></div>
+      <div><label for="ev_bxr">Brix meladura real (°Bx)</label><input id="ev_bxr" value="65" inputmode="decimal"></div>
+    </div>
+  </div>
+  <div class="sec"><h3>Vapor y equipo</h3>
+    <div class="grid">
+      <div><label for="ev_vap">Vapor alimentado al 1er vaso (t/h)</label><input id="ev_vap" value="100" inputmode="decimal"></div>
+      <div><label for="ev_area">Área de calandrias (m²)</label><input id="ev_area" value="3500" inputmode="decimal"></div>
+      <div><label for="ev_vac">Vacío último efecto (inHg)</label><input id="ev_vac" value="26" inputmode="decimal"></div>
+      <div><label for="ev_efectos">Número de efectos</label>
+        <select id="ev_efectos">
+          <option value="3">3</option>
+          <option value="4" selected>4</option>
+          <option value="5">5</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <div class="res">
+    <div class="rc"><div class="lb">Agua evaporada total</div><div class="vl" id="ev_agua">—</div><div class="un">t/h</div></div>
+    <div class="rc"><div class="lb">Economía de vapor</div><div class="vl" id="ev_econ">—</div><div class="un">kg/kg</div></div>
+  </div>
+  <div class="warn" id="ev_w"></div>
+  <div class="det"><h4>Detalle</h4><div id="ev_det"></div></div>
+
+
+<h2>Fundamento teórico y fórmulas</h2>
+<h3>Agua evaporada y meladura producida</h3>
+<div class="formula-block">\[\%Evaporación = \left(1-\frac{Bx_{clarificado}}{Bx_{meladura,objetivo}}\right)\times100\]</div>
+<div class="formula-block">\[Agua_{evaporada}\,(t/h) = Jugo_{clarificado}\,(t/h) \times \frac{\%Evaporación}{100}\]</div>
+<h3>Economía de vapor</h3>
+<div class="formula-block">\[Economía\,(kg/kg) = \frac{Agua_{evaporada}}{Vapor_{alimentado\,1er\,efecto}}\]</div>
+<h3>Tasa de evaporación específica</h3>
+<div class="formula-block">\[Tasa\,(kg/m^2\cdot h) = \frac{Agua_{evaporada}\times1000}{Área_{calandrias}}\]</div>
+<p>La economía de vapor típica escala aproximadamente con el número de efectos (Hugot): 2.6 kg/kg en triple efecto, 3.2 kg/kg en cuádruple y 4.0 kg/kg en quíntuple efecto; estos valores se usan como referencia para estimar el Brix teórico de meladura y detectar desviaciones frente al Brix real.</p>
+<p class="lit-ref"><strong>Literatura de referencia:</strong> E. Hugot, <em>Handbook of Cane Sugar Engineering</em> (evaporación de múltiple efecto y economía de vapor); Peter Rein, <em>Cane Sugar Engineering</em>; Meade–Chen, <em>Cane Sugar Handbook</em>.</p>
+
+<h2>Rangos operacionales típicos (KPIs)</h2>
+<table class="kpi-table">
+<thead><tr><th>KPI</th><th>Rango típico</th><th>Alerta</th></tr></thead>
+<tbody>
+<tr><td>Brix de meladura real</td><td>60 – 70 °Bx</td><td>&lt;60 °Bx "meladura liviana" · &gt;70 °Bx "meladura muy concentrada"</td></tr>
+<tr><td>Economía de vapor (cuádruple efecto)</td><td>≥ 3.2 kg/kg</td><td>&lt;3.2 kg/kg "economía baja" (posible incrustación)</td></tr>
+<tr><td>Economía de vapor (quíntuple efecto)</td><td>≥ 4.0 kg/kg</td><td>&lt;4.0 kg/kg "economía baja"</td></tr>
+<tr><td>Vacío del condensador</td><td>≥ 24 inHg</td><td>&lt;24 inHg "vacío bajo, pérdida de capacidad"</td></tr>
+<tr><td>Desviación Brix real vs. teórico por vapor</td><td>≤ 2 °Bx</td><td>&gt;2 °Bx "brix desviado, revisar instrumentos"</td></tr>
+</tbody>
+</table>
+
+<h2>Preguntas frecuentes</h2>
+<div class="faq-list">
+<div class="faq-item"><h3>¿Qué economía de vapor debo esperar en un evaporador de cuádruple efecto?</h3><p>Un valor de referencia típico es 3.2 kg de agua evaporada por kg de vapor alimentado al primer efecto; por debajo de eso conviene revisar incrustación en calandrias o purgas insuficientes de vapor vegetal.</p></div>
+<div class="faq-item"><h3>¿Por qué la meladura muy concentrada (>70 °Bx) es un riesgo?</h3><p>A concentraciones muy altas la meladura puede empezar a cristalizar espontáneamente dentro del propio evaporador o en las tuberías de salida, generando taponamientos y pérdida de control del proceso de cristalización aguas abajo.</p></div>
+<div class="faq-item"><h3>¿Cómo se calcula el Brix teórico de meladura y para qué sirve?</h3><p>Se estima a partir del vapor alimentado y la economía de vapor típica según el número de efectos; comparado con el Brix real medido, una desviación mayor a 2 puntos suele indicar error de instrumentación (refractómetro) o de medición del flujo de vapor.</p></div>
+<div class="faq-item"><h3>¿Qué efecto tiene un vacío bajo en el condensador sobre la evaporación?</h3><p>Un vacío por debajo de 24 inHg en el último efecto reduce el diferencial de temperatura disponible para la transferencia de calor, disminuyendo la capacidad de evaporación de todo el tren, incluso si el vapor de entrada es suficiente.</p></div>
+</div>
+
+<p class="back-link"><a href="https://sugarplantcalc.com/calculadoras/">&lsaquo; Volver a todas las calculadoras</a></p>
+</article>
+</div>
+
+<script>
+var LBL = {"pctEvap": "% de evaporación", "meladuraH": "Meladura producida", "tasa": "Tasa de evaporación específica", "bxTeorico": "Brix meladura teórico (por vapor)", "avMeladuraLiviana": "Meladura liviana ({0} °Bx, < 60): aumenta el tiempo de cocción en tachos y el consumo de vapor.", "avMeladuraConc": "Meladura muy concentrada ({0} °Bx, > 70): riesgo de cristalización no controlada y taponamiento.", "avEconBaja4": "Economía de vapor baja ({0} kg/kg, < 3.2 en cuádruple): posible incrustación o purga deficiente.", "avEconBaja5": "Economía de vapor baja ({0} kg/kg, < 4.0 en quíntuple): revisa incrustaciones o sangrados.", "avVacioBajo": "Vacío bajo en el condensador ({0} inHg, < 24): pérdida de capacidad de evaporación.", "avBrixDesv": "Brix de meladura real ({0}) se desvía del teórico por vapor ({1}) por más de 2 puntos: revisa el refractómetro o el flujo de vapor medido."};
+
+function g(id){return document.getElementById(id)}
+function n(id){var e=g(id);if(!e)return 0;var x=parseFloat((e.value||"").replace(",","."));return isFinite(x)?x:0}
+function f(x,d){return (!isFinite(x))?"—":x.toFixed(d)}
+function set(id,v){var e=g(id);if(e)e.textContent=v}
+function tabla(id,filas){var e=g(id);if(!e)return;e.innerHTML=filas.map(function(r){return '<div class="row"><span>'+r[0]+'</span><span style="font-weight:400;text-align:right;max-width:62%">'+r[1]+'</span></div>'}).join("")}
+function aviso(id,msg){var e=g(id);if(!e)return;if(!msg){e.style.display='none';e.textContent='';return}e.style.display='block';e.textContent=msg}
+
+function economiaTipica(ne){return ne===3?2.6:ne===4?3.2:ne===5?4.0:3.2}
+function calcEvaporacion(){
+  var flujo=n('ev_flujo'),bxc=n('ev_bxc'),bxt=n('ev_bxt'),bxr=n('ev_bxr'),vap=n('ev_vap'),
+      numEf=parseInt(g('ev_efectos').value||"4",10),area=n('ev_area'),vac=n('ev_vac');
+  var invalido=flujo<=0||bxt<=0||vap<=0||area<=0;
+  if(invalido){["ev_agua","ev_econ"].forEach(function(id){set(id,'—')});tabla('ev_det',[]);aviso('ev_w',null);return}
+  var pctEvap=(1-(bxc/bxt))*100;
+  var aguaH=flujo*(pctEvap/100);
+  var meladuraH=flujo-aguaH;
+  var econ=aguaH/vap;
+  var tasa=(aguaH*1000)/area;
+  var aguaEsperadaVapor=vap*economiaTipica(numEf);
+  var meladuraEsperada=flujo-aguaEsperadaVapor;
+  var bxTeorico=meladuraEsperada>0?bxc*flujo/meladuraEsperada:0;
+  set('ev_agua',f(aguaH,2));set('ev_econ',f(econ,2));
+  tabla('ev_det',[
+    [LBL.pctEvap,f(pctEvap,2)+" %"],
+    [LBL.meladuraH,f(meladuraH,2)+" t/h"],
+    [LBL.tasa,f(tasa,1)+" kg/m²·h"],
+    [LBL.bxTeorico, bxr>0?(f(bxTeorico,1)+" °Bx"):"—"]
+  ]);
+  var avisos=[];
+  if(bxr>0&&bxr<60)avisos.push(LBL.avMeladuraLiviana.replace('{0}',f(bxr,1)));
+  if(bxr>70)avisos.push(LBL.avMeladuraConc.replace('{0}',f(bxr,1)));
+  if(numEf===4&&econ<3.2)avisos.push(LBL.avEconBaja4.replace('{0}',f(econ,2)));
+  if(numEf===5&&econ<4.0)avisos.push(LBL.avEconBaja5.replace('{0}',f(econ,2)));
+  if(vac>0&&vac<24)avisos.push(LBL.avVacioBajo.replace('{0}',f(vac,1)));
+  if(bxr>0&&meladuraEsperada>0&&Math.abs(bxr-bxTeorico)>2)avisos.push(LBL.avBrixDesv.replace('{0}',f(bxr,1)).replace('{1}',f(bxTeorico,1)));
+  aviso('ev_w', avisos.length?avisos.join("\n\n"):null);
+}
+
+var CAMPOS=[];
+document.querySelectorAll("#ev_flujo,#ev_bxc,#ev_bxt,#ev_bxr,#ev_vap,#ev_area,#ev_vac,#ev_efectos").forEach(function(e){
+  CAMPOS.push(e.id);
+  e.addEventListener("input",calcEvaporacion);
+  e.addEventListener("change",calcEvaporacion);
+});
+try{
+  var saved=JSON.parse(localStorage.getItem("spc_calc_evaporacion")||"{}");
+  CAMPOS.forEach(function(k){if(saved[k]!=null)g(k).value=saved[k]});
+}catch(_){}
+calcEvaporacion();
+window.addEventListener('beforeunload',function(){try{var o={};CAMPOS.forEach(function(k){o[k]=g(k).value});localStorage.setItem("spc_calc_evaporacion",JSON.stringify(o))}catch(_){}});
+
+</script>
+<script src="/assets/js/cookie-consent.js"></script>
+</body>
+</html>
