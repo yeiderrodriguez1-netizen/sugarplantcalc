@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#121417">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>Calculadora de Pureza: Brix y Pol del Jugo de Caña</title>
+<meta name="description" content="Calcula la pureza de jugo, meladura o miel a partir de Brix y Pol. Detecta lecturas imposibles o purezas bajas al instante.">
+<link rel="canonical" href="https://sugarplantcalc.com/calculadoras/calculadora-pureza-brix-pol/">
+<link rel="alternate" hreflang="es" href="https://sugarplantcalc.com/calculadoras/calculadora-pureza-brix-pol/">
+<link rel="alternate" hreflang="en" href="https://sugarplantcalc.com/en/calculadoras/brix-pol-purity-calculator/">
+<link rel="alternate" hreflang="pt" href="https://sugarplantcalc.com/pt/calculadoras/calculadora-pureza-brix-pol/">
+<link rel="alternate" hreflang="x-default" href="https://sugarplantcalc.com/calculadoras/calculadora-pureza-brix-pol/">
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/img/logo.png" type="image/png">
+<link rel="apple-touch-icon" href="/assets/img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/calc-theme.css">
+<link rel="stylesheet" href="/assets/css/calc-page.css">
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://sugarplantcalc.com/calculadoras/calculadora-pureza-brix-pol/#app",
+      "name": "Calculadora de Pureza a partir de Brix y Pol",
+      "url": "https://sugarplantcalc.com/calculadoras/calculadora-pureza-brix-pol/",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web",
+      "description": "Calcula la pureza de jugo, meladura o miel a partir de Brix y Pol. Detecta lecturas imposibles o purezas bajas al instante.",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "author": { "@type": "Person", "name": "Ing. Yeider Rodríguez Molina" },
+      "inLanguage": "es"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://sugarplantcalc.com/calculadoras/calculadora-pureza-brix-pol/#faq",
+      "mainEntity": [
+        { "@type": "Question", "name": "¿Qué significa que la pureza del jugo sea baja?", "acceptedAnswer": { "@type": "Answer", "text": "Una pureza por debajo de 70% suele indicar caña deteriorada, contaminación con no-azúcares, o error en la toma de muestra; el rango normal de jugo mezclado es 78–88%." } },
+        { "@type": "Question", "name": "¿Por qué la calculadora marca \"pureza imposible\" en algunos casos?", "acceptedAnswer": { "@type": "Answer", "text": "Si el Pol leído es mayor que el Brix, la fórmula da más de 100%, lo cual no tiene sentido físico porque la sacarosa no puede superar el total de sólidos disueltos: revisa el refractómetro y el polarímetro." } },
+        { "@type": "Question", "name": "¿Cuál es la diferencia entre pureza aparente y pureza verdadera?", "acceptedAnswer": { "@type": "Answer", "text": "La pureza aparente usa Brix refractométrico y Pol por polarización, que incluyen otros sólidos disueltos; la pureza verdadera requiere análisis de sacarosa real (HPLC) y suele ser ligeramente distinta." } },
+        { "@type": "Question", "name": "¿Cómo cambia la pureza a lo largo del proceso de fábrica?", "acceptedAnswer": { "@type": "Answer", "text": "En general sube ligeramente del jugo mezclado a la meladura por efecto de la clarificación (remoción de no-azúcares), y luego cae en las mieles a medida que se agota la sacarosa cristalizable." } }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://sugarplantcalc.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Calculadoras", "item": "https://sugarplantcalc.com/calculadoras/" },
+        { "@type": "ListItem", "position": 3, "name": "Calculadora de Pureza a partir de Brix y Pol", "item": "https://sugarplantcalc.com/calculadoras/calculadora-pureza-brix-pol/" }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="cookie-banner" hidden id="cookieBanner" role="dialog" aria-label="Cookie notice">
+<div class="cookie-banner-inner">
+<p class="cookie-banner-text">Usamos cookies propias y de Google Analytics para entender cómo se usa este sitio y mejorarlo. Google Analytics solo se activa si aceptas. <a href="https://sites.google.com/view/sugarplantcalc-privacidad" rel="noopener" target="_blank">Más información</a>.</p>
+<div class="cookie-banner-actions">
+<button class="cookie-btn cookie-btn-reject" id="cookieReject" type="button">Rechazar</button>
+<button class="cookie-btn cookie-btn-accept" id="cookieAccept" type="button">Aceptar</button>
+</div>
+</div>
+</div>
+
+<div class="wrap calc-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+<a href="https://sugarplantcalc.com/">Inicio</a> &rsaquo; <a href="https://sugarplantcalc.com/calculadoras/">Calculadoras</a> &rsaquo; <span>Calculadora de Pureza a partir de Brix y Pol</span>
+</nav>
+
+<article>
+<h1>Calculadora de Pureza a partir de Brix y Pol</h1>
+
+<div class="intro"><p>La <strong>pureza</strong> es la relación entre la sacarosa (Pol) y los sólidos solubles totales (Brix) de un jugo, meladura o miel. Es el indicador de laboratorio más usado para seguir la calidad del proceso de extracción, clarificación y evaporación en un ingenio azucarero. Esta calculadora obtiene la pureza aparente y avisa si la lectura es baja o físicamente imposible.</p></div>
+
+<h2>Calculadora: pureza aparente (Pol/Brix)</h2>
+<div class="sec"><h3>Lectura de laboratorio</h3>
+    <div class="grid">
+      <div><label for="pz_bx">Brix (°Bx)</label><input id="pz_bx" value="15.0" inputmode="decimal"></div>
+      <div><label for="pz_pol">Pol (%)</label><input id="pz_pol" value="12.5" inputmode="decimal"></div>
+    </div>
+  </div>
+  <div class="res">
+    <div class="rc wide"><div class="lb">Pureza</div><div class="vl" id="pz_r">—</div><div class="un">%</div></div>
+  </div>
+  <div class="warn" id="pz_w"></div>
+
+
+<h2>Fundamento teórico y fórmulas</h2>
+<h3>Pureza aparente</h3>
+<div class="formula-block">\[Pureza(\%) = \frac{Pol}{Brix} \times 100\]</div>
+<p>La pureza aparente asume que el Brix refractométrico representa los sólidos solubles totales y que el Pol representa la sacarosa aparente medida por polarimetría. Es una aproximación de trabajo (no la pureza verdadera obtenida por HPLC), pero es el estándar de control diario en fábrica (Meade–Chen).</p>
+<p class="lit-ref"><strong>Literatura de referencia:</strong> Meade–Chen, <em>Cane Sugar Handbook</em> (definición de pureza aparente y purezas típicas por corriente); Peter Rein, <em>Cane Sugar Engineering</em>; E. Hugot, <em>Handbook of Cane Sugar Engineering</em>.</p>
+
+<h2>Rangos operacionales típicos (KPIs)</h2>
+<table class="kpi-table">
+<thead><tr><th>KPI</th><th>Rango típico</th><th>Alerta</th></tr></thead>
+<tbody>
+<tr><td>Pureza jugo mezclado</td><td>78% – 88%</td><td>Informativo (típico jugo mezclado)</td></tr>
+<tr><td>Pureza jugo clarificado</td><td>78% – 88%</td><td>Informativo (similar al jugo mezclado)</td></tr>
+<tr><td>Pureza meladura</td><td>80% – 88%</td><td>Informativo (algo más alta por concentración)</td></tr>
+<tr><td>Pureza calculada</td><td>≥ 70%</td><td>&lt;70% "pureza baja"</td></tr>
+<tr><td>Relación Pol vs. Brix</td><td>Pol ≤ Brix siempre</td><td>Pol &gt; Brix → "pureza imposible" (&gt;100%)</td></tr>
+</tbody>
+</table>
+
+<h2>Preguntas frecuentes</h2>
+<div class="faq-list">
+<div class="faq-item"><h3>¿Qué significa que la pureza del jugo sea baja?</h3><p>Una pureza por debajo de 70% suele indicar caña deteriorada, contaminación con no-azúcares, o error en la toma de muestra; el rango normal de jugo mezclado es 78–88%.</p></div>
+<div class="faq-item"><h3>¿Por qué la calculadora marca "pureza imposible" en algunos casos?</h3><p>Si el Pol leído es mayor que el Brix, la fórmula da más de 100%, lo cual no tiene sentido físico porque la sacarosa no puede superar el total de sólidos disueltos: revisa el refractómetro y el polarímetro.</p></div>
+<div class="faq-item"><h3>¿Cuál es la diferencia entre pureza aparente y pureza verdadera?</h3><p>La pureza aparente usa Brix refractométrico y Pol por polarización, que incluyen otros sólidos disueltos; la pureza verdadera requiere análisis de sacarosa real (HPLC) y suele ser ligeramente distinta.</p></div>
+<div class="faq-item"><h3>¿Cómo cambia la pureza a lo largo del proceso de fábrica?</h3><p>En general sube ligeramente del jugo mezclado a la meladura por efecto de la clarificación (remoción de no-azúcares), y luego cae en las mieles a medida que se agota la sacarosa cristalizable.</p></div>
+</div>
+
+<p class="back-link"><a href="https://sugarplantcalc.com/calculadoras/">&lsaquo; Volver a todas las calculadoras</a></p>
+</article>
+</div>
+
+<script>
+var LBL = {"avImposible": "Pol mayor que Brix: la pureza pasaría de 100 %, lo cual es imposible. Revisa las lecturas: la sacarosa no puede superar los sólidos totales.", "avBaja": "Pureza de {0} %: es baja. Típico: jugo mezclado 78–88 %, jugo claro similar, meladura más alta. Verifica si el valor tiene sentido para tu corriente."};
+
+function g(id){return document.getElementById(id)}
+function n(id){var e=g(id);if(!e)return 0;var x=parseFloat((e.value||"").replace(",","."));return isFinite(x)?x:0}
+function f(x,d){return (!isFinite(x))?"—":x.toFixed(d)}
+function set(id,v){var e=g(id);if(e)e.textContent=v}
+function aviso(id,msg){var e=g(id);if(!e)return;if(!msg){e.style.display='none';e.textContent='';return}e.style.display='block';e.textContent=msg}
+
+function calcPureza(){
+  var bx=n('pz_bx'),pol=n('pz_pol');
+  if(bx<=0||pol<=0){set('pz_r','—');aviso('pz_w',null);return}
+  var p=pol/bx*100;
+  set('pz_r',f(p,1));
+  aviso('pz_w', pol>bx?LBL.avImposible : (p<70?LBL.avBaja.replace('{0}',f(p,1)):null));
+}
+
+var CAMPOS=[];
+document.querySelectorAll("#pz_bx,#pz_pol").forEach(function(e){
+  CAMPOS.push(e.id);
+  e.addEventListener("input",calcPureza);
+  e.addEventListener("change",calcPureza);
+});
+try{
+  var saved=JSON.parse(localStorage.getItem("spc_calc_pureza")||"{}");
+  CAMPOS.forEach(function(k){if(saved[k]!=null)g(k).value=saved[k]});
+}catch(_){}
+calcPureza();
+window.addEventListener('beforeunload',function(){try{var o={};CAMPOS.forEach(function(k){o[k]=g(k).value});localStorage.setItem("spc_calc_pureza",JSON.stringify(o))}catch(_){}});
+
+</script>
+<script src="/assets/js/cookie-consent.js"></script>
+</body>
+</html>
