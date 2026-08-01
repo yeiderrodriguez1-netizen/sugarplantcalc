@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#121417">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>Alpha-amylase Dosing Calculator for Juice</title>
+<meta name="description" content="Calculate alpha-amylase consumption (g/h, kg/day) and dosing pump flow based on juice starch, temperature and residence time.">
+<link rel="canonical" href="https://sugarplantcalc.com/en/calculadoras/alpha-amylase-dosing-calculator-juice/">
+<link rel="alternate" hreflang="es" href="https://sugarplantcalc.com/calculadoras/dosificacion-alfa-amilasa-jugo/">
+<link rel="alternate" hreflang="en" href="https://sugarplantcalc.com/en/calculadoras/alpha-amylase-dosing-calculator-juice/">
+<link rel="alternate" hreflang="pt" href="https://sugarplantcalc.com/pt/calculadoras/calculadora-dosagem-alfa-amilase-caldo/">
+<link rel="alternate" hreflang="x-default" href="https://sugarplantcalc.com/calculadoras/dosificacion-alfa-amilasa-jugo/">
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/img/logo.png" type="image/png">
+<link rel="apple-touch-icon" href="/assets/img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/calc-theme.css">
+<link rel="stylesheet" href="/assets/css/calc-page.css">
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://sugarplantcalc.com/en/calculadoras/alpha-amylase-dosing-calculator-juice/#app",
+      "name": "Alpha-amylase Dosing Calculator for Sugarcane Juice",
+      "url": "https://sugarplantcalc.com/en/calculadoras/alpha-amylase-dosing-calculator-juice/",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web",
+      "description": "Calculate alpha-amylase consumption (g/h, kg/day) and dosing pump flow based on juice starch, temperature and residence time.",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "author": { "@type": "Person", "name": "Ing. Yeider Rodríguez Molina" },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://sugarplantcalc.com/en/calculadoras/alpha-amylase-dosing-calculator-juice/#faq",
+      "mainEntity": [
+        { "@type": "Question", "name": "What starch level in juice is considered high?", "acceptedAnswer": { "@type": "Answer", "text": "Above 500 ppm is considered high starch, with risk of high viscosity in syrup and massecuites, and possible commercial sugar quality rejection due to turbidity." } },
+        { "@type": "Question", "name": "What is the optimal temperature for dosing alpha-amylase?", "acceptedAnswer": { "@type": "Answer", "text": "The typical working range is 75–98 °C; below 75 °C starch does not fully gelatinise so the enzyme cannot access it, and above 98 °C there is a risk of thermal inactivation." } },
+        { "@type": "Question", "name": "Where is alpha-amylase normally dosed in the process?", "acceptedAnswer": { "@type": "Answer", "text": "It is usually dosed into hot limed juice or at the entrance to clarification, where temperature is already in the enzyme's optimal range and there is enough residence time before evaporation." } },
+        { "@type": "Question", "name": "What happens if residence time is very low even at the correct temperature?", "acceptedAnswer": { "@type": "Answer", "text": "With less than 5 minutes of contact, starch hydrolysis is incomplete even at optimal temperature; the calculator flags \"very low residence time\" in that case." } }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sugarplantcalc.com/en/" },
+        { "@type": "ListItem", "position": 2, "name": "Calculators", "item": "https://sugarplantcalc.com/en/calculadoras/" },
+        { "@type": "ListItem", "position": 3, "name": "Alpha-amylase Dosing Calculator for Sugarcane Juice", "item": "https://sugarplantcalc.com/en/calculadoras/alpha-amylase-dosing-calculator-juice/" }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="cookie-banner" hidden id="cookieBanner" role="dialog" aria-label="Cookie notice">
+<div class="cookie-banner-inner">
+<p class="cookie-banner-text">We use our own cookies and Google Analytics cookies to understand how this site is used and improve it. Google Analytics only activates if you accept. <a href="https://sites.google.com/view/sugarplantcalc-privacidad" rel="noopener" target="_blank">More information</a>.</p>
+<div class="cookie-banner-actions">
+<button class="cookie-btn cookie-btn-reject" id="cookieReject" type="button">Reject</button>
+<button class="cookie-btn cookie-btn-accept" id="cookieAccept" type="button">Accept</button>
+</div>
+</div>
+</div>
+
+<div class="wrap calc-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+<a href="https://sugarplantcalc.com/en/">Home</a> &rsaquo; <a href="https://sugarplantcalc.com/en/calculadoras/">Calculators</a> &rsaquo; <span>Alpha-amylase Dosing Calculator for Sugarcane Juice</span>
+</nav>
+
+<article>
+<h1>Alpha-amylase Dosing Calculator for Sugarcane Juice</h1>
+
+<div class="intro"><p><strong>Alpha-amylase</strong> hydrolyses the natural starch in cane to prevent filterability, turbidity and viscosity problems in clarified juice, syrup and massecuites. This calculator computes enzyme consumption in g/h and kg/day, and the diluted dosing pump flow, from juice flow, measured starch, target dose, and temperature/residence time conditions.</p></div>
+
+<h2>Calculator: enzyme consumption and dosing pump flow</h2>
+<div class="sec"><h3>Juice and starch</h3>
+    <div class="grid">
+      <div><label for="am_flujo">Juice flow (t/h)</label><input id="am_flujo" value="450" inputmode="decimal"></div>
+      <div><label for="am_alm">Starch in juice (ppm)</label><input id="am_alm" value="150" inputmode="decimal"></div>
+      <div class="full"><label for="am_temp">Juice temperature (°C)</label><input id="am_temp" value="88" inputmode="decimal"></div>
+    </div>
+  </div>
+  <div class="sec"><h3>Alpha-amylase enzyme</h3>
+    <div class="grid">
+      <div><label for="am_dosis">Target dose (ppm)</label><input id="am_dosis" value="12" inputmode="decimal"></div>
+      <div><label for="am_dens">Enzyme density (kg/L)</label><input id="am_dens" value="1.15" inputmode="decimal"></div>
+      <div><label for="am_dil">Tank dilution (% V/V)</label><input id="am_dil" value="8" inputmode="decimal"></div>
+      <div><label for="am_tr">Residence time (min)</label><input id="am_tr" value="10" inputmode="decimal"></div>
+    </div>
+  </div>
+  <div class="rc wide" style="margin-bottom:10px"><div class="lb">Dosing pump flow</div><div class="vl" id="am_bomba">—</div><div class="un">L/h</div></div>
+  <div class="res">
+    <div class="rc"><div class="lb">Amylase consumption</div><div class="vl" id="am_gh">—</div><div class="un">g/h</div></div>
+    <div class="rc"><div class="lb">Daily consumption</div><div class="vl" id="am_kgd">—</div><div class="un">kg/day</div></div>
+  </div>
+  <div class="warn" id="am_w"></div>
+  <div class="det"><h4>Detail</h4><div id="am_det"></div></div>
+
+
+<h2>Theoretical background and formulas</h2>
+<h3>Enzyme consumption</h3>
+<div class="formula-block">\[Enzyme_{g/h} = Juice_{flow}\,(t/h) \times Target_{dose}\,(ppm)\]</div>
+<h3>Dosing pump flow (diluted enzyme)</h3>
+<div class="formula-block">\[Q_{pump}\,(L/h) = \frac{Enzyme_{g/h}/\rho_{enzyme}}{1000 \times (Dilution_{\%}/100)}\]</div>
+<p>A typical thermostable alpha-amylase works best between 75 °C and 98 °C, matching limed or clarified juice temperature; outside that range starch gelatinization is incomplete or the enzyme denatures (Eggleston, ISSCT).</p>
+<p class="lit-ref"><strong>Reference literature:</strong> Peter Rein, <em>Cane Sugar Engineering</em> (starch and its enzymatic control); E. Hugot, <em>Handbook of Cane Sugar Engineering</em>; Meade–Chen, <em>Cane Sugar Handbook</em> (starch and filterability).</p>
+
+<h2>Typical operational ranges (KPIs)</h2>
+<table class="kpi-table">
+<thead><tr><th>KPI</th><th>Typical range</th><th>Alert</th></tr></thead>
+<tbody>
+<tr><td>Starch in juice</td><td>&lt; 500 ppm</td><td>&gt;500 ppm "high starch"</td></tr>
+<tr><td>Reaction temperature</td><td>75 °C – 98 °C</td><td>&gt;98 °C "high temperature" · &lt;75 °C "low temperature"</td></tr>
+<tr><td>Residence time</td><td>≥ 5 min</td><td>&lt;5 min "very low residence time"</td></tr>
+<tr><td>Temperature out of range + low time</td><td>Both conditions at once</td><td>"double failure": the enzyme is likely not working</td></tr>
+</tbody>
+</table>
+
+<h2>Frequently asked questions</h2>
+<div class="faq-list">
+<div class="faq-item"><h3>What starch level in juice is considered high?</h3><p>Above 500 ppm is considered high starch, with risk of high viscosity in syrup and massecuites, and possible commercial sugar quality rejection due to turbidity.</p></div>
+<div class="faq-item"><h3>What is the optimal temperature for dosing alpha-amylase?</h3><p>The typical working range is 75–98 °C; below 75 °C starch does not fully gelatinise so the enzyme cannot access it, and above 98 °C there is a risk of thermal inactivation.</p></div>
+<div class="faq-item"><h3>Where is alpha-amylase normally dosed in the process?</h3><p>It is usually dosed into hot limed juice or at the entrance to clarification, where temperature is already in the enzyme's optimal range and there is enough residence time before evaporation.</p></div>
+<div class="faq-item"><h3>What happens if residence time is very low even at the correct temperature?</h3><p>With less than 5 minutes of contact, starch hydrolysis is incomplete even at optimal temperature; the calculator flags "very low residence time" in that case.</p></div>
+</div>
+
+<p class="back-link"><a href="https://sugarplantcalc.com/en/calculadoras/">&lsaquo; Back to all calculators</a></p>
+</article>
+</div>
+
+<script>
+var LBL = {"almidonJugo": "Starch in juice", "mlMin": "mL/min", "avAlmidonAlto": "High starch ({0} ppm, > 500): risk of high viscosity and commercial sugar quality rejection.", "avDobleFalla": "Temperature ({0} °C) out of range AND low residence time ({1} min) at the same time: the enzyme is likely not working. Check both conditions.", "avTempAlta": "High temperature ({0} °C, > 98): risk of thermal inactivation.", "avTempBaja": "Low temperature ({0} °C, < 75): starch does not fully gelatinise.", "avResidenciaBaja": "Very low residence time ({0} min, < 5)."};
+
+function g(id){return document.getElementById(id)}
+function n(id){var e=g(id);if(!e)return 0;var x=parseFloat((e.value||"").replace(",","."));return isFinite(x)?x:0}
+function f(x,d){return (!isFinite(x))?"—":x.toFixed(d)}
+function set(id,v){var e=g(id);if(e)e.textContent=v}
+function tabla(id,filas){var e=g(id);if(!e)return;e.innerHTML=filas.map(function(r){return '<div class="row"><span>'+r[0]+'</span><span style="font-weight:400;text-align:right;max-width:62%">'+r[1]+'</span></div>'}).join("")}
+function aviso(id,msg){var e=g(id);if(!e)return;if(!msg){e.style.display='none';e.textContent='';return}e.style.display='block';e.textContent=msg}
+
+function calcEnzima(flujoTh,sustratoPpm,dosisPpm,densEnz,dilucionPct){
+  if(flujoTh<=0||densEnz<=0||dilucionPct<=0)return{valida:false};
+  var sustratoKgH=(flujoTh*sustratoPpm)/1000;
+  var enzGH=flujoTh*dosisPpm;
+  var enzKgDia=(enzGH*24)/1000;
+  var enzMlMin=(enzGH/densEnz)/60;
+  var enzLH=(enzGH/densEnz)/1000;
+  var caudalBombaLH=enzLH/(dilucionPct/100);
+  return{valida:true,sustratoKgH:sustratoKgH,enzGH:enzGH,enzKgDia:enzKgDia,enzMlMin:enzMlMin,caudalBombaLH:caudalBombaLH};
+}
+function avisosAmilasa(almidon,temp,tr){
+  var avisos=[];
+  if(almidon>500)avisos.push(LBL.avAlmidonAlto.replace('{0}',f(almidon,0)));
+  var tempAlta=temp>98,tempBaja=(temp>0.001&&temp<74.999),tiempoBajo=tr<5;
+  if((tempAlta&&tiempoBajo)||(tempBaja&&tiempoBajo)){
+    avisos.push(LBL.avDobleFalla.replace('{0}',f(temp,1)).replace('{1}',f(tr,1)));
+  } else {
+    if(tempAlta)avisos.push(LBL.avTempAlta.replace('{0}',f(temp,1)));
+    if(tempBaja)avisos.push(LBL.avTempBaja.replace('{0}',f(temp,1)));
+    if(tiempoBajo)avisos.push(LBL.avResidenciaBaja.replace('{0}',f(tr,1)));
+  }
+  return avisos;
+}
+function calcAmilasa(){
+  var flujo=n('am_flujo'),alm=n('am_alm'),dosis=n('am_dosis'),dens=n('am_dens'),dil=n('am_dil'),temp=n('am_temp'),tr=n('am_tr');
+  var r=calcEnzima(flujo,alm,dosis,dens,dil);
+  set('am_bomba', r.valida?f(r.caudalBombaLH,3):"—");
+  set('am_gh', r.valida?f(r.enzGH,1):"—");
+  set('am_kgd', r.valida?f(r.enzKgDia,2):"—");
+  tabla('am_det', r.valida?[[LBL.almidonJugo,f(r.sustratoKgH,2)+" kg/h"],[LBL.mlMin,f(r.enzMlMin,2)]]:[]);
+  var avisos=avisosAmilasa(alm,temp,tr);
+  aviso('am_w', avisos.length?avisos.join("\n\n"):null);
+}
+
+var CAMPOS=[];
+document.querySelectorAll("#am_flujo,#am_alm,#am_temp,#am_dosis,#am_dens,#am_dil,#am_tr").forEach(function(e){
+  CAMPOS.push(e.id);
+  e.addEventListener("input",calcAmilasa);
+  e.addEventListener("change",calcAmilasa);
+});
+try{
+  var saved=JSON.parse(localStorage.getItem("spc_calc_amilasa")||"{}");
+  CAMPOS.forEach(function(k){if(saved[k]!=null)g(k).value=saved[k]});
+}catch(_){}
+calcAmilasa();
+window.addEventListener('beforeunload',function(){try{var o={};CAMPOS.forEach(function(k){o[k]=g(k).value});localStorage.setItem("spc_calc_amilasa",JSON.stringify(o))}catch(_){}});
+
+</script>
+<script src="/assets/js/cookie-consent.js"></script>
+</body>
+</html>
