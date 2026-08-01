@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#121417">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>Calculadora de Dosagem de Dextranase na Cana</title>
+<meta name="description" content="Calcule o consumo de dextranase (g/h, kg/dia) e a vazão da bomba dosadora com base no dextrano do caldo, temperatura e tempo de retenção.">
+<link rel="canonical" href="https://sugarplantcalc.com/pt/calculadoras/calculadora-dosagem-dextranase-cana/">
+<link rel="alternate" hreflang="es" href="https://sugarplantcalc.com/calculadoras/dosificacion-dextranasa-cana/">
+<link rel="alternate" hreflang="en" href="https://sugarplantcalc.com/en/calculadoras/dextranase-dosing-calculator-sugarcane/">
+<link rel="alternate" hreflang="pt" href="https://sugarplantcalc.com/pt/calculadoras/calculadora-dosagem-dextranase-cana/">
+<link rel="alternate" hreflang="x-default" href="https://sugarplantcalc.com/calculadoras/dosificacion-dextranasa-cana/">
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/img/logo.png" type="image/png">
+<link rel="apple-touch-icon" href="/assets/img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/calc-theme.css">
+<link rel="stylesheet" href="/assets/css/calc-page.css">
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://sugarplantcalc.com/pt/calculadoras/calculadora-dosagem-dextranase-cana/#app",
+      "name": "Calculadora de Dosagem de Dextranase para Caldo de Cana",
+      "url": "https://sugarplantcalc.com/pt/calculadoras/calculadora-dosagem-dextranase-cana/",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web",
+      "description": "Calcule o consumo de dextranase (g/h, kg/dia) e a vazão da bomba dosadora com base no dextrano do caldo, temperatura e tempo de retenção.",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "author": { "@type": "Person", "name": "Ing. Yeider Rodríguez Molina" },
+      "inLanguage": "pt"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://sugarplantcalc.com/pt/calculadoras/calculadora-dosagem-dextranase-cana/#faq",
+      "mainEntity": [
+        { "@type": "Question", "name": "Que nível de dextrano no caldo é considerado severo?", "acceptedAnswer": { "@type": "Answer", "text": "Acima de 500 ppm é considerado dextrano severo, com alto risco de aumento de viscosidade, elongação de cristais e grão falso nas tachas." } },
+        { "@type": "Question", "name": "Qual é a temperatura ideal para dosar dextranase?", "acceptedAnswer": { "@type": "Answer", "text": "A faixa de trabalho típica é 45–65 °C; acima de 65 °C a enzima se inativa termicamente e abaixo de 45 °C sua cinética é lenta demais para hidrolisar o dextrano a tempo." } },
+        { "@type": "Question", "name": "Por que o tempo de retenção importa além da dose?", "acceptedAnswer": { "@type": "Answer", "text": "A enzima precisa de pelo menos 10 minutos de contato com o caldo para hidrolisar o dextrano de forma efetiva; uma dose correta com tempo de retenção insuficiente não atinge o efeito esperado." } },
+        { "@type": "Question", "name": "O que significa o alerta de \"dupla falha\"?", "acceptedAnswer": { "@type": "Answer", "text": "Aparece quando a temperatura está fora da faixa ótima E o tempo de retenção é baixo ao mesmo tempo, indicando que a enzima provavelmente não está sendo efetiva de forma alguma, não apenas parcialmente." } }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Início", "item": "https://sugarplantcalc.com/pt/" },
+        { "@type": "ListItem", "position": 2, "name": "Calculadoras", "item": "https://sugarplantcalc.com/pt/calculadoras/" },
+        { "@type": "ListItem", "position": 3, "name": "Calculadora de Dosagem de Dextranase para Caldo de Cana", "item": "https://sugarplantcalc.com/pt/calculadoras/calculadora-dosagem-dextranase-cana/" }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="cookie-banner" hidden id="cookieBanner" role="dialog" aria-label="Cookie notice">
+<div class="cookie-banner-inner">
+<p class="cookie-banner-text">Usamos cookies próprios e do Google Analytics para entender como este site é usado e melhorá-lo. O Google Analytics só é ativado se você aceitar. <a href="https://sites.google.com/view/sugarplantcalc-privacidad" rel="noopener" target="_blank">Mais informações</a>.</p>
+<div class="cookie-banner-actions">
+<button class="cookie-btn cookie-btn-reject" id="cookieReject" type="button">Rejeitar</button>
+<button class="cookie-btn cookie-btn-accept" id="cookieAccept" type="button">Aceitar</button>
+</div>
+</div>
+</div>
+
+<div class="wrap calc-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+<a href="https://sugarplantcalc.com/pt/">Início</a> &rsaquo; <a href="https://sugarplantcalc.com/pt/calculadoras/">Calculadoras</a> &rsaquo; <span>Calculadora de Dosagem de Dextranase para Caldo de Cana</span>
+</nav>
+
+<article>
+<h1>Calculadora de Dosagem de Dextranase para Caldo de Cana</h1>
+
+<div class="intro"><p>A <strong>dextranase</strong> hidrolisa o dextrano formado por bactérias (<em>Leuconostoc</em>) em cana deteriorada ou armazenada por muito tempo, evitando problemas de viscosidade, elongação de cristais e grão falso na cristalização. Esta calculadora obtém o consumo de enzima em g/h e kg/dia, e a vazão da bomba dosadora diluída, a partir da vazão de caldo, do dextrano medido, da dose alvo e das condições de temperatura e tempo de retenção.</p></div>
+
+<h2>Calculadora: consumo de enzima e vazão da bomba dosadora</h2>
+<div class="sec"><h3>Caldo e dextrano</h3>
+    <div class="grid">
+      <div><label for="dx_flujo">Vazão de caldo (t/h)</label><input id="dx_flujo" value="450" inputmode="decimal"></div>
+      <div><label for="dx_dext">Dextrano no caldo (ppm)</label><input id="dx_dext" value="150" inputmode="decimal"></div>
+      <div class="full"><label for="dx_temp">Temperatura do caldo (°C)</label><input id="dx_temp" value="55" inputmode="decimal"></div>
+    </div>
+  </div>
+  <div class="sec"><h3>Enzima dextranase</h3>
+    <div class="grid">
+      <div><label for="dx_dosis">Dose alvo (ppm)</label><input id="dx_dosis" value="20" inputmode="decimal"></div>
+      <div><label for="dx_dens">Densidade da enzima (kg/L)</label><input id="dx_dens" value="1.12" inputmode="decimal"></div>
+      <div><label for="dx_dil">Diluição no tanque (% V/V)</label><input id="dx_dil" value="10" inputmode="decimal"></div>
+      <div><label for="dx_tr">Tempo de residência (min)</label><input id="dx_tr" value="15" inputmode="decimal"></div>
+    </div>
+  </div>
+  <div class="rc wide" style="margin-bottom:10px"><div class="lb">Vazão da bomba dosadora</div><div class="vl" id="dx_bomba">—</div><div class="un">L/h</div></div>
+  <div class="res">
+    <div class="rc"><div class="lb">Consumo de dextranase</div><div class="vl" id="dx_gh">—</div><div class="un">g/h</div></div>
+    <div class="rc"><div class="lb">Consumo diário</div><div class="vl" id="dx_kgd">—</div><div class="un">kg/dia</div></div>
+  </div>
+  <div class="warn" id="dx_w"></div>
+  <div class="det"><h4>Detalhe</h4><div id="dx_det"></div></div>
+
+
+<h2>Fundamento teórico e fórmulas</h2>
+<h3>Consumo de enzima</h3>
+<div class="formula-block">\[Enzima_{g/h} = Vazão_{caldo}\,(t/h) \times Dose_{alvo}\,(ppm)\]</div>
+<h3>Vazão da bomba dosadora (enzima diluída)</h3>
+<div class="formula-block">\[Q_{bomba}\,(L/h) = \frac{Enzima_{g/h}/\rho_{enzima}}{1000 \times (Diluição_{\%}/100)}\]</div>
+<p>A dosagem efetiva de dextranase depende criticamente da temperatura e do tempo de retenção no tanque de reação: fora da janela ótima, a enzima se inativa ou não consegue hidrolisar o dextrano antes de o caldo avançar no processo (Eggleston, ISSCT).</p>
+<p class="lit-ref"><strong>Literatura de referência:</strong> Peter Rein, <em>Cane Sugar Engineering</em> (dextrano e seu controle enzimático); E. Hugot, <em>Handbook of Cane Sugar Engineering</em>; Meade–Chen, <em>Cane Sugar Handbook</em> (deterioração da cana e dextrano).</p>
+
+<h2>Faixas operacionais típicas (KPIs)</h2>
+<table class="kpi-table">
+<thead><tr><th>KPI</th><th>Faixa típica</th><th>Alerta</th></tr></thead>
+<tbody>
+<tr><td>Dextrano no caldo</td><td>&lt; 500 ppm</td><td>&gt;500 ppm "dextrano severo"</td></tr>
+<tr><td>Temperatura de reação</td><td>45 °C – 65 °C</td><td>&gt;65 °C "temperatura alta" · &lt;45 °C "temperatura baixa"</td></tr>
+<tr><td>Tempo de retenção</td><td>≥ 10 min</td><td>&lt;10 min "tempo de retenção baixo"</td></tr>
+<tr><td>Temperatura fora da faixa + tempo baixo</td><td>Ambas as condições ao mesmo tempo</td><td>"dupla falha": a enzima provavelmente não funciona</td></tr>
+</tbody>
+</table>
+
+<h2>Perguntas frequentes</h2>
+<div class="faq-list">
+<div class="faq-item"><h3>Que nível de dextrano no caldo é considerado severo?</h3><p>Acima de 500 ppm é considerado dextrano severo, com alto risco de aumento de viscosidade, elongação de cristais e grão falso nas tachas.</p></div>
+<div class="faq-item"><h3>Qual é a temperatura ideal para dosar dextranase?</h3><p>A faixa de trabalho típica é 45–65 °C; acima de 65 °C a enzima se inativa termicamente e abaixo de 45 °C sua cinética é lenta demais para hidrolisar o dextrano a tempo.</p></div>
+<div class="faq-item"><h3>Por que o tempo de retenção importa além da dose?</h3><p>A enzima precisa de pelo menos 10 minutos de contato com o caldo para hidrolisar o dextrano de forma efetiva; uma dose correta com tempo de retenção insuficiente não atinge o efeito esperado.</p></div>
+<div class="faq-item"><h3>O que significa o alerta de "dupla falha"?</h3><p>Aparece quando a temperatura está fora da faixa ótima E o tempo de retenção é baixo ao mesmo tempo, indicando que a enzima provavelmente não está sendo efetiva de forma alguma, não apenas parcialmente.</p></div>
+</div>
+
+<p class="back-link"><a href="https://sugarplantcalc.com/pt/calculadoras/">&lsaquo; Voltar a todas as calculadoras</a></p>
+</article>
+</div>
+
+<script>
+var LBL = {"dextranoJugo": "Dextrano no caldo", "mlMin": "mL/min", "avDextranoSevero": "Dextrano severo ({0} ppm, > 500): risco de alta viscosidade, elongação de cristais e grãos falsos.", "avDobleFalla": "Temperatura ({0} °C) fora do ótimo E tempo de retenção baixo ({1} min) ao mesmo tempo: a enzima provavelmente não está funcionando. Revise ambas as condições.", "avTempAlta": "Temperatura alta ({0} °C, > 65): risco de inativação da enzima.", "avTempBaja": "Temperatura baixa ({0} °C, < 45): cinética enzimática lenta.", "avResidenciaBaja": "Tempo de retenção baixo ({0} min, < 10)."};
+
+function g(id){return document.getElementById(id)}
+function n(id){var e=g(id);if(!e)return 0;var x=parseFloat((e.value||"").replace(",","."));return isFinite(x)?x:0}
+function f(x,d){return (!isFinite(x))?"—":x.toFixed(d)}
+function set(id,v){var e=g(id);if(e)e.textContent=v}
+function tabla(id,filas){var e=g(id);if(!e)return;e.innerHTML=filas.map(function(r){return '<div class="row"><span>'+r[0]+'</span><span style="font-weight:400;text-align:right;max-width:62%">'+r[1]+'</span></div>'}).join("")}
+function aviso(id,msg){var e=g(id);if(!e)return;if(!msg){e.style.display='none';e.textContent='';return}e.style.display='block';e.textContent=msg}
+
+function calcEnzima(flujoTh,sustratoPpm,dosisPpm,densEnz,dilucionPct){
+  if(flujoTh<=0||densEnz<=0||dilucionPct<=0)return{valida:false};
+  var sustratoKgH=(flujoTh*sustratoPpm)/1000;
+  var enzGH=flujoTh*dosisPpm;
+  var enzKgDia=(enzGH*24)/1000;
+  var enzMlMin=(enzGH/densEnz)/60;
+  var enzLH=(enzGH/densEnz)/1000;
+  var caudalBombaLH=enzLH/(dilucionPct/100);
+  return{valida:true,sustratoKgH:sustratoKgH,enzGH:enzGH,enzKgDia:enzKgDia,enzMlMin:enzMlMin,caudalBombaLH:caudalBombaLH};
+}
+function avisosDextranasa(dextrano,temp,tr){
+  var avisos=[];
+  if(dextrano>500)avisos.push(LBL.avDextranoSevero.replace('{0}',f(dextrano,0)));
+  var tempAlta=temp>65,tempBaja=(temp>0.001&&temp<44.999),tiempoBajo=tr<10;
+  if((tempAlta&&tiempoBajo)||(tempBaja&&tiempoBajo)){
+    avisos.push(LBL.avDobleFalla.replace('{0}',f(temp,1)).replace('{1}',f(tr,1)));
+  } else {
+    if(tempAlta)avisos.push(LBL.avTempAlta.replace('{0}',f(temp,1)));
+    if(tempBaja)avisos.push(LBL.avTempBaja.replace('{0}',f(temp,1)));
+    if(tiempoBajo)avisos.push(LBL.avResidenciaBaja.replace('{0}',f(tr,1)));
+  }
+  return avisos;
+}
+function calcDextranasa(){
+  var flujo=n('dx_flujo'),dext=n('dx_dext'),dosis=n('dx_dosis'),dens=n('dx_dens'),dil=n('dx_dil'),temp=n('dx_temp'),tr=n('dx_tr');
+  var r=calcEnzima(flujo,dext,dosis,dens,dil);
+  set('dx_bomba', r.valida?f(r.caudalBombaLH,3):"—");
+  set('dx_gh', r.valida?f(r.enzGH,1):"—");
+  set('dx_kgd', r.valida?f(r.enzKgDia,2):"—");
+  tabla('dx_det', r.valida?[[LBL.dextranoJugo,f(r.sustratoKgH,2)+" kg/h"],[LBL.mlMin,f(r.enzMlMin,2)]]:[]);
+  var avisos=avisosDextranasa(dext,temp,tr);
+  aviso('dx_w', avisos.length?avisos.join("\n\n"):null);
+}
+
+var CAMPOS=[];
+document.querySelectorAll("#dx_flujo,#dx_dext,#dx_temp,#dx_dosis,#dx_dens,#dx_dil,#dx_tr").forEach(function(e){
+  CAMPOS.push(e.id);
+  e.addEventListener("input",calcDextranasa);
+  e.addEventListener("change",calcDextranasa);
+});
+try{
+  var saved=JSON.parse(localStorage.getItem("spc_calc_dextranasa")||"{}");
+  CAMPOS.forEach(function(k){if(saved[k]!=null)g(k).value=saved[k]});
+}catch(_){}
+calcDextranasa();
+window.addEventListener('beforeunload',function(){try{var o={};CAMPOS.forEach(function(k){o[k]=g(k).value});localStorage.setItem("spc_calc_dextranasa",JSON.stringify(o))}catch(_){}});
+
+</script>
+<script src="/assets/js/cookie-consent.js"></script>
+</body>
+</html>
