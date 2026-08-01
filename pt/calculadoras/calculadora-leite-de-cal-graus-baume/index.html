@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#121417">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>Calculadora de Leite de Cal em Graus Baumé</title>
+<meta name="description" content="Calcule a vazão de leite de cal (L/h), a cal virgem necessária (t/dia) e a água de extinção a partir da concentração em °Bé.">
+<link rel="canonical" href="https://sugarplantcalc.com/pt/calculadoras/calculadora-leite-de-cal-graus-baume/">
+<link rel="alternate" hreflang="es" href="https://sugarplantcalc.com/calculadoras/lechada-de-cal-grados-baume/">
+<link rel="alternate" hreflang="en" href="https://sugarplantcalc.com/en/calculadoras/milk-of-lime-baume-calculator/">
+<link rel="alternate" hreflang="pt" href="https://sugarplantcalc.com/pt/calculadoras/calculadora-leite-de-cal-graus-baume/">
+<link rel="alternate" hreflang="x-default" href="https://sugarplantcalc.com/calculadoras/lechada-de-cal-grados-baume/">
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/img/logo.png" type="image/png">
+<link rel="apple-touch-icon" href="/assets/img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/calc-theme.css">
+<link rel="stylesheet" href="/assets/css/calc-page.css">
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://sugarplantcalc.com/pt/calculadoras/calculadora-leite-de-cal-graus-baume/#app",
+      "name": "Calculadora de Leite de Cal e Graus Baumé",
+      "url": "https://sugarplantcalc.com/pt/calculadoras/calculadora-leite-de-cal-graus-baume/",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web",
+      "description": "Calcule a vazão de leite de cal (L/h), a cal virgem necessária (t/dia) e a água de extinção a partir da concentração em °Bé.",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "author": { "@type": "Person", "name": "Ing. Yeider Rodríguez Molina" },
+      "inLanguage": "pt"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://sugarplantcalc.com/pt/calculadoras/calculadora-leite-de-cal-graus-baume/#faq",
+      "mainEntity": [
+        { "@type": "Question", "name": "Por que o leite de cal é manejado em graus Baumé e não em Brix?", "acceptedAnswer": { "@type": "Answer", "text": "Os graus Baumé são lidos diretamente com um densímetro sem precisar calcular a composição, e a escala é calibrada para suspensões mais densas como o leite de cal, diferente do Brix que é específico para soluções açucaradas." } },
+        { "@type": "Question", "name": "O que acontece se o leite de cal estiver acima de 15 °Bé?", "acceptedAnswer": { "@type": "Answer", "text": "Um leite de cal muito concentrado sedimenta facilmente e entope linhas, válvulas e bicos dosadores; a faixa operacional recomendada é 6–12 °Bé para manter boa fluidez." } },
+        { "@type": "Question", "name": "Como a demanda de CaO se relaciona com a qualidade da cana?", "acceptedAnswer": { "@type": "Answer", "text": "Canas mais deterioradas ou com maior acidez natural do caldo requerem mais cal para atingir o pH de neutralização; demandas abaixo de 0,5 kg CaO/t cana costumam deixar o caldo insuficientemente neutralizado." } },
+        { "@type": "Question", "name": "Por que se usa o fator 0,7569 no cálculo da cal virgem?", "acceptedAnswer": { "@type": "Answer", "text": "É a relação de massas molares entre CaO (56,08 g/mol) e Ca(OH)₂ (74,09 g/mol); converte o Ca(OH)₂ equivalente presente no leite de cal na quantidade de CaO (cal virgem) necessária para produzi-lo." } }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Início", "item": "https://sugarplantcalc.com/pt/" },
+        { "@type": "ListItem", "position": 2, "name": "Calculadoras", "item": "https://sugarplantcalc.com/pt/calculadoras/" },
+        { "@type": "ListItem", "position": 3, "name": "Calculadora de Leite de Cal e Graus Baumé", "item": "https://sugarplantcalc.com/pt/calculadoras/calculadora-leite-de-cal-graus-baume/" }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="cookie-banner" hidden id="cookieBanner" role="dialog" aria-label="Cookie notice">
+<div class="cookie-banner-inner">
+<p class="cookie-banner-text">Usamos cookies próprios e do Google Analytics para entender como este site é usado e melhorá-lo. O Google Analytics só é ativado se você aceitar. <a href="https://sites.google.com/view/sugarplantcalc-privacidad" rel="noopener" target="_blank">Mais informações</a>.</p>
+<div class="cookie-banner-actions">
+<button class="cookie-btn cookie-btn-reject" id="cookieReject" type="button">Rejeitar</button>
+<button class="cookie-btn cookie-btn-accept" id="cookieAccept" type="button">Aceitar</button>
+</div>
+</div>
+</div>
+
+<div class="wrap calc-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+<a href="https://sugarplantcalc.com/pt/">Início</a> &rsaquo; <a href="https://sugarplantcalc.com/pt/calculadoras/">Calculadoras</a> &rsaquo; <span>Calculadora de Leite de Cal e Graus Baumé</span>
+</nav>
+
+<article>
+<h1>Calculadora de Leite de Cal e Graus Baumé</h1>
+
+<div class="intro"><p>O <strong>leite de cal</strong> é preparado extinguindo cal virgem (CaO) em água até uma concentração expressa em graus Baumé, e é dosado no caldo para neutralizar a acidez na etapa de caleação. Esta calculadora obtém a vazão de leite de cal ao caldo, o ajuste da válvula, a cal virgem comercial necessária por dia e a água de extinção aproximada, a partir da demanda de CaO e da concentração do leite de cal.</p></div>
+
+<h2>Calculadora: vazão de leite de cal, cal virgem necessária e água de extinção</h2>
+<div class="sec"><h3>Caldo de cana</h3>
+    <div class="grid">
+      <div><label for="c_q">Vazão (m³/h)</label><input id="c_q" value="450" inputmode="decimal"></div>
+      <div><label for="c_bx">Brix (°Bx)</label><input id="c_bx" value="15" inputmode="decimal"></div>
+      <div><label for="c_t">Temperatura (°C)</label><input id="c_t" value="35" inputmode="decimal"></div>
+      <div><label for="c_hd">Horas de moagem / dia</label><input id="c_hd" value="22" inputmode="decimal"></div>
+      <div><label for="c_dem">Demanda (kg CaO/m³)</label><input id="c_dem" value="0.80" inputmode="decimal"></div>
+      <div><label for="c_tch">Moagem (t cana/h)</label><input id="c_tch" value="400" inputmode="decimal"></div>
+    </div>
+  </div>
+  <div class="sec"><h3>Leite de cal e cal virgem</h3>
+    <div class="grid">
+      <div><label for="c_be">Concentração (°Bé)</label><input id="c_be" value="10" inputmode="decimal"></div>
+      <div><label for="c_pu">Pureza da cal virgem (% CaO)</label><input id="c_pu" value="88" inputmode="decimal"></div>
+      <div class="full"><label for="c_ea">Eficiência de extinção (%)</label><input id="c_ea" value="92" inputmode="decimal"></div>
+    </div>
+  </div>
+  <div class="res">
+    <div class="rc"><div class="lb">Leite de cal ao caldo</div><div class="vl" id="c_lh">—</div><div class="un">L/h</div></div>
+    <div class="rc"><div class="lb">Ajuste da válvula</div><div class="vl" id="c_lm">—</div><div class="un">L/min</div></div>
+    <div class="rc wide"><div class="lb">Cal virgem por dia</div><div class="vl" id="c_td">—</div><div class="un">t/dia</div></div>
+  </div>
+  <div class="warn" id="c_w"></div>
+  <div class="det"><h4>Detalhe do cálculo</h4><div id="c_det"></div></div>
+
+
+<h2>Fundamento teórico e fórmulas</h2>
+<h3>Densidade do leite de cal por graus Baumé</h3>
+<div class="formula-block">\[SG_{leite} = \frac{145}{145-°Bé}\]</div>
+<h3>CaO necessário e vazão de leite de cal</h3>
+<div class="formula-block">\[CaO_{kg/h} = Q_{caldo}\,(m^3/h) \times Demanda\,(kg\,CaO/m^3)\]</div>
+<div class="formula-block">\[Q_{leite}\,(L/h) = \frac{CaO_{kg/h} \times 1000}{g_{CaO}\,(g/L\,leite)}\]</div>
+<h3>Cal virgem comercial</h3>
+<div class="formula-block">\[CalVirgem_{comercial} = \frac{CaO_{kg/h}}{(\%Pureza/100)\times(\%Eficiência_{extinção}/100)}\]</div>
+<p>O fator 0,7569 converte Ca(OH)₂ em CaO equivalente (relação de massas molares 56,08/74,09), e 2,24 kg/L é a densidade de referência do Ca(OH)₂ puro usada para estimar os sólidos dissolvidos no leite de cal a partir de sua gravidade específica (Hugot).</p>
+<p class="lit-ref"><strong>Literatura de referência:</strong> E. Hugot, <em>Handbook of Cane Sugar Engineering</em> (caleação e preparo do leite de cal); Peter Rein, <em>Cane Sugar Engineering</em>; Meade–Chen, <em>Cane Sugar Handbook</em>.</p>
+
+<h2>Faixas operacionais típicas (KPIs)</h2>
+<table class="kpi-table">
+<thead><tr><th>KPI</th><th>Faixa típica</th><th>Alerta</th></tr></thead>
+<tbody>
+<tr><td>Concentração do leite de cal</td><td>6 – 12 °Bé</td><td>&lt;5 °Bé "leite de cal baixo" · &gt;15 °Bé "leite de cal alto"</td></tr>
+<tr><td>Demanda de CaO por cana</td><td>0,5 – 1,5 kg CaO/t cana</td><td>&lt;0,5 "cal insuficiente" · &gt;1,5 "consumo alto"</td></tr>
+<tr><td>Pureza da cal virgem comercial</td><td>85% – 92% CaO</td><td>Informativo (conforme fornecedor)</td></tr>
+<tr><td>Eficiência de extinção</td><td>88% – 95%</td><td>Informativo (conforme extintor e qualidade da água)</td></tr>
+</tbody>
+</table>
+
+<h2>Perguntas frequentes</h2>
+<div class="faq-list">
+<div class="faq-item"><h3>Por que o leite de cal é manejado em graus Baumé e não em Brix?</h3><p>Os graus Baumé são lidos diretamente com um densímetro sem precisar calcular a composição, e a escala é calibrada para suspensões mais densas como o leite de cal, diferente do Brix que é específico para soluções açucaradas.</p></div>
+<div class="faq-item"><h3>O que acontece se o leite de cal estiver acima de 15 °Bé?</h3><p>Um leite de cal muito concentrado sedimenta facilmente e entope linhas, válvulas e bicos dosadores; a faixa operacional recomendada é 6–12 °Bé para manter boa fluidez.</p></div>
+<div class="faq-item"><h3>Como a demanda de CaO se relaciona com a qualidade da cana?</h3><p>Canas mais deterioradas ou com maior acidez natural do caldo requerem mais cal para atingir o pH de neutralização; demandas abaixo de 0,5 kg CaO/t cana costumam deixar o caldo insuficientemente neutralizado.</p></div>
+<div class="faq-item"><h3>Por que se usa o fator 0,7569 no cálculo da cal virgem?</h3><p>É a relação de massas molares entre CaO (56,08 g/mol) e Ca(OH)₂ (74,09 g/mol); converte o Ca(OH)₂ equivalente presente no leite de cal na quantidade de CaO (cal virgem) necessária para produzi-lo.</p></div>
+</div>
+
+<p class="back-link"><a href="https://sugarplantcalc.com/pt/calculadoras/">&lsaquo; Voltar a todas as calculadoras</a></p>
+</article>
+</div>
+
+<script>
+var LBL = {"densidadJugo": "Densidade do caldo", "densidadLechada": "Densidade do leite de cal", "solidos": "Sólidos no leite de cal", "caoReq": "CaO requerido", "caoh2Eq": "Ca(OH)₂ equivalente", "calVivaCom": "Cal virgem comercial", "aguaApagado": "Água de extinção (aprox.)", "avBaja": "Leite de cal abaixo de 5 °Bé: vazões muito altas e diluição do caldo. A faixa operacional usual é 6–12 °Bé.", "avAlta": "Leite de cal acima de 15 °Bé: risco de sedimentação e entupimento em linhas e válvulas.", "avPoco": "Menos de 0,5 kg CaO por tonelada de cana: verifique a demanda, o caldo pode ficar sem neutralizar.", "avMucho": "Mais de 1,5 kg CaO por tonelada de cana: consumo alto, aumenta o volume de torta e a formação de cor."};
+
+function g(id){return document.getElementById(id)}
+function n(id){var e=g(id);if(!e)return 0;var x=parseFloat((e.value||"").replace(",","."));return isFinite(x)?x:0}
+function f(x,d){return (!isFinite(x))?"—":x.toFixed(d)}
+function set(id,v){var e=g(id);if(e)e.textContent=v}
+function tabla(id,filas){var e=g(id);if(!e)return;e.innerHTML=filas.map(function(r){return '<div class="row"><span>'+r[0]+'</span><span style="font-weight:400;text-align:right;max-width:62%">'+r[1]+'</span></div>'}).join("")}
+function aviso(id,msg){var e=g(id);if(!e)return;if(!msg){e.style.display='none';e.textContent='';return}e.style.display='block';e.textContent=msg}
+
+function rhoJugo(bx,tC){
+  var rho20=998.70+3.91679*bx+0.0135108*bx*bx+2.95998e-5*bx*bx*bx;
+  var dt=tC-20;
+  return rho20-(0.24707*dt+0.003169*dt*dt);
+}
+function sgBaume(b){return b<145?145/(145-b):1}
+var F_CAO=0.7569,D_CAOH2=2.24;
+
+function calcCal(){
+  var q=n('c_q'),bx=n('c_bx'),tC=n('c_t'),dem=n('c_dem'),tch=n('c_tch'),hd=n('c_hd'),be=n('c_be'),pu=n('c_pu'),ea=n('c_ea');
+  var rho=rhoJugo(bx,tC),sg=sgBaume(be);
+  var frac=Math.max((1-1/sg)/(1-1/D_CAOH2),0);
+  var gCoh=frac*sg*1000,gCao=gCoh*F_CAO;
+  var cao=q*dem,coh=cao/F_CAO,lh=gCao>0?cao*1000/gCao:0,lm=lh/60;
+  var rend=(pu>0?pu/100:1)*(ea>0?ea/100:1),cv=rend>0?cao/rend:0;
+  var agua=Math.max(lh*sg-cv,0),caotc=tch>0?cao/tch:0;
+  set('c_lh',f(lh,0));set('c_lm',f(lm,1));set('c_td',f(cv*hd/1000,2));
+  tabla('c_det',[[LBL.densidadJugo,f(rho,1)+" kg/m³"],[LBL.densidadLechada,f(sg,4)+" kg/L"],
+    [LBL.solidos,f(frac*100,1)+" % Ca(OH)₂ p/p"],[LBL.caoReq,f(cao,1)+" kg/h"],
+    [LBL.caoh2Eq,f(coh,1)+" kg/h"],[LBL.calVivaCom,f(cv,1)+" kg/h"],
+    [LBL.aguaApagado,f(agua/1000,2)+" m³/h"]]);
+  aviso('c_w', be<5?LBL.avBaja : (be>15?LBL.avAlta : ((caotc>0&&caotc<0.5)?LBL.avPoco : (caotc>1.5?LBL.avMucho : null))));
+}
+
+var CAMPOS=[];
+document.querySelectorAll("#c_q,#c_bx,#c_t,#c_hd,#c_dem,#c_tch,#c_be,#c_pu,#c_ea").forEach(function(e){
+  CAMPOS.push(e.id);
+  e.addEventListener("input",calcCal);
+  e.addEventListener("change",calcCal);
+});
+try{
+  var saved=JSON.parse(localStorage.getItem("spc_calc_cal")||"{}");
+  CAMPOS.forEach(function(k){if(saved[k]!=null)g(k).value=saved[k]});
+}catch(_){}
+calcCal();
+window.addEventListener('beforeunload',function(){try{var o={};CAMPOS.forEach(function(k){o[k]=g(k).value});localStorage.setItem("spc_calc_cal",JSON.stringify(o))}catch(_){}});
+
+</script>
+<script src="/assets/js/cookie-consent.js"></script>
+</body>
+</html>
