@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#121417">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>Density Calculator: Juice, Syrup and Molasses by Brix</title>
+<meta name="description" content="Calculate density (kg/L) and Baumé degrees of juice, syrup or molasses from Brix and temperature. Flags Brix values outside the typical product range.">
+<link rel="canonical" href="https://sugarplantcalc.com/en/calculadoras/juice-syrup-molasses-density-calculator/">
+<link rel="alternate" hreflang="es" href="https://sugarplantcalc.com/calculadoras/densidad-brix-jugo-meladura-miel/">
+<link rel="alternate" hreflang="en" href="https://sugarplantcalc.com/en/calculadoras/juice-syrup-molasses-density-calculator/">
+<link rel="alternate" hreflang="pt" href="https://sugarplantcalc.com/pt/calculadoras/calculadora-densidade-caldo-xarope-mel/">
+<link rel="alternate" hreflang="x-default" href="https://sugarplantcalc.com/calculadoras/densidad-brix-jugo-meladura-miel/">
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/img/logo.png" type="image/png">
+<link rel="apple-touch-icon" href="/assets/img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/calc-theme.css">
+<link rel="stylesheet" href="/assets/css/calc-page.css">
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://sugarplantcalc.com/en/calculadoras/juice-syrup-molasses-density-calculator/#app",
+      "name": "Density Calculator for Juice, Syrup and Molasses",
+      "url": "https://sugarplantcalc.com/en/calculadoras/juice-syrup-molasses-density-calculator/",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web",
+      "description": "Calculate density (kg/L) and Baumé degrees of juice, syrup or molasses from Brix and temperature. Flags Brix values outside the typical product range.",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "author": { "@type": "Person", "name": "Ing. Yeider Rodríguez Molina" },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://sugarplantcalc.com/en/calculadoras/juice-syrup-molasses-density-calculator/#faq",
+      "mainEntity": [
+        { "@type": "Question", "name": "Why does molasses density use a different factor than juice?", "acceptedAnswer": { "@type": "Answer", "text": "Molasses has a higher concentration of non-sugars (ash, gums) that raise its density beyond what the pure sucrose-water correlation for juice predicts; a correction factor of 1.010 is applied." } },
+        { "@type": "Question", "name": "What are Baumé degrees and why are they used in a mill?", "acceptedAnswer": { "@type": "Answer", "text": "It is a specific gravity scale widely used in the field because it can be read directly with a hydrometer without calculating Brix; useful for quick control of milk of lime and syrups." } },
+        { "@type": "Question", "name": "Why does the calculator warn the Brix is outside the typical range?", "acceptedAnswer": { "@type": "Answer", "text": "Each product (juice, syrup, molasses) has a normal concentration window in the process; a value outside that range usually means the wrong product was selected or there is a real process issue." } },
+        { "@type": "Question", "name": "How does temperature affect measured density?", "acceptedAnswer": { "@type": "Answer", "text": "As temperature rises, the density of a sugar solution decreases due to thermal expansion; that is why any field hydrometer or refractometer must be corrected or read at the reference temperature (usually 20 °C)." } }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sugarplantcalc.com/en/" },
+        { "@type": "ListItem", "position": 2, "name": "Calculators", "item": "https://sugarplantcalc.com/en/calculadoras/" },
+        { "@type": "ListItem", "position": 3, "name": "Density Calculator for Juice, Syrup and Molasses", "item": "https://sugarplantcalc.com/en/calculadoras/juice-syrup-molasses-density-calculator/" }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="cookie-banner" hidden id="cookieBanner" role="dialog" aria-label="Cookie notice">
+<div class="cookie-banner-inner">
+<p class="cookie-banner-text">We use our own cookies and Google Analytics cookies to understand how this site is used and improve it. Google Analytics only activates if you accept. <a href="https://sites.google.com/view/sugarplantcalc-privacidad" rel="noopener" target="_blank">More information</a>.</p>
+<div class="cookie-banner-actions">
+<button class="cookie-btn cookie-btn-reject" id="cookieReject" type="button">Reject</button>
+<button class="cookie-btn cookie-btn-accept" id="cookieAccept" type="button">Accept</button>
+</div>
+</div>
+</div>
+
+<div class="wrap calc-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+<a href="https://sugarplantcalc.com/en/">Home</a> &rsaquo; <a href="https://sugarplantcalc.com/en/calculadoras/">Calculators</a> &rsaquo; <span>Density Calculator for Juice, Syrup and Molasses</span>
+</nav>
+
+<article>
+<h1>Density Calculator for Juice, Syrup and Molasses</h1>
+
+<div class="intro"><p>The <strong>density</strong> of sugar process streams is calculated from Brix and temperature using standard industry empirical correlations. This calculator computes density in kg/L, specific gravity and Baumé degrees for juice, syrup or molasses, and flags when the entered Brix does not match the typical range for the selected product.</p></div>
+
+<h2>Calculator: density and Baumé degrees by Brix and temperature</h2>
+<div class="sec"><h3>Sample</h3>
+    <div class="grid">
+      <div class="full">
+        <label for="dn_prod">Product</label>
+        <select id="dn_prod">
+          <option value="jugo">Juice</option>
+          <option value="meladura">Syrup</option>
+          <option value="miel">Molasses</option>
+        </select>
+      </div>
+      <div><label for="dn_bx">Brix (°Bx)</label><input id="dn_bx" value="15" inputmode="decimal"></div>
+      <div><label for="dn_t">Temperature (°C)</label><input id="dn_t" value="30" inputmode="decimal"></div>
+    </div>
+  </div>
+  <div class="res">
+    <div class="rc"><div class="lb">Density</div><div class="vl" id="dn_kgl">—</div><div class="un">kg/L</div></div>
+    <div class="rc"><div class="lb">Baumé degrees</div><div class="vl" id="dn_be">—</div><div class="un">°Bé</div></div>
+  </div>
+  <div class="warn" id="dn_w"></div>
+  <div class="det"><h4>Detail</h4><div id="dn_det"></div></div>
+
+
+<h2>Theoretical background and formulas</h2>
+<h3>Juice density at 20 °C (polynomial correlation)</h3>
+<div class="formula-block">\[\rho_{20} = 998.70 + 3.91679\,Bx + 0.0135108\,Bx^2 + 2.95998\times10^{-5}\,Bx^3\]</div>
+<h3>Temperature correction</h3>
+<div class="formula-block">\[\rho(t) = \rho_{20} - \left(0.24707\,\Delta t + 0.003169\,\Delta t^2\right), \quad \Delta t = t - 20\]</div>
+<h3>Baumé degrees</h3>
+<div class="formula-block">\[°B\acute{e} = 145 - \frac{145}{SG}\]</div>
+<p>For syrup and molasses the same juice density model is applied with a product-specific correction factor, since their non-sugars and viscosity differ from diluted juice (Hugot).</p>
+<p class="lit-ref"><strong>Reference literature:</strong> E. Hugot, <em>Handbook of Cane Sugar Engineering</em> (density correlations for sugar solutions); Peter Rein, <em>Cane Sugar Engineering</em>; Meade–Chen, <em>Cane Sugar Handbook</em> (Baumé scale).</p>
+
+<h2>Typical operational ranges (KPIs)</h2>
+<table class="kpi-table">
+<thead><tr><th>KPI</th><th>Typical range</th><th>Alert</th></tr></thead>
+<tbody>
+<tr><td>Typical juice Brix</td><td>10 – 20 °Bx</td><td>&lt;10 or &gt;20 °Bx "outside typical range"</td></tr>
+<tr><td>Typical syrup Brix</td><td>55 – 70 °Bx</td><td>&lt;55 or &gt;70 °Bx "outside typical range"</td></tr>
+<tr><td>Typical molasses Brix</td><td>80 – 95 °Bx</td><td>&lt;80 or &gt;95 °Bx "outside typical range"</td></tr>
+</tbody>
+</table>
+
+<h2>Frequently asked questions</h2>
+<div class="faq-list">
+<div class="faq-item"><h3>Why does molasses density use a different factor than juice?</h3><p>Molasses has a higher concentration of non-sugars (ash, gums) that raise its density beyond what the pure sucrose-water correlation for juice predicts; a correction factor of 1.010 is applied.</p></div>
+<div class="faq-item"><h3>What are Baumé degrees and why are they used in a mill?</h3><p>It is a specific gravity scale widely used in the field because it can be read directly with a hydrometer without calculating Brix; useful for quick control of milk of lime and syrups.</p></div>
+<div class="faq-item"><h3>Why does the calculator warn the Brix is outside the typical range?</h3><p>Each product (juice, syrup, molasses) has a normal concentration window in the process; a value outside that range usually means the wrong product was selected or there is a real process issue.</p></div>
+<div class="faq-item"><h3>How does temperature affect measured density?</h3><p>As temperature rises, the density of a sugar solution decreases due to thermal expansion; that is why any field hydrometer or refractometer must be corrected or read at the reference temperature (usually 20 °C).</p></div>
+</div>
+
+<p class="back-link"><a href="https://sugarplantcalc.com/en/calculadoras/">&lsaquo; Back to all calculators</a></p>
+</article>
+</div>
+
+<script>
+var LBL = {"sg": "Specific gravity (20 °C)", "avBajo": "Brix is below this product's typical range ({0}–{1} °Bx). Check whether you picked the right product.", "avAlto": "Brix is above this product's typical range ({0}–{1} °Bx). Check whether you picked the right product."};
+
+function g(id){return document.getElementById(id)}
+function n(id){var e=g(id);if(!e)return 0;var x=parseFloat((e.value||"").replace(",","."));return isFinite(x)?x:0}
+function f(x,d){return (!isFinite(x))?"—":x.toFixed(d)}
+function set(id,v){var e=g(id);if(e)e.textContent=v}
+function tabla(id,filas){var e=g(id);if(!e)return;e.innerHTML=filas.map(function(r){return '<div class="row"><span>'+r[0]+'</span><span style="font-weight:400;text-align:right;max-width:62%">'+r[1]+'</span></div>'}).join("")}
+function aviso(id,msg){var e=g(id);if(!e)return;if(!msg){e.style.display='none';e.textContent='';return}e.style.display='block';e.textContent=msg}
+
+function rhoJugo(bx,tC){
+  var rho20=998.70+3.91679*bx+0.0135108*bx*bx+2.95998e-5*bx*bx*bx;
+  var dt=tC-20;
+  return rho20-(0.24707*dt+0.003169*dt*dt);
+}
+
+var PRODUCTOS_DENS={jugo:{min:10,max:20,factor:1.0},meladura:{min:55,max:70,factor:1.0},miel:{min:80,max:95,factor:1.010}};
+function calcDensidad(){
+  var prod=PRODUCTOS_DENS[g('dn_prod').value],bx=n('dn_bx'),tC=n('dn_t');
+  if(bx<=0){set('dn_kgl','—');set('dn_be','—');tabla('dn_det',[]);aviso('dn_w',null);return}
+  var rho=rhoJugo(bx,tC)*prod.factor;
+  var kgl=rho/1000,sg=kgl/0.998203,be=sg>0?145-145/sg:0;
+  set('dn_kgl',f(kgl,4));set('dn_be',f(be,1));
+  tabla('dn_det',[[LBL.sg,f(sg,4)]]);
+  aviso('dn_w', bx<prod.min?LBL.avBajo.replace('{0}',prod.min).replace('{1}',prod.max) : (bx>prod.max?LBL.avAlto.replace('{0}',prod.min).replace('{1}',prod.max):null));
+}
+
+var CAMPOS=[];
+document.querySelectorAll("#dn_prod,#dn_bx,#dn_t").forEach(function(e){
+  CAMPOS.push(e.id);
+  e.addEventListener("input",calcDensidad);
+  e.addEventListener("change",calcDensidad);
+});
+try{
+  var saved=JSON.parse(localStorage.getItem("spc_calc_densidad")||"{}");
+  CAMPOS.forEach(function(k){if(saved[k]!=null)g(k).value=saved[k]});
+}catch(_){}
+calcDensidad();
+window.addEventListener('beforeunload',function(){try{var o={};CAMPOS.forEach(function(k){o[k]=g(k).value});localStorage.setItem("spc_calc_densidad",JSON.stringify(o))}catch(_){}});
+
+</script>
+<script src="/assets/js/cookie-consent.js"></script>
+</body>
+</html>
