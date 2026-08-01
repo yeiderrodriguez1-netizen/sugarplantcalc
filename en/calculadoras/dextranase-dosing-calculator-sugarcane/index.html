@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#121417">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>Dextranase Dosing Calculator for Sugarcane Juice</title>
+<meta name="description" content="Calculate dextranase consumption (g/h, kg/day) and dosing pump flow based on juice dextran, temperature and retention time.">
+<link rel="canonical" href="https://sugarplantcalc.com/en/calculadoras/dextranase-dosing-calculator-sugarcane/">
+<link rel="alternate" hreflang="es" href="https://sugarplantcalc.com/calculadoras/dosificacion-dextranasa-cana/">
+<link rel="alternate" hreflang="en" href="https://sugarplantcalc.com/en/calculadoras/dextranase-dosing-calculator-sugarcane/">
+<link rel="alternate" hreflang="pt" href="https://sugarplantcalc.com/pt/calculadoras/calculadora-dosagem-dextranase-cana/">
+<link rel="alternate" hreflang="x-default" href="https://sugarplantcalc.com/calculadoras/dosificacion-dextranasa-cana/">
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/img/logo.png" type="image/png">
+<link rel="apple-touch-icon" href="/assets/img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/calc-theme.css">
+<link rel="stylesheet" href="/assets/css/calc-page.css">
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://sugarplantcalc.com/en/calculadoras/dextranase-dosing-calculator-sugarcane/#app",
+      "name": "Dextranase Dosing Calculator for Sugarcane Juice",
+      "url": "https://sugarplantcalc.com/en/calculadoras/dextranase-dosing-calculator-sugarcane/",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web",
+      "description": "Calculate dextranase consumption (g/h, kg/day) and dosing pump flow based on juice dextran, temperature and retention time.",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "author": { "@type": "Person", "name": "Ing. Yeider Rodríguez Molina" },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://sugarplantcalc.com/en/calculadoras/dextranase-dosing-calculator-sugarcane/#faq",
+      "mainEntity": [
+        { "@type": "Question", "name": "What level of dextran in juice is considered severe?", "acceptedAnswer": { "@type": "Answer", "text": "Above 500 ppm is considered severe dextran, with high risk of increased viscosity, needle-like crystal elongation and false grain in the pans." } },
+        { "@type": "Question", "name": "What is the optimal temperature for dosing dextranase?", "acceptedAnswer": { "@type": "Answer", "text": "The typical working range is 45–65 °C; above 65 °C the enzyme becomes thermally inactivated, and below 45 °C its kinetics are too slow to hydrolyse the dextran in time." } },
+        { "@type": "Question", "name": "Why does retention time matter in addition to dose?", "acceptedAnswer": { "@type": "Answer", "text": "The enzyme needs at least 10 minutes of contact with the juice to effectively hydrolyse the dextran; a correct dose with insufficient retention time will not achieve the expected effect." } },
+        { "@type": "Question", "name": "What does the \"double failure\" alert mean?", "acceptedAnswer": { "@type": "Answer", "text": "It appears when temperature is out of the optimal range AND retention time is low at the same time, indicating the enzyme is likely not effective at all, not just partially." } }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sugarplantcalc.com/en/" },
+        { "@type": "ListItem", "position": 2, "name": "Calculators", "item": "https://sugarplantcalc.com/en/calculadoras/" },
+        { "@type": "ListItem", "position": 3, "name": "Dextranase Dosing Calculator for Sugarcane Juice", "item": "https://sugarplantcalc.com/en/calculadoras/dextranase-dosing-calculator-sugarcane/" }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="cookie-banner" hidden id="cookieBanner" role="dialog" aria-label="Cookie notice">
+<div class="cookie-banner-inner">
+<p class="cookie-banner-text">We use our own cookies and Google Analytics cookies to understand how this site is used and improve it. Google Analytics only activates if you accept. <a href="https://sites.google.com/view/sugarplantcalc-privacidad" rel="noopener" target="_blank">More information</a>.</p>
+<div class="cookie-banner-actions">
+<button class="cookie-btn cookie-btn-reject" id="cookieReject" type="button">Reject</button>
+<button class="cookie-btn cookie-btn-accept" id="cookieAccept" type="button">Accept</button>
+</div>
+</div>
+</div>
+
+<div class="wrap calc-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+<a href="https://sugarplantcalc.com/en/">Home</a> &rsaquo; <a href="https://sugarplantcalc.com/en/calculadoras/">Calculators</a> &rsaquo; <span>Dextranase Dosing Calculator for Sugarcane Juice</span>
+</nav>
+
+<article>
+<h1>Dextranase Dosing Calculator for Sugarcane Juice</h1>
+
+<div class="intro"><p><strong>Dextranase</strong> hydrolyses the dextran formed by bacteria (<em>Leuconostoc</em>) in deteriorated or long-stored cane, preventing viscosity problems, crystal elongation and false grain in crystallization. This calculator computes enzyme consumption in g/h and kg/day, and the diluted dosing pump flow, from juice flow, measured dextran, target dose, and temperature/retention time conditions.</p></div>
+
+<h2>Calculator: enzyme consumption and dosing pump flow</h2>
+<div class="sec"><h3>Juice and dextran</h3>
+    <div class="grid">
+      <div><label for="dx_flujo">Juice flow (t/h)</label><input id="dx_flujo" value="450" inputmode="decimal"></div>
+      <div><label for="dx_dext">Dextran in juice (ppm)</label><input id="dx_dext" value="150" inputmode="decimal"></div>
+      <div class="full"><label for="dx_temp">Juice temperature (°C)</label><input id="dx_temp" value="55" inputmode="decimal"></div>
+    </div>
+  </div>
+  <div class="sec"><h3>Dextranase enzyme</h3>
+    <div class="grid">
+      <div><label for="dx_dosis">Target dose (ppm)</label><input id="dx_dosis" value="20" inputmode="decimal"></div>
+      <div><label for="dx_dens">Enzyme density (kg/L)</label><input id="dx_dens" value="1.12" inputmode="decimal"></div>
+      <div><label for="dx_dil">Tank dilution (% V/V)</label><input id="dx_dil" value="10" inputmode="decimal"></div>
+      <div><label for="dx_tr">Residence time (min)</label><input id="dx_tr" value="15" inputmode="decimal"></div>
+    </div>
+  </div>
+  <div class="rc wide" style="margin-bottom:10px"><div class="lb">Dosing pump flow</div><div class="vl" id="dx_bomba">—</div><div class="un">L/h</div></div>
+  <div class="res">
+    <div class="rc"><div class="lb">Dextranase consumption</div><div class="vl" id="dx_gh">—</div><div class="un">g/h</div></div>
+    <div class="rc"><div class="lb">Daily consumption</div><div class="vl" id="dx_kgd">—</div><div class="un">kg/day</div></div>
+  </div>
+  <div class="warn" id="dx_w"></div>
+  <div class="det"><h4>Detail</h4><div id="dx_det"></div></div>
+
+
+<h2>Theoretical background and formulas</h2>
+<h3>Enzyme consumption</h3>
+<div class="formula-block">\[Enzyme_{g/h} = Juice_{flow}\,(t/h) \times Target_{dose}\,(ppm)\]</div>
+<h3>Dosing pump flow (diluted enzyme)</h3>
+<div class="formula-block">\[Q_{pump}\,(L/h) = \frac{Enzyme_{g/h}/\rho_{enzyme}}{1000 \times (Dilution_{\%}/100)}\]</div>
+<p>Effective dextranase dosing depends critically on temperature and retention time in the reaction tank: outside its optimum window, the enzyme becomes inactive or fails to hydrolyse the dextran before the juice moves further in the process (Eggleston, ISSCT).</p>
+<p class="lit-ref"><strong>Reference literature:</strong> Peter Rein, <em>Cane Sugar Engineering</em> (dextran and its enzymatic control); E. Hugot, <em>Handbook of Cane Sugar Engineering</em>; Meade–Chen, <em>Cane Sugar Handbook</em> (cane deterioration and dextran).</p>
+
+<h2>Typical operational ranges (KPIs)</h2>
+<table class="kpi-table">
+<thead><tr><th>KPI</th><th>Typical range</th><th>Alert</th></tr></thead>
+<tbody>
+<tr><td>Dextran in juice</td><td>&lt; 500 ppm</td><td>&gt;500 ppm "severe dextran"</td></tr>
+<tr><td>Reaction temperature</td><td>45 °C – 65 °C</td><td>&gt;65 °C "high temperature" · &lt;45 °C "low temperature"</td></tr>
+<tr><td>Retention time</td><td>≥ 10 min</td><td>&lt;10 min "low retention time"</td></tr>
+<tr><td>Temperature out of range + low time</td><td>Both conditions at once</td><td>"double failure": the enzyme is likely not working</td></tr>
+</tbody>
+</table>
+
+<h2>Frequently asked questions</h2>
+<div class="faq-list">
+<div class="faq-item"><h3>What level of dextran in juice is considered severe?</h3><p>Above 500 ppm is considered severe dextran, with high risk of increased viscosity, needle-like crystal elongation and false grain in the pans.</p></div>
+<div class="faq-item"><h3>What is the optimal temperature for dosing dextranase?</h3><p>The typical working range is 45–65 °C; above 65 °C the enzyme becomes thermally inactivated, and below 45 °C its kinetics are too slow to hydrolyse the dextran in time.</p></div>
+<div class="faq-item"><h3>Why does retention time matter in addition to dose?</h3><p>The enzyme needs at least 10 minutes of contact with the juice to effectively hydrolyse the dextran; a correct dose with insufficient retention time will not achieve the expected effect.</p></div>
+<div class="faq-item"><h3>What does the "double failure" alert mean?</h3><p>It appears when temperature is out of the optimal range AND retention time is low at the same time, indicating the enzyme is likely not effective at all, not just partially.</p></div>
+</div>
+
+<p class="back-link"><a href="https://sugarplantcalc.com/en/calculadoras/">&lsaquo; Back to all calculators</a></p>
+</article>
+</div>
+
+<script>
+var LBL = {"dextranoJugo": "Dextran in juice", "mlMin": "mL/min", "avDextranoSevero": "Severe dextran ({0} ppm, > 500): risk of high viscosity, crystal elongation and false grain.", "avDobleFalla": "Temperature ({0} °C) out of range AND low retention time ({1} min) at the same time: the enzyme is likely not working. Check both conditions.", "avTempAlta": "High temperature ({0} °C, > 65): risk of enzyme inactivation.", "avTempBaja": "Low temperature ({0} °C, < 45): slow enzyme kinetics.", "avResidenciaBaja": "Low retention time ({0} min, < 10)."};
+
+function g(id){return document.getElementById(id)}
+function n(id){var e=g(id);if(!e)return 0;var x=parseFloat((e.value||"").replace(",","."));return isFinite(x)?x:0}
+function f(x,d){return (!isFinite(x))?"—":x.toFixed(d)}
+function set(id,v){var e=g(id);if(e)e.textContent=v}
+function tabla(id,filas){var e=g(id);if(!e)return;e.innerHTML=filas.map(function(r){return '<div class="row"><span>'+r[0]+'</span><span style="font-weight:400;text-align:right;max-width:62%">'+r[1]+'</span></div>'}).join("")}
+function aviso(id,msg){var e=g(id);if(!e)return;if(!msg){e.style.display='none';e.textContent='';return}e.style.display='block';e.textContent=msg}
+
+function calcEnzima(flujoTh,sustratoPpm,dosisPpm,densEnz,dilucionPct){
+  if(flujoTh<=0||densEnz<=0||dilucionPct<=0)return{valida:false};
+  var sustratoKgH=(flujoTh*sustratoPpm)/1000;
+  var enzGH=flujoTh*dosisPpm;
+  var enzKgDia=(enzGH*24)/1000;
+  var enzMlMin=(enzGH/densEnz)/60;
+  var enzLH=(enzGH/densEnz)/1000;
+  var caudalBombaLH=enzLH/(dilucionPct/100);
+  return{valida:true,sustratoKgH:sustratoKgH,enzGH:enzGH,enzKgDia:enzKgDia,enzMlMin:enzMlMin,caudalBombaLH:caudalBombaLH};
+}
+function avisosDextranasa(dextrano,temp,tr){
+  var avisos=[];
+  if(dextrano>500)avisos.push(LBL.avDextranoSevero.replace('{0}',f(dextrano,0)));
+  var tempAlta=temp>65,tempBaja=(temp>0.001&&temp<44.999),tiempoBajo=tr<10;
+  if((tempAlta&&tiempoBajo)||(tempBaja&&tiempoBajo)){
+    avisos.push(LBL.avDobleFalla.replace('{0}',f(temp,1)).replace('{1}',f(tr,1)));
+  } else {
+    if(tempAlta)avisos.push(LBL.avTempAlta.replace('{0}',f(temp,1)));
+    if(tempBaja)avisos.push(LBL.avTempBaja.replace('{0}',f(temp,1)));
+    if(tiempoBajo)avisos.push(LBL.avResidenciaBaja.replace('{0}',f(tr,1)));
+  }
+  return avisos;
+}
+function calcDextranasa(){
+  var flujo=n('dx_flujo'),dext=n('dx_dext'),dosis=n('dx_dosis'),dens=n('dx_dens'),dil=n('dx_dil'),temp=n('dx_temp'),tr=n('dx_tr');
+  var r=calcEnzima(flujo,dext,dosis,dens,dil);
+  set('dx_bomba', r.valida?f(r.caudalBombaLH,3):"—");
+  set('dx_gh', r.valida?f(r.enzGH,1):"—");
+  set('dx_kgd', r.valida?f(r.enzKgDia,2):"—");
+  tabla('dx_det', r.valida?[[LBL.dextranoJugo,f(r.sustratoKgH,2)+" kg/h"],[LBL.mlMin,f(r.enzMlMin,2)]]:[]);
+  var avisos=avisosDextranasa(dext,temp,tr);
+  aviso('dx_w', avisos.length?avisos.join("\n\n"):null);
+}
+
+var CAMPOS=[];
+document.querySelectorAll("#dx_flujo,#dx_dext,#dx_temp,#dx_dosis,#dx_dens,#dx_dil,#dx_tr").forEach(function(e){
+  CAMPOS.push(e.id);
+  e.addEventListener("input",calcDextranasa);
+  e.addEventListener("change",calcDextranasa);
+});
+try{
+  var saved=JSON.parse(localStorage.getItem("spc_calc_dextranasa")||"{}");
+  CAMPOS.forEach(function(k){if(saved[k]!=null)g(k).value=saved[k]});
+}catch(_){}
+calcDextranasa();
+window.addEventListener('beforeunload',function(){try{var o={};CAMPOS.forEach(function(k){o[k]=g(k).value});localStorage.setItem("spc_calc_dextranasa",JSON.stringify(o))}catch(_){}});
+
+</script>
+<script src="/assets/js/cookie-consent.js"></script>
+</body>
+</html>
