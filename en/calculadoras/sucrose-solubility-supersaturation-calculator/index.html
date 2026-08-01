@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#121417">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>Sucrose Solubility and Supersaturation Calculator</title>
+<meta name="description" content="Calculate the supersaturation coefficient (y) of a massecuite or syrup and identify the working zone: labile, intermediate, metastable or undersaturated.">
+<link rel="canonical" href="https://sugarplantcalc.com/en/calculadoras/sucrose-solubility-supersaturation-calculator/">
+<link rel="alternate" hreflang="es" href="https://sugarplantcalc.com/calculadoras/sobresaturacion-solubilidad-sacarosa/">
+<link rel="alternate" hreflang="en" href="https://sugarplantcalc.com/en/calculadoras/sucrose-solubility-supersaturation-calculator/">
+<link rel="alternate" hreflang="pt" href="https://sugarplantcalc.com/pt/calculadoras/calculadora-solubilidade-supersaturacao-sacarose/">
+<link rel="alternate" hreflang="x-default" href="https://sugarplantcalc.com/calculadoras/sobresaturacion-solubilidad-sacarosa/">
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/img/logo.png" type="image/png">
+<link rel="apple-touch-icon" href="/assets/img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/calc-theme.css">
+<link rel="stylesheet" href="/assets/css/calc-page.css">
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://sugarplantcalc.com/en/calculadoras/sucrose-solubility-supersaturation-calculator/#app",
+      "name": "Sucrose Supersaturation and Solubility Calculator",
+      "url": "https://sugarplantcalc.com/en/calculadoras/sucrose-solubility-supersaturation-calculator/",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web",
+      "description": "Calculate the supersaturation coefficient (y) of a massecuite or syrup and identify the working zone: labile, intermediate, metastable or undersaturated.",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "author": { "@type": "Person", "name": "Ing. Yeider Rodríguez Molina" },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://sugarplantcalc.com/en/calculadoras/sucrose-solubility-supersaturation-calculator/#faq",
+      "mainEntity": [
+        { "@type": "Question", "name": "What is the metastable zone and why is it the working zone?", "acceptedAnswer": { "@type": "Answer", "text": "It is the supersaturation range (y between 1.00 and 1.20) where existing crystals grow by consuming dissolved sucrose without spontaneous new nuclei forming; that is why it is the target condition throughout boiling in the pan." } },
+        { "@type": "Question", "name": "What happens if the massecuite enters the labile zone (y > 1.30)?", "acceptedAnswer": { "@type": "Answer", "text": "Uncontrolled spontaneous nucleation occurs, producing \"false grain\": unwanted new crystals that ruin the strike's grain size distribution and complicate later exhaustion in centrifugals." } },
+        { "@type": "Question", "name": "Why does purity affect the supersaturation coefficient?", "acceptedAnswer": { "@type": "Answer", "text": "Non-sugars present in lower-purity syrups or molasses reduce the effective solubility of sucrose (solubility depression effect), so at the same Brix and temperature, a lower-purity massecuite has a higher y than a high-purity one." } },
+        { "@type": "Question", "name": "What does an \"undersaturated\" result (y < 1.0) mean?", "acceptedAnswer": { "@type": "Answer", "text": "It indicates the solution has not reached the saturation point at that temperature and concentration: if crystals were present, they would dissolve instead of growing, so it needs to be concentrated further or cooled to enter the working zone." } }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sugarplantcalc.com/en/" },
+        { "@type": "ListItem", "position": 2, "name": "Calculators", "item": "https://sugarplantcalc.com/en/calculadoras/" },
+        { "@type": "ListItem", "position": 3, "name": "Sucrose Supersaturation and Solubility Calculator", "item": "https://sugarplantcalc.com/en/calculadoras/sucrose-solubility-supersaturation-calculator/" }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="cookie-banner" hidden id="cookieBanner" role="dialog" aria-label="Cookie notice">
+<div class="cookie-banner-inner">
+<p class="cookie-banner-text">We use our own cookies and Google Analytics cookies to understand how this site is used and improve it. Google Analytics only activates if you accept. <a href="https://sites.google.com/view/sugarplantcalc-privacidad" rel="noopener" target="_blank">More information</a>.</p>
+<div class="cookie-banner-actions">
+<button class="cookie-btn cookie-btn-reject" id="cookieReject" type="button">Reject</button>
+<button class="cookie-btn cookie-btn-accept" id="cookieAccept" type="button">Accept</button>
+</div>
+</div>
+</div>
+
+<div class="wrap calc-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+<a href="https://sugarplantcalc.com/en/">Home</a> &rsaquo; <a href="https://sugarplantcalc.com/en/calculadoras/">Calculators</a> &rsaquo; <span>Sucrose Supersaturation and Solubility Calculator</span>
+</nav>
+
+<article>
+<h1>Sucrose Supersaturation and Solubility Calculator</h1>
+
+<div class="intro"><p>The <strong>supersaturation coefficient (y)</strong> is the variable that governs all crystallization in pans: it determines whether a crystal grows, dissolves, or whether unwanted spontaneous nuclei appear. This calculator computes y from the Brix, purity and temperature of a massecuite or syrup using the pure sucrose-in-water solubility correlation, and identifies which working zone it falls into.</p></div>
+
+<h2>Calculator: supersaturation coefficient (y) and working zone</h2>
+<div class="sec"><h3>Massecuite data</h3>
+    <div class="grid">
+      <div><label for="sb_bx">Brix (°Bx)</label><input id="sb_bx" value="92" inputmode="decimal"></div>
+      <div><label for="sb_pu">Purity (%)</label><input id="sb_pu" value="80" inputmode="decimal"></div>
+      <div><label for="sb_t">Temperature (°C)</label><input id="sb_t" value="65" inputmode="decimal"></div>
+      <div><label for="sb_coef">Solubility coefficient</label><input id="sb_coef" value="1.0" inputmode="decimal"></div>
+    </div>
+  </div>
+  <div class="res">
+    <div class="rc wide"><div class="lb">Supersaturation coefficient</div><div class="vl" id="sb_y">—</div><div class="un">dimensionless (y)</div></div>
+  </div>
+  <div class="warn" id="sb_w"></div>
+  <div class="det"><h4>Detail</h4><div id="sb_det"></div></div>
+
+
+<h2>Theoretical background and formulas</h2>
+<h3>Pure sucrose solubility (Charles correlation)</h3>
+<div class="formula-block">\[S_{pure}(\%) = 64.397 + 0.07251\,T + 0.0020569\,T^2 - 9.035\times10^{-6}\,T^3\]</div>
+<h3>Actual sucrose/water ratio vs. saturation</h3>
+<div class="formula-block">\[Q_{actual} = \frac{Brix\times Purity/100}{100-Brix} \qquad Q_{sat} = \frac{S_{pure}}{100-S_{pure}}\times C_{sol}\]</div>
+<h3>Supersaturation coefficient</h3>
+<div class="formula-block">\[y = \frac{Q_{actual}}{Q_{sat}}\]</div>
+<p>The solubility coefficient (\(C_{sol}\)) corrects pure sucrose solubility for the effect of the non-sugars present (lower purity reduces effective solubility), following the approach described by Rein and used in the classic pan supersaturation formula.</p>
+<p class="lit-ref"><strong>Reference literature:</strong> Peter Rein, <em>Cane Sugar Engineering</em> (supersaturation and crystallization zones); E. Hugot, <em>Handbook of Cane Sugar Engineering</em>; Meade–Chen, <em>Cane Sugar Handbook</em> (Charles solubility correlation).</p>
+
+<h2>Typical operational ranges (KPIs)</h2>
+<table class="kpi-table">
+<thead><tr><th>KPI</th><th>Typical range</th><th>Alert</th></tr></thead>
+<tbody>
+<tr><td>Metastable zone (working zone)</td><td>1.00 ≤ y ≤ 1.20</td><td>"metastable zone": crystals grow without nucleating</td></tr>
+<tr><td>Intermediate zone</td><td>1.20 &lt; y ≤ 1.30</td><td>"intermediate zone": new nuclei may appear</td></tr>
+<tr><td>Labile zone</td><td>y &gt; 1.30</td><td>"labile zone": spontaneous nucleation, risk of false grain</td></tr>
+<tr><td>Undersaturated</td><td>0 &lt; y &lt; 1.00</td><td>"undersaturated": a crystal would dissolve</td></tr>
+<tr><td>Valid temperature range</td><td>0 °C – 100 °C</td><td>Out of range → "correlation not reliable"</td></tr>
+</tbody>
+</table>
+
+<h2>Frequently asked questions</h2>
+<div class="faq-list">
+<div class="faq-item"><h3>What is the metastable zone and why is it the working zone?</h3><p>It is the supersaturation range (y between 1.00 and 1.20) where existing crystals grow by consuming dissolved sucrose without spontaneous new nuclei forming; that is why it is the target condition throughout boiling in the pan.</p></div>
+<div class="faq-item"><h3>What happens if the massecuite enters the labile zone (y > 1.30)?</h3><p>Uncontrolled spontaneous nucleation occurs, producing "false grain": unwanted new crystals that ruin the strike's grain size distribution and complicate later exhaustion in centrifugals.</p></div>
+<div class="faq-item"><h3>Why does purity affect the supersaturation coefficient?</h3><p>Non-sugars present in lower-purity syrups or molasses reduce the effective solubility of sucrose (solubility depression effect), so at the same Brix and temperature, a lower-purity massecuite has a higher y than a high-purity one.</p></div>
+<div class="faq-item"><h3>What does an "undersaturated" result (y < 1.0) mean?</h3><p>It indicates the solution has not reached the saturation point at that temperature and concentration: if crystals were present, they would dissolve instead of growing, so it needs to be concentrated further or cooled to enter the working zone.</p></div>
+</div>
+
+<p class="back-link"><a href="https://sugarplantcalc.com/en/calculadoras/">&lsaquo; Back to all calculators</a></p>
+</article>
+</div>
+
+<script>
+var LBL = {"solPura": "Pure sucrose solubility", "solGagua": "Solubility (g/100 g water)", "relSacagua": "Actual sucrose/water ratio", "relSat": "Ratio at saturation", "avTemp": "The correlation is reliable only between 0 and 100 °C.", "avLabil": "Labile zone (y = {0}): spontaneous nucleation, risk of false grain.", "avIntermedia": "Intermediate zone (y = {0}): nuclei may appear on existing crystals.", "avMetaestable": "Metastable zone (y = {0}): crystals grow without forming new nuclei. This is the working zone.", "avInsaturada": "Undersaturated (y = {0}): the solution is not saturated, a crystal would dissolve."};
+
+function g(id){return document.getElementById(id)}
+function n(id){var e=g(id);if(!e)return 0;var x=parseFloat((e.value||"").replace(",","."));return isFinite(x)?x:0}
+function f(x,d){return (!isFinite(x))?"—":x.toFixed(d)}
+function set(id,v){var e=g(id);if(e)e.textContent=v}
+function tabla(id,filas){var e=g(id);if(!e)return;e.innerHTML=filas.map(function(r){return '<div class="row"><span>'+r[0]+'</span><span style="font-weight:400;text-align:right;max-width:62%">'+r[1]+'</span></div>'}).join("")}
+function aviso(id,msg){var e=g(id);if(!e)return;if(!msg){e.style.display='none';e.textContent='';return}e.style.display='block';e.textContent=msg}
+
+function solPuraPct(t){return 64.397+0.07251*t+0.0020569*t*t-9.035e-6*t*t*t}
+function calcSolub(brix,pureza,temp,coef){
+  if(brix<=0||brix>=100||pureza<=0)return{valida:false};
+  var c=coef>0?coef:1,satPura=solPuraPct(temp);
+  var gAgua=satPura<100?100*satPura/(100-satPura):0;
+  var qSatPura=satPura<100?satPura/(100-satPura):0;
+  var qSat=qSatPura*c;
+  var sacarosa=brix*pureza/100,agua=100-brix;
+  var q=agua>0?sacarosa/agua:0,y=qSat>0?q/qSat:0;
+  return{valida:true,satPura:satPura,gAgua:gAgua,q:q,qSat:qSat,y:y,tempOk:(temp>=0&&temp<=100)};
+}
+function avisoSolub(r){
+  if(!r.valida)return null;
+  if(!r.tempOk)return LBL.avTemp;
+  if(r.y>1.3)return LBL.avLabil.replace('{0}',f(r.y,2));
+  if(r.y>1.2)return LBL.avIntermedia.replace('{0}',f(r.y,2));
+  if(r.y>=1.0)return LBL.avMetaestable.replace('{0}',f(r.y,2));
+  if(r.y>0)return LBL.avInsaturada.replace('{0}',f(r.y,2));
+  return null;
+}
+function calcSolubilidad(){
+  var r=calcSolub(n('sb_bx'),n('sb_pu'),n('sb_t'),n('sb_coef'));
+  set('sb_y', r.valida?f(r.y,3):"—");
+  tabla('sb_det', r.valida?[
+    [LBL.solPura,f(r.satPura,2)+" %"],
+    [LBL.solGagua,f(r.gAgua,1)],
+    [LBL.relSacagua,f(r.q,3)],
+    [LBL.relSat,f(r.qSat,3)]
+  ]:[]);
+  aviso('sb_w', avisoSolub(r));
+}
+
+var CAMPOS=[];
+document.querySelectorAll("#sb_bx,#sb_pu,#sb_t,#sb_coef").forEach(function(e){
+  CAMPOS.push(e.id);
+  e.addEventListener("input",calcSolubilidad);
+  e.addEventListener("change",calcSolubilidad);
+});
+try{
+  var saved=JSON.parse(localStorage.getItem("spc_calc_solubilidad")||"{}");
+  CAMPOS.forEach(function(k){if(saved[k]!=null)g(k).value=saved[k]});
+}catch(_){}
+calcSolubilidad();
+window.addEventListener('beforeunload',function(){try{var o={};CAMPOS.forEach(function(k){o[k]=g(k).value});localStorage.setItem("spc_calc_solubilidad",JSON.stringify(o))}catch(_){}});
+
+</script>
+<script src="/assets/js/cookie-consent.js"></script>
+</body>
+</html>
