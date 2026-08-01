@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#121417">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>Flocculant Dosing Calculator for the Clarifier</title>
+<meta name="description" content="Calculate polymer consumption (kg/day), solution pump flow (L/min) and flocculant batch duration for your clarifier.">
+<link rel="canonical" href="https://sugarplantcalc.com/en/calculadoras/flocculant-dosing-calculator-clarifier/">
+<link rel="alternate" hreflang="es" href="https://sugarplantcalc.com/calculadoras/dosis-floculante-clarificador/">
+<link rel="alternate" hreflang="en" href="https://sugarplantcalc.com/en/calculadoras/flocculant-dosing-calculator-clarifier/">
+<link rel="alternate" hreflang="pt" href="https://sugarplantcalc.com/pt/calculadoras/calculadora-dosagem-floculante-clarificador/">
+<link rel="alternate" hreflang="x-default" href="https://sugarplantcalc.com/calculadoras/dosis-floculante-clarificador/">
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/img/logo.png" type="image/png">
+<link rel="apple-touch-icon" href="/assets/img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/calc-theme.css">
+<link rel="stylesheet" href="/assets/css/calc-page.css">
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://sugarplantcalc.com/en/calculadoras/flocculant-dosing-calculator-clarifier/#app",
+      "name": "Flocculant Dosing Calculator for the Clarifier",
+      "url": "https://sugarplantcalc.com/en/calculadoras/flocculant-dosing-calculator-clarifier/",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web",
+      "description": "Calculate polymer consumption (kg/day), solution pump flow (L/min) and flocculant batch duration for your clarifier.",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "author": { "@type": "Person", "name": "Ing. Yeider Rodríguez Molina" },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://sugarplantcalc.com/en/calculadoras/flocculant-dosing-calculator-clarifier/#faq",
+      "mainEntity": [
+        { "@type": "Question", "name": "What is the typical flocculant dose in cane juice clarification?", "acceptedAnswer": { "@type": "Answer", "text": "The usual range is 1–6 ppm of polymer on the juice; below 1 ppm a stable floc rarely forms, and above 6 ppm it is a typical overdose that can reflocculate the mud and increase turbidity." } },
+        { "@type": "Question", "name": "Why should the stock solution not be prepared too concentrated?", "acceptedAnswer": { "@type": "Answer", "text": "Above 2 g/L the viscosity of the polyacrylamide solution rises sharply, hindering complete dissolution and uniform dosing; the recommended practical range is 0.5–1.5 g/L." } },
+        { "@type": "Question", "name": "What happens if the batch lasts less than 1.5 hours?", "acceptedAnswer": { "@type": "Answer", "text": "The polymer needs a 30–60 minute ageing time after dissolving to develop its full chain and effectiveness; a batch consumed in less than 1.5 hours does not give enough time, so a larger tank or two alternating tanks should be used." } },
+        { "@type": "Question", "name": "How does the flocculant dose relate to the jar test?", "acceptedAnswer": { "@type": "Answer", "text": "The optimal ppm dose obtained from a laboratory jar test is the ideal starting point for this calculator, since it field-validates the working range before adjusting the plant dosing pump." } }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sugarplantcalc.com/en/" },
+        { "@type": "ListItem", "position": 2, "name": "Calculators", "item": "https://sugarplantcalc.com/en/calculadoras/" },
+        { "@type": "ListItem", "position": 3, "name": "Flocculant Dosing Calculator for the Clarifier", "item": "https://sugarplantcalc.com/en/calculadoras/flocculant-dosing-calculator-clarifier/" }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="cookie-banner" hidden id="cookieBanner" role="dialog" aria-label="Cookie notice">
+<div class="cookie-banner-inner">
+<p class="cookie-banner-text">We use our own cookies and Google Analytics cookies to understand how this site is used and improve it. Google Analytics only activates if you accept. <a href="https://sites.google.com/view/sugarplantcalc-privacidad" rel="noopener" target="_blank">More information</a>.</p>
+<div class="cookie-banner-actions">
+<button class="cookie-btn cookie-btn-reject" id="cookieReject" type="button">Reject</button>
+<button class="cookie-btn cookie-btn-accept" id="cookieAccept" type="button">Accept</button>
+</div>
+</div>
+</div>
+
+<div class="wrap calc-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+<a href="https://sugarplantcalc.com/en/">Home</a> &rsaquo; <a href="https://sugarplantcalc.com/en/calculadoras/">Calculators</a> &rsaquo; <span>Flocculant Dosing Calculator for the Clarifier</span>
+</nav>
+
+<article>
+<h1>Flocculant Dosing Calculator for the Clarifier</h1>
+
+<div class="intro"><p><strong>Flocculant</strong> (anionic polyacrylamide) is dosed into limed, heated juice before the clarifier to accelerate mud settling. This calculator computes daily polymer consumption, diluted solution pump flow and batch preparation duration from juice flow, dose in ppm and stock solution concentration.</p></div>
+
+<h2>Calculator: polymer required, solution pump and batch</h2>
+<div class="sec"><h3>Juice to the clarifier</h3>
+    <div class="grid">
+      <div><label for="f_q">Flow (m³/h)</label><input id="f_q" value="450" inputmode="decimal"></div>
+      <div><label for="f_bx">Brix (°Bx)</label><input id="f_bx" value="15" inputmode="decimal"></div>
+      <div><label for="f_t">Temperature (°C)</label><input id="f_t" value="102" inputmode="decimal"></div>
+      <div><label for="f_hd">Crushing hours / day</label><input id="f_hd" value="22" inputmode="decimal"></div>
+      <div class="full"><label for="f_ppm">Dose (ppm of polymer)</label><input id="f_ppm" value="3" inputmode="decimal"></div>
+    </div>
+  </div>
+  <div class="sec"><h3>Make-up</h3>
+    <div class="grid">
+      <div><label for="f_cs">Stock solution (g/L)</label><input id="f_cs" value="1.0" inputmode="decimal"></div>
+      <div><label for="f_vt">Tank (m³)</label><input id="f_vt" value="5" inputmode="decimal"></div>
+      <div class="full"><label for="f_dil">In-line dilution (water : solution)</label><input id="f_dil" value="3" inputmode="decimal"></div>
+    </div>
+  </div>
+  <div class="res">
+    <div class="rc"><div class="lb">Polymer</div><div class="vl" id="f_kd">—</div><div class="un">kg/day</div></div>
+    <div class="rc"><div class="lb">Solution pump</div><div class="vl" id="f_lm">—</div><div class="un">L/min</div></div>
+    <div class="rc wide"><div class="lb">Batch duration</div><div class="vl" id="f_du">—</div><div class="un">hours</div></div>
+  </div>
+  <div class="warn" id="f_w"></div>
+  <div class="det"><h4>Calculation detail</h4><div id="f_det"></div></div>
+
+
+<h2>Theoretical background and formulas</h2>
+<h3>Pure polymer required</h3>
+<div class="formula-block">\[Polymer_{kg/h} = \dot{m}_{juice}\,(kg/h) \times \frac{Dose_{ppm}}{10^6}\]</div>
+<h3>Solution pump flow</h3>
+<div class="formula-block">\[Q_{pump}\,(L/h) = \frac{Polymer_{kg/h} \times 1000}{C_{stock\,solution}\,(g/L)}\]</div>
+<h3>Batch duration</h3>
+<div class="formula-block">\[t_{batch}\,(h) = \frac{V_{tank}\,(m^3) \times 1000}{Q_{pump}\,(L/h)}\]</div>
+<p>The polymer stock solution is prepared dilute (typically 0.5–1.5 g/L) because at higher concentration its viscosity rises exponentially, hindering both complete dissolution and uniform dosing (Rein).</p>
+<p class="lit-ref"><strong>Reference literature:</strong> Peter Rein, <em>Cane Sugar Engineering</em> (flocculants and clarification); E. Hugot, <em>Handbook of Cane Sugar Engineering</em>; Meade–Chen, <em>Cane Sugar Handbook</em>.</p>
+
+<h2>Typical operational ranges (KPIs)</h2>
+<table class="kpi-table">
+<thead><tr><th>KPI</th><th>Typical range</th><th>Alert</th></tr></thead>
+<tbody>
+<tr><td>Stock solution concentration</td><td>0.5 – 1.5 g/L</td><td>&lt;0.3 g/L "solution too dilute" · &gt;2 g/L "solution too concentrated"</td></tr>
+<tr><td>Polymer dose</td><td>1 – 6 ppm</td><td>&lt;1 ppm "low dose" · &gt;6 ppm "typical overdose"</td></tr>
+<tr><td>Batch duration</td><td>≥ 1.5 h</td><td>&lt;1.5 h "short batch, not enough time for the polymer to age"</td></tr>
+</tbody>
+</table>
+
+<h2>Frequently asked questions</h2>
+<div class="faq-list">
+<div class="faq-item"><h3>What is the typical flocculant dose in cane juice clarification?</h3><p>The usual range is 1–6 ppm of polymer on the juice; below 1 ppm a stable floc rarely forms, and above 6 ppm it is a typical overdose that can reflocculate the mud and increase turbidity.</p></div>
+<div class="faq-item"><h3>Why should the stock solution not be prepared too concentrated?</h3><p>Above 2 g/L the viscosity of the polyacrylamide solution rises sharply, hindering complete dissolution and uniform dosing; the recommended practical range is 0.5–1.5 g/L.</p></div>
+<div class="faq-item"><h3>What happens if the batch lasts less than 1.5 hours?</h3><p>The polymer needs a 30–60 minute ageing time after dissolving to develop its full chain and effectiveness; a batch consumed in less than 1.5 hours does not give enough time, so a larger tank or two alternating tanks should be used.</p></div>
+<div class="faq-item"><h3>How does the flocculant dose relate to the jar test?</h3><p>The optimal ppm dose obtained from a laboratory jar test is the ideal starting point for this calculator, since it field-validates the working range before adjusting the plant dosing pump.</p></div>
+</div>
+
+<p class="back-link"><a href="https://sugarplantcalc.com/en/calculadoras/">&lsaquo; Back to all calculators</a></p>
+</article>
+</div>
+
+<script>
+var LBL = {"densidadJugo": "Juice density", "flujoMasico": "Juice mass flow", "polimeroReq": "Polymer required", "aguaDilucion": "In-line dilution water", "concAplicada": "Applied concentration", "polvoBatch": "Powder per batch", "batchesDia": "Batches per day", "avSolAlta": "Stock solution above 2 g/L: viscosity shoots up and the polymer does not dissolve well. The practical range is 0.5–1.5 g/L.", "avSolBaja": "Stock solution below 0.3 g/L: it forces huge tanks and the polymer degrades before it is used.", "avDosisBaja": "Less than 1 ppm: a stable floc rarely forms. Check with a jar test.", "avDosisAlta": "More than 6 ppm: typical overdose. Mud reflocculation and higher clarified juice turbidity.", "avBatch": "The batch lasts less than 1.5 h: it does not allow the polymer ageing time (30–60 min). Consider a larger tank or two alternating tanks."};
+
+function g(id){return document.getElementById(id)}
+function n(id){var e=g(id);if(!e)return 0;var x=parseFloat((e.value||"").replace(",","."));return isFinite(x)?x:0}
+function f(x,d){return (!isFinite(x))?"—":x.toFixed(d)}
+function set(id,v){var e=g(id);if(e)e.textContent=v}
+function tabla(id,filas){var e=g(id);if(!e)return;e.innerHTML=filas.map(function(r){return '<div class="row"><span>'+r[0]+'</span><span style="font-weight:400;text-align:right;max-width:62%">'+r[1]+'</span></div>'}).join("")}
+function aviso(id,msg){var e=g(id);if(!e)return;if(!msg){e.style.display='none';e.textContent='';return}e.style.display='block';e.textContent=msg}
+
+function rhoJugo(bx,tC){
+  var rho20=998.70+3.91679*bx+0.0135108*bx*bx+2.95998e-5*bx*bx*bx;
+  var dt=tC-20;
+  return rho20-(0.24707*dt+0.003169*dt*dt);
+}
+
+function calcFloc(){
+  var q=n('f_q'),bx=n('f_bx'),tC=n('f_t'),ppm=n('f_ppm'),hd=n('f_hd'),cs=n('f_cs'),dil=n('f_dil'),vt=n('f_vt');
+  var rho=rhoJugo(bx,tC),m=q*rho,pol=m*ppm/1e6;
+  var lh=cs>0?pol*1000/cs:0,lm=lh/60,ap=lh*(1+dil),apm=ap/60;
+  var agua=lh*dil,capl=ap>0?pol*1000/ap:0,dur=lh>0?vt*1000/lh:0;
+  set('f_kd',f(pol*hd,1));set('f_lm',f(lm,1));set('f_du',f(dur,1));
+  tabla('f_det',[[LBL.densidadJugo,f(rho,1)+" kg/m³"],[LBL.flujoMasico,f(m/1000,1)+" t/h"],
+    [LBL.polimeroReq,f(pol,3)+" kg/h"],[LBL.aguaDilucion,f(agua/1000,2)+" m³/h"],
+    [LBL.concAplicada,f(capl,3)+" g/L"],[LBL.polvoBatch,f(vt*cs,1)+" kg"],
+    [LBL.batchesDia,dur>0?f(hd/dur,1):"—"]]);
+  aviso('f_w', cs>2?LBL.avSolAlta : (cs<0.3?LBL.avSolBaja : (ppm<1?LBL.avDosisBaja
+    : (ppm>6?LBL.avDosisAlta : ((dur>0&&dur<1.5)?LBL.avBatch : null)))));
+}
+
+var CAMPOS=[];
+document.querySelectorAll("#f_q,#f_bx,#f_t,#f_hd,#f_ppm,#f_cs,#f_vt,#f_dil").forEach(function(e){
+  CAMPOS.push(e.id);
+  e.addEventListener("input",calcFloc);
+  e.addEventListener("change",calcFloc);
+});
+try{
+  var saved=JSON.parse(localStorage.getItem("spc_calc_floc")||"{}");
+  CAMPOS.forEach(function(k){if(saved[k]!=null)g(k).value=saved[k]});
+}catch(_){}
+calcFloc();
+window.addEventListener('beforeunload',function(){try{var o={};CAMPOS.forEach(function(k){o[k]=g(k).value});localStorage.setItem("spc_calc_floc",JSON.stringify(o))}catch(_){}});
+
+</script>
+<script src="/assets/js/cookie-consent.js"></script>
+</body>
+</html>
