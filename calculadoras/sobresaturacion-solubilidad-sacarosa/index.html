@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#121417">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>Calculadora de Sobresaturación y Solubilidad de Sacarosa</title>
+<meta name="description" content="Calcula el coeficiente de sobresaturación (y) de una masa o jarabe e identifica la zona de trabajo: lábil, intermedia, metaestable o insaturada.">
+<link rel="canonical" href="https://sugarplantcalc.com/calculadoras/sobresaturacion-solubilidad-sacarosa/">
+<link rel="alternate" hreflang="es" href="https://sugarplantcalc.com/calculadoras/sobresaturacion-solubilidad-sacarosa/">
+<link rel="alternate" hreflang="en" href="https://sugarplantcalc.com/en/calculadoras/sucrose-solubility-supersaturation-calculator/">
+<link rel="alternate" hreflang="pt" href="https://sugarplantcalc.com/pt/calculadoras/calculadora-solubilidade-supersaturacao-sacarose/">
+<link rel="alternate" hreflang="x-default" href="https://sugarplantcalc.com/calculadoras/sobresaturacion-solubilidad-sacarosa/">
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/img/logo.png" type="image/png">
+<link rel="apple-touch-icon" href="/assets/img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/calc-theme.css">
+<link rel="stylesheet" href="/assets/css/calc-page.css">
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://sugarplantcalc.com/calculadoras/sobresaturacion-solubilidad-sacarosa/#app",
+      "name": "Calculadora de Sobresaturación y Solubilidad de Sacarosa",
+      "url": "https://sugarplantcalc.com/calculadoras/sobresaturacion-solubilidad-sacarosa/",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web",
+      "description": "Calcula el coeficiente de sobresaturación (y) de una masa o jarabe e identifica la zona de trabajo: lábil, intermedia, metaestable o insaturada.",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "author": { "@type": "Person", "name": "Ing. Yeider Rodríguez Molina" },
+      "inLanguage": "es"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://sugarplantcalc.com/calculadoras/sobresaturacion-solubilidad-sacarosa/#faq",
+      "mainEntity": [
+        { "@type": "Question", "name": "¿Qué es la zona metaestable y por qué es la zona de trabajo?", "acceptedAnswer": { "@type": "Answer", "text": "Es el rango de sobresaturación (y entre 1.00 y 1.20) donde los cristales existentes crecen consumiendo la sacarosa disuelta sin que se formen núcleos nuevos espontáneamente; por eso es la condición objetivo durante toda la cocción en el tacho." } },
+        { "@type": "Question", "name": "¿Qué pasa si la masa entra en zona lábil (y > 1.30)?", "acceptedAnswer": { "@type": "Answer", "text": "Se produce nucleación espontánea incontrolada, generando \"grano falso\": cristales nuevos no deseados que arruinan la distribución de tamaño de grano de la templa y complican el agotamiento posterior en centrífugas." } },
+        { "@type": "Question", "name": "¿Por qué la pureza afecta el coeficiente de sobresaturación?", "acceptedAnswer": { "@type": "Answer", "text": "Los no-azúcares presentes en jarabes o mieles de menor pureza reducen la solubilidad efectiva de la sacarosa (efecto de depresión de solubilidad), por lo que a igual Brix y temperatura, una masa de menor pureza tiene mayor y que una de alta pureza." } },
+        { "@type": "Question", "name": "¿Qué significa un resultado \"insaturado\" (y < 1.0)?", "acceptedAnswer": { "@type": "Answer", "text": "Indica que la solución no ha alcanzado el punto de saturación a esa temperatura y concentración: si hubiera cristales presentes, se disolverían en lugar de crecer, por lo que hay que concentrar más o bajar la temperatura para entrar en zona de trabajo." } }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://sugarplantcalc.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Calculadoras", "item": "https://sugarplantcalc.com/calculadoras/" },
+        { "@type": "ListItem", "position": 3, "name": "Calculadora de Sobresaturación y Solubilidad de Sacarosa", "item": "https://sugarplantcalc.com/calculadoras/sobresaturacion-solubilidad-sacarosa/" }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="cookie-banner" hidden id="cookieBanner" role="dialog" aria-label="Cookie notice">
+<div class="cookie-banner-inner">
+<p class="cookie-banner-text">Usamos cookies propias y de Google Analytics para entender cómo se usa este sitio y mejorarlo. Google Analytics solo se activa si aceptas. <a href="https://sites.google.com/view/sugarplantcalc-privacidad" rel="noopener" target="_blank">Más información</a>.</p>
+<div class="cookie-banner-actions">
+<button class="cookie-btn cookie-btn-reject" id="cookieReject" type="button">Rechazar</button>
+<button class="cookie-btn cookie-btn-accept" id="cookieAccept" type="button">Aceptar</button>
+</div>
+</div>
+</div>
+
+<div class="wrap calc-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+<a href="https://sugarplantcalc.com/">Inicio</a> &rsaquo; <a href="https://sugarplantcalc.com/calculadoras/">Calculadoras</a> &rsaquo; <span>Calculadora de Sobresaturación y Solubilidad de Sacarosa</span>
+</nav>
+
+<article>
+<h1>Calculadora de Sobresaturación y Solubilidad de Sacarosa</h1>
+
+<div class="intro"><p>El <strong>coeficiente de sobresaturación (y)</strong> es la variable que gobierna toda la cristalización en tachos: determina si un cristal crece, se disuelve o si aparecen núcleos espontáneos indeseados. Esta calculadora obtiene y a partir del Brix, la pureza y la temperatura de una masa o jarabe, usando la correlación de solubilidad de sacarosa pura en agua, e identifica en qué zona de trabajo se encuentra.</p></div>
+
+<h2>Calculadora: coeficiente de sobresaturación (y) y zona de trabajo</h2>
+<div class="sec"><h3>Datos de la masa</h3>
+    <div class="grid">
+      <div><label for="sb_bx">Brix (°Bx)</label><input id="sb_bx" value="92" inputmode="decimal"></div>
+      <div><label for="sb_pu">Pureza (%)</label><input id="sb_pu" value="80" inputmode="decimal"></div>
+      <div><label for="sb_t">Temperatura (°C)</label><input id="sb_t" value="65" inputmode="decimal"></div>
+      <div><label for="sb_coef">Coef. de solubilidad</label><input id="sb_coef" value="1.0" inputmode="decimal"></div>
+    </div>
+  </div>
+  <div class="res">
+    <div class="rc wide"><div class="lb">Coeficiente de sobresaturación</div><div class="vl" id="sb_y">—</div><div class="un">adimensional (y)</div></div>
+  </div>
+  <div class="warn" id="sb_w"></div>
+  <div class="det"><h4>Detalle</h4><div id="sb_det"></div></div>
+
+
+<h2>Fundamento teórico y fórmulas</h2>
+<h3>Solubilidad de sacarosa pura (correlación de Charles)</h3>
+<div class="formula-block">\[S_{pura}(\%) = 64.397 + 0.07251\,T + 0.0020569\,T^2 - 9.035\times10^{-6}\,T^3\]</div>
+<h3>Relación sacarosa/agua real vs. saturación</h3>
+<div class="formula-block">\[Q_{real} = \frac{Brix\times Pureza/100}{100-Brix} \qquad Q_{sat} = \frac{S_{pura}}{100-S_{pura}}\times C_{sol}\]</div>
+<h3>Coeficiente de sobresaturación</h3>
+<div class="formula-block">\[y = \frac{Q_{real}}{Q_{sat}}\]</div>
+<p>El coeficiente de solubilidad (\(C_{sol}\)) corrige la solubilidad de sacarosa pura por el efecto de los no-azúcares presentes (menor pureza reduce la solubilidad efectiva), siguiendo el enfoque descrito por Rein y usado en la fórmula clásica de sobresaturación de tachos.</p>
+<p class="lit-ref"><strong>Literatura de referencia:</strong> Peter Rein, <em>Cane Sugar Engineering</em> (sobresaturación y zonas de cristalización); E. Hugot, <em>Handbook of Cane Sugar Engineering</em>; Meade–Chen, <em>Cane Sugar Handbook</em> (correlación de solubilidad de Charles).</p>
+
+<h2>Rangos operacionales típicos (KPIs)</h2>
+<table class="kpi-table">
+<thead><tr><th>KPI</th><th>Rango típico</th><th>Alerta</th></tr></thead>
+<tbody>
+<tr><td>Zona metaestable (zona de trabajo)</td><td>1.00 ≤ y ≤ 1.20</td><td>"zona metaestable": el cristal crece sin nuclear</td></tr>
+<tr><td>Zona intermedia</td><td>1.20 &lt; y ≤ 1.30</td><td>"zona intermedia": pueden aparecer núcleos nuevos</td></tr>
+<tr><td>Zona lábil</td><td>y &gt; 1.30</td><td>"zona lábil": nucleación espontánea, riesgo de grano falso</td></tr>
+<tr><td>Insaturada</td><td>0 &lt; y &lt; 1.00</td><td>"insaturada": un cristal se disolvería</td></tr>
+<tr><td>Rango de temperatura válido</td><td>0 °C – 100 °C</td><td>Fuera de rango → "correlación no fiable"</td></tr>
+</tbody>
+</table>
+
+<h2>Preguntas frecuentes</h2>
+<div class="faq-list">
+<div class="faq-item"><h3>¿Qué es la zona metaestable y por qué es la zona de trabajo?</h3><p>Es el rango de sobresaturación (y entre 1.00 y 1.20) donde los cristales existentes crecen consumiendo la sacarosa disuelta sin que se formen núcleos nuevos espontáneamente; por eso es la condición objetivo durante toda la cocción en el tacho.</p></div>
+<div class="faq-item"><h3>¿Qué pasa si la masa entra en zona lábil (y > 1.30)?</h3><p>Se produce nucleación espontánea incontrolada, generando "grano falso": cristales nuevos no deseados que arruinan la distribución de tamaño de grano de la templa y complican el agotamiento posterior en centrífugas.</p></div>
+<div class="faq-item"><h3>¿Por qué la pureza afecta el coeficiente de sobresaturación?</h3><p>Los no-azúcares presentes en jarabes o mieles de menor pureza reducen la solubilidad efectiva de la sacarosa (efecto de depresión de solubilidad), por lo que a igual Brix y temperatura, una masa de menor pureza tiene mayor y que una de alta pureza.</p></div>
+<div class="faq-item"><h3>¿Qué significa un resultado "insaturado" (y < 1.0)?</h3><p>Indica que la solución no ha alcanzado el punto de saturación a esa temperatura y concentración: si hubiera cristales presentes, se disolverían en lugar de crecer, por lo que hay que concentrar más o bajar la temperatura para entrar en zona de trabajo.</p></div>
+</div>
+
+<p class="back-link"><a href="https://sugarplantcalc.com/calculadoras/">&lsaquo; Volver a todas las calculadoras</a></p>
+</article>
+</div>
+
+<script>
+var LBL = {"solPura": "Solubilidad sacarosa pura", "solGagua": "Solubilidad (g/100 g agua)", "relSacagua": "Relación sacarosa/agua real", "relSat": "Relación en saturación", "avTemp": "La correlación es fiable solo entre 0 y 100 °C.", "avLabil": "Zona lábil (y = {0}): nucleación espontánea, riesgo de grano falso.", "avIntermedia": "Zona intermedia (y = {0}): pueden aparecer núcleos sobre los cristales existentes.", "avMetaestable": "Zona metaestable (y = {0}): el cristal crece sin formar núcleos nuevos. Es la zona de trabajo.", "avInsaturada": "Insaturada (y = {0}): la solución no está saturada, un cristal se disolvería."};
+
+function g(id){return document.getElementById(id)}
+function n(id){var e=g(id);if(!e)return 0;var x=parseFloat((e.value||"").replace(",","."));return isFinite(x)?x:0}
+function f(x,d){return (!isFinite(x))?"—":x.toFixed(d)}
+function set(id,v){var e=g(id);if(e)e.textContent=v}
+function tabla(id,filas){var e=g(id);if(!e)return;e.innerHTML=filas.map(function(r){return '<div class="row"><span>'+r[0]+'</span><span style="font-weight:400;text-align:right;max-width:62%">'+r[1]+'</span></div>'}).join("")}
+function aviso(id,msg){var e=g(id);if(!e)return;if(!msg){e.style.display='none';e.textContent='';return}e.style.display='block';e.textContent=msg}
+
+function solPuraPct(t){return 64.397+0.07251*t+0.0020569*t*t-9.035e-6*t*t*t}
+function calcSolub(brix,pureza,temp,coef){
+  if(brix<=0||brix>=100||pureza<=0)return{valida:false};
+  var c=coef>0?coef:1,satPura=solPuraPct(temp);
+  var gAgua=satPura<100?100*satPura/(100-satPura):0;
+  var qSatPura=satPura<100?satPura/(100-satPura):0;
+  var qSat=qSatPura*c;
+  var sacarosa=brix*pureza/100,agua=100-brix;
+  var q=agua>0?sacarosa/agua:0,y=qSat>0?q/qSat:0;
+  return{valida:true,satPura:satPura,gAgua:gAgua,q:q,qSat:qSat,y:y,tempOk:(temp>=0&&temp<=100)};
+}
+function avisoSolub(r){
+  if(!r.valida)return null;
+  if(!r.tempOk)return LBL.avTemp;
+  if(r.y>1.3)return LBL.avLabil.replace('{0}',f(r.y,2));
+  if(r.y>1.2)return LBL.avIntermedia.replace('{0}',f(r.y,2));
+  if(r.y>=1.0)return LBL.avMetaestable.replace('{0}',f(r.y,2));
+  if(r.y>0)return LBL.avInsaturada.replace('{0}',f(r.y,2));
+  return null;
+}
+function calcSolubilidad(){
+  var r=calcSolub(n('sb_bx'),n('sb_pu'),n('sb_t'),n('sb_coef'));
+  set('sb_y', r.valida?f(r.y,3):"—");
+  tabla('sb_det', r.valida?[
+    [LBL.solPura,f(r.satPura,2)+" %"],
+    [LBL.solGagua,f(r.gAgua,1)],
+    [LBL.relSacagua,f(r.q,3)],
+    [LBL.relSat,f(r.qSat,3)]
+  ]:[]);
+  aviso('sb_w', avisoSolub(r));
+}
+
+var CAMPOS=[];
+document.querySelectorAll("#sb_bx,#sb_pu,#sb_t,#sb_coef").forEach(function(e){
+  CAMPOS.push(e.id);
+  e.addEventListener("input",calcSolubilidad);
+  e.addEventListener("change",calcSolubilidad);
+});
+try{
+  var saved=JSON.parse(localStorage.getItem("spc_calc_solubilidad")||"{}");
+  CAMPOS.forEach(function(k){if(saved[k]!=null)g(k).value=saved[k]});
+}catch(_){}
+calcSolubilidad();
+window.addEventListener('beforeunload',function(){try{var o={};CAMPOS.forEach(function(k){o[k]=g(k).value});localStorage.setItem("spc_calc_solubilidad",JSON.stringify(o))}catch(_){}});
+
+</script>
+<script src="/assets/js/cookie-consent.js"></script>
+</body>
+</html>
