@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#121417">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>Calculadora de Extração de Pol e Tandem de Moendas</title>
+<meta name="description" content="Calcule a extração de Pol, extração reduzida e embebição % fibra do seu tandem de moendas. Detecte desvios de brix e perdas de caldo na hora.">
+<link rel="canonical" href="https://sugarplantcalc.com/pt/calculadoras/tandem-moendas-calculadora-extracao-pol/">
+<link rel="alternate" hreflang="es" href="https://sugarplantcalc.com/calculadoras/tandem-molinos-extraccion-pol/">
+<link rel="alternate" hreflang="en" href="https://sugarplantcalc.com/en/calculadoras/mill-tandem-pol-extraction-calculator/">
+<link rel="alternate" hreflang="pt" href="https://sugarplantcalc.com/pt/calculadoras/tandem-moendas-calculadora-extracao-pol/">
+<link rel="alternate" hreflang="x-default" href="https://sugarplantcalc.com/calculadoras/tandem-molinos-extraccion-pol/">
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/img/logo.png" type="image/png">
+<link rel="apple-touch-icon" href="/assets/img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/calc-theme.css">
+<link rel="stylesheet" href="/assets/css/calc-page.css">
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://sugarplantcalc.com/pt/calculadoras/tandem-moendas-calculadora-extracao-pol/#app",
+      "name": "Calculadora de Extração de Pol e Tandem de Moendas",
+      "url": "https://sugarplantcalc.com/pt/calculadoras/tandem-moendas-calculadora-extracao-pol/",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web",
+      "description": "Calcule a extração de Pol, extração reduzida e embebição % fibra do seu tandem de moendas. Detecte desvios de brix e perdas de caldo na hora.",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "author": { "@type": "Person", "name": "Ing. Yeider Rodríguez Molina" },
+      "inLanguage": "pt"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://sugarplantcalc.com/pt/calculadoras/tandem-moendas-calculadora-extracao-pol/#faq",
+      "mainEntity": [
+        { "@type": "Question", "name": "Qual é a extração de Pol normal em um engenho de açúcar?", "acceptedAnswer": { "@type": "Answer", "text": "Tandems bem mantidos operam entre 94% e 97%; abaixo de 94% costuma indicar desgaste dos rolos, embebição insuficiente ou má preparação da cana." } },
+        { "@type": "Question", "name": "Qual a diferença entre extração de Pol e extração reduzida?", "acceptedAnswer": { "@type": "Answer", "text": "A extração reduzida normaliza o resultado a 12,5% de fibra na cana, permitindo comparar tandems de variedades/safras diferentes em igualdade de condições (método de Hugot)." } },
+        { "@type": "Question", "name": "Como a embebição % fibra afeta a extração?", "acceptedAnswer": { "@type": "Answer", "text": "A faixa eficiente típica é 200–250% fibra; abaixo dilui mal o caldo residual no bagaço, acima sobrecarrega a evaporação sem ganho proporcional de extração." } },
+        { "@type": "Question", "name": "Por que meu brix de caldo misto real difere do esperado?", "acceptedAnswer": { "@type": "Answer", "text": "Um desvio maior que 0,8 °Bx em relação ao valor calculado por diluição costuma indicar vazamentos, má distribuição de água de embebição ou erro de amostragem." } }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Início", "item": "https://sugarplantcalc.com/pt/" },
+        { "@type": "ListItem", "position": 2, "name": "Calculadoras", "item": "https://sugarplantcalc.com/pt/calculadoras/" },
+        { "@type": "ListItem", "position": 3, "name": "Calculadora de Extração de Pol e Tandem de Moendas", "item": "https://sugarplantcalc.com/pt/calculadoras/tandem-moendas-calculadora-extracao-pol/" }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="cookie-banner" hidden id="cookieBanner" role="dialog" aria-label="Cookie notice">
+<div class="cookie-banner-inner">
+<p class="cookie-banner-text">Usamos cookies próprios e do Google Analytics para entender como este site é usado e melhorá-lo. O Google Analytics só é ativado se você aceitar. <a href="https://sites.google.com/view/sugarplantcalc-privacidad" rel="noopener" target="_blank">Mais informações</a>.</p>
+<div class="cookie-banner-actions">
+<button class="cookie-btn cookie-btn-reject" id="cookieReject" type="button">Rejeitar</button>
+<button class="cookie-btn cookie-btn-accept" id="cookieAccept" type="button">Aceitar</button>
+</div>
+</div>
+</div>
+
+<div class="wrap calc-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+<a href="https://sugarplantcalc.com/pt/">Início</a> &rsaquo; <a href="https://sugarplantcalc.com/pt/calculadoras/">Calculadoras</a> &rsaquo; <span>Calculadora de Extração de Pol e Tandem de Moendas</span>
+</nav>
+
+<article>
+<h1>Calculadora de Extração de Pol e Tandem de Moendas</h1>
+
+<div class="intro"><p>A <strong>extração de Pol</strong> é o indicador mais usado para medir o quão bem um tandem de moendas separa a sacarose da fibra da cana. Esta calculadora obtém a extração de Pol, a extração reduzida a 12,5% de fibra e a embebição % fibra a partir dos dados de cana, bagaço, caldo e embebição do seu turno.</p></div>
+
+<h2>Calculadora: extração de Pol, extração reduzida e embebição</h2>
+<div class="sec"><h3>Cana e bagaço</h3>
+    <div class="grid">
+      <div><label for="ml_tch">Cana (t/h)</label><input id="ml_tch" value="150" inputmode="decimal"></div>
+      <div><label for="ml_polc">Pol na cana (%)</label><input id="ml_polc" value="13.5" inputmode="decimal"></div>
+      <div><label for="ml_fibc">Fibra na cana (%)</label><input id="ml_fibc" value="12.5" inputmode="decimal"></div>
+      <div><label for="ml_polb">Pol no bagaço (%)</label><input id="ml_polb" value="1.8" inputmode="decimal"></div>
+      <div class="full"><label for="ml_fibb">Fibra no bagaço (%)</label><input id="ml_fibb" value="48" inputmode="decimal"></div>
+    </div>
+  </div>
+  <div class="sec"><h3>Caldo e embebição</h3>
+    <div class="grid">
+      <div><label for="ml_bxp">Brix do caldo primário (°Bx)</label><input id="ml_bxp" value="17.5" inputmode="decimal"></div>
+      <div><label for="ml_polp">Pol do caldo primário (%)</label><input id="ml_polp" value="15.2" inputmode="decimal"></div>
+      <div><label for="ml_bxm">Brix do caldo misto (°Bx)</label><input id="ml_bxm" value="13.7" inputmode="decimal"></div>
+      <div><label for="ml_imb">Embebição % cana</label><input id="ml_imb" value="28" inputmode="decimal"></div>
+    </div>
+  </div>
+  <div class="sec"><h3>Rolos da moenda</h3>
+    <div class="grid">
+      <div class="full"><label for="ml_maza">Comprimento dos rolos (pés)</label><input id="ml_maza" value="6" inputmode="decimal"></div>
+    </div>
+  </div>
+  <div class="res">
+    <div class="rc"><div class="lb">Extração de Pol</div><div class="vl" id="ml_ext">—</div><div class="un">%</div></div>
+    <div class="rc"><div class="lb">Extração reduzida</div><div class="vl" id="ml_extr">—</div><div class="un">%</div></div>
+  </div>
+  <div class="rc wide" style="margin-bottom:10px"><div class="lb">Embebição % fibra</div><div class="vl" id="ml_imbf">—</div><div class="un">% fibra</div></div>
+  <div class="warn" id="ml_w"></div>
+  <div class="det"><h4>Detalhe</h4><div id="ml_det"></div></div>
+
+
+<h2>Fundamento teórico e fórmulas</h2>
+<h3>Extração de Pol</h3>
+<div class="formula-block">\[EP(\%) = 100 - \frac{Pol_{bagaço} \times Fibra_{cana}}{Fibra_{bagaço} \times Pol_{cana}} \times 100\]</div>
+<h3>Extração reduzida (normalizada a 12,5% fibra — E. Hugot)</h3>
+<div class="formula-block">\[ER(\%) = 100 - (100-EP)\left(\frac{Fibra_{cana}}{12.5}\right)\left(\frac{87.5}{100-Fibra_{cana}}\right)\]</div>
+<h3>Embebição % fibra</h3>
+<div class="formula-block">\[IF(\%) = \frac{Embebição_{\%cana}}{Fibra_{\%cana}} \times 100\]</div>
+<h3>Brix do caldo misto esperado</h3>
+<div class="formula-block">\[Bx_{misto}^{esperado} = Bx_{primário}\left(1-\frac{Emb}{100+Emb}\right)\]</div>
+<p class="lit-ref"><strong>Literatura de referência:</strong> E. Hugot, <em>Handbook of Cane Sugar Engineering</em> (extração reduzida a 12,5% fibra); Peter Rein, <em>Cane Sugar Engineering</em> (extração e embebição); Meade–Chen, <em>Cane Sugar Handbook</em>.</p>
+
+<h2>Faixas operacionais típicas (KPIs)</h2>
+<table class="kpi-table">
+<thead><tr><th>KPI</th><th>Faixa típica</th><th>Alerta</th></tr></thead>
+<tbody>
+<tr><td>Extração de Pol</td><td>94% – 97%</td><td>Informativo (varia por variedade/desfibrador)</td></tr>
+<tr><td>Extração reduzida (12,5% fibra)</td><td>≥ 96%</td><td>Informativo</td></tr>
+<tr><td>Embebição % fibra</td><td>200% – 250%</td><td>&lt;200% "baixa" · &gt;250% "alta"</td></tr>
+<tr><td>Desvio brix misto vs. esperado</td><td>≤ 0,8 °Bx</td><td>&gt;0,8 °Bx "brix desviado"</td></tr>
+<tr><td>Caldo perdido na fibra do bagaço</td><td>&lt; 35–40%</td><td>&gt;40% "caldo perdido alto"</td></tr>
+</tbody>
+</table>
+
+<h2>Perguntas frequentes</h2>
+<div class="faq-list">
+<div class="faq-item"><h3>Qual é a extração de Pol normal em um engenho de açúcar?</h3><p>Tandems bem mantidos operam entre 94% e 97%; abaixo de 94% costuma indicar desgaste dos rolos, embebição insuficiente ou má preparação da cana.</p></div>
+<div class="faq-item"><h3>Qual a diferença entre extração de Pol e extração reduzida?</h3><p>A extração reduzida normaliza o resultado a 12,5% de fibra na cana, permitindo comparar tandems de variedades/safras diferentes em igualdade de condições (método de Hugot).</p></div>
+<div class="faq-item"><h3>Como a embebição % fibra afeta a extração?</h3><p>A faixa eficiente típica é 200–250% fibra; abaixo dilui mal o caldo residual no bagaço, acima sobrecarrega a evaporação sem ganho proporcional de extração.</p></div>
+<div class="faq-item"><h3>Por que meu brix de caldo misto real difere do esperado?</h3><p>Um desvio maior que 0,8 °Bx em relação ao valor calculado por diluição costuma indicar vazamentos, má distribuição de água de embebição ou erro de amostragem.</p></div>
+</div>
+
+<p class="back-link"><a href="https://sugarplantcalc.com/pt/calculadoras/">&lsaquo; Voltar a todas as calculadoras</a></p>
+</article>
+</div>
+
+<script>
+var LBL = {"fibra": "Fibra", "agua": "Água de embebição", "bagazo": "Bagaço % cana", "jugoPerdido": "Caldo perdido % fibra", "brixEsperado": "Brix misto esperado", "tchPie": "Carga por pé de rolo", "uTchPie": "t/h·pé", "avImbBaja": "Embebição baixa ({0} % fibra, < 200 %): risco de perda de extração.", "avImbAlta": "Embebição alta ({0} % fibra, > 250 %): risco de sobrecarga térmica nos evaporadores.", "avBrixDesv": "Brix misto ({0}) se desvia do esperado ({1}) em mais de 0,8: revise o fluxômetro de água ou vazamentos nos tanques.", "avJugoAlto": "Caldo perdido % fibra elevado ({0}, > 40): revise o trabalho mecânico ou o preparo da cana."};
+
+function g(id){return document.getElementById(id)}
+function n(id){var e=g(id);if(!e)return 0;var x=parseFloat((e.value||"").replace(",","."));return isFinite(x)?x:0}
+function f(x,d){return (!isFinite(x))?"—":x.toFixed(d)}
+function set(id,v){var e=g(id);if(e)e.textContent=v}
+function tabla(id,filas){var e=g(id);if(!e)return;e.innerHTML=filas.map(function(r){return '<div class="row"><span>'+r[0]+'</span><span style="font-weight:400;text-align:right;max-width:62%">'+r[1]+'</span></div>'}).join("")}
+function aviso(id,msg){var e=g(id);if(!e)return;if(!msg){e.style.display='none';e.textContent='';return}e.style.display='block';e.textContent=msg}
+
+function calcMolienda(){
+  var tch=n('ml_tch'),polc=n('ml_polc'),fibc=n('ml_fibc'),polb=n('ml_polb'),fibb=n('ml_fibb'),
+      bxp=n('ml_bxp'),polp=n('ml_polp'),bxm=n('ml_bxm'),imb=n('ml_imb'),maza=n('ml_maza');
+  var invalido=tch<=0||fibc<=0||fibc>=100||fibb<=0||polc<=0||maza<=0;
+  if(invalido){["ml_ext","ml_extr","ml_imbf"].forEach(function(id){set(id,'—')});tabla('ml_det',[]);aviso('ml_w',null);return}
+  var fibraTh=tch*(fibc/100);
+  var imbFibra=(imb/fibc)*100;
+  var aguaH=tch*(imb/100);
+  var bagCana=(fibc/fibb)*100;
+  var extPol=100-((polb*fibc)/(fibb*polc))*100;
+  var extRed=100-((100-extPol)*(fibc/12.5)*(87.5/(100-fibc)));
+  var hayPolP=polp>0;
+  var jugoPerdido=hayPolP?(polb*100*100)/(polp*fibb):0;
+  var bxmEsperado=bxp*(1-(imb/(100+imb)));
+  var tchPie=tch/maza;
+  set('ml_ext',f(extPol,2));set('ml_extr',f(extRed,2));set('ml_imbf',f(imbFibra,1));
+  tabla('ml_det',[
+    [LBL.fibra,f(fibraTh,2)+" t/h"],
+    [LBL.agua,f(aguaH,2)+" t/h"],
+    [LBL.bagazo,f(bagCana,2)+" %"],
+    [LBL.jugoPerdido, hayPolP?(f(jugoPerdido,2)+" %"):"—"],
+    [LBL.brixEsperado,f(bxmEsperado,2)+" °Bx"],
+    [LBL.tchPie,f(tchPie,2)+" "+LBL.uTchPie]
+  ]);
+  var avisos=[];
+  if(imbFibra<200)avisos.push(LBL.avImbBaja.replace('{0}',f(imbFibra,1)));
+  if(imbFibra>250)avisos.push(LBL.avImbAlta.replace('{0}',f(imbFibra,1)));
+  if(bxm>0&&Math.abs(bxm-bxmEsperado)>0.8)avisos.push(LBL.avBrixDesv.replace('{0}',f(bxm,1)).replace('{1}',f(bxmEsperado,1)));
+  if(hayPolP&&jugoPerdido>40)avisos.push(LBL.avJugoAlto.replace('{0}',f(jugoPerdido,1)));
+  aviso('ml_w', avisos.length?avisos.join("\n\n"):null);
+}
+
+var CAMPOS=[];
+document.querySelectorAll("#ml_tch,#ml_polc,#ml_fibc,#ml_polb,#ml_fibb,#ml_bxp,#ml_polp,#ml_bxm,#ml_imb,#ml_maza").forEach(function(e){
+  CAMPOS.push(e.id);
+  e.addEventListener("input",calcMolienda);
+  e.addEventListener("change",calcMolienda);
+});
+try{
+  var saved=JSON.parse(localStorage.getItem("spc_calc_molienda")||"{}");
+  CAMPOS.forEach(function(k){if(saved[k]!=null)g(k).value=saved[k]});
+}catch(_){}
+calcMolienda();
+window.addEventListener('beforeunload',function(){try{var o={};CAMPOS.forEach(function(k){o[k]=g(k).value});localStorage.setItem("spc_calc_molienda",JSON.stringify(o))}catch(_){}});
+
+</script>
+<script src="/assets/js/cookie-consent.js"></script>
+</body>
+</html>
