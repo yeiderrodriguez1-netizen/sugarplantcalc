@@ -161,6 +161,35 @@
         }
         .lang-btn:hover { color: var(--text-main); background: rgba(255, 255, 255, 0.06); }
         .lang-btn.active { background: var(--accent-gold); color: #000; }
+        /* --- MENÚ DE CALCULADORAS (mega-menú) --- */
+        .calc-switch { position: relative; display: inline-flex; }
+        .calc-toggle {
+            display: inline-flex; align-items: center; gap: 0.4rem;
+            background: transparent; border: none; color: var(--text-muted);
+            font-family: var(--font-main); font-weight: 500; font-size: 0.92rem;
+            padding: 0; cursor: pointer; transition: var(--transition);
+        }
+        .calc-toggle:hover { color: var(--text-main); }
+        .calc-caret { transition: transform 0.25s ease; flex-shrink: 0; }
+        .calc-switch.open .calc-caret { transform: rotate(180deg); }
+        .calc-switch.open .calc-toggle { color: var(--accent-gold); }
+        .calc-menu {
+            position: absolute; top: calc(100% + 14px); left: 50%; transform: translateX(-50%) translateY(-8px);
+            width: min(780px, 90vw);
+            background: var(--bg-card); border: 1px solid var(--border-gold); border-radius: var(--radius-md);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.55); padding: 1.4rem;
+            opacity: 0; visibility: hidden;
+            transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease; z-index: 1200;
+        }
+        .calc-switch.open .calc-menu { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
+        .calc-menu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem 1.8rem; }
+        .calc-group-title { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent-gold); margin-bottom: 0.6rem; }
+        .calc-item { display: flex; align-items: flex-start; gap: 0.6rem; padding: 0.45rem 0.4rem; border-radius: 8px; text-decoration: none; transition: background 0.15s ease; }
+        .calc-item:hover { background: rgba(255, 255, 255, 0.05); }
+        .calc-item .ic { font-size: 16px; line-height: 1.3; filter: saturate(.85); flex-shrink: 0; }
+        .calc-item .tt { display: block; font-size: 0.88rem; font-weight: 600; color: var(--text-main); }
+        .calc-item .ds { display: block; font-size: 0.76rem; color: var(--text-muted); margin-top: 1px; }
+
 
         .nav-toggle { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 6px; }
         .nav-toggle span { width: 24px; height: 2px; background: var(--text-main); border-radius: 2px; transition: var(--transition); }
@@ -348,7 +377,7 @@
         .reveal.in { opacity: 1; transform: none; }
 
         /* --- BASE TÁCTIL --- */
-        a, button, .btn, .lang-btn, .lang-toggle, .faq-q, .nav-toggle { -webkit-tap-highlight-color: rgba(245, 179, 1, 0.18); }
+        a, button, .btn, .lang-btn, .lang-toggle, .faq-q, .nav-toggle, .calc-toggle, .calc-item { -webkit-tap-highlight-color: rgba(245, 179, 1, 0.18); }
         .btn:active, .lang-toggle:active, .faq-q:active, .benefit:active, .feature-card:active, .shot:active { transform: scale(0.98); }
 
         /* --- RESPONSIVE --- */
@@ -384,6 +413,17 @@
             }
             .nav-lang .lang-switch.open .lang-menu { max-height: 220px; padding: 0 0 0.4rem 1.4rem; }
             .nav-lang .lang-btn { min-height: 46px; }
+            /* Menú de calculadoras dentro del menú móvil (acordeón) */
+            .nav-calc .calc-switch { width: 100%; }
+            .nav-calc .calc-toggle { width: 100%; justify-content: space-between; min-height: 50px; padding: 0.5rem 0; color: var(--text-muted); }
+            .nav-calc .calc-menu {
+                position: static; width: auto; min-width: 0; box-shadow: none; border: none; background: transparent;
+                padding: 0; max-height: 0; overflow: hidden; opacity: 1; visibility: visible; transform: none;
+                transition: max-height 0.3s ease;
+            }
+            .nav-calc .calc-switch.open .calc-menu { max-height: 2000px; padding: 0 0 0.6rem 0; }
+            .nav-calc .calc-menu-grid { grid-template-columns: 1fr; gap: 1.2rem; }
+
             /* Hero sin mockup del teléfono */
             .hero-visual { display: none; }
             .hero { padding-top: 3rem; }
@@ -472,6 +512,50 @@
 <li><a data-i18n="nav_about" href="#creador">About</a></li>
 <li><a data-i18n="nav_faq" href="#faq">FAQ</a></li>
 <li><a data-i18n="nav_contact" href="#contacto">Contact</a></li>
+<li class="nav-calc">
+<div class="calc-switch" id="calcSwitch">
+<button aria-expanded="false" aria-haspopup="true" class="calc-toggle" id="calcToggle" type="button">
+<span data-i18n="nav_calc">Calculators</span>
+<svg class="calc-caret" fill="none" height="11" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" viewbox="0 0 24 24" width="11"><polyline points="6 9 12 15 18 9"></polyline></svg>
+</button>
+<div class="calc-menu" id="calcMenu" role="menu">
+<div class="calc-menu-grid">
+<div class="calc-group-block">
+<div class="calc-group-title">Lab and conversions</div>
+<a class="calc-item" href="/en/calculadoras/sugar-industry-unit-converter/" role="menuitem"><span class="ic">⇄</span><span><span class="tt">Conversion</span><span class="ds">Process units, updates itself</span></span></a>
+<a class="calc-item" href="/en/calculadoras/brix-pol-purity-calculator/" role="menuitem"><span class="ic">🧪</span><span><span class="tt">Purity</span><span class="ds">From Brix and Pol</span></span></a>
+<a class="calc-item" href="/en/calculadoras/juice-syrup-molasses-density-calculator/" role="menuitem"><span class="ic">⚖</span><span><span class="tt">Density</span><span class="ds">Product and Brix → density</span></span></a>
+<a class="calc-item" href="/en/calculadoras/sugar-factory-yield-calculator/" role="menuitem"><span class="ic">📈</span><span><span class="tt">Yield</span><span class="ds">Factory yield from shift production data</span></span></a>
+</div>
+<div class="calc-group-block">
+<div class="calc-group-title">Milling and extraction</div>
+<a class="calc-item" href="/en/calculadoras/mill-tandem-pol-extraction-calculator/" role="menuitem"><span class="ic">⚙</span><span><span class="tt">Mill tandem</span><span class="ds">Extraction, imbibition and fibre balance</span></span></a>
+</div>
+<div class="calc-group-block">
+<div class="calc-group-title">Enzymatic treatment</div>
+<a class="calc-item" href="/en/calculadoras/dextranase-dosing-calculator-sugarcane/" role="menuitem"><span class="ic">🧬</span><span><span class="tt">Dextranase</span><span class="ds">Enzyme dosing against dextran</span></span></a>
+<a class="calc-item" href="/en/calculadoras/alpha-amylase-dosing-calculator-juice/" role="menuitem"><span class="ic">🧬</span><span><span class="tt">Alpha-amylase</span><span class="ds">Enzyme dosing against starch</span></span></a>
+</div>
+<div class="calc-group-block">
+<div class="calc-group-title">Cane juice clarification</div>
+<a class="calc-item" href="/en/calculadoras/phosphoric-acid-clarification-calculator/" role="menuitem"><span class="ic">⚗</span><span><span class="tt">Phosphoric acid</span><span class="ds">P₂O₅ adjustment in limed juice</span></span></a>
+<a class="calc-item" href="/en/calculadoras/milk-of-lime-baume-calculator/" role="menuitem"><span class="ic">💧</span><span><span class="tt">Milk of lime</span><span class="ds">Liming from degrees Baumé</span></span></a>
+<a class="calc-item" href="/en/calculadoras/flocculant-dosing-calculator-clarifier/" role="menuitem"><span class="ic">✽</span><span><span class="tt">Flocculant</span><span class="ds">Polymer to the clarifier and make-up</span></span></a>
+<a class="calc-item" href="/en/calculadoras/jar-test-calculator-clarification/" role="menuitem"><span class="ic">⚗</span><span><span class="tt">Jar test</span><span class="ds">Optimum flocculant dose in the lab</span></span></a>
+</div>
+<div class="calc-group-block">
+<div class="calc-group-title">Evaporation</div>
+<a class="calc-item" href="/en/calculadoras/multiple-effect-evaporation-steam-economy-calculator/" role="menuitem"><span class="ic">🌡</span><span><span class="tt">Evaporation and thermal economy</span><span class="ds">Multiple effect: steam economy and syrup</span></span></a>
+</div>
+<div class="calc-group-block">
+<div class="calc-group-title">Crystallization</div>
+<a class="calc-item" href="/en/calculadoras/sucrose-solubility-supersaturation-calculator/" role="menuitem"><span class="ic">💎</span><span><span class="tt">Sucrose solubility</span><span class="ds">Solubility and supersaturation for boiling</span></span></a>
+<a class="calc-item" href="/en/calculadoras/sjm-formula-massecuite-crystallization/" role="menuitem"><span class="ic">🍯</span><span><span class="tt">Crystallization and pans</span><span class="ds">Supersaturation, S-J-M yield and strike</span></span></a>
+</div>
+</div>
+</div>
+</div>
+</li>
 <li class="nav-lang">
 <div aria-label="Idioma / Language / Idioma" class="lang-switch" id="langSwitch" role="group">
 <button aria-expanded="false" aria-haspopup="true" aria-label="Cambiar idioma" class="lang-toggle" id="langToggle" type="button">
@@ -583,10 +667,6 @@
 <p data-i18n="card6_d">Save critical runs to compare milling shifts and review historical data.</p>
 </div>
 </div>
-<a class="feature-note" href="https://sugarplantcalc.com/en/calculadoras/">
-<svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="18"><circle cx="12" cy="12" r="10"></circle><line x1="2" x2="22" y1="12" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
-<span data-i18n="feat_web_soon">Online calculators from your browser — try them now</span>
-</a>
 </div>
 </section>
 <!-- COMPARATIVA -->
@@ -752,7 +832,7 @@
         };
         var I18N = {
             es: {
-                nav_features: 'Funciones', nav_compare: 'Comparativa', nav_about: 'Sobre mí', nav_faq: 'FAQ',
+                nav_features: 'Funciones', nav_compare: 'Comparativa', nav_about: 'Sobre mí', nav_faq: 'FAQ', nav_calc: 'Calculadoras',
                 hero_badge: 'Herramienta técnica industrial · 100% Offline',
                 hero_title: 'Los cálculos de tu ingenio, <span>resueltos en el celular y sin internet</span>',
                 hero_sub: 'SugarPlantCalc reúne Brix, Pol, pureza, extracción, balance de masa, clarificación y evaporación en una sola app. Resultados de planta en segundos, aunque no tengas señal.',
@@ -806,7 +886,7 @@
                 foot_copy: '© 2026 SugarPlantCalc. Todos los derechos reservados. Desarrollado por Ing. Yeider Rodríguez Molina.'
             },
             en: {
-                nav_features: 'Features', nav_compare: 'Comparison', nav_about: 'About', nav_faq: 'FAQ',
+                nav_features: 'Features', nav_compare: 'Comparison', nav_about: 'About', nav_faq: 'FAQ', nav_calc: 'Calculators',
                 hero_badge: 'Industrial technical tool · 100% Offline',
                 hero_title: 'Your sugar mill calculations, <span>solved on your phone and without internet</span>',
                 hero_sub: 'SugarPlantCalc brings Brix, Pol, purity, extraction, mass balance, clarification and evaporation into a single app. Plant results in seconds, even with no signal.',
@@ -860,7 +940,7 @@
                 foot_copy: '© 2026 SugarPlantCalc. All rights reserved. Developed by Ing. Yeider Rodríguez Molina.'
             },
             pt: {
-                nav_features: 'Funcionalidades', nav_compare: 'Comparação', nav_about: 'Sobre mim', nav_faq: 'FAQ',
+                nav_features: 'Funcionalidades', nav_compare: 'Comparação', nav_about: 'Sobre mim', nav_faq: 'FAQ', nav_calc: 'Calculadoras',
                 hero_badge: 'Ferramenta técnica industrial · 100% Offline',
                 hero_title: 'Os cálculos da sua usina, <span>resolvidos no celular e sem internet</span>',
                 hero_sub: 'O SugarPlantCalc reúne Brix, Pol, pureza, extração, balanço de massa, clarificação e evaporação em um só app. Resultados de planta em segundos, mesmo sem sinal.',
@@ -949,6 +1029,7 @@
         if (langToggle) {
             langToggle.addEventListener('click', function (e) {
                 e.stopPropagation();
+                closeCalc();
                 var open = !langSwitch.classList.contains('open');
                 langSwitch.classList.toggle('open', open);
                 langToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
@@ -958,6 +1039,21 @@
         document.querySelectorAll('.lang-btn').forEach(function (b) {
             b.addEventListener('click', function () { try { localStorage.setItem('spc_lang', b.dataset.lang); } catch (e) {} });
         });
+
+                // Menú de calculadoras (mega-menú)
+        var calcSwitch = document.getElementById('calcSwitch');
+        var calcToggle = document.getElementById('calcToggle');
+        function closeCalc() { if (calcSwitch) { calcSwitch.classList.remove('open'); if (calcToggle) calcToggle.setAttribute('aria-expanded', 'false'); } }
+        if (calcToggle) {
+            calcToggle.addEventListener('click', function (e) {
+                e.stopPropagation();
+                closeLang();
+                var open = !calcSwitch.classList.contains('open');
+                calcSwitch.classList.toggle('open', open);
+                calcToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+            });
+            document.addEventListener('click', function (e) { if (!calcSwitch.contains(e.target)) closeCalc(); });
+        }
 
         // Menú móvil
         var navToggle = document.getElementById('navToggle');
