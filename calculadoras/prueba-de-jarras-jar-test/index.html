@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#121417">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>Calculadora de Prueba de Jarras para Clarificación</title>
+<meta name="description" content="Calcula la dosis óptima de floculante con una prueba de jarras: puntaje por turbidez, velocidad de sedimentación y volumen de lodo.">
+<link rel="canonical" href="https://sugarplantcalc.com/calculadoras/prueba-de-jarras-jar-test/">
+<link rel="alternate" hreflang="es" href="https://sugarplantcalc.com/calculadoras/prueba-de-jarras-jar-test/">
+<link rel="alternate" hreflang="en" href="https://sugarplantcalc.com/en/calculadoras/jar-test-calculator-clarification/">
+<link rel="alternate" hreflang="pt" href="https://sugarplantcalc.com/pt/calculadoras/calculadora-teste-de-jarros-clarificacao/">
+<link rel="alternate" hreflang="x-default" href="https://sugarplantcalc.com/calculadoras/prueba-de-jarras-jar-test/">
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/img/logo.png" type="image/png">
+<link rel="apple-touch-icon" href="/assets/img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/calc-theme.css">
+<link rel="stylesheet" href="/assets/css/calc-page.css">
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://sugarplantcalc.com/calculadoras/prueba-de-jarras-jar-test/#app",
+      "name": "Calculadora de Prueba de Jarras (Jar Test) para Clarificación",
+      "url": "https://sugarplantcalc.com/calculadoras/prueba-de-jarras-jar-test/",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web",
+      "description": "Calcula la dosis óptima de floculante con una prueba de jarras: puntaje por turbidez, velocidad de sedimentación y volumen de lodo.",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "author": { "@type": "Person", "name": "Ing. Yeider Rodríguez Molina" },
+      "inLanguage": "es"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://sugarplantcalc.com/calculadoras/prueba-de-jarras-jar-test/#faq",
+      "mainEntity": [
+        { "@type": "Question", "name": "¿Por qué la turbidez tiene el mayor peso en el puntaje?", "acceptedAnswer": { "@type": "Answer", "text": "Porque es el criterio de aceptación directo del jugo clarificado hacia evaporación: una menor turbidez del sobrenadante indica mejor remoción de sólidos suspendidos, por eso pesa 45% frente a 35% de la velocidad y 20% del lodo." } },
+        { "@type": "Question", "name": "¿Qué significa que la dosis óptima quede en el borde de la serie probada?", "acceptedAnswer": { "@type": "Answer", "text": "Si la jarra ganadora es la de mayor o menor dosis probada, el verdadero óptimo podría estar fuera del rango evaluado; la calculadora recomienda repetir la prueba ampliando el rango de dosis en esa dirección." } },
+        { "@type": "Question", "name": "¿Cuándo se debe leer el volumen de lodo: al minuto 1 o a los 30 minutos?", "acceptedAnswer": { "@type": "Answer", "text": "El volumen de lodo se lee a los 30 minutos, una vez terminada la sedimentación, como dato de referencia adicional; la velocidad de sedimentación (usada en el puntaje) se mide al minuto 1 midiendo el descenso de la interfaz." } },
+        { "@type": "Question", "name": "¿Qué pasa si solo tengo turbidez y dosis, sin lectura de lodo?", "acceptedAnswer": { "@type": "Answer", "text": "El puntaje se recalcula usando solo turbidez (45%) y velocidad (35%) normalizadas a 100%, sin penalizar la ausencia del dato de lodo; el lodo es información adicional, no obligatoria para obtener una recomendación." } }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://sugarplantcalc.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Calculadoras", "item": "https://sugarplantcalc.com/calculadoras/" },
+        { "@type": "ListItem", "position": 3, "name": "Calculadora de Prueba de Jarras (Jar Test) para Clarificación", "item": "https://sugarplantcalc.com/calculadoras/prueba-de-jarras-jar-test/" }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="cookie-banner" hidden id="cookieBanner" role="dialog" aria-label="Cookie notice">
+<div class="cookie-banner-inner">
+<p class="cookie-banner-text">Usamos cookies propias y de Google Analytics para entender cómo se usa este sitio y mejorarlo. Google Analytics solo se activa si aceptas. <a href="https://sites.google.com/view/sugarplantcalc-privacidad" rel="noopener" target="_blank">Más información</a>.</p>
+<div class="cookie-banner-actions">
+<button class="cookie-btn cookie-btn-reject" id="cookieReject" type="button">Rechazar</button>
+<button class="cookie-btn cookie-btn-accept" id="cookieAccept" type="button">Aceptar</button>
+</div>
+</div>
+</div>
+
+<div class="wrap calc-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+<a href="https://sugarplantcalc.com/">Inicio</a> &rsaquo; <a href="https://sugarplantcalc.com/calculadoras/">Calculadoras</a> &rsaquo; <span>Calculadora de Prueba de Jarras (Jar Test) para Clarificación</span>
+</nav>
+
+<article>
+<h1>Calculadora de Prueba de Jarras (Jar Test) para Clarificación</h1>
+
+<div class="intro"><p>La <strong>prueba de jarras</strong> es el método de laboratorio estándar para determinar la dosis óptima de floculante antes de ajustarla en el clarificador. Esta calculadora convierte los datos de hasta 6 jarras (dosis, velocidad de sedimentación, volumen de lodo y turbidez del sobrenadante) en un puntaje ponderado y recomienda la dosis óptima en ppm de polímero.</p></div>
+
+<h2>Calculadora: puntaje ponderado y dosis óptima de floculante</h2>
+<div class="sec"><h3>Montaje de la prueba</h3>
+    <div class="grid">
+      <div><label for="j_v">Volumen por jarra (mL)</label><input id="j_v" value="1000" inputmode="decimal"></div>
+      <div><label for="j_cs">Solución de prueba (g/L)</label><input id="j_cs" value="0.5" inputmode="decimal"></div>
+      <div><label for="j_bx">Brix del jugo (°Bx)</label><input id="j_bx" value="15" inputmode="decimal"></div>
+      <div><label for="j_t">Temperatura (°C)</label><input id="j_t" value="102" inputmode="decimal"></div>
+      <div class="full"><label for="j_tm">Tiempo de lectura (min)</label><input id="j_tm" value="5" inputmode="decimal"></div>
+    </div>
+  </div>
+  <div class="dose"><h3>Resultados por jarra</h3>
+    <div id="j_tabla"></div>
+  </div>
+  <div class="mejorbox">
+    <div class="lb">Dosis óptima</div>
+    <div class="vl" id="j_opt">—</div>
+    <div class="un">ppm de polímero</div>
+    <div class="cm" id="j_com">Registra al menos dos jarras con dosis y turbidez para obtener una recomendación.</div>
+  </div>
+  <div class="warn" id="j_w"></div>
+  <div class="det"><h4>Cómo correr la prueba</h4><div id="j_guia"></div></div>
+
+
+<h2>Fundamento teórico y fórmulas</h2>
+<h3>Puntaje ponderado por jarra</h3>
+<div class="formula-block">\[Score_i = 100\times\frac{0.45\,n_{turbidez,i} + 0.35\,n_{velocidad,i} + 0.20\,n_{lodo,i}}{0.45+0.35+0.20\,[lodo\,disponible]}\]</div>
+<p>Cada componente se normaliza contra el mejor valor de la serie: \(n_{turbidez}=NTU_{mín}/NTU_i\), \(n_{velocidad}=v_i/v_{máx}\), \(n_{lodo}=lodo_{mín}/lodo_i\) (solo si hay lecturas de lodo &gt; 0). La turbidez tiene el mayor peso (45%) porque es el criterio de aceptación del jugo clarificado; la velocidad de sedimentación (35%) determina la capacidad del clarificador; el lodo (20%) es un dato de referencia adicional.</p>
+<h3>Volumen de solución de prueba por jarra</h3>
+<div class="formula-block">\[V_{solución}\,(mL) = \frac{Masa_{jarra}\,(g) \times Dosis\,(ppm)/1000}{C_{solución\,prueba}\,(g/L)}\]</div>
+<p class="lit-ref"><strong>Literatura de referencia:</strong> Peter Rein, <em>Cane Sugar Engineering</em> (prueba de jarras y selección de floculante); E. Hugot, <em>Handbook of Cane Sugar Engineering</em>; Meade–Chen, <em>Cane Sugar Handbook</em>.</p>
+
+<h2>Rangos operacionales típicos (KPIs)</h2>
+<table class="kpi-table">
+<thead><tr><th>KPI</th><th>Rango típico</th><th>Alerta</th></tr></thead>
+<tbody>
+<tr><td>Jarras válidas mínimas</td><td>≥ 2 (dosis y turbidez &gt; 0)</td><td>&lt;2 "registra al menos dos jarras" (sin recomendación)</td></tr>
+<tr><td>Peso de turbidez en el puntaje</td><td>45%</td><td>Criterio de aceptación del jugo clarificado</td></tr>
+<tr><td>Peso de velocidad de sedimentación</td><td>35%</td><td>Determina capacidad del clarificador</td></tr>
+<tr><td>Peso de volumen de lodo (si se midió)</td><td>20%</td><td>Dato de referencia adicional, no descarta jarras</td></tr>
+<tr><td>Dosis óptima en el extremo probado</td><td>—</td><td>Si es la dosis más alta o más baja de la serie → "repite ampliando el rango"</td></tr>
+<tr><td>Objetivo de turbidez de referencia</td><td>≈ 20 IU (ICUMSA)</td><td>Criterio de planta, ajustable por ingenio</td></tr>
+</tbody>
+</table>
+
+<h2>Preguntas frecuentes</h2>
+<div class="faq-list">
+<div class="faq-item"><h3>¿Por qué la turbidez tiene el mayor peso en el puntaje?</h3><p>Porque es el criterio de aceptación directo del jugo clarificado hacia evaporación: una menor turbidez del sobrenadante indica mejor remoción de sólidos suspendidos, por eso pesa 45% frente a 35% de la velocidad y 20% del lodo.</p></div>
+<div class="faq-item"><h3>¿Qué significa que la dosis óptima quede en el borde de la serie probada?</h3><p>Si la jarra ganadora es la de mayor o menor dosis probada, el verdadero óptimo podría estar fuera del rango evaluado; la calculadora recomienda repetir la prueba ampliando el rango de dosis en esa dirección.</p></div>
+<div class="faq-item"><h3>¿Cuándo se debe leer el volumen de lodo: al minuto 1 o a los 30 minutos?</h3><p>El volumen de lodo se lee a los 30 minutos, una vez terminada la sedimentación, como dato de referencia adicional; la velocidad de sedimentación (usada en el puntaje) se mide al minuto 1 midiendo el descenso de la interfaz.</p></div>
+<div class="faq-item"><h3>¿Qué pasa si solo tengo turbidez y dosis, sin lectura de lodo?</h3><p>El puntaje se recalcula usando solo turbidez (45%) y velocidad (35%) normalizadas a 100%, sin penalizar la ausencia del dato de lodo; el lodo es información adicional, no obligatoria para obtener una recomendación.</p></div>
+</div>
+
+<p class="back-link"><a href="https://sugarplantcalc.com/calculadoras/">&lsaquo; Volver a todas las calculadoras</a></p>
+</article>
+</div>
+
+<script>
+var LBL = {"jarra": "Jarra {0}", "ppm": "ppm", "interfaz": "Interfaz cm", "lodo": "Lodo %", "turbidez": "Turbidez", "pocasJarras": "Registra al menos dos jarras con dosis y turbidez para obtener una recomendación.", "bordeSuperior": "La jarra elegida es la de mayor dosis: el óptimo puede estar por encima del rango probado. Repite la serie subiendo las dosis.", "bordeInferior": "La jarra elegida es la de menor dosis: el óptimo puede estar por debajo. Repite la serie bajando las dosis.", "g1": "1. Solución", "g1v": "Prepara la solución de floculante y déjala madurar de 30 a 60 minutos antes de usarla; sin ese reposo el polímero no flocula bien.", "g2": "2. Jugo", "g2v": "Toma la muestra de jugo alcalizado en la entrada del clarificador, antes de dosificar el floculante y a temperatura de proceso (100–105 °C). Asegúrate de que el flujo sea representativo, evitando zonas de baja circulación o sedimentación, y mantén la muestra caliente durante toda la prueba: si se enfría, la velocidad de sedimentación cambia.", "g3": "3. Dosificar", "g3v": "Agrega el volumen indicado en cada jarra con un dosificador, con agitación rápida (100 rpm) durante 10 s.", "g4": "4. Floculación", "g4v": "Baja a 20–30 rpm por 1 min y detén la agitación.", "g5": "5. Velocidad", "g5v": "Mide el descenso de la interfaz al minuto 1.", "g6": "6. Lodos", "g6v": "Lee el volumen de lodo a los 30 minutos, ya con la sedimentación terminada. Es un dato de referencia, no un criterio de aceptación: no descarta ni aprueba una jarra. Otras referencias leen a 1, 3 y 5 min, pero eso mide compactación, no volumen final.", "g7": "7. Turbidez", "g7v": "Mide la turbidez del sobrenadante en unidades ICUMSA (IU). El objetivo de 20 IU es criterio de planta, no una norma publicada: ajústalo a tu ingenio.", "densidadUsada": "Densidad usada", "densidadUsadaV": "{0} kg/m³ · masa por jarra {1} g", "ejemplo3ppm": "Ejemplo a 3 ppm", "ejemplo3ppmV": "{0} mL de solución de prueba por jarra"};
+
+function g(id){return document.getElementById(id)}
+function n(id){var e=g(id);if(!e)return 0;var x=parseFloat((e.value||"").replace(",","."));return isFinite(x)?x:0}
+function f(x,d){return (!isFinite(x))?"—":x.toFixed(d)}
+function set(id,v){var e=g(id);if(e)e.textContent=v}
+function aviso(id,msg){var e=g(id);if(!e)return;if(!msg){e.style.display='none';e.textContent='';return}e.style.display='block';e.textContent=msg}
+
+function rhoJugo(bx,tC){
+  var rho20=998.70+3.91679*bx+0.0135108*bx*bx+2.95998e-5*bx*bx*bx;
+  var dt=tC-20;
+  return rho20-(0.24707*dt+0.003169*dt*dt);
+}
+
+var NJ=6;
+function tf(s){var args=Array.prototype.slice.call(arguments,1);for(var i=0;i<args.length;i++){s=s.split("{"+i+"}").join(args[i]);}return s;}
+
+function construirJarras(){
+  var h="";
+  for(var i=1;i<=NJ;i++){
+    h+='<div class="jar" id="j_row'+i+'">'
+      +'<div class="jh"><span class="jn">'+tf(LBL.jarra,i)+'</span><span class="js" id="j_sc'+i+'"></span>'
+      +'<span class="jml" id="j_ml'+i+'">—</span></div>'
+      +'<div class="g4">'
+      +'<div><label>'+LBL.ppm+'</label><input id="j_p'+i+'" value="'+i+'" inputmode="decimal"></div>'
+      +'<div><label>'+LBL.interfaz+'</label><input id="j_h'+i+'" value="" inputmode="decimal"></div>'
+      +'<div><label>'+LBL.lodo+'</label><input id="j_l'+i+'" value="" inputmode="decimal"></div>'
+      +'<div><label>'+LBL.turbidez+' NTU</label><input id="j_n'+i+'" value="" inputmode="decimal"></div>'
+      +'</div></div>';
+  }
+  g('j_tabla').innerHTML=h;
+  document.querySelectorAll('#j_tabla input').forEach(function(e){
+    e.addEventListener("input",calcJarras);
+    e.addEventListener("change",calcJarras);
+  });
+}
+
+function calcJarras(){
+  var V=n('j_v'),cs=n('j_cs'),bx=n('j_bx'),tC=n('j_t'),tm=n('j_tm');
+  var rho=rhoJugo(bx,tC);
+  var masaG=V*rho/1000;
+  var datos=[];
+  for(var i=1;i<=NJ;i++){
+    var ppm=n('j_p'+i),alt=n('j_h'+i),lodo=n('j_l'+i),ntu=n('j_n'+i);
+    var mg=masaG*ppm/1000;
+    var ml=cs>0?mg/cs:0;
+    set('j_ml'+i, ppm>0? f(ml,2)+" mL":"—");
+    var vel=tm>0?alt/tm:0;
+    datos.push({i:i,ppm:ppm,vel:vel,lodo:lodo,ntu:ntu,valida:(ntu>0&&ppm>0)});
+  }
+  var validas=datos.filter(function(d){return d.valida});
+  for(var k=1;k<=NJ;k++){set('j_sc'+k,"");g('j_row'+k).classList.remove("mejor")}
+
+  if(validas.length<2){
+    set('j_opt',"—");
+    g('j_com').textContent=LBL.pocasJarras;
+    aviso('j_w',null);
+    guia(masaG,cs,rho);
+    return;
+  }
+
+  var maxVel=Math.max.apply(null,validas.map(function(d){return d.vel}));
+  var lodos=validas.filter(function(d){return d.lodo>0}).map(function(d){return d.lodo});
+  var minLodo=lodos.length?Math.min.apply(null,lodos):0;
+  var minNtu=Math.min.apply(null,validas.map(function(d){return d.ntu}));
+
+  validas.forEach(function(d){
+    var nTurb=minNtu/d.ntu;
+    var nVel=maxVel>0?d.vel/maxVel:0;
+    var nLodo=(minLodo>0&&d.lodo>0)?minLodo/d.lodo:0;
+    var peso=0.45+0.35+(nLodo>0?0.20:0);
+    d.score=100*(0.45*nTurb+0.35*nVel+(nLodo>0?0.20*nLodo:0))/peso;
+  });
+
+  var mejor=validas.slice().sort(function(a,b){return b.score-a.score})[0];
+  validas.forEach(function(d){set('j_sc'+d.i,f(d.score,0))});
+  g('j_row'+mejor.i).classList.add("mejor");
+
+  set('j_opt',f(mejor.ppm,1));
+  var partes=[tf(LBL.jarra,mejor.i)+": "+f(mejor.ntu,0)+" NTU"];
+  if(mejor.vel>0)partes.push(f(mejor.vel,1)+" cm/min");
+  if(mejor.lodo>0)partes.push(f(mejor.lodo,0)+" %");
+  g('j_com').textContent=partes.join(" · ")+".";
+
+  var ordenadas=validas.slice().sort(function(a,b){return a.ppm-b.ppm});
+  var msg=null;
+  if(mejor.ppm===ordenadas[ordenadas.length-1].ppm) msg=LBL.bordeSuperior;
+  else if(mejor.ppm===ordenadas[0].ppm) msg=LBL.bordeInferior;
+  aviso('j_w',msg);
+  guia(masaG,cs,rho);
+}
+
+function guia(masaG,cs,rho){
+  var ej=cs>0?(masaG*3/1000)/cs:0;
+  g('j_guia').innerHTML=[
+    [LBL.g1,LBL.g1v], [LBL.g2,LBL.g2v], [LBL.g3,LBL.g3v],
+    [LBL.g4,LBL.g4v], [LBL.g5,LBL.g5v], [LBL.g6,LBL.g6v], [LBL.g7,LBL.g7v],
+    [LBL.densidadUsada, tf(LBL.densidadUsadaV, f(rho,1), f(masaG,0))],
+    [LBL.ejemplo3ppm, tf(LBL.ejemplo3ppmV, f(ej,2))]
+  ].map(function(r){return '<div class="row"><span>'+r[0]+'</span><span style="font-weight:400;text-align:right;max-width:62%">'+r[1]+'</span></div>'}).join("");
+}
+
+construirJarras();
+var CAMPOS=["j_v","j_cs","j_bx","j_t","j_tm"];
+document.querySelectorAll("#j_v,#j_cs,#j_bx,#j_t,#j_tm").forEach(function(e){
+  e.addEventListener("input",calcJarras);
+  e.addEventListener("change",calcJarras);
+});
+calcJarras();
+
+</script>
+<script src="/assets/js/cookie-consent.js"></script>
+</body>
+</html>
