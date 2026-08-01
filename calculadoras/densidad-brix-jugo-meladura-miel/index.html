@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#121417">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>Calculadora de Densidad: Jugo, Meladura y Miel por Brix</title>
+<meta name="description" content="Calcula densidad (kg/L) y grados Baumé de jugo, meladura o miel a partir del Brix y la temperatura. Avisa si el Brix no es típico del producto.">
+<link rel="canonical" href="https://sugarplantcalc.com/calculadoras/densidad-brix-jugo-meladura-miel/">
+<link rel="alternate" hreflang="es" href="https://sugarplantcalc.com/calculadoras/densidad-brix-jugo-meladura-miel/">
+<link rel="alternate" hreflang="en" href="https://sugarplantcalc.com/en/calculadoras/juice-syrup-molasses-density-calculator/">
+<link rel="alternate" hreflang="pt" href="https://sugarplantcalc.com/pt/calculadoras/calculadora-densidade-caldo-xarope-mel/">
+<link rel="alternate" hreflang="x-default" href="https://sugarplantcalc.com/calculadoras/densidad-brix-jugo-meladura-miel/">
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/img/logo.png" type="image/png">
+<link rel="apple-touch-icon" href="/assets/img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/calc-theme.css">
+<link rel="stylesheet" href="/assets/css/calc-page.css">
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://sugarplantcalc.com/calculadoras/densidad-brix-jugo-meladura-miel/#app",
+      "name": "Calculadora de Densidad de Jugo, Meladura y Miel",
+      "url": "https://sugarplantcalc.com/calculadoras/densidad-brix-jugo-meladura-miel/",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web",
+      "description": "Calcula densidad (kg/L) y grados Baumé de jugo, meladura o miel a partir del Brix y la temperatura. Avisa si el Brix no es típico del producto.",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "author": { "@type": "Person", "name": "Ing. Yeider Rodríguez Molina" },
+      "inLanguage": "es"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://sugarplantcalc.com/calculadoras/densidad-brix-jugo-meladura-miel/#faq",
+      "mainEntity": [
+        { "@type": "Question", "name": "¿Por qué la densidad de la miel usa un factor distinto al del jugo?", "acceptedAnswer": { "@type": "Answer", "text": "La miel tiene mayor concentración de no-azúcares (cenizas, gomas) que aumentan su densidad más allá de lo que predice la correlación pura de sacarosa-agua del jugo; por eso se aplica un factor de corrección de 1.010." } },
+        { "@type": "Question", "name": "¿Qué son los grados Baumé y para qué se usan en fábrica?", "acceptedAnswer": { "@type": "Answer", "text": "Es una escala de gravedad específica muy usada en campo porque se puede leer directo con un densímetro (pesa-jarabes) sin necesidad de calcular Brix; útil para el control rápido de lechada de cal y jarabes." } },
+        { "@type": "Question", "name": "¿Por qué la calculadora avisa que el Brix está fuera de rango típico?", "acceptedAnswer": { "@type": "Answer", "text": "Cada producto (jugo, meladura, miel) tiene una ventana de concentración normal en el proceso; un valor fuera de ese rango suele indicar que se seleccionó el producto equivocado o que hay un problema de proceso real." } },
+        { "@type": "Question", "name": "¿Cómo afecta la temperatura a la densidad medida?", "acceptedAnswer": { "@type": "Answer", "text": "A mayor temperatura, la densidad de una solución azucarada disminuye por expansión térmica; por eso todo densímetro y refractómetro de campo debe corregirse o leerse a la temperatura de referencia (usualmente 20 °C)." } }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://sugarplantcalc.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Calculadoras", "item": "https://sugarplantcalc.com/calculadoras/" },
+        { "@type": "ListItem", "position": 3, "name": "Calculadora de Densidad de Jugo, Meladura y Miel", "item": "https://sugarplantcalc.com/calculadoras/densidad-brix-jugo-meladura-miel/" }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="cookie-banner" hidden id="cookieBanner" role="dialog" aria-label="Cookie notice">
+<div class="cookie-banner-inner">
+<p class="cookie-banner-text">Usamos cookies propias y de Google Analytics para entender cómo se usa este sitio y mejorarlo. Google Analytics solo se activa si aceptas. <a href="https://sites.google.com/view/sugarplantcalc-privacidad" rel="noopener" target="_blank">Más información</a>.</p>
+<div class="cookie-banner-actions">
+<button class="cookie-btn cookie-btn-reject" id="cookieReject" type="button">Rechazar</button>
+<button class="cookie-btn cookie-btn-accept" id="cookieAccept" type="button">Aceptar</button>
+</div>
+</div>
+</div>
+
+<div class="wrap calc-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+<a href="https://sugarplantcalc.com/">Inicio</a> &rsaquo; <a href="https://sugarplantcalc.com/calculadoras/">Calculadoras</a> &rsaquo; <span>Calculadora de Densidad de Jugo, Meladura y Miel</span>
+</nav>
+
+<article>
+<h1>Calculadora de Densidad de Jugo, Meladura y Miel</h1>
+
+<div class="intro"><p>La <strong>densidad</strong> de las corrientes azucareras se calcula a partir del Brix y la temperatura usando correlaciones empíricas estándar de la industria. Esta calculadora obtiene la densidad en kg/L, la gravedad específica y los grados Baumé de jugo, meladura o miel, y avisa si el Brix ingresado no corresponde al rango típico del producto seleccionado.</p></div>
+
+<h2>Calculadora: densidad y grados Baumé por Brix y temperatura</h2>
+<div class="sec"><h3>Muestra</h3>
+    <div class="grid">
+      <div class="full">
+        <label for="dn_prod">Producto</label>
+        <select id="dn_prod">
+          <option value="jugo">Jugo</option>
+          <option value="meladura">Meladura</option>
+          <option value="miel">Miel</option>
+        </select>
+      </div>
+      <div><label for="dn_bx">Brix (°Bx)</label><input id="dn_bx" value="15" inputmode="decimal"></div>
+      <div><label for="dn_t">Temperatura (°C)</label><input id="dn_t" value="30" inputmode="decimal"></div>
+    </div>
+  </div>
+  <div class="res">
+    <div class="rc"><div class="lb">Densidad</div><div class="vl" id="dn_kgl">—</div><div class="un">kg/L</div></div>
+    <div class="rc"><div class="lb">Grados Baumé</div><div class="vl" id="dn_be">—</div><div class="un">°Bé</div></div>
+  </div>
+  <div class="warn" id="dn_w"></div>
+  <div class="det"><h4>Detalle</h4><div id="dn_det"></div></div>
+
+
+<h2>Fundamento teórico y fórmulas</h2>
+<h3>Densidad del jugo a 20 °C (correlación polinómica)</h3>
+<div class="formula-block">\[\rho_{20} = 998.70 + 3.91679\,Bx + 0.0135108\,Bx^2 + 2.95998\times10^{-5}\,Bx^3\]</div>
+<h3>Corrección por temperatura</h3>
+<div class="formula-block">\[\rho(t) = \rho_{20} - \left(0.24707\,\Delta t + 0.003169\,\Delta t^2\right), \quad \Delta t = t - 20\]</div>
+<h3>Grados Baumé</h3>
+<div class="formula-block">\[°Bé = 145 - \frac{145}{SG}\]</div>
+<p>Para meladura y miel se aplica el mismo modelo de densidad del jugo con un factor de corrección propio de cada producto, dado que sus no-azúcares y viscosidad difieren del jugo diluido (Hugot).</p>
+<p class="lit-ref"><strong>Literatura de referencia:</strong> E. Hugot, <em>Handbook of Cane Sugar Engineering</em> (correlaciones de densidad de soluciones azucaradas); Peter Rein, <em>Cane Sugar Engineering</em>; Meade–Chen, <em>Cane Sugar Handbook</em> (escala Baumé).</p>
+
+<h2>Rangos operacionales típicos (KPIs)</h2>
+<table class="kpi-table">
+<thead><tr><th>KPI</th><th>Rango típico</th><th>Alerta</th></tr></thead>
+<tbody>
+<tr><td>Brix típico de jugo</td><td>10 – 20 °Bx</td><td>&lt;10 o &gt;20 °Bx "fuera de rango típico"</td></tr>
+<tr><td>Brix típico de meladura</td><td>55 – 70 °Bx</td><td>&lt;55 o &gt;70 °Bx "fuera de rango típico"</td></tr>
+<tr><td>Brix típico de miel</td><td>80 – 95 °Bx</td><td>&lt;80 o &gt;95 °Bx "fuera de rango típico"</td></tr>
+</tbody>
+</table>
+
+<h2>Preguntas frecuentes</h2>
+<div class="faq-list">
+<div class="faq-item"><h3>¿Por qué la densidad de la miel usa un factor distinto al del jugo?</h3><p>La miel tiene mayor concentración de no-azúcares (cenizas, gomas) que aumentan su densidad más allá de lo que predice la correlación pura de sacarosa-agua del jugo; por eso se aplica un factor de corrección de 1.010.</p></div>
+<div class="faq-item"><h3>¿Qué son los grados Baumé y para qué se usan en fábrica?</h3><p>Es una escala de gravedad específica muy usada en campo porque se puede leer directo con un densímetro (pesa-jarabes) sin necesidad de calcular Brix; útil para el control rápido de lechada de cal y jarabes.</p></div>
+<div class="faq-item"><h3>¿Por qué la calculadora avisa que el Brix está fuera de rango típico?</h3><p>Cada producto (jugo, meladura, miel) tiene una ventana de concentración normal en el proceso; un valor fuera de ese rango suele indicar que se seleccionó el producto equivocado o que hay un problema de proceso real.</p></div>
+<div class="faq-item"><h3>¿Cómo afecta la temperatura a la densidad medida?</h3><p>A mayor temperatura, la densidad de una solución azucarada disminuye por expansión térmica; por eso todo densímetro y refractómetro de campo debe corregirse o leerse a la temperatura de referencia (usualmente 20 °C).</p></div>
+</div>
+
+<p class="back-link"><a href="https://sugarplantcalc.com/calculadoras/">&lsaquo; Volver a todas las calculadoras</a></p>
+</article>
+</div>
+
+<script>
+var LBL = {"sg": "Gravedad específica (20 °C)", "avBajo": "El Brix está por debajo del rango típico de este producto ({0}–{1} °Bx). Revisa si elegiste el producto correcto.", "avAlto": "El Brix está por encima del rango típico de este producto ({0}–{1} °Bx). Revisa si elegiste el producto correcto."};
+
+function g(id){return document.getElementById(id)}
+function n(id){var e=g(id);if(!e)return 0;var x=parseFloat((e.value||"").replace(",","."));return isFinite(x)?x:0}
+function f(x,d){return (!isFinite(x))?"—":x.toFixed(d)}
+function set(id,v){var e=g(id);if(e)e.textContent=v}
+function tabla(id,filas){var e=g(id);if(!e)return;e.innerHTML=filas.map(function(r){return '<div class="row"><span>'+r[0]+'</span><span style="font-weight:400;text-align:right;max-width:62%">'+r[1]+'</span></div>'}).join("")}
+function aviso(id,msg){var e=g(id);if(!e)return;if(!msg){e.style.display='none';e.textContent='';return}e.style.display='block';e.textContent=msg}
+
+function rhoJugo(bx,tC){
+  var rho20=998.70+3.91679*bx+0.0135108*bx*bx+2.95998e-5*bx*bx*bx;
+  var dt=tC-20;
+  return rho20-(0.24707*dt+0.003169*dt*dt);
+}
+
+var PRODUCTOS_DENS={jugo:{min:10,max:20,factor:1.0},meladura:{min:55,max:70,factor:1.0},miel:{min:80,max:95,factor:1.010}};
+function calcDensidad(){
+  var prod=PRODUCTOS_DENS[g('dn_prod').value],bx=n('dn_bx'),tC=n('dn_t');
+  if(bx<=0){set('dn_kgl','—');set('dn_be','—');tabla('dn_det',[]);aviso('dn_w',null);return}
+  var rho=rhoJugo(bx,tC)*prod.factor;
+  var kgl=rho/1000,sg=kgl/0.998203,be=sg>0?145-145/sg:0;
+  set('dn_kgl',f(kgl,4));set('dn_be',f(be,1));
+  tabla('dn_det',[[LBL.sg,f(sg,4)]]);
+  aviso('dn_w', bx<prod.min?LBL.avBajo.replace('{0}',prod.min).replace('{1}',prod.max) : (bx>prod.max?LBL.avAlto.replace('{0}',prod.min).replace('{1}',prod.max):null));
+}
+
+var CAMPOS=[];
+document.querySelectorAll("#dn_prod,#dn_bx,#dn_t").forEach(function(e){
+  CAMPOS.push(e.id);
+  e.addEventListener("input",calcDensidad);
+  e.addEventListener("change",calcDensidad);
+});
+try{
+  var saved=JSON.parse(localStorage.getItem("spc_calc_densidad")||"{}");
+  CAMPOS.forEach(function(k){if(saved[k]!=null)g(k).value=saved[k]});
+}catch(_){}
+calcDensidad();
+window.addEventListener('beforeunload',function(){try{var o={};CAMPOS.forEach(function(k){o[k]=g(k).value});localStorage.setItem("spc_calc_densidad",JSON.stringify(o))}catch(_){}});
+
+</script>
+<script src="/assets/js/cookie-consent.js"></script>
+</body>
+</html>
