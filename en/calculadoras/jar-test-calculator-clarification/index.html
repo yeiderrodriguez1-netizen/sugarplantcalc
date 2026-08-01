@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#121417">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>Jar Test Calculator for Clarification</title>
+<meta name="description" content="Calculate the optimal flocculant dose with a jar test: weighted score by turbidity, settling rate and mud volume.">
+<link rel="canonical" href="https://sugarplantcalc.com/en/calculadoras/jar-test-calculator-clarification/">
+<link rel="alternate" hreflang="es" href="https://sugarplantcalc.com/calculadoras/prueba-de-jarras-jar-test/">
+<link rel="alternate" hreflang="en" href="https://sugarplantcalc.com/en/calculadoras/jar-test-calculator-clarification/">
+<link rel="alternate" hreflang="pt" href="https://sugarplantcalc.com/pt/calculadoras/calculadora-teste-de-jarros-clarificacao/">
+<link rel="alternate" hreflang="x-default" href="https://sugarplantcalc.com/calculadoras/prueba-de-jarras-jar-test/">
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/img/logo.png" type="image/png">
+<link rel="apple-touch-icon" href="/assets/img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/calc-theme.css">
+<link rel="stylesheet" href="/assets/css/calc-page.css">
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://sugarplantcalc.com/en/calculadoras/jar-test-calculator-clarification/#app",
+      "name": "Jar Test Calculator for Clarification",
+      "url": "https://sugarplantcalc.com/en/calculadoras/jar-test-calculator-clarification/",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web",
+      "description": "Calculate the optimal flocculant dose with a jar test: weighted score by turbidity, settling rate and mud volume.",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "author": { "@type": "Person", "name": "Ing. Yeider Rodríguez Molina" },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://sugarplantcalc.com/en/calculadoras/jar-test-calculator-clarification/#faq",
+      "mainEntity": [
+        { "@type": "Question", "name": "Why does turbidity carry the highest weight in the score?", "acceptedAnswer": { "@type": "Answer", "text": "Because it is the direct acceptance criterion for clarified juice going to evaporation: lower supernatant turbidity indicates better removal of suspended solids, hence its 45% weight versus 35% for settling rate and 20% for mud." } },
+        { "@type": "Question", "name": "What does it mean when the optimal dose falls at the edge of the tested series?", "acceptedAnswer": { "@type": "Answer", "text": "If the winning jar is the highest or lowest dose tested, the true optimum could lie outside the evaluated range; the calculator recommends repeating the test expanding the dose range in that direction." } },
+        { "@type": "Question", "name": "When should mud volume be read: at minute 1 or at 30 minutes?", "acceptedAnswer": { "@type": "Answer", "text": "Mud volume is read at 30 minutes, once settling has finished, as an additional reference figure; settling rate (used in the score) is measured at minute 1 by reading the interface drop." } },
+        { "@type": "Question", "name": "What if I only have turbidity and dose, without a mud reading?", "acceptedAnswer": { "@type": "Answer", "text": "The score is recalculated using only turbidity (45%) and velocity (35%) normalised to 100%, without penalising the absence of mud data; mud is additional information, not mandatory to get a recommendation." } }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sugarplantcalc.com/en/" },
+        { "@type": "ListItem", "position": 2, "name": "Calculators", "item": "https://sugarplantcalc.com/en/calculadoras/" },
+        { "@type": "ListItem", "position": 3, "name": "Jar Test Calculator for Clarification", "item": "https://sugarplantcalc.com/en/calculadoras/jar-test-calculator-clarification/" }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="cookie-banner" hidden id="cookieBanner" role="dialog" aria-label="Cookie notice">
+<div class="cookie-banner-inner">
+<p class="cookie-banner-text">We use our own cookies and Google Analytics cookies to understand how this site is used and improve it. Google Analytics only activates if you accept. <a href="https://sites.google.com/view/sugarplantcalc-privacidad" rel="noopener" target="_blank">More information</a>.</p>
+<div class="cookie-banner-actions">
+<button class="cookie-btn cookie-btn-reject" id="cookieReject" type="button">Reject</button>
+<button class="cookie-btn cookie-btn-accept" id="cookieAccept" type="button">Accept</button>
+</div>
+</div>
+</div>
+
+<div class="wrap calc-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+<a href="https://sugarplantcalc.com/en/">Home</a> &rsaquo; <a href="https://sugarplantcalc.com/en/calculadoras/">Calculators</a> &rsaquo; <span>Jar Test Calculator for Clarification</span>
+</nav>
+
+<article>
+<h1>Jar Test Calculator for Clarification</h1>
+
+<div class="intro"><p>The <strong>jar test</strong> is the standard laboratory method for determining the optimal flocculant dose before adjusting it on the clarifier. This calculator converts data from up to 6 jars (dose, settling rate, mud volume and supernatant turbidity) into a weighted score and recommends the optimal dose in ppm of polymer.</p></div>
+
+<h2>Calculator: weighted score and optimal flocculant dose</h2>
+<div class="sec"><h3>Test set-up</h3>
+    <div class="grid">
+      <div><label for="j_v">Volume per jar (mL)</label><input id="j_v" value="1000" inputmode="decimal"></div>
+      <div><label for="j_cs">Test solution (g/L)</label><input id="j_cs" value="0.5" inputmode="decimal"></div>
+      <div><label for="j_bx">Juice Brix (°Bx)</label><input id="j_bx" value="15" inputmode="decimal"></div>
+      <div><label for="j_t">Temperature (°C)</label><input id="j_t" value="102" inputmode="decimal"></div>
+      <div class="full"><label for="j_tm">Reading time (min)</label><input id="j_tm" value="5" inputmode="decimal"></div>
+    </div>
+  </div>
+  <div class="dose"><h3>Results per jar</h3>
+    <div id="j_tabla"></div>
+  </div>
+  <div class="mejorbox">
+    <div class="lb">Optimum dose</div>
+    <div class="vl" id="j_opt">—</div>
+    <div class="un">ppm of polymer</div>
+    <div class="cm" id="j_com">Record at least two jars with dose and turbidity to get a recommendation.</div>
+  </div>
+  <div class="warn" id="j_w"></div>
+  <div class="det"><h4>How to run the test</h4><div id="j_guia"></div></div>
+
+
+<h2>Theoretical background and formulas</h2>
+<h3>Weighted score per jar</h3>
+<div class="formula-block">\[Score_i = 100\times\frac{0.45\,n_{turbidity,i} + 0.35\,n_{velocity,i} + 0.20\,n_{mud,i}}{0.45+0.35+0.20\,[mud\,available]}\]</div>
+<p>Each component is normalised against the best value in the series: \(n_{turbidity}=NTU_{min}/NTU_i\), \(n_{velocity}=v_i/v_{max}\), \(n_{mud}=mud_{min}/mud_i\) (only if there are mud readings &gt; 0). Turbidity carries the highest weight (45%) because it is the acceptance criterion for the clarified juice; settling rate (35%) determines clarifier capacity; mud (20%) is an additional reference figure.</p>
+<h3>Test solution volume per jar</h3>
+<div class="formula-block">\[V_{solution}\,(mL) = \frac{Jar_{mass}\,(g) \times Dose\,(ppm)/1000}{C_{test\,solution}\,(g/L)}\]</div>
+<p class="lit-ref"><strong>Reference literature:</strong> Peter Rein, <em>Cane Sugar Engineering</em> (jar test and flocculant selection); E. Hugot, <em>Handbook of Cane Sugar Engineering</em>; Meade–Chen, <em>Cane Sugar Handbook</em>.</p>
+
+<h2>Typical operational ranges (KPIs)</h2>
+<table class="kpi-table">
+<thead><tr><th>KPI</th><th>Typical range</th><th>Alert</th></tr></thead>
+<tbody>
+<tr><td>Minimum valid jars</td><td>≥ 2 (dose and turbidity &gt; 0)</td><td>&lt;2 "record at least two jars" (no recommendation)</td></tr>
+<tr><td>Turbidity weight in score</td><td>45%</td><td>Acceptance criterion for the clarified juice</td></tr>
+<tr><td>Settling rate weight</td><td>35%</td><td>Determines clarifier capacity</td></tr>
+<tr><td>Mud volume weight (if measured)</td><td>20%</td><td>Additional reference figure, does not reject jars</td></tr>
+<tr><td>Optimal dose at the tested edge</td><td>—</td><td>If it is the highest or lowest dose in the series → "repeat expanding the range"</td></tr>
+<tr><td>Reference turbidity target</td><td>≈ 20 IU (ICUMSA)</td><td>Plant criterion, adjustable per mill</td></tr>
+</tbody>
+</table>
+
+<h2>Frequently asked questions</h2>
+<div class="faq-list">
+<div class="faq-item"><h3>Why does turbidity carry the highest weight in the score?</h3><p>Because it is the direct acceptance criterion for clarified juice going to evaporation: lower supernatant turbidity indicates better removal of suspended solids, hence its 45% weight versus 35% for settling rate and 20% for mud.</p></div>
+<div class="faq-item"><h3>What does it mean when the optimal dose falls at the edge of the tested series?</h3><p>If the winning jar is the highest or lowest dose tested, the true optimum could lie outside the evaluated range; the calculator recommends repeating the test expanding the dose range in that direction.</p></div>
+<div class="faq-item"><h3>When should mud volume be read: at minute 1 or at 30 minutes?</h3><p>Mud volume is read at 30 minutes, once settling has finished, as an additional reference figure; settling rate (used in the score) is measured at minute 1 by reading the interface drop.</p></div>
+<div class="faq-item"><h3>What if I only have turbidity and dose, without a mud reading?</h3><p>The score is recalculated using only turbidity (45%) and velocity (35%) normalised to 100%, without penalising the absence of mud data; mud is additional information, not mandatory to get a recommendation.</p></div>
+</div>
+
+<p class="back-link"><a href="https://sugarplantcalc.com/en/calculadoras/">&lsaquo; Back to all calculators</a></p>
+</article>
+</div>
+
+<script>
+var LBL = {"jarra": "Jar {0}", "ppm": "ppm", "interfaz": "Interface cm", "lodo": "Mud %", "turbidez": "Turbidity", "pocasJarras": "Record at least two jars with dose and turbidity to get a recommendation.", "bordeSuperior": "The chosen jar is the highest dose: the optimum may lie above the tested range. Repeat the series with higher doses.", "bordeInferior": "The chosen jar is the lowest dose: the optimum may lie below. Repeat the series with lower doses.", "g1": "1. Solution", "g1v": "Prepare the flocculant solution and let it mature for 30 to 60 minutes before using it; without that resting time the polymer does not flocculate well.", "g2": "2. Juice", "g2v": "Take the limed juice sample at the clarifier inlet, before dosing the flocculant and at process temperature (100–105 °C). Make sure the flow is representative, avoiding areas of low circulation or settling, and keep the sample hot throughout the test: if it cools, the settling rate changes.", "g3": "3. Dose", "g3v": "Add the indicated volume to each jar with a dispenser, under rapid stirring (100 rpm) for 10 s.", "g4": "4. Flocculation", "g4v": "Reduce to 20–30 rpm for 1 min and stop stirring.", "g5": "5. Settling rate", "g5v": "Measure the interface drop at minute 1.", "g6": "6. Mud", "g6v": "Read the mud volume at 30 minutes, once settling has finished. It is a reference figure, not an acceptance criterion: it neither rejects nor approves a jar. Other references read at 1, 3 and 5 min, but that measures compaction, not final volume.", "g7": "7. Turbidity", "g7v": "Measure the turbidity of the supernatant in ICUMSA units (IU). The 20 IU target is a plant criterion, not a published standard: adjust it to your mill.", "densidadUsada": "Density used", "densidadUsadaV": "{0} kg/m³ · mass per jar {1} g", "ejemplo3ppm": "Example at 3 ppm", "ejemplo3ppmV": "{0} mL of test solution per jar"};
+
+function g(id){return document.getElementById(id)}
+function n(id){var e=g(id);if(!e)return 0;var x=parseFloat((e.value||"").replace(",","."));return isFinite(x)?x:0}
+function f(x,d){return (!isFinite(x))?"—":x.toFixed(d)}
+function set(id,v){var e=g(id);if(e)e.textContent=v}
+function aviso(id,msg){var e=g(id);if(!e)return;if(!msg){e.style.display='none';e.textContent='';return}e.style.display='block';e.textContent=msg}
+
+function rhoJugo(bx,tC){
+  var rho20=998.70+3.91679*bx+0.0135108*bx*bx+2.95998e-5*bx*bx*bx;
+  var dt=tC-20;
+  return rho20-(0.24707*dt+0.003169*dt*dt);
+}
+
+var NJ=6;
+function tf(s){var args=Array.prototype.slice.call(arguments,1);for(var i=0;i<args.length;i++){s=s.split("{"+i+"}").join(args[i]);}return s;}
+
+function construirJarras(){
+  var h="";
+  for(var i=1;i<=NJ;i++){
+    h+='<div class="jar" id="j_row'+i+'">'
+      +'<div class="jh"><span class="jn">'+tf(LBL.jarra,i)+'</span><span class="js" id="j_sc'+i+'"></span>'
+      +'<span class="jml" id="j_ml'+i+'">—</span></div>'
+      +'<div class="g4">'
+      +'<div><label>'+LBL.ppm+'</label><input id="j_p'+i+'" value="'+i+'" inputmode="decimal"></div>'
+      +'<div><label>'+LBL.interfaz+'</label><input id="j_h'+i+'" value="" inputmode="decimal"></div>'
+      +'<div><label>'+LBL.lodo+'</label><input id="j_l'+i+'" value="" inputmode="decimal"></div>'
+      +'<div><label>'+LBL.turbidez+' NTU</label><input id="j_n'+i+'" value="" inputmode="decimal"></div>'
+      +'</div></div>';
+  }
+  g('j_tabla').innerHTML=h;
+  document.querySelectorAll('#j_tabla input').forEach(function(e){
+    e.addEventListener("input",calcJarras);
+    e.addEventListener("change",calcJarras);
+  });
+}
+
+function calcJarras(){
+  var V=n('j_v'),cs=n('j_cs'),bx=n('j_bx'),tC=n('j_t'),tm=n('j_tm');
+  var rho=rhoJugo(bx,tC);
+  var masaG=V*rho/1000;
+  var datos=[];
+  for(var i=1;i<=NJ;i++){
+    var ppm=n('j_p'+i),alt=n('j_h'+i),lodo=n('j_l'+i),ntu=n('j_n'+i);
+    var mg=masaG*ppm/1000;
+    var ml=cs>0?mg/cs:0;
+    set('j_ml'+i, ppm>0? f(ml,2)+" mL":"—");
+    var vel=tm>0?alt/tm:0;
+    datos.push({i:i,ppm:ppm,vel:vel,lodo:lodo,ntu:ntu,valida:(ntu>0&&ppm>0)});
+  }
+  var validas=datos.filter(function(d){return d.valida});
+  for(var k=1;k<=NJ;k++){set('j_sc'+k,"");g('j_row'+k).classList.remove("mejor")}
+
+  if(validas.length<2){
+    set('j_opt',"—");
+    g('j_com').textContent=LBL.pocasJarras;
+    aviso('j_w',null);
+    guia(masaG,cs,rho);
+    return;
+  }
+
+  var maxVel=Math.max.apply(null,validas.map(function(d){return d.vel}));
+  var lodos=validas.filter(function(d){return d.lodo>0}).map(function(d){return d.lodo});
+  var minLodo=lodos.length?Math.min.apply(null,lodos):0;
+  var minNtu=Math.min.apply(null,validas.map(function(d){return d.ntu}));
+
+  validas.forEach(function(d){
+    var nTurb=minNtu/d.ntu;
+    var nVel=maxVel>0?d.vel/maxVel:0;
+    var nLodo=(minLodo>0&&d.lodo>0)?minLodo/d.lodo:0;
+    var peso=0.45+0.35+(nLodo>0?0.20:0);
+    d.score=100*(0.45*nTurb+0.35*nVel+(nLodo>0?0.20*nLodo:0))/peso;
+  });
+
+  var mejor=validas.slice().sort(function(a,b){return b.score-a.score})[0];
+  validas.forEach(function(d){set('j_sc'+d.i,f(d.score,0))});
+  g('j_row'+mejor.i).classList.add("mejor");
+
+  set('j_opt',f(mejor.ppm,1));
+  var partes=[tf(LBL.jarra,mejor.i)+": "+f(mejor.ntu,0)+" NTU"];
+  if(mejor.vel>0)partes.push(f(mejor.vel,1)+" cm/min");
+  if(mejor.lodo>0)partes.push(f(mejor.lodo,0)+" %");
+  g('j_com').textContent=partes.join(" · ")+".";
+
+  var ordenadas=validas.slice().sort(function(a,b){return a.ppm-b.ppm});
+  var msg=null;
+  if(mejor.ppm===ordenadas[ordenadas.length-1].ppm) msg=LBL.bordeSuperior;
+  else if(mejor.ppm===ordenadas[0].ppm) msg=LBL.bordeInferior;
+  aviso('j_w',msg);
+  guia(masaG,cs,rho);
+}
+
+function guia(masaG,cs,rho){
+  var ej=cs>0?(masaG*3/1000)/cs:0;
+  g('j_guia').innerHTML=[
+    [LBL.g1,LBL.g1v], [LBL.g2,LBL.g2v], [LBL.g3,LBL.g3v],
+    [LBL.g4,LBL.g4v], [LBL.g5,LBL.g5v], [LBL.g6,LBL.g6v], [LBL.g7,LBL.g7v],
+    [LBL.densidadUsada, tf(LBL.densidadUsadaV, f(rho,1), f(masaG,0))],
+    [LBL.ejemplo3ppm, tf(LBL.ejemplo3ppmV, f(ej,2))]
+  ].map(function(r){return '<div class="row"><span>'+r[0]+'</span><span style="font-weight:400;text-align:right;max-width:62%">'+r[1]+'</span></div>'}).join("");
+}
+
+construirJarras();
+var CAMPOS=["j_v","j_cs","j_bx","j_t","j_tm"];
+document.querySelectorAll("#j_v,#j_cs,#j_bx,#j_t,#j_tm").forEach(function(e){
+  e.addEventListener("input",calcJarras);
+  e.addEventListener("change",calcJarras);
+});
+calcJarras();
+
+</script>
+<script src="/assets/js/cookie-consent.js"></script>
+</body>
+</html>
