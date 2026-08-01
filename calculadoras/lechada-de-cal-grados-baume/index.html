@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#121417">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>Calculadora de Lechada de Cal en Grados Baumé</title>
+<meta name="description" content="Calcula el caudal de lechada de cal (L/h), la cal viva requerida (t/día) y el agua de apagado a partir de la concentración en °Bé.">
+<link rel="canonical" href="https://sugarplantcalc.com/calculadoras/lechada-de-cal-grados-baume/">
+<link rel="alternate" hreflang="es" href="https://sugarplantcalc.com/calculadoras/lechada-de-cal-grados-baume/">
+<link rel="alternate" hreflang="en" href="https://sugarplantcalc.com/en/calculadoras/milk-of-lime-baume-calculator/">
+<link rel="alternate" hreflang="pt" href="https://sugarplantcalc.com/pt/calculadoras/calculadora-leite-de-cal-graus-baume/">
+<link rel="alternate" hreflang="x-default" href="https://sugarplantcalc.com/calculadoras/lechada-de-cal-grados-baume/">
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/img/logo.png" type="image/png">
+<link rel="apple-touch-icon" href="/assets/img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/calc-theme.css">
+<link rel="stylesheet" href="/assets/css/calc-page.css">
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://sugarplantcalc.com/calculadoras/lechada-de-cal-grados-baume/#app",
+      "name": "Calculadora de Lechada de Cal y Grados Baumé",
+      "url": "https://sugarplantcalc.com/calculadoras/lechada-de-cal-grados-baume/",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web",
+      "description": "Calcula el caudal de lechada de cal (L/h), la cal viva requerida (t/día) y el agua de apagado a partir de la concentración en °Bé.",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "author": { "@type": "Person", "name": "Ing. Yeider Rodríguez Molina" },
+      "inLanguage": "es"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://sugarplantcalc.com/calculadoras/lechada-de-cal-grados-baume/#faq",
+      "mainEntity": [
+        { "@type": "Question", "name": "¿Por qué la lechada de cal se maneja en grados Baumé y no en Brix?", "acceptedAnswer": { "@type": "Answer", "text": "Los grados Baumé se leen directo con un densímetro sin necesidad de calcular la composición, y la escala está calibrada para suspensiones más densas como la lechada, a diferencia del Brix que es específico para soluciones azucaradas." } },
+        { "@type": "Question", "name": "¿Qué pasa si la lechada está por encima de 15 °Bé?", "acceptedAnswer": { "@type": "Answer", "text": "Una lechada demasiado concentrada sedimenta con facilidad y tapona líneas, válvulas y boquillas dosificadoras; el rango operativo recomendado es 6–12 °Bé para mantener buena fluidez." } },
+        { "@type": "Question", "name": "¿Cómo se relaciona la demanda de CaO con la calidad de la caña?", "acceptedAnswer": { "@type": "Answer", "text": "Cañas más deterioradas o con mayor acidez natural del jugo requieren más cal para alcanzar el pH de neutralización; demandas por debajo de 0.5 kg CaO/t caña suelen dejar el jugo insuficientemente neutralizado." } },
+        { "@type": "Question", "name": "¿Por qué se usa el factor 0.7569 en el cálculo de cal viva?", "acceptedAnswer": { "@type": "Answer", "text": "Es la relación de masas molares entre CaO (56.08 g/mol) y Ca(OH)₂ (74.09 g/mol); permite convertir el Ca(OH)₂ equivalente presente en la lechada a la cantidad de CaO (cal viva) necesaria para producirla." } }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://sugarplantcalc.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Calculadoras", "item": "https://sugarplantcalc.com/calculadoras/" },
+        { "@type": "ListItem", "position": 3, "name": "Calculadora de Lechada de Cal y Grados Baumé", "item": "https://sugarplantcalc.com/calculadoras/lechada-de-cal-grados-baume/" }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="cookie-banner" hidden id="cookieBanner" role="dialog" aria-label="Cookie notice">
+<div class="cookie-banner-inner">
+<p class="cookie-banner-text">Usamos cookies propias y de Google Analytics para entender cómo se usa este sitio y mejorarlo. Google Analytics solo se activa si aceptas. <a href="https://sites.google.com/view/sugarplantcalc-privacidad" rel="noopener" target="_blank">Más información</a>.</p>
+<div class="cookie-banner-actions">
+<button class="cookie-btn cookie-btn-reject" id="cookieReject" type="button">Rechazar</button>
+<button class="cookie-btn cookie-btn-accept" id="cookieAccept" type="button">Aceptar</button>
+</div>
+</div>
+</div>
+
+<div class="wrap calc-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+<a href="https://sugarplantcalc.com/">Inicio</a> &rsaquo; <a href="https://sugarplantcalc.com/calculadoras/">Calculadoras</a> &rsaquo; <span>Calculadora de Lechada de Cal y Grados Baumé</span>
+</nav>
+
+<article>
+<h1>Calculadora de Lechada de Cal y Grados Baumé</h1>
+
+<div class="intro"><p>La <strong>lechada de cal</strong> se prepara apagando cal viva (CaO) en agua hasta una concentración expresada en grados Baumé, y se dosifica al jugo para neutralizar la acidez en la etapa de encalado. Esta calculadora obtiene el caudal de lechada al jugo, el ajuste de válvula, la cal viva comercial requerida por día y el agua de apagado aproximada, a partir de la demanda de CaO y la concentración de la lechada.</p></div>
+
+<h2>Calculadora: caudal de lechada, cal viva requerida y agua de apagado</h2>
+<div class="sec"><h3>Jugo de caña</h3>
+    <div class="grid">
+      <div><label for="c_q">Flujo (m³/h)</label><input id="c_q" value="450" inputmode="decimal"></div>
+      <div><label for="c_bx">Brix (°Bx)</label><input id="c_bx" value="15" inputmode="decimal"></div>
+      <div><label for="c_t">Temperatura (°C)</label><input id="c_t" value="35" inputmode="decimal"></div>
+      <div><label for="c_hd">Horas de molienda / día</label><input id="c_hd" value="22" inputmode="decimal"></div>
+      <div><label for="c_dem">Demanda (kg CaO/m³)</label><input id="c_dem" value="0.80" inputmode="decimal"></div>
+      <div><label for="c_tch">Molienda (t caña/h)</label><input id="c_tch" value="400" inputmode="decimal"></div>
+    </div>
+  </div>
+  <div class="sec"><h3>Lechada y cal viva</h3>
+    <div class="grid">
+      <div><label for="c_be">Concentración (°Bé)</label><input id="c_be" value="10" inputmode="decimal"></div>
+      <div><label for="c_pu">Pureza cal viva (% CaO)</label><input id="c_pu" value="88" inputmode="decimal"></div>
+      <div class="full"><label for="c_ea">Eficiencia de apagado (%)</label><input id="c_ea" value="92" inputmode="decimal"></div>
+    </div>
+  </div>
+  <div class="res">
+    <div class="rc"><div class="lb">Lechada al jugo</div><div class="vl" id="c_lh">—</div><div class="un">L/h</div></div>
+    <div class="rc"><div class="lb">Ajuste de válvula</div><div class="vl" id="c_lm">—</div><div class="un">L/min</div></div>
+    <div class="rc wide"><div class="lb">Cal viva por día</div><div class="vl" id="c_td">—</div><div class="un">t/día</div></div>
+  </div>
+  <div class="warn" id="c_w"></div>
+  <div class="det"><h4>Detalle del cálculo</h4><div id="c_det"></div></div>
+
+
+<h2>Fundamento teórico y fórmulas</h2>
+<h3>Densidad de la lechada por grados Baumé</h3>
+<div class="formula-block">\[SG_{lechada} = \frac{145}{145-°Bé}\]</div>
+<h3>CaO requerido y caudal de lechada</h3>
+<div class="formula-block">\[CaO_{kg/h} = Q_{jugo}\,(m^3/h) \times Demanda\,(kg\,CaO/m^3)\]</div>
+<div class="formula-block">\[Q_{lechada}\,(L/h) = \frac{CaO_{kg/h} \times 1000}{g_{CaO}\,(g/L\,lechada)}\]</div>
+<h3>Cal viva comercial</h3>
+<div class="formula-block">\[CalViva_{comercial} = \frac{CaO_{kg/h}}{(\%Pureza/100)\times(\%Eficiencia_{apagado}/100)}\]</div>
+<p>El factor 0.7569 convierte Ca(OH)₂ a CaO equivalente (relación de masas molares 56.08/74.09), y 2.24 kg/L es la densidad de referencia del Ca(OH)₂ puro usada para estimar los sólidos disueltos en la lechada a partir de su gravedad específica (Hugot).</p>
+<p class="lit-ref"><strong>Literatura de referencia:</strong> E. Hugot, <em>Handbook of Cane Sugar Engineering</em> (encalado y preparación de lechada); Peter Rein, <em>Cane Sugar Engineering</em>; Meade–Chen, <em>Cane Sugar Handbook</em>.</p>
+
+<h2>Rangos operacionales típicos (KPIs)</h2>
+<table class="kpi-table">
+<thead><tr><th>KPI</th><th>Rango típico</th><th>Alerta</th></tr></thead>
+<tbody>
+<tr><td>Concentración de lechada</td><td>6 – 12 °Bé</td><td>&lt;5 °Bé "lechada baja" · &gt;15 °Bé "lechada alta"</td></tr>
+<tr><td>Demanda de CaO por caña</td><td>0.5 – 1.5 kg CaO/t caña</td><td>&lt;0.5 "cal insuficiente" · &gt;1.5 "consumo alto"</td></tr>
+<tr><td>Pureza de cal viva comercial</td><td>85% – 92% CaO</td><td>Informativo (según proveedor)</td></tr>
+<tr><td>Eficiencia de apagado</td><td>88% – 95%</td><td>Informativo (según apagador y calidad del agua)</td></tr>
+</tbody>
+</table>
+
+<h2>Preguntas frecuentes</h2>
+<div class="faq-list">
+<div class="faq-item"><h3>¿Por qué la lechada de cal se maneja en grados Baumé y no en Brix?</h3><p>Los grados Baumé se leen directo con un densímetro sin necesidad de calcular la composición, y la escala está calibrada para suspensiones más densas como la lechada, a diferencia del Brix que es específico para soluciones azucaradas.</p></div>
+<div class="faq-item"><h3>¿Qué pasa si la lechada está por encima de 15 °Bé?</h3><p>Una lechada demasiado concentrada sedimenta con facilidad y tapona líneas, válvulas y boquillas dosificadoras; el rango operativo recomendado es 6–12 °Bé para mantener buena fluidez.</p></div>
+<div class="faq-item"><h3>¿Cómo se relaciona la demanda de CaO con la calidad de la caña?</h3><p>Cañas más deterioradas o con mayor acidez natural del jugo requieren más cal para alcanzar el pH de neutralización; demandas por debajo de 0.5 kg CaO/t caña suelen dejar el jugo insuficientemente neutralizado.</p></div>
+<div class="faq-item"><h3>¿Por qué se usa el factor 0.7569 en el cálculo de cal viva?</h3><p>Es la relación de masas molares entre CaO (56.08 g/mol) y Ca(OH)₂ (74.09 g/mol); permite convertir el Ca(OH)₂ equivalente presente en la lechada a la cantidad de CaO (cal viva) necesaria para producirla.</p></div>
+</div>
+
+<p class="back-link"><a href="https://sugarplantcalc.com/calculadoras/">&lsaquo; Volver a todas las calculadoras</a></p>
+</article>
+</div>
+
+<script>
+var LBL = {"densidadJugo": "Densidad del jugo", "densidadLechada": "Densidad de la lechada", "solidos": "Sólidos en la lechada", "caoReq": "CaO requerido", "caoh2Eq": "Ca(OH)₂ equivalente", "calVivaCom": "Cal viva comercial", "aguaApagado": "Agua de apagado (aprox.)", "avBaja": "Lechada por debajo de 5 °Bé: caudales muy altos y dilución del jugo. El rango operativo usual es 6–12 °Bé.", "avAlta": "Lechada por encima de 15 °Bé: riesgo de sedimentación y taponamiento en líneas y válvulas.", "avPoco": "Menos de 0.5 kg CaO por tonelada de caña: revisa la demanda, el jugo podría quedar sin neutralizar.", "avMucho": "Más de 1.5 kg CaO por tonelada de caña: consumo alto, sube el volumen de cachaza y la formación de color."};
+
+function g(id){return document.getElementById(id)}
+function n(id){var e=g(id);if(!e)return 0;var x=parseFloat((e.value||"").replace(",","."));return isFinite(x)?x:0}
+function f(x,d){return (!isFinite(x))?"—":x.toFixed(d)}
+function set(id,v){var e=g(id);if(e)e.textContent=v}
+function tabla(id,filas){var e=g(id);if(!e)return;e.innerHTML=filas.map(function(r){return '<div class="row"><span>'+r[0]+'</span><span style="font-weight:400;text-align:right;max-width:62%">'+r[1]+'</span></div>'}).join("")}
+function aviso(id,msg){var e=g(id);if(!e)return;if(!msg){e.style.display='none';e.textContent='';return}e.style.display='block';e.textContent=msg}
+
+function rhoJugo(bx,tC){
+  var rho20=998.70+3.91679*bx+0.0135108*bx*bx+2.95998e-5*bx*bx*bx;
+  var dt=tC-20;
+  return rho20-(0.24707*dt+0.003169*dt*dt);
+}
+function sgBaume(b){return b<145?145/(145-b):1}
+var F_CAO=0.7569,D_CAOH2=2.24;
+
+function calcCal(){
+  var q=n('c_q'),bx=n('c_bx'),tC=n('c_t'),dem=n('c_dem'),tch=n('c_tch'),hd=n('c_hd'),be=n('c_be'),pu=n('c_pu'),ea=n('c_ea');
+  var rho=rhoJugo(bx,tC),sg=sgBaume(be);
+  var frac=Math.max((1-1/sg)/(1-1/D_CAOH2),0);
+  var gCoh=frac*sg*1000,gCao=gCoh*F_CAO;
+  var cao=q*dem,coh=cao/F_CAO,lh=gCao>0?cao*1000/gCao:0,lm=lh/60;
+  var rend=(pu>0?pu/100:1)*(ea>0?ea/100:1),cv=rend>0?cao/rend:0;
+  var agua=Math.max(lh*sg-cv,0),caotc=tch>0?cao/tch:0;
+  set('c_lh',f(lh,0));set('c_lm',f(lm,1));set('c_td',f(cv*hd/1000,2));
+  tabla('c_det',[[LBL.densidadJugo,f(rho,1)+" kg/m³"],[LBL.densidadLechada,f(sg,4)+" kg/L"],
+    [LBL.solidos,f(frac*100,1)+" % Ca(OH)₂ p/p"],[LBL.caoReq,f(cao,1)+" kg/h"],
+    [LBL.caoh2Eq,f(coh,1)+" kg/h"],[LBL.calVivaCom,f(cv,1)+" kg/h"],
+    [LBL.aguaApagado,f(agua/1000,2)+" m³/h"]]);
+  aviso('c_w', be<5?LBL.avBaja : (be>15?LBL.avAlta : ((caotc>0&&caotc<0.5)?LBL.avPoco : (caotc>1.5?LBL.avMucho : null))));
+}
+
+var CAMPOS=[];
+document.querySelectorAll("#c_q,#c_bx,#c_t,#c_hd,#c_dem,#c_tch,#c_be,#c_pu,#c_ea").forEach(function(e){
+  CAMPOS.push(e.id);
+  e.addEventListener("input",calcCal);
+  e.addEventListener("change",calcCal);
+});
+try{
+  var saved=JSON.parse(localStorage.getItem("spc_calc_cal")||"{}");
+  CAMPOS.forEach(function(k){if(saved[k]!=null)g(k).value=saved[k]});
+}catch(_){}
+calcCal();
+window.addEventListener('beforeunload',function(){try{var o={};CAMPOS.forEach(function(k){o[k]=g(k).value});localStorage.setItem("spc_calc_cal",JSON.stringify(o))}catch(_){}});
+
+</script>
+<script src="/assets/js/cookie-consent.js"></script>
+</body>
+</html>
