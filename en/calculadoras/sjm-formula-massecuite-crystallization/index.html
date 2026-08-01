@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#121417">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>S-J-M Formula Calculator: Crystallization Efficiency</title>
+<meta name="description" content="Calculate the S-J-M yield and % crystal in massecuite from liquor, massecuite and mother liquor purities. Includes supersaturation alerts.">
+<link rel="canonical" href="https://sugarplantcalc.com/en/calculadoras/sjm-formula-massecuite-crystallization/">
+<link rel="alternate" hreflang="es" href="https://sugarplantcalc.com/calculadoras/formula-sjm-cristalizacion-tachos/">
+<link rel="alternate" hreflang="en" href="https://sugarplantcalc.com/en/calculadoras/sjm-formula-massecuite-crystallization/">
+<link rel="alternate" hreflang="pt" href="https://sugarplantcalc.com/pt/calculadoras/formula-sjm-cristalizacao-cozimento/">
+<link rel="alternate" hreflang="x-default" href="https://sugarplantcalc.com/calculadoras/formula-sjm-cristalizacion-tachos/">
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/img/logo.png" type="image/png">
+<link rel="apple-touch-icon" href="/assets/img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/calc-theme.css">
+<link rel="stylesheet" href="/assets/css/calc-page.css">
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://sugarplantcalc.com/en/calculadoras/sjm-formula-massecuite-crystallization/#app",
+      "name": "Crystallization Calculator: S-J-M Formula and % Crystal in Massecuite",
+      "url": "https://sugarplantcalc.com/en/calculadoras/sjm-formula-massecuite-crystallization/",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web",
+      "description": "Calculate the S-J-M yield and % crystal in massecuite from liquor, massecuite and mother liquor purities. Includes supersaturation alerts.",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "author": { "@type": "Person", "name": "Ing. Yeider Rodríguez Molina" },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://sugarplantcalc.com/en/calculadoras/sjm-formula-massecuite-crystallization/#faq",
+      "mainEntity": [
+        { "@type": "Question", "name": "What does S-J-M mean in sugar crystallization?", "acceptedAnswer": { "@type": "Answer", "text": "It identifies the three purities in the balance: Sucrose (crystal), Juice (feed liquor) and Molasses (mother liquor). Also known as the purity drop formula." } },
+        { "@type": "Question", "name": "What is the ideal % crystal in an A massecuite?", "acceptedAnswer": { "@type": "Answer", "text": "Typically between 40% and 55%. Below 30% it is considered low crystal content." } },
+        { "@type": "Question", "name": "How does mother liquor purity relate to exhaustion?", "acceptedAnswer": { "@type": "Answer", "text": "The mother liquor must have lower purity than the massecuite and the feed liquor. If that relationship does not hold, the data is inconsistent." } },
+        { "@type": "Question", "name": "What is the supersaturation coefficient and how is it used here?", "acceptedAnswer": { "@type": "Answer", "text": "It is a factor derived from sucrose solubility at the working temperature, calculated in detail in the Solubility calculator and used here as an input to the balance." } }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sugarplantcalc.com/en/" },
+        { "@type": "ListItem", "position": 2, "name": "Calculators", "item": "https://sugarplantcalc.com/en/calculadoras/" },
+        { "@type": "ListItem", "position": 3, "name": "Crystallization Calculator: S-J-M Formula and % Crystal in Massecuite", "item": "https://sugarplantcalc.com/en/calculadoras/sjm-formula-massecuite-crystallization/" }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="cookie-banner" hidden id="cookieBanner" role="dialog" aria-label="Cookie notice">
+<div class="cookie-banner-inner">
+<p class="cookie-banner-text">We use our own cookies and Google Analytics cookies to understand how this site is used and improve it. Google Analytics only activates if you accept. <a href="https://sites.google.com/view/sugarplantcalc-privacidad" rel="noopener" target="_blank">More information</a>.</p>
+<div class="cookie-banner-actions">
+<button class="cookie-btn cookie-btn-reject" id="cookieReject" type="button">Reject</button>
+<button class="cookie-btn cookie-btn-accept" id="cookieAccept" type="button">Accept</button>
+</div>
+</div>
+</div>
+
+<div class="wrap calc-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+<a href="https://sugarplantcalc.com/en/">Home</a> &rsaquo; <a href="https://sugarplantcalc.com/en/calculadoras/">Calculators</a> &rsaquo; <span>Crystallization Calculator: S-J-M Formula and % Crystal in Massecuite</span>
+</nav>
+
+<article>
+<h1>Crystallization Calculator: S-J-M Formula and % Crystal in Massecuite</h1>
+
+<div class="intro"><p>The <strong>S-J-M formula</strong> measures how efficient a crystallization pan is by relating the purities of the crystal (S), the feed liquor (J) and the mother liquor (M). This calculator computes the theoretical S-J-M yield, the % crystal in the massecuite, and the pan's mass balance from your lab readings.</p></div>
+
+<h2>Calculator: S-J-M yield, % crystal and mass balance</h2>
+<div class="sec"><h3>Feed liquor</h3>
+    <div class="grid">
+      <div><label for="tc_bxl">Liquor Brix (°Bx)</label><input id="tc_bxl" value="65" inputmode="decimal"></div>
+      <div><label for="tc_pul">Liquor purity J (%)</label><input id="tc_pul" value="85" inputmode="decimal"></div>
+    </div>
+  </div>
+  <div class="sec"><h3>Massecuite and molasses</h3>
+    <div class="grid">
+      <div><label for="tc_bxm">Massecuite Brix (°Bx)</label><input id="tc_bxm" value="92" inputmode="decimal"></div>
+      <div><label for="tc_pum">Massecuite purity (%)</label><input id="tc_pum" value="80" inputmode="decimal"></div>
+      <div><label for="tc_pumm">Mother liquor purity M (%)</label><input id="tc_pumm" value="60" inputmode="decimal"></div>
+      <div><label for="tc_puc">Crystal purity S (%)</label><input id="tc_puc" value="99.5" inputmode="decimal"></div>
+      <div class="full"><label for="tc_coef">Solubility coefficient</label><input id="tc_coef" value="1.0" inputmode="decimal"></div>
+    </div>
+  </div>
+  <div class="sec"><h3>Equipment</h3>
+    <div class="grid">
+      <div><label for="tc_temp">Temperature (°C)</label><input id="tc_temp" value="65" inputmode="decimal"></div>
+      <div><label for="tc_vac">Pan vacuum (inHg)</label><input id="tc_vac" value="26" inputmode="decimal"></div>
+      <div><label for="tc_vol">Pan volume (m³)</label><input id="tc_vol" value="30" inputmode="decimal"></div>
+      <div><label for="tc_dens">Massecuite density (t/m³)</label><input id="tc_dens" value="1.48" inputmode="decimal"></div>
+    </div>
+  </div>
+  <div class="res">
+    <div class="rc"><div class="lb">Supersaturation</div><div class="vl" id="tc_y">—</div><div class="un">adim.</div></div>
+    <div class="rc"><div class="lb">% Crystal</div><div class="vl" id="tc_pc">—</div><div class="un">%</div></div>
+  </div>
+  <div class="rc wide" style="margin-bottom:10px"><div class="lb">Theoretical S-J-M yield</div><div class="vl" id="tc_sjm">—</div><div class="un">%</div></div>
+  <div class="warn" id="tc_w"></div>
+  <div class="det"><h4>Detail</h4><div id="tc_det"></div></div>
+
+
+<h2>Theoretical background and formulas</h2>
+<h3>S-J-M yield</h3>
+<div class="formula-block">\[SJM(\%) = \frac{Pu_{crystal}\,(Pu_{liquor}-Pu_{motherliquor})}{Pu_{liquor}\,(Pu_{crystal}-Pu_{motherliquor})}\times100\]</div>
+<h3>% crystal in massecuite</h3>
+<div class="formula-block">\[\%Crystal = \frac{Bx_{massecuite}\,(Pu_{massecuite}-Pu_{motherliquor})}{100-Pu_{motherliquor}}\]</div>
+<h3>Pan mass balance</h3>
+<div class="formula-block">\[m_{massecuite} = V \times \rho \qquad m_{liquor} = m_{massecuite}\times\frac{Bx_{massecuite}}{Bx_{liquor}} \qquad m_{water\,evap} = m_{liquor}-m_{massecuite}\]</div>
+<p class="lit-ref"><strong>Reference literature:</strong> Peter Rein, <em>Cane Sugar Engineering</em> (crystallization and pan mass balance); E. Hugot, <em>Handbook of Cane Sugar Engineering</em>; Meade–Chen, <em>Cane Sugar Handbook</em> (purity drop methods).</p>
+
+<h2>Typical operational ranges (KPIs)</h2>
+<table class="kpi-table">
+<thead><tr><th>KPI</th><th>Typical range</th><th>Alert</th></tr></thead>
+<tbody>
+<tr><td>S-J-M yield</td><td>55% – 70%</td><td>Outside 0–100% "invalid data"</td></tr>
+<tr><td>% Crystal in massecuite</td><td>40% – 55%</td><td>&lt;30% "low crystal content"</td></tr>
+<tr><td>Purity relationship (mother &lt; massecuite &lt; liquor)</td><td>Must always hold</td><td>If not met → "inconsistent purity"</td></tr>
+<tr><td>Pan vacuum</td><td>≥ 25 inHg</td><td>&lt;25 inHg "low vacuum"</td></tr>
+</tbody>
+</table>
+
+<h2>Frequently asked questions</h2>
+<div class="faq-list">
+<div class="faq-item"><h3>What does S-J-M mean in sugar crystallization?</h3><p>It identifies the three purities in the balance: Sucrose (crystal), Juice (feed liquor) and Molasses (mother liquor). Also known as the purity drop formula.</p></div>
+<div class="faq-item"><h3>What is the ideal % crystal in an A massecuite?</h3><p>Typically between 40% and 55%. Below 30% it is considered low crystal content.</p></div>
+<div class="faq-item"><h3>How does mother liquor purity relate to exhaustion?</h3><p>The mother liquor must have lower purity than the massecuite and the feed liquor. If that relationship does not hold, the data is inconsistent.</p></div>
+<div class="faq-item"><h3>What is the supersaturation coefficient and how is it used here?</h3><p>It is a factor derived from sucrose solubility at the working temperature, calculated in detail in the Solubility calculator and used here as an input to the balance.</p></div>
+</div>
+
+<p class="back-link"><a href="https://sugarplantcalc.com/en/calculadoras/">&lsaquo; Back to all calculators</a></p>
+</article>
+</div>
+
+<script>
+var LBL = {"tonMasa": "Massecuite per strike", "tonLicor": "Liquor required", "aguaEvap": "Water to evaporate in the pan", "avTemp": "Temperature is outside the 0-100°C range: check the sensor reading.", "avLabil": "Labile zone (Y={0}, > 1.3): high risk of spontaneous nucleation (false grain).", "avInterm": "Intermediate zone (Y={0}, 1.2–1.3): monitor closely to avoid nucleation.", "avBajoCristal": "Low crystal content ({0} %, < 30): adjust seeding density or boiling time.", "avVacioBajo": "Low pan vacuum ({0} inHg, < 25): raises boiling temperature and may caramelise the sucrose.", "avPurezaInc": "Massecuite purity ({0} %) should fall between the mother liquor M ({1} %) and the feed liquor J ({2} %). Check the lab readings.", "avInvalido": "The S-J-M yield or the crystal % came out outside 0-100 %: these are inconsistent lab readings, not a real result."};
+
+function g(id){return document.getElementById(id)}
+function n(id){var e=g(id);if(!e)return 0;var x=parseFloat((e.value||"").replace(",","."));return isFinite(x)?x:0}
+function f(x,d){return (!isFinite(x))?"—":x.toFixed(d)}
+function set(id,v){var e=g(id);if(e)e.textContent=v}
+function tabla(id,filas){var e=g(id);if(!e)return;e.innerHTML=filas.map(function(r){return '<div class="row"><span>'+r[0]+'</span><span style="font-weight:400;text-align:right;max-width:62%">'+r[1]+'</span></div>'}).join("")}
+function aviso(id,msg){var e=g(id);if(!e)return;if(!msg){e.style.display='none';e.textContent='';return}e.style.display='block';e.textContent=msg}
+
+function solPuraPct(t){return 64.397+0.07251*t+0.0020569*t*t-9.035e-6*t*t*t}
+function calcSolub(brix,pureza,temp,coef){
+  if(brix<=0||brix>=100||pureza<=0)return{valida:false};
+  var c=coef>0?coef:1,satPura=solPuraPct(temp);
+  var qSatPura=satPura<100?satPura/(100-satPura):0;
+  var qSat=qSatPura*c;
+  var sacarosa=brix*pureza/100,agua=100-brix;
+  var q=agua>0?sacarosa/agua:0,y=qSat>0?q/qSat:0;
+  return{valida:true,satPura:satPura,q:q,qSat:qSat,y:y,tempOk:(temp>=0&&temp<=100)};
+}
+
+function calcTachos(){
+  var bxl=n('tc_bxl'),pul=n('tc_pul'),bxm=n('tc_bxm'),pum=n('tc_pum'),pumm=n('tc_pumm'),puc=n('tc_puc'),
+      temp=n('tc_temp'),vac=n('tc_vac'),vol=n('tc_vol'),dens=n('tc_dens'),coef=n('tc_coef');
+  var invalido=bxl<=0||pul<=0||bxm<=0||pum<=0||pumm<=0||pumm>=100||puc<=pumm||vol<=0||dens<=0;
+  if(invalido){set('tc_y','—');set('tc_pc','—');set('tc_sjm','—');tabla('tc_det',[]);aviso('tc_w',null);return}
+  var sol=calcSolub(bxm,pum,temp,coef);
+  var sjm=(puc*(pul-pumm))/(pul*(puc-pumm))*100;
+  var pctCristal=(bxm*(pum-pumm))/(100-pumm);
+  var tonMasa=vol*dens;
+  var tonLicor=tonMasa*(bxm/bxl);
+  var aguaEvap=tonLicor-tonMasa;
+  set('tc_y', sol.valida?f(sol.y,3):"—");
+  set('tc_pc',f(pctCristal,1));
+  set('tc_sjm',f(sjm,1));
+  tabla('tc_det',[
+    [LBL.tonMasa,f(tonMasa,2)+" t"],
+    [LBL.tonLicor,f(tonLicor,2)+" t"],
+    [LBL.aguaEvap,f(aguaEvap,2)+" t"]
+  ]);
+  var avisos=[];
+  if(sol.valida && sol.tempOk===false) avisos.push(LBL.avTemp);
+  else if(sol.valida){
+    if(sol.y>1.3)avisos.push(LBL.avLabil.replace('{0}',f(sol.y,2)));
+    else if(sol.y>1.2)avisos.push(LBL.avInterm.replace('{0}',f(sol.y,2)));
+  }
+  if(pctCristal<30)avisos.push(LBL.avBajoCristal.replace('{0}',f(pctCristal,1)));
+  if(vac>0&&vac<25)avisos.push(LBL.avVacioBajo.replace('{0}',f(vac,1)));
+  if(pum<pumm||pum>pul)avisos.push(LBL.avPurezaInc.replace('{0}',f(pum,1)).replace('{1}',f(pumm,1)).replace('{2}',f(pul,1)));
+  if(sjm<0||sjm>100||pctCristal<0||pctCristal>100)avisos.push(LBL.avInvalido);
+  aviso('tc_w', avisos.length?avisos.join("\n\n"):null);
+}
+
+var CAMPOS=[];
+document.querySelectorAll("#tc_bxl,#tc_pul,#tc_bxm,#tc_pum,#tc_pumm,#tc_puc,#tc_coef,#tc_temp,#tc_vac,#tc_vol,#tc_dens").forEach(function(e){
+  CAMPOS.push(e.id);
+  e.addEventListener("input",calcTachos);
+  e.addEventListener("change",calcTachos);
+});
+try{
+  var saved=JSON.parse(localStorage.getItem("spc_calc_tachos")||"{}");
+  CAMPOS.forEach(function(k){if(saved[k]!=null)g(k).value=saved[k]});
+}catch(_){}
+calcTachos();
+window.addEventListener('beforeunload',function(){try{var o={};CAMPOS.forEach(function(k){o[k]=g(k).value});localStorage.setItem("spc_calc_tachos",JSON.stringify(o))}catch(_){}});
+
+</script>
+<script src="/assets/js/cookie-consent.js"></script>
+</body>
+</html>
