@@ -149,7 +149,7 @@
 </div>
 
 <script>
-var LBL = {"densidadJugo": "Juice density", "densidadLechada": "Milk of lime density", "solidos": "Solids in milk of lime", "caoReq": "CaO required", "caoh2Eq": "Ca(OH)₂ equivalent", "calVivaCom": "Commercial quicklime", "aguaApagado": "Slaking water (approx.)", "avBaja": "Milk of lime below 5 °Bé: very high flow rates and juice dilution. The usual operating range is 6–12 °Bé.", "avAlta": "Milk of lime above 15 °Bé: risk of settling and plugging in lines and valves.", "avPoco": "Less than 0.5 kg CaO per tonne of cane: check the demand, the juice could end up unneutralised.", "avMucho": "More than 1.5 kg CaO per tonne of cane: high consumption, it raises filter mud volume and colour formation."};
+var LBL = {"densidadJugo": "Juice density", "densidadLechada": "Milk of lime density", "solidos": "Solids in milk of lime", "caoReq": "CaO required", "caoh2Eq": "Ca(OH)₂ equivalent", "calVivaCom": "Commercial quicklime", "aguaApagado": "Slaking water (approx.)", "avBaja": "Milk of lime below 5 °Bé: very high flow rates and juice dilution. The usual operating range is 6–12 °Bé.", "avAlta": "Milk of lime above 15 °Bé: risk of settling and plugging in lines and valves.", "avPoco": "Less than 0.5 kg CaO per tonne of cane: check the demand, the juice could end up unneutralised.", "avMucho": "More than 1.5 kg CaO per tonne of cane: high consumption, it raises filter mud volume and colour formation.", "avDatosInsuficientes": "Not enough data to calculate: check that the flow and the reagent data (concentration, density, or degrees) are complete and greater than zero."};
 
 function g(id){return document.getElementById(id)}
 function n(id){var e=g(id);if(!e)return 0;var x=parseFloat((e.value||"").replace(",","."));return isFinite(x)?x:0}
@@ -168,6 +168,8 @@ var F_CAO=0.7569,D_CAOH2=2.24;
 
 function calcCal(){
   var q=n('c_q'),bx=n('c_bx'),tC=n('c_t'),dem=n('c_dem'),tch=n('c_tch'),hd=n('c_hd'),be=n('c_be'),pu=n('c_pu'),ea=n('c_ea');
+  var invalido=q<=0||be<=0||be>40||pu<=0||ea<=0;
+  if(invalido){set('c_lh','—');set('c_lm','—');set('c_td','—');tabla('c_det',[]);aviso('c_w',LBL.avDatosInsuficientes);return}
   var rho=rhoJugo(bx,tC),sg=sgBaume(be);
   var frac=Math.max((1-1/sg)/(1-1/D_CAOH2),0);
   var gCoh=frac*sg*1000,gCao=gCoh*F_CAO;
