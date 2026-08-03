@@ -155,7 +155,7 @@
 </div>
 
 <script>
-var LBL = {"fibra": "Fibre", "agua": "Imbibition water", "bagazo": "Bagasse % cane", "jugoPerdido": "Juice lost % fibre", "brixEsperado": "Expected mixed juice Brix", "tchPie": "Load per foot of roll", "uTchPie": "t/h·ft", "avImbBaja": "Low imbibition ({0} % fibre, < 200 %): risk of extraction loss.", "avImbAlta": "High imbibition ({0} % fibre, > 250 %): risk of thermal overload in the evaporators.", "avBrixDesv": "Mixed juice Brix ({0}) deviates from the expected value ({1}) by more than 0.8: check the water flow meter or tank leaks.", "avJugoAlto": "High juice lost % fibre ({0}, > 40): check mechanical work or cane preparation."};
+var LBL = {"fibra": "Fibre", "agua": "Imbibition water", "bagazo": "Bagasse % cane", "jugoPerdido": "Juice lost % fibre", "brixEsperado": "Expected mixed juice Brix", "tchPie": "Load per foot of roll", "uTchPie": "t/h·ft", "avImbBaja": "Low imbibition ({0} % fibre, < 200 %): risk of extraction loss.", "avImbAlta": "High imbibition ({0} % fibre, > 250 %): risk of thermal overload in the evaporators.", "avBrixDesv": "Mixed juice Brix ({0}) deviates from the expected value ({1}) by more than 0.8: check the water flow meter or tank leaks.", "avJugoAlto": "High juice lost % fibre ({0}, > 40): check mechanical work or cane preparation.", "avBagazoImposible": "Bagasse/cane of {0} % is impossible (bagasse always weighs less than the cane): check the cane and bagasse fibre readings, they may be swapped.", "avExtraccionBaja": "Low Pol extraction ({0} %, < 90): check cane preparation, mill performance, or the fibre/Pol data entered."};
 
 function g(id){return document.getElementById(id)}
 function n(id){var e=g(id);if(!e)return 0;var x=parseFloat((e.value||"").replace(",","."));return isFinite(x)?x:0}
@@ -189,6 +189,8 @@ function calcMolienda(){
     [LBL.tchPie,f(tchPie,2)+" "+LBL.uTchPie]
   ]);
   var avisos=[];
+  if(bagCana>100)avisos.push(LBL.avBagazoImposible.replace('{0}',f(bagCana,1)));
+  if(extPol<90)avisos.push(LBL.avExtraccionBaja.replace('{0}',f(extPol,1)));
   if(imbFibra<200)avisos.push(LBL.avImbBaja.replace('{0}',f(imbFibra,1)));
   if(imbFibra>250)avisos.push(LBL.avImbAlta.replace('{0}',f(imbFibra,1)));
   if(bxm>0&&Math.abs(bxm-bxmEsperado)>0.8)avisos.push(LBL.avBrixDesv.replace('{0}',f(bxm,1)).replace('{1}',f(bxmEsperado,1)));
