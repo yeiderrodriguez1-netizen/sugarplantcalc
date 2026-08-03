@@ -176,7 +176,7 @@ function calcSolub(brix,pureza,temp,coef){
 function calcTachos(){
   var bxl=n('tc_bxl'),pul=n('tc_pul'),bxm=n('tc_bxm'),pum=n('tc_pum'),pumm=n('tc_pumm'),puc=n('tc_puc'),
       temp=n('tc_temp'),vac=n('tc_vac'),vol=n('tc_vol'),dens=n('tc_dens'),coef=n('tc_coef');
-  var invalido=bxl<=0||pul<=0||bxm<=0||pum<=0||pumm<=0||pumm>=100||puc<=pumm||vol<=0||dens<=0;
+  var invalido=bxl<=0||pul<=0||bxm<=0||pum<=0||pumm<=0||pumm>=100||puc<=pumm||vol<=0||dens<=0||bxm<=bxl;
   if(invalido){set('tc_y','—');set('tc_pc','—');set('tc_sjm','—');tabla('tc_det',[]);aviso('tc_w',null);return}
   var sol=calcSolub(bxm,pum,temp,coef);
   var sjm=(puc*(pul-pumm))/(pul*(puc-pumm))*100;
