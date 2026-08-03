@@ -166,7 +166,7 @@ function calcEnzima(flujoTh,sustratoPpm,dosisPpm,densEnz,dilucionPct){
 function avisosDextranasa(dextrano,temp,tr){
   var avisos=[];
   if(dextrano>500)avisos.push(LBL.avDextranoSevero.replace('{0}',f(dextrano,0)));
-  var tempAlta=temp>65,tempBaja=(temp>0.001&&temp<44.999),tiempoBajo=tr<10;
+  var tempAlta=temp>65,tempBaja=temp<45,tiempoBajo=tr<10;
   if((tempAlta&&tiempoBajo)||(tempBaja&&tiempoBajo)){
     avisos.push(LBL.avDobleFalla.replace('{0}',f(temp,1)).replace('{1}',f(tr,1)));
   } else {
