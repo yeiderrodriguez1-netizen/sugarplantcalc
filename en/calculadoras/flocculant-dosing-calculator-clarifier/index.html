@@ -146,7 +146,7 @@
 </div>
 
 <script>
-var LBL = {"densidadJugo": "Juice density", "flujoMasico": "Juice mass flow", "polimeroReq": "Polymer required", "aguaDilucion": "In-line dilution water", "concAplicada": "Applied concentration", "polvoBatch": "Powder per batch", "batchesDia": "Batches per day", "avSolAlta": "Stock solution above 2 g/L: viscosity shoots up and the polymer does not dissolve well. The practical range is 0.5–1.5 g/L.", "avSolBaja": "Stock solution below 0.3 g/L: it forces huge tanks and the polymer degrades before it is used.", "avDosisBaja": "Less than 1 ppm: a stable floc rarely forms. Check with a jar test.", "avDosisAlta": "More than 6 ppm: typical overdose. Mud reflocculation and higher clarified juice turbidity.", "avBatch": "The batch lasts less than 1.5 h: it does not allow the polymer ageing time (30–60 min). Consider a larger tank or two alternating tanks."};
+var LBL = {"densidadJugo": "Juice density", "flujoMasico": "Juice mass flow", "polimeroReq": "Polymer required", "aguaDilucion": "In-line dilution water", "concAplicada": "Applied concentration", "polvoBatch": "Powder per batch", "batchesDia": "Batches per day", "avSolAlta": "Stock solution above 2 g/L: viscosity shoots up and the polymer does not dissolve well. The practical range is 0.5–1.5 g/L.", "avSolBaja": "Stock solution below 0.3 g/L: it forces huge tanks and the polymer degrades before it is used.", "avDosisBaja": "Less than 1 ppm: a stable floc rarely forms. Check with a jar test.", "avDosisAlta": "More than 6 ppm: typical overdose. Mud reflocculation and higher clarified juice turbidity.", "avBatch": "The batch lasts less than 1.5 h: it does not allow the polymer ageing time (30–60 min). Consider a larger tank or two alternating tanks.", "avDatosInsuficientes": "Not enough data to calculate: check that the flow and the reagent data (concentration, density, or degrees) are complete and greater than zero."};
 
 function g(id){return document.getElementById(id)}
 function n(id){var e=g(id);if(!e)return 0;var x=parseFloat((e.value||"").replace(",","."));return isFinite(x)?x:0}
@@ -163,6 +163,8 @@ function rhoJugo(bx,tC){
 
 function calcFloc(){
   var q=n('f_q'),bx=n('f_bx'),tC=n('f_t'),ppm=n('f_ppm'),hd=n('f_hd'),cs=n('f_cs'),dil=n('f_dil'),vt=n('f_vt');
+  var invalido=q<=0||cs<=0;
+  if(invalido){set('f_kd','—');set('f_lm','—');set('f_du','—');tabla('f_det',[]);aviso('f_w',LBL.avDatosInsuficientes);return}
   var rho=rhoJugo(bx,tC),m=q*rho,pol=m*ppm/1e6;
   var lh=cs>0?pol*1000/cs:0,lm=lh/60,ap=lh*(1+dil),apm=ap/60;
   var agua=lh*dil,capl=ap>0?pol*1000/ap:0,dur=lh>0?vt*1000/lh:0;
