@@ -166,7 +166,7 @@ function calcEnzima(flujoTh,sustratoPpm,dosisPpm,densEnz,dilucionPct){
 function avisosAmilasa(almidon,temp,tr){
   var avisos=[];
   if(almidon>500)avisos.push(LBL.avAlmidonAlto.replace('{0}',f(almidon,0)));
-  var tempAlta=temp>98,tempBaja=(temp>0.001&&temp<74.999),tiempoBajo=tr<5;
+  var tempAlta=temp>98,tempBaja=temp<75,tiempoBajo=tr<5;
   if((tempAlta&&tiempoBajo)||(tempBaja&&tiempoBajo)){
     avisos.push(LBL.avDobleFalla.replace('{0}',f(temp,1)).replace('{1}',f(tr,1)));
   } else {
