@@ -149,7 +149,7 @@
 </div>
 
 <script>
-var LBL = {"densidadJugo": "Densidade do caldo", "densidadLechada": "Densidade do leite de cal", "solidos": "Sólidos no leite de cal", "caoReq": "CaO requerido", "caoh2Eq": "Ca(OH)₂ equivalente", "calVivaCom": "Cal virgem comercial", "aguaApagado": "Água de extinção (aprox.)", "avBaja": "Leite de cal abaixo de 5 °Bé: vazões muito altas e diluição do caldo. A faixa operacional usual é 6–12 °Bé.", "avAlta": "Leite de cal acima de 15 °Bé: risco de sedimentação e entupimento em linhas e válvulas.", "avPoco": "Menos de 0,5 kg CaO por tonelada de cana: verifique a demanda, o caldo pode ficar sem neutralizar.", "avMucho": "Mais de 1,5 kg CaO por tonelada de cana: consumo alto, aumenta o volume de torta e a formação de cor."};
+var LBL = {"densidadJugo": "Densidade do caldo", "densidadLechada": "Densidade do leite de cal", "solidos": "Sólidos no leite de cal", "caoReq": "CaO requerido", "caoh2Eq": "Ca(OH)₂ equivalente", "calVivaCom": "Cal virgem comercial", "aguaApagado": "Água de extinção (aprox.)", "avBaja": "Leite de cal abaixo de 5 °Bé: vazões muito altas e diluição do caldo. A faixa operacional usual é 6–12 °Bé.", "avAlta": "Leite de cal acima de 15 °Bé: risco de sedimentação e entupimento em linhas e válvulas.", "avPoco": "Menos de 0,5 kg CaO por tonelada de cana: verifique a demanda, o caldo pode ficar sem neutralizar.", "avMucho": "Mais de 1,5 kg CaO por tonelada de cana: consumo alto, aumenta o volume de torta e a formação de cor.", "avDatosInsuficientes": "Dados insuficientes para calcular: verifique se o fluxo e os dados do reagente (concentração, densidade ou graus) estão completos e maiores que zero."};
 
 function g(id){return document.getElementById(id)}
 function n(id){var e=g(id);if(!e)return 0;var x=parseFloat((e.value||"").replace(",","."));return isFinite(x)?x:0}
@@ -168,6 +168,8 @@ var F_CAO=0.7569,D_CAOH2=2.24;
 
 function calcCal(){
   var q=n('c_q'),bx=n('c_bx'),tC=n('c_t'),dem=n('c_dem'),tch=n('c_tch'),hd=n('c_hd'),be=n('c_be'),pu=n('c_pu'),ea=n('c_ea');
+  var invalido=q<=0||be<=0||be>40||pu<=0||ea<=0;
+  if(invalido){set('c_lh','—');set('c_lm','—');set('c_td','—');tabla('c_det',[]);aviso('c_w',LBL.avDatosInsuficientes);return}
   var rho=rhoJugo(bx,tC),sg=sgBaume(be);
   var frac=Math.max((1-1/sg)/(1-1/D_CAOH2),0);
   var gCoh=frac*sg*1000,gCao=gCoh*F_CAO;
