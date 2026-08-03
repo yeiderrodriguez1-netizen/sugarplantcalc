@@ -144,7 +144,7 @@
 </div>
 
 <script>
-var LBL = {"jarra": "Jar {0}", "ppm": "ppm", "interfaz": "Interface cm", "lodo": "Mud %", "turbidez": "Turbidity", "pocasJarras": "Record at least two jars with dose and turbidity to get a recommendation.", "bordeSuperior": "The chosen jar is the highest dose: the optimum may lie above the tested range. Repeat the series with higher doses.", "bordeInferior": "The chosen jar is the lowest dose: the optimum may lie below. Repeat the series with lower doses.", "g1": "1. Solution", "g1v": "Prepare the flocculant solution and let it mature for 30 to 60 minutes before using it; without that resting time the polymer does not flocculate well.", "g2": "2. Juice", "g2v": "Take the limed juice sample at the clarifier inlet, before dosing the flocculant and at process temperature (100–105 °C). Make sure the flow is representative, avoiding areas of low circulation or settling, and keep the sample hot throughout the test: if it cools, the settling rate changes.", "g3": "3. Dose", "g3v": "Add the indicated volume to each jar with a dispenser, under rapid stirring (100 rpm) for 10 s.", "g4": "4. Flocculation", "g4v": "Reduce to 20–30 rpm for 1 min and stop stirring.", "g5": "5. Settling rate", "g5v": "Measure the interface drop at minute 1.", "g6": "6. Mud", "g6v": "Read the mud volume at 30 minutes, once settling has finished. It is a reference figure, not an acceptance criterion: it neither rejects nor approves a jar. Other references read at 1, 3 and 5 min, but that measures compaction, not final volume.", "g7": "7. Turbidity", "g7v": "Measure the turbidity of the supernatant in ICUMSA units (IU). The 20 IU target is a plant criterion, not a published standard: adjust it to your mill.", "densidadUsada": "Density used", "densidadUsadaV": "{0} kg/m³ · mass per jar {1} g", "ejemplo3ppm": "Example at 3 ppm", "ejemplo3ppmV": "{0} mL of test solution per jar"};
+var LBL = {"jarra": "Jar {0}", "ppm": "ppm", "interfaz": "Interface cm", "lodo": "Mud %", "turbidez": "Turbidity", "pocasJarras": "Record at least two jars with dose and turbidity to get a recommendation.", "bordeSuperior": "The chosen jar is the highest dose: the optimum may lie above the tested range. Repeat the series with higher doses.", "bordeInferior": "The chosen jar is the lowest dose: the optimum may lie below. Repeat the series with lower doses.", "g1": "1. Solution", "g1v": "Prepare the flocculant solution and let it mature for 30 to 60 minutes before using it; without that resting time the polymer does not flocculate well.", "g2": "2. Juice", "g2v": "Take the limed juice sample at the clarifier inlet, before dosing the flocculant and at process temperature (100–105 °C). Make sure the flow is representative, avoiding areas of low circulation or settling, and keep the sample hot throughout the test: if it cools, the settling rate changes.", "g3": "3. Dose", "g3v": "Add the indicated volume to each jar with a dispenser, under rapid stirring (100 rpm) for 10 s.", "g4": "4. Flocculation", "g4v": "Reduce to 20–30 rpm for 1 min and stop stirring.", "g5": "5. Settling rate", "g5v": "Measure the interface drop at minute 1.", "g6": "6. Mud", "g6v": "Read the mud volume at 30 minutes, once settling has finished. It is a reference figure, not an acceptance criterion: it neither rejects nor approves a jar. Other references read at 1, 3 and 5 min, but that measures compaction, not final volume.", "g7": "7. Turbidity", "g7v": "Measure the turbidity of the supernatant in ICUMSA units (IU). The 20 IU target is a plant criterion, not a published standard: adjust it to your mill.", "densidadUsada": "Density used", "densidadUsadaV": "{0} kg/m³ · mass per jar {1} g", "ejemplo3ppm": "Example at 3 ppm", "ejemplo3ppmV": "{0} mL of test solution per jar", "jEstSinDatos": "No data", "jEstFaltaInt": "Interface missing", "jEstCumple": "Meets both", "jEstLentaTurbia": "Slow and turbid", "jEstLenta": "Slow", "jEstTurbAlta": "High turbidity", "cDetalleCercana": " Jar {0} is the closest: {1} {2} against a target of {3}, and {4} cm/min against a minimum of {5}. Repeat the series around {6} ppm.", "cNingunaAmbas": "No jar meets the criteria: best settling rate is {0} cm/min (minimum {1}) and best turbidity {2} {3} (target {4}).", "cNingunaVel": "No jar reaches {0} cm/min; the fastest gets to {1} cm/min.", "cNingunaTurb": "No jar goes below {0} {1}; the cleanest stays at {2} {1}.", "cOptima": "Jar {0}: {1} {2} · {3} cm/min settling", "cOptimaLodo": " · {0} % mud", "aSobredosisVel": "The chosen jar settles at {0} cm/min, above the {1} cm/min of the range. This usually means overdosing: try lowering the dose and check that turbidity holds.", "aUnicaCandidata": "Only one jar meets both conditions. The choice is fragile: repeat the series with doses around {0} ppm to confirm it.", "aAguasArriba": "Slow settling and turbid juice at the same time: the fault is upstream. Check pH, temperature, mixed juice Brix, lime quality and flow stability before moving the flocculant dose any further.", "aFlocInadecuado": "The floc settles well but the supernatant stays milky: the polymer forms a fast floc with a poor result. Consider changing product, and check overdosing, mud reflocculation and filter mud extraction.", "aSubdosis": "The juice comes out clean but the floc settles slowly: check polymer ageing (30–60 min) and try increasing the dose."};
 
 function g(id){return document.getElementById(id)}
 function n(id){var e=g(id);if(!e)return 0;var x=parseFloat((e.value||"").replace(",","."));return isFinite(x)?x:0}
@@ -185,18 +185,27 @@ function calcJarras(){
   var V=n('j_v'),cs=n('j_cs'),bx=n('j_bx'),tC=n('j_t'),tm=n('j_tm');
   var rho=rhoJugo(bx,tC);
   var masaG=V*rho/1000;
-  var datos=[];
+  var TURB_OBJ=45,VEL_MIN=12,VEL_MAX=17,UNI="NTU";
+  var base=[];
   for(var i=1;i<=NJ;i++){
     var ppm=n('j_p'+i),alt=n('j_h'+i),lodo=n('j_l'+i),ntu=n('j_n'+i);
     var mg=masaG*ppm/1000;
     var ml=cs>0?mg/cs:0;
     set('j_ml'+i, ppm>0? f(ml,2)+" mL":"—");
     var vel=tm>0?alt/tm:0;
-    datos.push({i:i,ppm:ppm,vel:vel,lodo:lodo,ntu:ntu,valida:(ntu>0&&ppm>0)});
+    var valida=(ntu>0&&ppm>0);
+    var hayVel=(alt>0&&tm>0);
+    var okVel=hayVel&&vel>=VEL_MIN;
+    var okTurb=valida&&ntu<=TURB_OBJ;
+    var excesoTurb=TURB_OBJ>0?Math.max(ntu/TURB_OBJ-1,0):0;
+    var deficitVel=VEL_MIN>0?Math.max(1-vel/VEL_MIN,0):0;
+    var estLbl=!valida?LBL.jEstSinDatos:(!hayVel?LBL.jEstFaltaInt:(okVel&&okTurb?LBL.jEstCumple:(!okVel&&!okTurb?LBL.jEstLentaTurbia:(!okVel?LBL.jEstLenta:LBL.jEstTurbAlta))));
+    base.push({i:i,ppm:ppm,vel:vel,lodo:lodo,ntu:ntu,valida:valida,okVel:okVel,okTurb:okTurb,candidata:(valida&&okVel&&okTurb),desvio:excesoTurb+deficitVel,estLbl:estLbl});
   }
-  var validas=datos.filter(function(d){return d.valida});
-  for(var k=1;k<=NJ;k++){set('j_sc'+k,"");g('j_row'+k).classList.remove("mejor")}
+  for(var k=1;k<=NJ;k++){g('j_row'+k).classList.remove("mejor")}
+  base.forEach(function(d){set('j_sc'+d.i,d.estLbl)});
 
+  var validas=base.filter(function(d){return d.valida});
   if(validas.length<2){
     set('j_opt',"—");
     g('j_com').textContent=LBL.pocasJarras;
@@ -205,33 +214,47 @@ function calcJarras(){
     return;
   }
 
-  var maxVel=Math.max.apply(null,validas.map(function(d){return d.vel}));
-  var lodos=validas.filter(function(d){return d.lodo>0}).map(function(d){return d.lodo});
-  var minLodo=lodos.length?Math.min.apply(null,lodos):0;
-  var minNtu=Math.min.apply(null,validas.map(function(d){return d.ntu}));
+  var candidatas=validas.filter(function(d){return d.candidata});
 
-  validas.forEach(function(d){
-    var nTurb=minNtu/d.ntu;
-    var nVel=maxVel>0?d.vel/maxVel:0;
-    var nLodo=(minLodo>0&&d.lodo>0)?minLodo/d.lodo:0;
-    var peso=0.45+0.35+(nLodo>0?0.20:0);
-    d.score=100*(0.45*nTurb+0.35*nVel+(nLodo>0?0.20*nLodo:0))/peso;
-  });
+  if(candidatas.length===0){
+    var ningunaVel=!validas.some(function(d){return d.okVel});
+    var ningunaTurb=!validas.some(function(d){return d.okTurb});
+    var mejorTurb=Math.min.apply(null,validas.map(function(d){return d.ntu}));
+    var mejorVel=Math.max.apply(null,validas.map(function(d){return d.vel}));
+    var cercana=validas.slice().sort(function(a,b){
+      if(a.desvio!==b.desvio)return a.desvio-b.desvio;
+      if(a.ntu!==b.ntu)return a.ntu-b.ntu;
+      return a.ppm-b.ppm;
+    })[0];
+    g('j_row'+cercana.i).classList.add("mejor");
+    var detalle=tf(LBL.cDetalleCercana,cercana.i,f(cercana.ntu,0),UNI,f(TURB_OBJ,0),f(cercana.vel,1),f(VEL_MIN,0),f(cercana.ppm,1));
+    var encabezado=ningunaVel&&ningunaTurb?tf(LBL.cNingunaAmbas,f(mejorVel,1),f(VEL_MIN,0),f(mejorTurb,0),UNI,f(TURB_OBJ,0))
+      :(ningunaVel?tf(LBL.cNingunaVel,f(VEL_MIN,0),f(mejorVel,1)):tf(LBL.cNingunaTurb,f(TURB_OBJ,0),UNI,f(mejorTurb,0)));
+    var diagnostico=ningunaVel&&ningunaTurb?LBL.aAguasArriba:(ningunaTurb?LBL.aFlocInadecuado:LBL.aSubdosis);
+    set('j_opt',"—");
+    g('j_com').textContent=encabezado+detalle;
+    aviso('j_w',diagnostico);
+    guia(masaG,cs,rho);
+    return;
+  }
 
-  var mejor=validas.slice().sort(function(a,b){return b.score-a.score})[0];
-  validas.forEach(function(d){set('j_sc'+d.i,f(d.score,0))});
+  var mejor=candidatas.slice().sort(function(a,b){
+    if(a.ntu!==b.ntu)return a.ntu-b.ntu;
+    return a.ppm-b.ppm;
+  })[0];
   g('j_row'+mejor.i).classList.add("mejor");
 
   set('j_opt',f(mejor.ppm,1));
-  var partes=[tf(LBL.jarra,mejor.i)+": "+f(mejor.ntu,0)+" NTU"];
-  if(mejor.vel>0)partes.push(f(mejor.vel,1)+" cm/min");
-  if(mejor.lodo>0)partes.push(f(mejor.lodo,0)+" %");
-  g('j_com').textContent=partes.join(" · ")+".";
+  var partes=[tf(LBL.cOptima,mejor.i,f(mejor.ntu,0),UNI,f(mejor.vel,1))];
+  if(mejor.lodo>0)partes.push(tf(LBL.cOptimaLodo,f(mejor.lodo,0)));
+  g('j_com').textContent=partes.join("")+".";
 
   var ordenadas=validas.slice().sort(function(a,b){return a.ppm-b.ppm});
   var msg=null;
-  if(mejor.ppm===ordenadas[ordenadas.length-1].ppm) msg=LBL.bordeSuperior;
-  else if(mejor.ppm===ordenadas[0].ppm) msg=LBL.bordeInferior;
+  if(mejor.vel>VEL_MAX)msg=tf(LBL.aSobredosisVel,f(mejor.vel,1),f(VEL_MAX,0));
+  else if(mejor.ppm===ordenadas[ordenadas.length-1].ppm)msg=LBL.bordeSuperior;
+  else if(mejor.ppm===ordenadas[0].ppm)msg=LBL.bordeInferior;
+  else if(candidatas.length===1)msg=tf(LBL.aUnicaCandidata,f(mejor.ppm,1));
   aviso('j_w',msg);
   guia(masaG,cs,rho);
 }
