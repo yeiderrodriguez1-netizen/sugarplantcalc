@@ -155,7 +155,7 @@
 </div>
 
 <script>
-var LBL = {"fibra": "Fibra", "agua": "Agua de imbibición", "bagazo": "Bagazo % caña", "jugoPerdido": "Jugo perdido % fibra", "brixEsperado": "Brix mezclado esperado", "tchPie": "Carga por pie de maza", "uTchPie": "t/h·pie", "avImbBaja": "Imbibición baja ({0} % fibra, < 200 %): riesgo de pérdida de extracción.", "avImbAlta": "Imbibición alta ({0} % fibra, > 250 %): riesgo de sobrecarga térmica en evaporadores.", "avBrixDesv": "Brix mezclado ({0}) se desvía del esperado ({1}) por más de 0.8: revisa el flujómetro de agua o fugas en tanques.", "avJugoAlto": "Jugo perdido % fibra elevado ({0}, > 40): revisa el trabajo mecánico o la preparación de caña."};
+var LBL = {"fibra": "Fibra", "agua": "Agua de imbibición", "bagazo": "Bagazo % caña", "jugoPerdido": "Jugo perdido % fibra", "brixEsperado": "Brix mezclado esperado", "tchPie": "Carga por pie de maza", "uTchPie": "t/h·pie", "avImbBaja": "Imbibición baja ({0} % fibra, < 200 %): riesgo de pérdida de extracción.", "avImbAlta": "Imbibición alta ({0} % fibra, > 250 %): riesgo de sobrecarga térmica en evaporadores.", "avBrixDesv": "Brix mezclado ({0}) se desvía del esperado ({1}) por más de 0.8: revisa el flujómetro de agua o fugas en tanques.", "avJugoAlto": "Jugo perdido % fibra elevado ({0}, > 40): revisa el trabajo mecánico o la preparación de caña.", "avBagazoImposible": "Bagazo/caña de {0} % es imposible (el bagazo siempre pesa menos que la caña): revisa los datos de fibra en caña y en bagazo, pueden estar invertidos.", "avExtraccionBaja": "Extracción de Pol baja ({0} %, < 90): revisa la preparación de caña, el trabajo de los molinos o los datos de fibra/Pol cargados."};
 
 function g(id){return document.getElementById(id)}
 function n(id){var e=g(id);if(!e)return 0;var x=parseFloat((e.value||"").replace(",","."));return isFinite(x)?x:0}
@@ -189,6 +189,8 @@ function calcMolienda(){
     [LBL.tchPie,f(tchPie,2)+" "+LBL.uTchPie]
   ]);
   var avisos=[];
+  if(bagCana>100)avisos.push(LBL.avBagazoImposible.replace('{0}',f(bagCana,1)));
+  if(extPol<90)avisos.push(LBL.avExtraccionBaja.replace('{0}',f(extPol,1)));
   if(imbFibra<200)avisos.push(LBL.avImbBaja.replace('{0}',f(imbFibra,1)));
   if(imbFibra>250)avisos.push(LBL.avImbAlta.replace('{0}',f(imbFibra,1)));
   if(bxm>0&&Math.abs(bxm-bxmEsperado)>0.8)avisos.push(LBL.avBrixDesv.replace('{0}',f(bxm,1)).replace('{1}',f(bxmEsperado,1)));
