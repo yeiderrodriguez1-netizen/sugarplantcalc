@@ -149,7 +149,7 @@
 </div>
 
 <script>
-var LBL = {"densidadJugo": "Densidad del jugo", "densidadLechada": "Densidad de la lechada", "solidos": "Sólidos en la lechada", "caoReq": "CaO requerido", "caoh2Eq": "Ca(OH)₂ equivalente", "calVivaCom": "Cal viva comercial", "aguaApagado": "Agua de apagado (aprox.)", "avBaja": "Lechada por debajo de 5 °Bé: caudales muy altos y dilución del jugo. El rango operativo usual es 6–12 °Bé.", "avAlta": "Lechada por encima de 15 °Bé: riesgo de sedimentación y taponamiento en líneas y válvulas.", "avPoco": "Menos de 0.5 kg CaO por tonelada de caña: revisa la demanda, el jugo podría quedar sin neutralizar.", "avMucho": "Más de 1.5 kg CaO por tonelada de caña: consumo alto, sube el volumen de cachaza y la formación de color."};
+var LBL = {"densidadJugo": "Densidad del jugo", "densidadLechada": "Densidad de la lechada", "solidos": "Sólidos en la lechada", "caoReq": "CaO requerido", "caoh2Eq": "Ca(OH)₂ equivalente", "calVivaCom": "Cal viva comercial", "aguaApagado": "Agua de apagado (aprox.)", "avBaja": "Lechada por debajo de 5 °Bé: caudales muy altos y dilución del jugo. El rango operativo usual es 6–12 °Bé.", "avAlta": "Lechada por encima de 15 °Bé: riesgo de sedimentación y taponamiento en líneas y válvulas.", "avPoco": "Menos de 0.5 kg CaO por tonelada de caña: revisa la demanda, el jugo podría quedar sin neutralizar.", "avMucho": "Más de 1.5 kg CaO por tonelada de caña: consumo alto, sube el volumen de cachaza y la formación de color.", "avDatosInsuficientes": "Datos insuficientes para calcular: revisa que el flujo y los datos del reactivo (concentración, densidad o grados) estén completos y sean mayores que cero."};
 
 function g(id){return document.getElementById(id)}
 function n(id){var e=g(id);if(!e)return 0;var x=parseFloat((e.value||"").replace(",","."));return isFinite(x)?x:0}
@@ -168,6 +168,8 @@ var F_CAO=0.7569,D_CAOH2=2.24;
 
 function calcCal(){
   var q=n('c_q'),bx=n('c_bx'),tC=n('c_t'),dem=n('c_dem'),tch=n('c_tch'),hd=n('c_hd'),be=n('c_be'),pu=n('c_pu'),ea=n('c_ea');
+  var invalido=q<=0||be<=0||be>40||pu<=0||ea<=0;
+  if(invalido){set('c_lh','—');set('c_lm','—');set('c_td','—');tabla('c_det',[]);aviso('c_w',LBL.avDatosInsuficientes);return}
   var rho=rhoJugo(bx,tC),sg=sgBaume(be);
   var frac=Math.max((1-1/sg)/(1-1/D_CAOH2),0);
   var gCoh=frac*sg*1000,gCao=gCoh*F_CAO;
