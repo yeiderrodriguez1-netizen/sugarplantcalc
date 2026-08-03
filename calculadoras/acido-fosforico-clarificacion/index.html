@@ -147,7 +147,7 @@
 </div>
 
 <script>
-var LBL = {"densidadJugo": "Densidad del jugo", "flujoMasico": "Flujo másico de jugo", "deficit": "Déficit de P₂O₅", "p2o5Adic": "P₂O₅ a adicionar", "h3po4Puro": "H₃PO₄ puro equivalente", "acidoMasa": "Ácido comercial (masa)", "avCubierto": "El jugo ya alcanza el objetivo de P₂O₅. No se requiere dosificación.", "avBajo": "Objetivo por debajo de 250 ppm: la clarificación suele perder eficacia. El rango usual es 250–350 ppm.", "avAlto": "Objetivo por encima de 400 ppm: el exceso de fosfato eleva el consumo de cal y el volumen de cachaza."};
+var LBL = {"densidadJugo": "Densidad del jugo", "flujoMasico": "Flujo másico de jugo", "deficit": "Déficit de P₂O₅", "p2o5Adic": "P₂O₅ a adicionar", "h3po4Puro": "H₃PO₄ puro equivalente", "acidoMasa": "Ácido comercial (masa)", "avCubierto": "El jugo ya alcanza el objetivo de P₂O₅. No se requiere dosificación.", "avBajo": "Objetivo por debajo de 250 ppm: la clarificación suele perder eficacia. El rango usual es 250–350 ppm.", "avAlto": "Objetivo por encima de 400 ppm: el exceso de fosfato eleva el consumo de cal y el volumen de cachaza.", "avDatosInsuficientes": "Datos insuficientes para calcular: revisa que el flujo y los datos del reactivo (concentración, densidad o grados) estén completos y sean mayores que cero."};
 
 function g(id){return document.getElementById(id)}
 function n(id){var e=g(id);if(!e)return 0;var x=parseFloat((e.value||"").replace(",","."));return isFinite(x)?x:0}
@@ -165,6 +165,8 @@ var F_P=0.7243;
 
 function calcAcido(){
   var q=n('a_q'),bx=n('a_bx'),tC=n('a_t'),pn=n('a_pn'),po=n('a_po'),ef=n('a_ef'),c=n('a_c'),d=n('a_d'),hd=n('a_hd');
+  var invalido=q<=0||c<=0||d<=0;
+  if(invalido){set('a_lh','—');set('a_lm','—');set('a_ld','—');tabla('a_det',[]);aviso('a_w',LBL.avDatosInsuficientes);return}
   var rho=rhoJugo(bx,tC),m=q*rho,def=Math.max(po-pn,0),e=ef>0?ef/100:1;
   var p=m*def/1e6/e,h=p/F_P,com=c>0?h/(c/100):0,lh=d>0?com/d:0,lm=lh/60;
   set('a_lh',f(lh,1));set('a_lm',f(lm,3));set('a_ld',f(lh*hd,0));
