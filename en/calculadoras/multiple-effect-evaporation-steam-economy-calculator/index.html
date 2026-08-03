@@ -167,7 +167,7 @@ function economiaTipica(ne){return ne===3?2.6:ne===4?3.2:ne===5?4.0:3.2}
 function calcEvaporacion(){
   var flujo=n('ev_flujo'),bxc=n('ev_bxc'),bxt=n('ev_bxt'),bxr=n('ev_bxr'),vap=n('ev_vap'),
       numEf=parseInt(g('ev_efectos').value||"4",10),area=n('ev_area'),vac=n('ev_vac');
-  var invalido=flujo<=0||bxt<=0||vap<=0||area<=0;
+  var invalido=flujo<=0||bxt<=0||vap<=0||area<=0||bxt<=bxc;
   if(invalido){["ev_agua","ev_econ"].forEach(function(id){set(id,'—')});tabla('ev_det',[]);aviso('ev_w',null);return}
   var pctEvap=(1-(bxc/bxt))*100;
   var aguaH=flujo*(pctEvap/100);
