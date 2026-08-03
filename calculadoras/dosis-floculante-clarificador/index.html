@@ -146,7 +146,7 @@
 </div>
 
 <script>
-var LBL = {"densidadJugo": "Densidad del jugo", "flujoMasico": "Flujo másico de jugo", "polimeroReq": "Polímero requerido", "aguaDilucion": "Agua de dilución en línea", "concAplicada": "Concentración aplicada", "polvoBatch": "Polvo por batch", "batchesDia": "Batches por día", "avSolAlta": "Solución madre por encima de 2 g/L: la viscosidad dispara y el polímero no se disuelve bien. El rango práctico es 0.5–1.5 g/L.", "avSolBaja": "Solución madre por debajo de 0.3 g/L: obliga a tanques enormes y el polímero se degrada antes de usarse.", "avDosisBaja": "Menos de 1 ppm: rara vez se forma flóculo estable. Verifica con prueba de jarras.", "avDosisAlta": "Más de 6 ppm: sobredosis típica. Refloculación del lodo y mayor turbiedad del jugo claro.", "avBatch": "El batch dura menos de 1.5 h: no alcanza el tiempo de maduración del polímero (30–60 min). Considera un tanque mayor o dos tanques alternos."};
+var LBL = {"densidadJugo": "Densidad del jugo", "flujoMasico": "Flujo másico de jugo", "polimeroReq": "Polímero requerido", "aguaDilucion": "Agua de dilución en línea", "concAplicada": "Concentración aplicada", "polvoBatch": "Polvo por batch", "batchesDia": "Batches por día", "avSolAlta": "Solución madre por encima de 2 g/L: la viscosidad dispara y el polímero no se disuelve bien. El rango práctico es 0.5–1.5 g/L.", "avSolBaja": "Solución madre por debajo de 0.3 g/L: obliga a tanques enormes y el polímero se degrada antes de usarse.", "avDosisBaja": "Menos de 1 ppm: rara vez se forma flóculo estable. Verifica con prueba de jarras.", "avDosisAlta": "Más de 6 ppm: sobredosis típica. Refloculación del lodo y mayor turbiedad del jugo claro.", "avBatch": "El batch dura menos de 1.5 h: no alcanza el tiempo de maduración del polímero (30–60 min). Considera un tanque mayor o dos tanques alternos.", "avDatosInsuficientes": "Datos insuficientes para calcular: revisa que el flujo y los datos del reactivo (concentración, densidad o grados) estén completos y sean mayores que cero."};
 
 function g(id){return document.getElementById(id)}
 function n(id){var e=g(id);if(!e)return 0;var x=parseFloat((e.value||"").replace(",","."));return isFinite(x)?x:0}
@@ -163,6 +163,8 @@ function rhoJugo(bx,tC){
 
 function calcFloc(){
   var q=n('f_q'),bx=n('f_bx'),tC=n('f_t'),ppm=n('f_ppm'),hd=n('f_hd'),cs=n('f_cs'),dil=n('f_dil'),vt=n('f_vt');
+  var invalido=q<=0||cs<=0;
+  if(invalido){set('f_kd','—');set('f_lm','—');set('f_du','—');tabla('f_det',[]);aviso('f_w',LBL.avDatosInsuficientes);return}
   var rho=rhoJugo(bx,tC),m=q*rho,pol=m*ppm/1e6;
   var lh=cs>0?pol*1000/cs:0,lm=lh/60,ap=lh*(1+dil),apm=ap/60;
   var agua=lh*dil,capl=ap>0?pol*1000/ap:0,dur=lh>0?vt*1000/lh:0;
