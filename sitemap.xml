@@ -26,6 +26,30 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://sugarplantcalc.com/"/>
   </url>
   <url>
+    <loc>https://sugarplantcalc.com/calculadoras/</loc>
+    <lastmod>2026-08-03</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://sugarplantcalc.com/calculadoras/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sugarplantcalc.com/en/calculadoras/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://sugarplantcalc.com/pt/calculadoras/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sugarplantcalc.com/calculadoras/"/>
+  </url>
+  <url>
+    <loc>https://sugarplantcalc.com/en/calculadoras/</loc>
+    <lastmod>2026-08-03</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://sugarplantcalc.com/calculadoras/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sugarplantcalc.com/en/calculadoras/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://sugarplantcalc.com/pt/calculadoras/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sugarplantcalc.com/calculadoras/"/>
+  </url>
+  <url>
+    <loc>https://sugarplantcalc.com/pt/calculadoras/</loc>
+    <lastmod>2026-08-03</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://sugarplantcalc.com/calculadoras/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sugarplantcalc.com/en/calculadoras/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://sugarplantcalc.com/pt/calculadoras/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sugarplantcalc.com/calculadoras/"/>
+  </url>
+  <url>
     <loc>https://sugarplantcalc.com/calculadoras/tandem-molinos-extraccion-pol/</loc>
     <lastmod>2026-08-01</lastmod>
     <xhtml:link rel="alternate" hreflang="es" href="https://sugarplantcalc.com/calculadoras/tandem-molinos-extraccion-pol/"/>
